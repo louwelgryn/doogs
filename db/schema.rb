@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_26_135427) do
+ActiveRecord::Schema.define(version: 2019_08_26_143021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,28 @@ ActiveRecord::Schema.define(version: 2019_08_26_135427) do
     t.index ["user_id"], name: "index_commitments_on_user_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.date "date"
+    t.string "status"
+    t.text "description"
+    t.string "hub"
+    t.bigint "project_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["project_id"], name: "index_events_on_project_id"
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "event_id"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_participations_on_event_id"
+    t.index ["user_id"], name: "index_participations_on_user_id"
+  end
+
   create_table "projects", force: :cascade do |t|
     t.bigint "association_id"
     t.string "name"
@@ -58,7 +80,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_135427) do
   end
 
   create_table "tasks", force: :cascade do |t|
-    t.string "status"
     t.bigint "user_id"
     t.bigint "project_id"
     t.text "description"
@@ -66,8 +87,18 @@ ActiveRecord::Schema.define(version: 2019_08_26_135427) do
     t.string "priority_level"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
     t.index ["project_id"], name: "index_tasks_on_project_id"
     t.index ["user_id"], name: "index_tasks_on_user_id"
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.bigint "skill_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_user_skills_on_skill_id"
+    t.index ["user_id"], name: "index_user_skills_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -98,9 +129,14 @@ ActiveRecord::Schema.define(version: 2019_08_26_135427) do
   add_foreign_key "commitments", "projects"
   add_foreign_key "commitments", "skills"
   add_foreign_key "commitments", "users"
+  add_foreign_key "events", "projects"
+  add_foreign_key "participations", "events"
+  add_foreign_key "participations", "users"
   add_foreign_key "projects", "associations"
   add_foreign_key "tasks", "projects"
   add_foreign_key "tasks", "users"
+  add_foreign_key "user_skills", "skills"
+  add_foreign_key "user_skills", "users"
   add_foreign_key "volunteer_skills", "skills"
   add_foreign_key "volunteer_skills", "users"
 end
