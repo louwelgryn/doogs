@@ -15,17 +15,6 @@ ActiveRecord::Schema.define(version: 2019_08_26_151713) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "associations", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.string "referent_name"
-    t.string "referent_position"
-    t.string "referent_image"
-    t.string "logo"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "charities", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -123,7 +112,7 @@ ActiveRecord::Schema.define(version: 2019_08_26_151713) do
     t.string "name"
     t.string "image"
     t.text "description"
-    t.string "level"
+    t.string "level", default: "Piou piou"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
