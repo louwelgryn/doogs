@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :association
+  belongs_to :charity
   has_many :commitments
   has_many :events
   has_many :tasks
