@@ -1,11 +1,10 @@
 
-
 <div class="container">
   <div class="row">
     <% @projects.each do |project| %>
     <div class="col-3">
       <div class="projects-cards">
-        <%= project.name %>
+        <%= link_to project.name, project_path(project) %>
     <%= project.charity %>
     <%= project.description %>
     <%= project.development_goal %>

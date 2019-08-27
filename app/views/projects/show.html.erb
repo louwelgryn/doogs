@@ -1,2 +1,23 @@
+
+hello
+
+
+
 <%= @project.name %>
 <%= @name %>
+
+
+
+
+
+
+
+
+
+<!-- join a project -->
+<% @project.commitments.each do |commitment| %>
+<%= commitment.skill %>
+<%= link_to 'Devenir bénévole', edit_commitment_path(commitment) %>
+<% end %>
+
+

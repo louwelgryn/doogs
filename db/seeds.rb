@@ -217,7 +217,7 @@ spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
 spa.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
 spa.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
-spa.save
+spa.save!
 
 puts "Creating charity AHP"
 
@@ -228,7 +228,7 @@ ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
 ahp.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
-ahp.save
+ahp.save!
 
 puts "Creating charity Article 1"
 
@@ -239,7 +239,7 @@ article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
 article1.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
 article1.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
-article1.save
+article1.save!
 
 puts "Creating charity Open Food Facts"
 
@@ -250,7 +250,7 @@ open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
 open_food_facts.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
 open_food_facts.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
-open_food_facts.save
+open_food_facts.save!
 
 
 
