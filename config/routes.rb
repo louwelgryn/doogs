@@ -9,4 +9,6 @@ Rails.application.routes.draw do
    resources :commitments, only: [:edit]
   get '/dashboard', to: 'pages#dashboard'
 
+  get '/projects/:id/dashboard', to: 'projects#dashboard'
+
 end

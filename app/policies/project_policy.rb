@@ -3,11 +3,13 @@ class ProjectPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
-
   end
 
   def show?
     true
+  end
+
+  def dashboard?
+    record.users.include? user
   end
 end

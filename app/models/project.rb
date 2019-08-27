@@ -1,6 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :charity
   has_many :commitments
+  has_many :users, through: :commitments
   has_many :events
   has_many :tasks
   validates :name, :description, :development_goal, :end_date, presence: true
