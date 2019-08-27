@@ -334,57 +334,57 @@ commitment_user1_project2 = Commitment.new
 commitment_user1_project2.skill = product_manager
 commitment_user1_project2.user = ignatius
 commitment_user1_project2.project = project_spa
-commitment_user1_project2.save
+commitment_user1_project2.save!
 
 commitment_user2_project2 = Commitment.new
 commitment_user2_project2.skill = developer_front
 commitment_user2_project2.user = ignatius
 commitment_user2_project2.project = project_spa
-commitment_user2_project2.save
+commitment_user2_project2.save!
 
 puts 'creating empty commitments for ahp'
 
 commitment_user1_project3 = Commitment.new
 commitment_user1_project3.skill = product_manager
 commitment_user1_project3.project = project_ahp
-commitment_user1_project3.save
+commitment_user1_project3.save!
 
 commitment_user2_project3 = Commitment.new
 commitment_user2_project3.skill = developer_front
 commitment_user2_project3.project = project_ahp
-commitment_user2_project3.save
+commitment_user2_project3.save!
 
 commitment_user3_project3 = Commitment.new
 commitment_user3_project3.skill = data_analyst
 commitment_user3_project3.project = project_ahp
-commitment_user3_project3.save
+commitment_user3_project3.save!
 
 commitment_user4_project3 = Commitment.new
 commitment_user4_project3.skill = data_analyst
 commitment_user4_project3.project = project_ahp
-commitment_user4_project3.save
+commitment_user4_project3.save!
 
 puts 'creating empty commitments for article1'
 
 commitment_user1_project4 = Commitment.new
 commitment_user1_project4.skill = product_manager
 commitment_user1_project4.project = project_article1
-commitment_user1_project4.save
+commitment_user1_project4.save!
 
 commitment_user2_project4 = Commitment.new
 commitment_user2_project4.skill = data_scientist
 commitment_user2_project4.project = project_article1
-commitment_user2_project4.save
+commitment_user2_project4.save!
 
 commitment_user3_project4 = Commitment.new
 commitment_user3_project4.skill = data_scientist
 commitment_user3_project4.project = project_article1
-commitment_user3_project4.save
+commitment_user3_project4.save!
 
 commitment_user4_project4 = Commitment.new
 commitment_user4_project4.skill = data_analyst
 commitment_user4_project4.project = project_article1
-commitment_user4_project4.save
+commitment_user4_project4.save!
 
 puts 'finished!'
 
