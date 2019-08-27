@@ -7,4 +7,5 @@ class Project < ApplicationRecord
   validates :development_goal, inclusion: { in: DEVELOPMENT_GOAL }
   validates :name, uniqueness: true
   validates :status, inclusion: { in: PROJECT_STATUS }
+  mount_uploader :image, PhotoUploader
 end
