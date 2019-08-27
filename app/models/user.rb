@@ -6,8 +6,8 @@ class User < ApplicationRecord
 
   has_many :commitments
   has_many :tasks
-  has_many :skills
+  has_many :user_skills
+  has_many :skills, through: :user_skills
   has_many :projects, through: :commitments
   mount_uploader :image, PhotoUploader
-
 end
