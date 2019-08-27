@@ -265,7 +265,7 @@ project_open_food_facts.status = "finished"
 project_open_food_facts.start_date = Date.new(2019,1,1)
 project_open_food_facts.end_date = Date.new(2019,3,1)
 project_open_food_facts.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566899900/7793640219_open-food-facts-le-wikipedia-de-l-alimentation_1_blmly1.jpg"
-project_open_food_facts.save
+project_open_food_facts.save!
 
 puts "creating project Article1"
 

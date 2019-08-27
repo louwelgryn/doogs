@@ -1,13 +1,22 @@
-this is the projects page
+
+
 <div class="container">
-  <% @projects.each do |project| %>
-    <%= project.name %>
+  <div class="row">
+    <% @projects.each do |project| %>
+    <div class="col-3">
+      <div class="projects-cards">
+        <%= project.name %>
     <%= project.charity %>
     <%= project.description %>
-    <%= project.development %>
-    <%= project.skills %>
+    <%= project.development_goal %>
     <%= project.status %>
-    <%= project.image %>
-  <% end %>
+    <%= cl_image_tag project.image, height: 300, width: 300  %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
 </div>
 
