@@ -1,6 +1,6 @@
 this is the projects page
 <div class="container">
-  <%= @projects.each do |project| %>
+  <% @projects.each do |project| %>
     <%= project.name %>
     <%= project.charity %>
     <%= project.description %>
@@ -10,3 +10,4 @@ this is the projects page
     <%= project.image %>
   <% end %>
 </div>
+

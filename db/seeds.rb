@@ -5,37 +5,47 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-puts "destroy all User"
-User.destroy_all
-puts "destroy all Projects"
+puts "destroy all UserSkill"
+UserSkill.destroy_all
+puts "destroy all Commitments"
+Commitment.destroy_all
+puts "destroy all Project"
 Project.destroy_all
 puts "destroy all Charity"
 Charity.destroy_all
-puts "destroy all Skills"
+puts "destroy all User"
+User.destroy_all
+puts "destroy all Skill"
 Skill.destroy_all
-puts "destroy all Commitments"
-Commitment.destroy_all
+
 
 
 puts "creating skills"
 
 data_analyst = Skill.new
 data_analyst.name = "Data analyst"
+data_analyst.save
 web_designer = Skill.new
 web_designer.name = "Web designer"
+web_designer.save
 data_scientist = Skill.new
 data_scientist.name = "Data scientist"
+data_scientist.save
 product_manager = Skill.new
 product_manager.name = "Product manager"
+product_manager.save
 developer_front = Skill.new
 developer_front.name = "Developer front"
+developer_front.save
 developer_back = Skill.new
 developer_back.name = "Developer back"
+developer_back.save
 full_stack_developer = Skill.new
 full_stack_developer.name = "Full Stack Developer"
+full_stack_developer.save
 data_engineer = Skill.new
 data_engineer.name = "Data engineer"
+data_engineer.save
 
 
 puts 'creating 8 users and their skills'
@@ -57,6 +67,7 @@ aurelie.save!
 aurelie_skill1 = UserSkill.new
 aurelie_skill1.skill = product_manager
 aurelie_skill1.user = aurelie
+aurelie_skill1.save
 
 puts 'creating Sheldon Cooper'
 
@@ -75,10 +86,12 @@ sheldon.save!
 sheldon_skill1 = UserSkill.new
 sheldon_skill1.skill = data_scientist
 sheldon_skill1.user = sheldon
+sheldon_skill1.save
 
 sheldon_skill2 = UserSkill.new
 sheldon_skill2.skill = data_engineer
 sheldon_skill2.user = sheldon
+sheldon_skill2.save
 
 puts 'creating Mark Zuckerberg'
 
@@ -97,18 +110,22 @@ mark.save!
 mark_skill1 = UserSkill.new
 mark_skill1.skill = full_stack_developer
 mark_skill1.user = mark
+mark_skill1.save
 
 mark_skill2 = UserSkill.new
 mark_skill2.skill = web_designer
 mark_skill2.user = mark
+mark_skill2.save
 
 mark_skill3 = UserSkill.new
 mark_skill3.skill = developer_front
 mark_skill3.user = mark
+mark_skill3.save
 
-mark_skill2 = UserSkill.new
-mark_skill2.skill = developer_back
-mark_skill2.user = mark
+mark_skill4 = UserSkill.new
+mark_skill4.skill = developer_back
+mark_skill4.user = mark
+mark_skill4.save
 
 puts 'creating Elizabeth Windsor'
 
@@ -127,6 +144,7 @@ elizabeth.save!
 elizabeth_skill1 = UserSkill.new
 elizabeth_skill1.skill = product_manager
 elizabeth_skill1.user = elizabeth
+elizabeth_skill1.save
 
 puts 'creating Aya Nakamura'
 
@@ -145,6 +163,7 @@ aya.save!
 aya_skill1 = UserSkill.new
 aya_skill1.skill = product_manager
 aya_skill1.user = aya
+aya_skill1.save
 
 puts 'creating Rihanna'
 
@@ -163,6 +182,7 @@ rihanna.save!
 rihanna_skill1 = UserSkill.new
 rihanna_skill1.skill = data_analyst
 rihanna_skill1.user = rihanna
+rihanna_skill1.save
 
 puts 'creating Ignatius Reilly'
 # User 7
@@ -180,10 +200,12 @@ ignatius.save!
 ignatius_skill1 = UserSkill.new
 ignatius_skill1.skill = web_designer
 ignatius_skill1.user = ignatius
+ignatius_skill1.save
 
-ignatius_skill1 = UserSkill.new
-ignatius_skill1.skill = developer_front
-ignatius_skill1.user = ignatius
+ignatius_skill2 = UserSkill.new
+ignatius_skill2.skill = developer_front
+ignatius_skill2.user = ignatius
+ignatius_skill2.save
 
 
 puts "Creating charity SPA"
@@ -195,6 +217,7 @@ spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
 spa.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
 spa.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.save
 
 puts "Creating charity AHP"
 
@@ -205,6 +228,7 @@ ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
 ahp.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.save
 
 puts "Creating charity Article 1"
 
@@ -215,6 +239,7 @@ article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
 article1.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
 article1.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.save
 
 puts "Creating charity Open Food Facts"
 
@@ -225,7 +250,7 @@ open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
 open_food_facts.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
 open_food_facts.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
-
+open_food_facts.save
 
 
 
@@ -240,18 +265,20 @@ project_open_food_facts.status = "finished"
 project_open_food_facts.start_date = Date.new(2019,1,1)
 project_open_food_facts.end_date = Date.new(2019,3,1)
 project_open_food_facts.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566899900/7793640219_open-food-facts-le-wikipedia-de-l-alimentation_1_blmly1.jpg"
+project_open_food_facts.save
 
 puts "creating project Article1"
 
-project_Article1 = Project.new
-project_Article1.name = "Algorithme de recommandation pour le parrainage étudiant"
-project_Article1.description = " Optimiser le matching parrain-filleul pour Frateli afin de prévoir si un matching va réussir ou échouer grâce à un outil algorithmique d’aide à la décision pour améliorer le taux de réussite du parrainage. "
-project_Article1.charity = article1
-project_Article1.development_goal = "Éducation de qualité"
-project_Article1.status = "pending"
-project_Article1.start_date = Date.new(2019,9,1)
-project_Article1.end_date = Date.new(2019,11,12)
-project_Article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901231/Cover-twitter_gvezw9.jpg"
+project_article1 = Project.new
+project_article1.name = "Algorithme de recommandation pour le parrainage étudiant"
+project_article1.description = " Optimiser le matching parrain-filleul pour Frateli afin de prévoir si un matching va réussir ou échouer grâce à un outil algorithmique d’aide à la décision pour améliorer le taux de réussite du parrainage. "
+project_article1.charity = article1
+project_article1.development_goal = "Éducation de qualité"
+project_article1.status = "pending"
+project_article1.start_date = Date.new(2019,9,1)
+project_article1.end_date = Date.new(2019,11,12)
+project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901231/Cover-twitter_gvezw9.jpg"
+project_article1.save
 
 puts "creating project Spa"
 
@@ -264,6 +291,7 @@ project_spa.status = "on going"
 project_spa.start_date = Date.new(2019,07,05)
 project_spa.end_date = Date.new(2019,11,10)
 project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902057/photo-1494256997604-768d1f608cac_ktmift.jpg"
+project_spa.save
 
 puts "creating project Ahp"
 
@@ -276,6 +304,7 @@ project_ahp.status = "pending"
 project_ahp.start_date = Date.new(2019,8,1)
 project_ahp.end_date = Date.new(2020,2,29)
 project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902207/katie-smith-uQs1802D0CQ-unsplash_ax9lud.jpg"
+project_ahp.save
 
 puts 'Commiting people to projects'
 
@@ -285,28 +314,77 @@ commitment_user1_project1 = Commitment.new
 commitment_user1_project1.skill = product_manager
 commitment_user1_project1.user = aya
 commitment_user1_project1.project = project_open_food_facts
+commitment_user1_project1.save
 
 commitment_user2_project1 = Commitment.new
 commitment_user2_project1.skill = developer_front
 commitment_user2_project1.user = mark
 commitment_user2_project1.project = project_open_food_facts
+commitment_user2_project1.save
 
 commitment_user3_project1 = Commitment.new
 commitment_user3_project1.skill = data_scientist
 commitment_user3_project1.user = sheldon
 commitment_user3_project1.project = project_open_food_facts
+commitment_user3_project1.save
 
 puts 'Commiting Elizabeth Windsor and Ignatius Reilly to spa (ongoing) '
 
-commitment_user1_project1 = Commitment.new
-commitment_user1_project1.skill = product_manager
-commitment_user1_project1.user = ignatius
-commitment_user1_project1.project = project_spa
+commitment_user1_project2 = Commitment.new
+commitment_user1_project2.skill = product_manager
+commitment_user1_project2.user = ignatius
+commitment_user1_project2.project = project_spa
+commitment_user1_project2.save
 
-commitment_user2_project1 = Commitment.new
-commitment_user2_project1.skill = developer_front
-commitment_user2_project1.user = ignatius
-commitment_user2_project1.project = project_spa
+commitment_user2_project2 = Commitment.new
+commitment_user2_project2.skill = developer_front
+commitment_user2_project2.user = ignatius
+commitment_user2_project2.project = project_spa
+commitment_user2_project2.save
+
+puts 'creating empty commitments for ahp'
+
+commitment_user1_project3 = Commitment.new
+commitment_user1_project3.skill = product_manager
+commitment_user1_project3.project = project_ahp
+commitment_user1_project3.save
+
+commitment_user2_project3 = Commitment.new
+commitment_user2_project3.skill = developer_front
+commitment_user2_project3.project = project_ahp
+commitment_user2_project3.save
+
+commitment_user3_project3 = Commitment.new
+commitment_user3_project3.skill = data_analyst
+commitment_user3_project3.project = project_ahp
+commitment_user3_project3.save
+
+commitment_user4_project3 = Commitment.new
+commitment_user4_project3.skill = data_analyst
+commitment_user4_project3.project = project_ahp
+commitment_user4_project3.save
+
+puts 'creating empty commitments for article1'
+
+commitment_user1_project4 = Commitment.new
+commitment_user1_project4.skill = product_manager
+commitment_user1_project4.project = project_article1
+commitment_user1_project4.save
+
+commitment_user2_project4 = Commitment.new
+commitment_user2_project4.skill = data_scientist
+commitment_user2_project4.project = project_article1
+commitment_user2_project4.save
+
+commitment_user3_project4 = Commitment.new
+commitment_user3_project4.skill = data_scientist
+commitment_user3_project4.project = project_article1
+commitment_user3_project4.save
+
+commitment_user4_project4 = Commitment.new
+commitment_user4_project4.skill = data_analyst
+commitment_user4_project4.project = project_article1
+commitment_user4_project4.save
 
 puts 'finished!'
 
