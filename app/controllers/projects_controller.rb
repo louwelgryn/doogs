@@ -8,6 +8,11 @@ class ProjectsController < ApplicationController
     @projects = policy_scope(Project)
   end
 
+  def dashboard
+    @project = Project.find(params[:id])
+    authorize @project
+  end
+
   private
 
   def project_params
