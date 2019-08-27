@@ -3,5 +3,11 @@ class ProjectPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+
+
+  end
+
+  def show?
+    true
   end
 end
