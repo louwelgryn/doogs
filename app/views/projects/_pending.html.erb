@@ -1,8 +1,11 @@
-
-<ul>
-    <% @project.commitments.each do |commitment| %>
+<p> Ce projet n'a pas encore commencé ! </p> <br>
+<p> Equipe actuelle: </p>
+<% @project.commitments.each do |commitment| %>
   <li>
-    <%= commitment.user.name %>
-    <%= commitment.skill.user %>
+    <% if commitment.user.nil? %>
+      <%= commitment.skill.name %> - à pourvoir!
+    <% else %>
+      <%= commitment.skill.name %>: <%= commitment.user.name %>
+    <% end %>
   </li>
-</ul>
+<% end %>

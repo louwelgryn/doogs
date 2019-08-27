@@ -3,8 +3,7 @@
 <p> <%= @project.name %> </p>
 
 <% if @project.status == 'pending'%>
-<p> Ce projet n'a pas encore commencé ! </p> <br>
-<p> Equipe actuelle: </p>
+  <%= render 'pending' %>
 
 <% elsif @project.status == 'ongoing' %>
   <%= render 'on_going' %>
