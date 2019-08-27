@@ -7,4 +7,6 @@ Rails.application.routes.draw do
 
   end
    resources :commitments, only: [:edit]
+  get '/dashboard', to: 'pages#dashboard'
+
 end

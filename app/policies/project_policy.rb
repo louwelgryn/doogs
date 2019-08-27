@@ -6,4 +6,8 @@ class ProjectPolicy < ApplicationPolicy
 
 
   end
+
+  def show?
+    true
+  end
 end
