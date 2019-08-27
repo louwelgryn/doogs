@@ -1,12 +1,18 @@
 <div class="container">
   <h1>Mon profil</h1>
-  <p><%= @user.name %></p>
-  <p><%= @user.description %></p>
-  <p><%= @user.level %></p>
-  <%= image_tag @user.remote_image_url %>
+  <%= cl_image_tag @user.image %>
+  <p>Nom : <%= @user.name %></p>
+  <p>Description : <%= @user.description %></p>
+  <p>Mon niveau : <%= @user.level %></p>
+  <p>Mon  : <%= @user.skills.name %></p>
 </div>
+
+<hr>
 
 <div class="container">
   <h1>Mon projet en cours</h1>
-  <p><%= @user_current_project.name %></p>
+  <h2><%= @user_current_project.name %></h2>
+  <p>Description : <%= @user_current_project.description %></p>
+  <p>Catégorie : <%= @user_current_project.development_goal %></p>
+  <p>Projet porté par cette association : <%= @user_current_project.charity %></p>
 </div>
