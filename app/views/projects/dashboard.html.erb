@@ -4,12 +4,15 @@
 
 <% if @project.status == 'pending'%>
 <p> Ce projet n'a pas encore commencé ! </p> <br>
-<p> Rejoindre l'équipe </p>
+<p> Equipe actuelle: </p>
 
 <% elsif @project.status == 'ongoing' %>
-<p>Ce projet est en cours ! </p>
+  <%= render 'on_going' %>
 
 <% else %>
-<p>Ce projet est fini ! </p>
+  <%= render 'finished' %>
 
 <% end %>
+
+
+

@@ -1,1 +1,8 @@
-_pending.html.erb
+
+<ul>
+    <% @project.commitments.each do |commitment| %>
+  <li>
+    <%= commitment.user.name %>
+    <%= commitment.skill.user %>
+  </li>
+</ul>
