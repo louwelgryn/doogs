@@ -1,4 +1,7 @@
 class ProjectsController < ApplicationController
+  def show
+    @project = project.find(params[:id])
+
   def index
     @projects = policy_scope(Project)
   end
@@ -7,5 +10,6 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image)
+
   end
 end
