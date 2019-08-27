@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def show
-    @project = project.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   def index
