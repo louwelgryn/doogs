@@ -1,12 +1,12 @@
 
-hello
-
-
-
-<%= @project.name %>
-<%= @name %>
-
-
+<h1><%= @project.name %></h1>
+<p><%= @project.description %></p>
+​
+​
+​
+Un projet de <strong><%= @project.charity.name %></strong>
+<br>
+<hr>
 
 
 
@@ -15,9 +15,19 @@ hello
 
 
 <!-- join a project -->
+<ul>
+  <h4>Liste des compétences nécessaires : </h4>
 <% @project.commitments.each do |commitment| %>
-<%= commitment.skill %>
-<%= link_to 'Devenir bénévole', edit_commitment_path(commitment) %>
+<li> <%= commitment.skill.name %>
+ <% if commitment.user.nil? %>
+ <%= simple_form_for(commitment) do |f| %>
+    <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+    <%= f.submit "Devenir bénévole", class: "btn btn-primary" %>
+  <% end %>
+  <% else %>
+   <%= commitment.user.name %>
 <% end %>
 
-
+ </li>
+<% end %>
+</ul>
