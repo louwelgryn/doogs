@@ -1,0 +1,11 @@
+<div class="container">
+  <%= @projects.each do |project| %>
+    <%= project.name %>
+    <%= project.charity %>
+    <%= project.description %>
+    <%= project.development %>
+    <%= project.skills %>
+    <%= project.status %>
+    <%= project.image %>
+  <% end %>
+</div>
