@@ -153,7 +153,7 @@ aya = User.new
 aya.name ="Aya Nakamura"
 aya.description = "Tu parles sur moi y'a R"
 aya.level = "Piou-piou"
-aya.remote_image_url = "https://www.calvados-tourisme.com/wp-content/uploads/tourinsoft/Aya-Nakamura-Parlophone-Warner-Music.jpg"
+aya.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566995680/icdsup3djupr25b4sdfd.jpg"
 aya.email = "ayanakamura@gmail.com"
 aya.password = "qwerty"
 aya.save!
@@ -332,7 +332,7 @@ puts 'Commiting Elizabeth Windsor and Ignatius Reilly to spa (ongoing) '
 
 commitment_user1_project2 = Commitment.new
 commitment_user1_project2.skill = product_manager
-commitment_user1_project2.user = ignatius
+commitment_user1_project2.user = elizabeth
 commitment_user1_project2.project = project_spa
 commitment_user1_project2.save!
 

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, only: [:index, :show] do
-    resources :tasks, only: [:new, :create]
+    resources :tasks, only: [:new, :create, :update]
   end
 
   resources :commitments, only: [:update]

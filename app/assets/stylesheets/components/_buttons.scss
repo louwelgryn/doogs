@@ -1,3 +1,22 @@
+
+.btn-black {
+text-transform: none;
+border-radius: 50px;
+    text-align: center;
+    background-color: #062521;
+    color: #fff;
+        height: 25px;
+    padding: 12px;
+    text-decoration: none;
+    width:80%;
+
+}
+.btn-black:hover {
+text-decoration: none;
+color:white;
+width:100%;
+}
+
 .button-default.turquoise {
   background-color: #fffb46;
   color: white;

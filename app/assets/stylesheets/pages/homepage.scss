@@ -1,0 +1,62 @@
+.green-banner {
+ // background-image: url('Vectorvector.svg');
+ background-color: #A4C5C6;
+ background-repeat: no-repeat;
+ height: 100vh;
+ position: relative;
+}
+
+
+.wave {
+  position: absolute;
+  bottom:0;
+}
+
+.orange-shape {
+ position: absolute;
+  top: -200px;
+  height: 600px;
+  right: 371px;
+  animation-name: leafRoll;
+  animation-duration: 2s;
+}
+
+@keyframes leafRoll {
+  from {
+    transform: rotate(-30deg);
+    top: -700px;
+  }
+  to {
+    top: -200px;
+    transform: rotate(0deg);
+  }
+}
+
+.croped-image {
+clip-path: polygon(10% 0,94% 36%,98% 100%,0 100%,0 20%);
+position: absolute;
+height: 400px;
+    bottom: 78px;
+    width: 50vw;
+    object-fit: cover;
+  object-position: right;
+}
+
+.home-page {
+  background-color: white;
+}
+
+.title {
+  position: absolute;
+    height: 200px;
+    top: 95px;
+    left: 331px;
+
+}
+
+.big-title {
+  font-size: 200px;
+}
+
+
+
