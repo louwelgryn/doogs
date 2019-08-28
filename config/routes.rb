@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
   resources :projects, only: [:index, :show] do
+    resources :tasks, only: [:new, :create, :update]
   end
 
-   resources :commitments, only: [:update]
+  resources :commitments, only: [:update]
+
   get '/dashboard', to: 'pages#dashboard'
 
   get '/projects/:id/dashboard', to: 'projects#dashboard', as: 'project_dashboard'

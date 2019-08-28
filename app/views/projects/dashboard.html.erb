@@ -1,15 +1,10 @@
-<h1>DASHBOARD PROJET</h>
-<br>
-<p> <%= @project.name %> </p>
-
-<% if @project.status == 'pending'%>
-<p> Ce projet n'a pas encore commencé ! </p> <br>
-<p> Rejoindre l'équipe </p>
-
-<% elsif @project.status == 'ongoing' %>
-<p>Ce projet est en cours ! </p>
-
-<% else %>
-<p>Ce projet est fini ! </p>
-
-<% end %>
+<div class="container">
+  <h1><%= @project.name %> - Tableau de bord</h1>
+  <% if @project.status == 'pending'%>
+    <%= render 'pending' %>
+  <% elsif @project.status == 'on going' %>
+    <%= render 'on_going' %>
+  <% else %>
+    <%= render 'finished' %>
+  <% end %>
+</div>
