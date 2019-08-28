@@ -15,7 +15,7 @@
               <div class="blog-slider__text"><%= truncate(project.description, length: 150) %></div>
 
               <%= link_to 'En savoir +', project_path(project), class: "blog-slider__button" %>
-              <span> <%= project.status %></span>
+              <div class="status <%= project.status %>"></div>
             </div>
         </div>
       </div>

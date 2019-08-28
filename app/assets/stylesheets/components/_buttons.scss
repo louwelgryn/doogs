@@ -52,13 +52,18 @@ a.blog-slider__button {
     transition: all 0.3s ease-in-out;
     color: #E58074;
     border-color: #E58074;
+    background-color: #E58074;
+    color: white;
     text-decoration: none;
     margin-top: 5%;
     // background-color:green;
 }
 
 a.blog-slider__button:hover {
-  background-color: #E58074;
-  color: white;
+
+  color: #E58074;
+  border-color: #E58074;
+
+  background-color: white;
 
 }
