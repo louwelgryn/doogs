@@ -24,11 +24,20 @@
   <div class="row">
     <div class="col" id="en_cours">
       <h2>Mon projet en cours</h2>
+
+      <% if @user_current_project.nil? %>
+        <p>Vous n'avez pas encore de projet en cours !</p>
+        <p><%= link_to 'Découvrez les projets', projects_path  %></p>
+
+      <% else %>
+
       <h3>"<%= @user_current_project.name %>"</h3>
       <%= cl_image_tag @user_current_project.image, width: 400 %>
       <p>Description : <%= @user_current_project.description %></p>
       <p>Catégorie : <%= @user_current_project.development_goal %></p>
       <p>Projet porté par cette association : <%= @user_current_project.charity.name %></p>
+
+      <% end %>
     </div>
     <div class="col" id="past">
       <h2>Mes projets passés</h2>
