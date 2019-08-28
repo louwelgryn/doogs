@@ -1,1 +1,11 @@
-_pending.html.erb
+<p> Ce projet n'a pas encore commencé ! </p> <br>
+<p> Equipe actuelle: </p>
+<% @project.commitments.each do |commitment| %>
+  <li>
+    <% if commitment.user.nil? %>
+      <%= commitment.skill.name %> - à pourvoir!
+    <% else %>
+      <%= commitment.skill.name %>: <%= commitment.user.name %>
+    <% end %>
+  </li>
+<% end %>

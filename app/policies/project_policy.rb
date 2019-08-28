@@ -9,6 +9,10 @@ class ProjectPolicy < ApplicationPolicy
     true
   end
 
+  def index?
+    true
+  end
+
   def dashboard?
     record.users.include? user
   end
