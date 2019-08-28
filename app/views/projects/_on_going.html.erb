@@ -28,7 +28,7 @@
           <p>Attribuée à : <%= task.user.name %></p>
           <p>Niveau de priorité : <%= task.priority_level %> </p>
           <p><%= task.description %></p>
-          <% if task.status == "pending" && (task.user == current_user ||  ) %>
+          <% if task.status == "pending" && ((current_user == task.user) || @manager) %>
             <%= simple_form_for [@project, task] do |f| %>
               <%= f.submit "Marquer cette tâche comme finie", class: "btn btn-primary" %>
             <% end %>
@@ -36,7 +36,7 @@
         </div>
         <hr>
       <% end %>
-      <% if current_user.commitments.find_by(project_id: @project.id).skill.name == "Product manager" %>
+      <% if @manager %>
         <%= link_to "Créer une nouvelle tâche", new_project_task_path(@project) %>
       <% end %>
     </div>

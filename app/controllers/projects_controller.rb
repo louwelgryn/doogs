@@ -14,9 +14,14 @@ class ProjectsController < ApplicationController
   def dashboard
     @project = Project.find(params[:id])
     authorize @project
+    @manager = manager?
   end
 
   private
+
+  def manager?
+    current_user.commitments.find_by(project_id: @project.id).skill.name == "Product manager"
+  end
 
   def project_volunteers
     @project.commitments.map do |commitment|
