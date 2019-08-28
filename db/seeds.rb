@@ -386,5 +386,53 @@ commitment_user4_project4.skill = data_analyst
 commitment_user4_project4.project = project_article1
 commitment_user4_project4.save!
 
+puts "creating Marie"
+
+marie = User.new
+marie.name ="marie Zuckerberg"
+marie.description = "J'ai pas mal de temps libre."
+marie.level = "Piou-piou"
+marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
+marie.email = "mariezuckerberg@gmail.com"
+marie.password = "qwerty"
+marie.save!
+
+# User 3- Skills
+
+marie_skill1 = UserSkill.new
+marie_skill1.skill = full_stack_developer
+marie_skill1.user = marie
+marie_skill1.save
+
+marie_skill2 = UserSkill.new
+marie_skill2.skill = web_designer
+marie_skill2.user = marie
+marie_skill2.save
+
+marie_skill3 = UserSkill.new
+marie_skill3.skill = developer_front
+marie_skill3.user = marie
+marie_skill3.save
+
+marie_skill4 = UserSkill.new
+marie_skill4.skill = developer_back
+marie_skill4.user = marie
+marie_skill4.save
+
+marie_skill5 = UserSkill.new
+marie_skill5.skill = data_analyst
+marie_skill5.user = marie
+marie_skill5.save
+
+marie_skill6 = UserSkill.new
+marie_skill6.skill = data_scientist
+marie_skill6.user = marie
+marie_skill6.save
+
+marie_skill7 = UserSkill.new
+marie_skill7.skill = product_manager
+marie_skill7.user = marie
+marie_skill7.save
+
 puts 'finished!'
 
