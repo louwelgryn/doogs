@@ -53,7 +53,7 @@
     height: 400px;
     transition: all .3s;
     margin-bottom: 15%;
-    background-color: #D4EBCF;
+    background-color: #A3C5C6;
 
 
   @media screen and (max-width: 992px) {
@@ -111,6 +111,7 @@
     color: #062520;
     font-weight: lighter;
     font-size: 17px;
+    color: #062520;
   }
 }
 
@@ -123,6 +124,7 @@
   width: 100%;
   font-weight: bolder;
   color: #E58074;
+  text-align: center;
 }
 
 .blog-slider__text {
@@ -133,7 +135,35 @@
   width: 100%;
   height: 35%;
   font-size: 13px;
+  color: white;
 }
 
+.status {
+
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+}
+
+.pending {
+
+    background: green;
+
+}
+
+.finished {
+
+    background: red;
+
+}
+
+.on.going {
+  background: orange;
+}
 
 
