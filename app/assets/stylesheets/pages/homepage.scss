@@ -17,6 +17,19 @@
   top: -200px;
   height: 600px;
   right: 371px;
+  animation-name: leafRoll;
+  animation-duration: 2s;
+}
+
+@keyframes leafRoll {
+  from {
+    transform: rotate(-30deg);
+    top: -700px;
+  }
+  to {
+    top: -200px;
+    transform: rotate(0deg);
+  }
 }
 
 .croped-image {
