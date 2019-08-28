@@ -5,7 +5,9 @@
 
 <p> <%= @project.status %> </p>
 <% if @project.status = "on going" %>
-  <%= link_to "Dashboard du projet", project_dashboard_path(@project) %>
+  <% if @project.users.include? current_user %>
+    <%= link_to "Dashboard du projet", project_dashboard_path(@project) %>
+  <% end %>
 <% end %>
 
 Un projet de <strong><%= @project.charity.name %></strong>
@@ -13,15 +15,17 @@ Un projet de <strong><%= @project.charity.name %></strong>
 <hr>
 
 <!-- join a project -->
-<ul>
-  <h4>Liste des compétences nécessaires : </h4>
+<h4>Liste des compétences nécessaires : </h4>
+<ul class="d-flex">
 <% @project.commitments.each do |commitment| %>
-<li> <%= commitment.skill.name %>
+<li class="d-inline">
  <% if commitment.user.nil? %>
+  <div class="empty-avatar"><%= commitment.skill.name %></div>
  <%= simple_form_for(commitment) do |f| %>
     <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
     <%= f.submit "Devenir bénévole", class: "btn btn-primary" %>
   <% end %>
+
   <% else %>
    <%= commitment.user.name %>
    <%= cl_image_tag commitment.user.name, crop: :fill, width: 1000, gravity: :auto, radius: "max", aspect_ratio: "1:1"%>
