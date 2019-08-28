@@ -7,20 +7,59 @@
     <p><%= link_to "Accéder au tableau de bord du projet", project_dashboard_path(@project) %></p>
   <% end %>
 
+
+  <hr>
+  <h2>L'équipe</h2>
+
   <ul class="d-flex">
     <% @project.commitments.each do |commitment| %>
-      <li class="d-inline"><%= commitment.skill.name %>
+
+      <li class="d-inline">
+
         <% if commitment.user %>
-          - Mission assurée par <%= commitment.user.name %>
-          <%= cl_image_tag commitment.user.name, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1"%>
+          <div class="avatar-container">
+            <div class="full-avatar">
+              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big"%>
+              <span>
+                hello
+              </span>
+            </div>
+          </div>
+
         <% elsif !current_user %>
-          <%= link_to "Accepter cette mission", new_user_session_path %>
+
+        <%= simple_form_for(commitment) do |f| %>
+            <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+
+            <div type="submit" class="reset-css">
+              <div class="avatar-container">
+                <div class="empty-avatar">
+                  <span class="empty-avatar-text">
+                    <%= commitment.skill.name %>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+          <% end %>
+
         <% else commitment.user.nil? %>
-        <div class="empty-avatar"><%= commitment.skill.name %></div>
+
           <%= simple_form_for(commitment) do |f| %>
             <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-            <%= f.submit "Accepter cette mission", class: "btn btn-primary" %>
+
+            <div type="submit" class="reset-css">
+              <div class="avatar-container">
+                <div class="empty-avatar">
+                  <span class="empty-avatar-text">
+                    <%= commitment.skill.name %>
+                  </span>
+                </div>
+              </div>
+            </div>
+
           <% end %>
+
         <% end %>
      </li>
     <% end %>

@@ -24,14 +24,53 @@
   border-radius: 50%;
 }
 
-.empty-avatar{
+.empty-avatar {
   background: rgb(170, 170, 170);
   border-radius:50%;
   width:96px;
   height:96px;
-  opacity: 0.8;
+  opacity: 0.4;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 10px;
+  transition: .5s ease;
 }
+
+// Write over avatars
+
+.avatar-container {
+  width: 100%;
+  margin-right: 20px;
+}
+
+.avatar-container:hover .empty-avatar {
+  opacity: 0.7;
+}
+
+.empty-avatar:hover .middle {
+  opacity: 1;
+}
+
+// div.empty-avatar-text:hover:after {
+//   content: "World!";
+// }
+
+.empty-avatar:hover span {display:none}
+.empty-avatar:hover:before {content:"JOIN!"; opacity: 1; color: rgba(0,0,0,1)}
+
+.avatar-container:hover .full-avatar img {
+  opacity: 0.2;
+}
+
+.full-avatar img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: .5s ease;
+}
+
+.full-avatar:hover span {display:none}
+.full-avatar:hover:before {content:"JOIN!"; opacity: 1; color: rgba(0,0,0,1)}
