@@ -1,7 +1,14 @@
 .avatar {
-  width: 40px;
+  width: 48px;
   border-radius: 50%;
 }
+
+.navbar-lewagon {
+  .avatar {
+    margin-left: 20px;
+  }
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;
