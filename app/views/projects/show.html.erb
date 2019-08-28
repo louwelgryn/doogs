@@ -2,12 +2,10 @@
 <h1><%= @project.name %></h1>
 <p><%= @project.description %></p>
 
-Un projet de <strong><%= @project.charity.name %></strong>
-<br>
-<hr>
-
-
-
+<p> <%= @project.status %> </p>
+<% if @project.status = "on going" %>
+  <%= link_to "Dashboard du projet", project_dashboard_path(@project) %>
+<% end %>
 
 Un projet de <strong><%= @project.charity.name %></strong>
 <br>
@@ -25,8 +23,12 @@ Un projet de <strong><%= @project.charity.name %></strong>
   <% end %>
   <% else %>
    <%= commitment.user.name %>
+   <%= cl_image_tag commitment.user.name, crop: :fill, width: 1000, gravity: :auto, radius: "max", aspect_ratio: "1:1"%>
 <% end %>
 
  </li>
 <% end %>
 </ul>
+
+<svg viewBox="0 0 361 329" class="current-resident-card"></svg>
+<path fill="#C2E1BB" fill-rule="evenodd" d="M327.775 185.887c-100.942 116.027-98.05 152.438-194.445 140.61-96.395-11.828-62.76-60.837-118.302-170.13C-40.514 47.076 76.749-9.384 173.144 2.445 269.54 14.272 428.718 69.86 327.775 185.887z"></path>
