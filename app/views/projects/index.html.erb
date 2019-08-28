@@ -1,6 +1,6 @@
 <div class="container">
 
-  <h1>Nos projets, votre fierté</h1>
+  <h1>Leurs projets, votre fierté</h1>
 
   <div class="row row-project-card d-flex">
     <% @projects.each do |project| %>
@@ -9,12 +9,13 @@
             <div class="blog-slider__img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path project.image %>);">
             </div>
             <div class="blog-slider__content">
-              <span class="blog-slider__code"><span><%= project.name %></span> <% project.name %></span>
-              <div class="blog-slider__title"><%= project.charity.name %> <span>_</span>
+              <div class="blog-slider__code"> <h5> <%= project.name %> </h5></div>
+              <div class="blog-slider__title"><%= project.charity.name %>
               </div>
               <div class="blog-slider__text"><%= truncate(project.description, length: 150) %></div>
 
               <%= link_to 'En savoir +', project_path(project), class: "blog-slider__button" %>
+              <span> <%= project.status %></span>
             </div>
         </div>
       </div>
