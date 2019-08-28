@@ -1,27 +1,44 @@
 <p>Ce projet est en cours ! </p>
 
-
 <div class="mx-auto">
   <ul class="nav margin-left" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-label" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vue d'ensemble</a>
+      <a class="nav-link active tab-label" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Calendrier</a>
+      <a class="nav-link tab-label" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Roadmap</a>
+      <a class="nav-link tab-label" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active tab-content" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
       lalala
     </div>
-    <div class="tab-pane fade tab-content" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
       lilili
     </div>
-    <div class="tab-pane fade tab-content" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      lululu
+    <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
+      <h2>Les tâches du projet</h2>
+      <% @project.tasks.each do |task| %>
+        <div class="task">
+          <p><%= task.name %></p>
+          <p>Statut : <%= task.status %></p>
+          <p>Attribuée à : <%= task.user.name %></p>
+          <p>Niveau de priorité : <%= task.priority_level %> </p>
+          <p><%= task.description %></p>
+          <% if task.status == "pending" && (task.user == current_user ||  ) %>
+            <%= simple_form_for [@project, task] do |f| %>
+              <%= f.submit "Marquer cette tâche comme finie", class: "btn btn-primary" %>
+            <% end %>
+          <% end %>
+        </div>
+        <hr>
+      <% end %>
+      <% if current_user.commitments.find_by(project_id: @project.id).skill.name == "Product manager" %>
+        <%= link_to "Créer une nouvelle tâche", new_project_task_path(@project) %>
+      <% end %>
     </div>
   </div>
 </div>
