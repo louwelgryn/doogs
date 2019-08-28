@@ -1,8 +1,23 @@
 
-<div class="home-page">
-<h1>DOOG</h1>
-<p>Sauvez le monde depuis votre canapé!</p>
-<%= link_to 'découvrir les projets', projects_path  %>
+
+
+<div class="home-page" >
+
+  <div class="green-banner">
+
+    <%= image_tag 'orange_shape.svg', class: "orange-shape"%>
+
+    <animate
+           xlink:href="#orange-shape"
+           attributeName="cx"
+           from="50"
+           to="450"
+           dur="1s"
+           begin="click"
+           fill="freeze" />
+</svg>
+    <%= image_tag 'devs.jpg', class: "croped-image"%>
+    <%= image_tag 'Vectorvector.svg', class: "wave"%>
+    <%= image_tag 'Doogtitle.svg', class: "title"%>
+  </div>
 </div>
-
-

@@ -1,3 +1,17 @@
-<svg width="1438" height="848" viewBox="0 0 1438 848" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.00001 0H1437.5V798C1375.67 818.833 1250.9 843.4 1082.5 847C872 851.5 738.904 459.336 274.5 659C130.902 720.738 11.4242 746.365 1.00001 753.86V755.5C0.00413623 755.102 0.0271493 754.56 1.00001 753.86L1.00001 0Z" fill="#A4C5C6"/>
+<svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+   viewBox="0 0 1440 241.8" style="enable-background:new 0 0 1440 241.8;" xml:space="preserve">
+<style type="text/css">
+  .st0{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+</style>
+<g>
+  <defs>
+    <rect id="SVGID_1_" x="-0.3" y="0.1" width="1440.6" height="241.7"/>
+  </defs>
+  <clipPath id="SVGID_2_">
+    <use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+  </clipPath>
+  <path class="st0" d="M0,64l40,16c40,16,120,48,200,53.3c80,5.7,160-16.3,240-32C560,85,640,75,720,69.3c80-5.3,160-5.3,240,16
+    c80,21.7,160,63.7,240,64c80-0.3,160-42.3,200-64l40-21.3v256h-40c-40,0-120,0-200,0s-160,0-240,0s-160,0-240,0s-160,0-240,0
+    s-160,0-240,0s-160,0-200,0H0V64z"/>
+</g>
 </svg>
