@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:new, :create]
   end
 
-  resources :commitments, only: [:edit]
+  resources :commitments, only: [:update]
 
   get '/dashboard', to: 'pages#dashboard'
 
