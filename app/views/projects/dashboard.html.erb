@@ -5,9 +5,9 @@
 <% if @project.status == 'pending'%>
   <%= render 'pending' %>
 
-<% elsif @project.status == 'ongoing' %>
+<% elsif @project.status == 'on going' %>
   <%= render 'on_going' %>
-
+  <div id="calendar" class="calendar-box"></div>
 <% else %>
   <%= render 'finished' %>
 
