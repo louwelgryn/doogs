@@ -1,9 +1,10 @@
-<div class="container">
+<div class="container-test">
 
   <div class="row">
     <div class="col" id="profile">
       <h2>Mon profil</h2>
-      <%= cl_image_tag @user.image, width: 400 %>
+      <%= cl_image_tag @user.image,:transformation=>[{:width=>1600, :height=>1600, :gravity=>"face", :crop=>"crop"}], class: "profile-image" %>
+       <%= image_tag 'weirdo.svg', class: "weirdo"%>
       <p>Nom : <%= @user.name %></p>
       <p>Description : <%= @user.description %></p>
       <p>Mon niveau : <%= @user.level %></p>
