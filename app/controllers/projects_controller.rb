@@ -4,6 +4,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     authorize @project
+    @volunteers = project_volunteers
   end
 
   def index
@@ -16,6 +17,12 @@ class ProjectsController < ApplicationController
   end
 
   private
+
+  def project_volunteers
+    @project.commitments.map do |commitment|
+      commitment.user
+    end
+  end
 
   def project_params
     params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image)
