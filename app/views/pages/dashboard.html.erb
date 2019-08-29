@@ -38,7 +38,7 @@
 
       <% else %>
 
-      <h3>"<%= @user_current_project.name %>"</h3>
+      <h3>"<%= link_to @user_current_project.name, project_dashboard_path(@user_current_project)%>"</h3>
       <%= cl_image_tag @user_current_project.image, width: 400 %>
       <p>Description : <%= @user_current_project.description %></p>
       <p>Catégorie : <%= @user_current_project.development_goal %></p>
