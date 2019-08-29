@@ -1,52 +1,39 @@
 <div class="container user-DB">
 
-  <div class="user-DB-element" id="profile-photo">
+  <div class="profile-image-wraper">
     <%= cl_image_tag @user.image,:transformation=>[{:width=>1600, :height=>1600, :gravity=>"face", :crop=>"crop"}], class: "profile-image" %>
+    <% if @user.notifications > 0 %>
+      <div class="user-notif">
+        <h4>Tâches en attente :</h2>
+          <% @user.tasks.each do |task| %>
+            <p>
+              <%= task.name  %>
+              <%= link_to project_dashboard_path(task.project) do %>
+                <i class="fas fa-hand-point-right"></i>
+              <% end %>
+            </p>
+          <% end %>
+      </div>
+    <% end %>
   </div>
 
   <div class="profile-info">
     <h1><%= @user.name %></h1>
-    <h2><%= @user.level %></h2>
+    <h2>Grade : <%= @user.level %> 🐦</h2>
     <p><%= @user.description %></p>
-    <p><%= @user.notifications %></p>
-
     <p>Mes compétences :</p>
-    <ul>
+    <ul class="list-inline">
       <% @user.skills.each do |skill| %>
-        <li><%= skill.name %></li>
+        <li class="list-inline-item"><%= skill.name %></li>
       <% end %>
     </ul>
   </div>
 
-  <div class="row">
-
-    <div class="col user-DB-project-current">
-      <h2>Mon projet en cours</h2>
-      <% if @user_current_project.nil? %>
-        <% if @user_upcoming_project.nil? %>
-          <p>Vous n'avez pas encore de projet en cours !</p>
-          <p><%= link_to 'Découvrez les projets', projects_path  %></p>
-        <% else %>
-          <p>Vous êtes inscrit au projet <%= link_to @user_upcoming_project.name, project_path(@user_upcoming_project) %>, l'équipe est encore en cours de formation!</p>
-        <% end %>
-      <% else %>
-        <h3>"<%= link_to @user_current_project.name, project_dashboard_path(@user_current_project)%>"</h3>
-        <%= cl_image_tag @user_current_project.image, width: 400 %>
-        <p>Description : <%= @user_current_project.description %></p>
-        <p>Catégorie : <%= @user_current_project.development_goal %></p>
-        <p>Projet porté par cette association : <%= @user_current_project.charity.name %></p>
+  <div class="profile-buttons">
+    <% unless @user_current_project.nil? %>
+      <%= link_to project_dashboard_path(@user_current_project), class: "btn-black" do %>Mon projet en cours
       <% end %>
-    </div>
-
-    <div class="col user-DB-project-past">
-      <h2>Mes projets passés</h2>
-      <p>Bla bla bla</p>
-      <ul>
-        <% @user_past_projects.each do |past_project| %>
-          <li><%= past_project.name %></li>
-        <% end %>
-      </ul>
-    </div>
-
+    <% end %>
   </div>
+
 </div>

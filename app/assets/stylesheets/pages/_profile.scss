@@ -4,23 +4,64 @@
   align-items: center;
 }
 
-.profile-info {
-  text-align: center;
+.profile-image-wraper {
+  background: url(asset_path('weirdo.svg'));
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
 }
 
 .profile-image {
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  width: 300px;
   object-fit: cover;
   object-position: right;
-  // z-index: 1;
 }
 
-#profile-photo {
-  width: 320px;
-  background: url(asset_path('weirdo.svg'));
-  background-repeat: no-repeat;
-  background-size: contain;
+.user-notif {
+  text-align: center;
+  color: white;
+  background-color: #e48174;
+  border-radius: 16px;
+  position: absolute;
+  top: 60%;
+  left: 80%;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  p {
+    margin: 0;
+  }
+  padding: 20px 10px;
+  box-shadow: 0 0 0 0 rgba(228, 129, 116, 1);
+  transform: scale(1);
+  animation: pulse 2s infinite;
+  a {
+    color: white;
+  }
+}
+
+.profile-info {
+  text-align: center;
+  margin: 40px 0;
+}
+
+@keyframes pulse {
+    0% {
+        // transform: scale(0.98);
+        box-shadow: 0 0 0 0 rgba(228, 129, 116, 0.7);
+    }
+
+    70% {
+        // transform: scale(1);
+        box-shadow: 0 0 0 16px rgba(228, 129, 116, 0);
+    }
+
+    100% {
+        // transform: scale(0.98);
+        box-shadow: 0 0 0 0 rgba(228, 129, 116, 0);
+    }
 }
