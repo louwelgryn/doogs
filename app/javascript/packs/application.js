@@ -10,29 +10,35 @@ if (document.querySelector(".home-page")) {
 import { initSweetalert } from '../components/init_sweetalert';
 window.initSweetalert = initSweetalert;
 
-/// MODAL ///
-// Get the modal
-// var modal = document.getElementById("myModal");
+// PROGRESS BAR
+const display = document.querySelector('.progress_bar');
+const transitionDuration = 900;
 
-// // Get the button that opens the modal
-// var btn = document.getElementById("myBtn");
 
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("close")[0];
+let progress = display.querySelector('.line__progress--fill');
+let radius = progress.r.baseVal.value;
+let circumference = 2 * Math.PI * radius;
 
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
+progress.style.setProperty('--transitionDuration', `${transitionDuration}ms`);
+progress.style.setProperty('--initialStroke');
 
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
+setTimeout(() => progress.style.strokeDashoffset = 50, 100);
 
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
+
+
+var bar = new ProgressBar.Line(container, {
+  strokeWidth: 4,
+  easing: 'easeInOut',
+  duration: 1400,
+  color: '#FFEA82',
+  trailColor: '#eee',
+  trailWidth: 1,
+  svgStyle: {width: '100%', height: '100%'},
+  from: {color: '#FFEA82'},
+  to: {color: '#ED6A5A'},
+  step: (state, bar) => {
+    bar.path.setAttribute('stroke', state.color);
+  }
+});
+
+bar.animate(1.0);  // Number from 0.0 to 1.0
