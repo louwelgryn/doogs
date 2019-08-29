@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
   def dashboard
     @project = Project.find(params[:id])
     @task = Task.new
+    @volunteers = @project.volunteers
     authorize @project
     @manager = manager?
   end
