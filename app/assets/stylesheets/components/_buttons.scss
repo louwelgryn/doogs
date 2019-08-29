@@ -11,6 +11,50 @@
   }
 }
 
+.btn-red {
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #b04632;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-color: black;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+.btn-orange {
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #ff9f1a;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.btn-yellow {
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #f5dd29;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.btn-status {
+  height: 25px;
+
+}
+
 .btn-black:hover {
   text-decoration: none;
   color:white;
