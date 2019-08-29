@@ -11,43 +11,31 @@
   }
 }
 
-.btn-red {
+.btn-basic {
   text-transform: none;
-  border-radius: 50px;
-  text-align: center;
+    border-radius: 50px;
+    text-align: center;
+    color: #fff;
+    /* padding: 12px 20px; */
+    text-decoration: none;
+    margin: 0 auto;
+    /* justify-content: center; */
+    /* align-content: center; */
+    text-align: center;
+    font-size: 15px;
+    /* padding: 10px; */
+}
+
+.btn-red {
   background-color: #b04632;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
   font-color: black;
-  p {
-    margin-bottom: 0 !important;
-  }
 }
 .btn-orange {
-  text-transform: none;
-  border-radius: 50px;
-  text-align: center;
   background-color: #ff9f1a;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  p {
-    margin-bottom: 0 !important;
-  }
 }
 
 .btn-yellow {
-  text-transform: none;
-  border-radius: 50px;
-  text-align: center;
   background-color: #f5dd29;
-  color: #fff;
-  padding: 12px 20px;
-  text-decoration: none;
-  p {
-    margin-bottom: 0 !important;
-  }
 }
 
 .btn-status {
