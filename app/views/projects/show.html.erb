@@ -8,8 +8,16 @@
   <% end %>
 
 
+ <!--  MODAL TEST -->
+  <!-- Trigger/Open The Modal -->
+
+<!-- The Modal -->
+
+
   <hr>
   <h2>L'équipe</h2>
+
+  <button id="sweet-alert-button" class="d-none">Click me!</button>
 
   <ul class="d-flex">
     <% @project.commitments.each do |commitment| %>
@@ -28,12 +36,14 @@
 
         <% elsif !current_user %>
 
-        <%= simple_form_for(commitment) do |f| %>
-            <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+
 
             <div type="submit" class="reset-css">
               <div class="avatar-container">
                 <div class="empty-avatar">
+
+                  <p class="reset-css submit-text"><%= link_to 'JOIN!', new_user_session_path, class: "reset-css" %>
+                  </p>
                   <span class="empty-avatar-text">
                     <%= commitment.skill.name %>
                   </span>
@@ -41,16 +51,13 @@
               </div>
             </div>
 
-          <% end %>
-
         <% else commitment.user.nil? %>
-
-          <%= simple_form_for(commitment) do |f| %>
+          <%= simple_form_for(commitment, remote: true) do |f| %>
             <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-
             <div type="submit" class="reset-css">
               <div class="avatar-container">
                 <div class="empty-avatar">
+                  <%= f.submit "JOIN!", class: "reset-css submit-text"%>
                   <span class="empty-avatar-text">
                     <%= commitment.skill.name %>
                   </span>
@@ -64,6 +71,17 @@
      </li>
     <% end %>
   </ul>
+
+<!-- MODAL -->
+<!--   <div id="myModal" class="modal">
+
+    <div class="modal-content">
+      <span class="close">&times;</span>
+        <%= @message %>
+    </div>
+
+  </div> -->
+
 
   <svg viewBox="0 0 361 329" class="current-resident-card"></svg>
   <path fill="#C2E1BB" fill-rule="evenodd" d="M327.775 185.887c-100.942 116.027-98.05 152.438-194.445 140.61-96.395-11.828-62.76-60.837-118.302-170.13C-40.514 47.076 76.749-9.384 173.144 2.445 269.54 14.272 428.718 69.86 327.775 185.887z"></path>

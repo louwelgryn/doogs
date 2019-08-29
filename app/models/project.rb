@@ -9,4 +9,10 @@ class Project < ApplicationRecord
   validates :name, uniqueness: true
   validates :status, inclusion: { in: PROJECT_STATUS }
   mount_uploader :image, PhotoUploader
+
+  def volunteers
+    self.commitments.map do |commitment|
+      commitment.user
+    end
+  end
 end
