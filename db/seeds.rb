@@ -9,6 +9,8 @@ puts "destroy all UserSkill"
 UserSkill.destroy_all
 puts "destroy all Commitments"
 Commitment.destroy_all
+puts "destroy all Tasks"
+Task.destroy_all
 puts "destroy all Project"
 Project.destroy_all
 puts "destroy all Charity"
