@@ -4,17 +4,43 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     authorize @project
-    @volunteers = project_volunteers
+    @volunteers = @project.volunteers
   end
 
   def index
+    @statuses = ApplicationRecord::PROJECT_STATUS
+    @thematics = ApplicationRecord::DEVELOPMENT_GOAL
     @projects = policy_scope(Project)
+
+    if params["search"] && params["search"]["status"]
+      @status = params["search"]["status"]
+      case params["search"]["status"]
+      when "on going"
+        @projects = @projects.where(status: 'on going')
+      when "finished"
+        @projects = @projects.where(status: 'finished')
+      when "pending"
+        @projects = @projects.where(status: 'pending')
+      end
+    end
+
+    if params["search"] && params["search"]["thematics"]
+      @thematics = params["search"]["thematics"]
+      ApplicationRecord::DEVELOPMENT_GOAL.each do |thematic|
+        @projects = @projects.where(development_goal: thematic) if params["search"]["thematics"] == thematic
+      end
+    end
   end
 
   def dashboard
     @project = Project.find(params[:id])
+    @task = Task.new
+    @volunteers = @project.volunteers
     authorize @project
     @manager = manager?
+  end
+
+  def search
   end
 
   private
