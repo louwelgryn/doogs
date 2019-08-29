@@ -288,7 +288,7 @@ project_open_food_facts.name = "Et si scanner vos produits vous permettait de d�
 project_open_food_facts.description = "À partir des données récupérées sur open food facts et auprès des industriels, l'objectif est de mettre en place un calculateur d'empreinte carbone. En fonction de plusieurs critères pré déterminés (emballages, composition, transport...) nous voulons pouvoir donner un label noir, rouge ou vert en fonction des gaz à effet de serre qui ont été émis pour la production du produit scanné."
 project_open_food_facts.charity = open_food_facts
 project_open_food_facts.development_goal = "Mesures relatives à la lutte contre les changements climatiques"
-project_open_food_facts.status = "finished"
+project_open_food_facts.status = "Terminé"
 project_open_food_facts.start_date = Date.new(2019,1,1)
 project_open_food_facts.end_date = Date.new(2019,3,1)
 project_open_food_facts.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566899900/7793640219_open-food-facts-le-wikipedia-de-l-alimentation_1_blmly1.jpg"
@@ -301,7 +301,7 @@ project_article1.name = "Algorithme de recommandation pour le parrainage étudia
 project_article1.description = "Optimiser le matching parrain-filleul pour Frateli afin de prévoir si un matching va réussir ou échouer grâce à un outil algorithmique d’aide à la décision pour améliorer le taux de réussite du parrainage."
 project_article1.charity = article1
 project_article1.development_goal = "Éducation de qualité"
-project_article1.status = "pending"
+project_article1.status = "En attente"
 project_article1.start_date = Date.new(2019,9,1)
 project_article1.end_date = Date.new(2019,11,12)
 project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901231/Cover-twitter_gvezw9.jpg"
@@ -314,8 +314,8 @@ project_spa.name = "Adoptez-moi"
 project_spa.description = "Pour augmenter la visibilité des animaux qui attendent d’être adoptés, le bot Adoptez-moi récupère les informations de chiens et de chats qui patientent sur le site de la SPA puis les partage sur Twitter."
 project_spa.charity = spa
 project_spa.development_goal = "Vie terrestre"
-project_spa.status = "on going"
-project_spa.start_date = Date.new(2019,07,05)
+project_spa.status = "En cours"
+project_spa.start_date = Date.new(2019,7,5)
 project_spa.end_date = Date.new(2019,11,10)
 project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902057/photo-1494256997604-768d1f608cac_ktmift.jpg"
 project_spa.save
@@ -327,7 +327,7 @@ project_ahp.name = "Data for food"
 project_ahp.description = "Retrouver les restaurant avec des problèmes d'hygiènes grâce aux commentaires TripAdvisor. L'objectif est de scraper et d'analyser plus de 80000 commentaires sur des restaurants pour détecter les restaurants insalubres, de manière automatisée par du Natural Language Processing. "
 project_ahp.charity = ahp
 project_ahp.development_goal = "Éducation de qualité"
-project_ahp.status = "pending"
+project_ahp.status = "En attente"
 project_ahp.start_date = Date.new(2019,8,1)
 project_ahp.end_date = Date.new(2020,2,29)
 project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902207/katie-smith-uQs1802D0CQ-unsplash_ax9lud.jpg"
@@ -340,11 +340,11 @@ project_neo.name = "Cartographier les petites bêtes"
 project_neo.description = "Nos naturalistes récoltent énormément d'informations sur la petite faune (insectes) du territoire de l'Occitanie. Ces informations sont géoréférences, nous souhaitons pouvoir les valoriser sur de belles cartes dynamiques en ligne."
 project_neo.charity = nature_en_occitanie
 project_neo.development_goal = "Vie terrestre"
-project_neo.status = "on going"
-project_neo.start_date = Date.new(2019,05,12)
-project_neo.end_date = Date.new(2019,09,18)
+project_neo.status = "En cours"
+project_neo.start_date = Date.new(2019,5,12)
+project_neo.end_date = Date.new(2019,10,18)
 project_neo.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069943/project_neo_gsavww.jpg"
-project_neo.save
+project_neo.save!
 
 puts "creating project Bretagne Vivante"
 
@@ -353,11 +353,11 @@ project_bv.name = "Sus aux algues vertes"
 project_bv.description = "Nous avons mesuré le taux de nitrates dans plus d'une cinquantaine de cours d'eau du Finistère et avons besoin de data analysts pour faire émerger des tendances de pollution aux nitrates par bassins versants."
 project_bv.charity = bretagne_vivante
 project_bv.development_goal = "Vie aquatique"
-project_bv.status = "finished"
-project_bv.start_date = Date.new(2018,2,09)
+project_bv.status = "Terminé"
+project_bv.start_date = Date.new(2018,2,9)
 project_bv.end_date = Date.new(2018,6,12)
 project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567070322/project_bv_i3xnzi.jpg"
-project_bv.save
+project_bv.save!
 
 # Commitments ----------------------------------------------------------------------
 
@@ -397,11 +397,17 @@ commitment_user2_project2.user = ignatius
 commitment_user2_project2.project = project_spa
 commitment_user2_project2.save!
 
-puts 'Commiting Aurelie Delpeche to neo (ongoing)'
+puts 'Commiting Aurelie Delpeche and Mark to neo (ongoing)'
 
 commitment_user1_project5 = Commitment.new
 commitment_user1_project5.skill = product_manager
 commitment_user1_project5.user = aurelie
+commitment_user1_project5.project = project_neo
+commitment_user1_project5.save!
+
+commitment_user1_project5 = Commitment.new
+commitment_user1_project5.skill = full_stack_developer
+commitment_user1_project5.user = mark
 commitment_user1_project5.project = project_neo
 commitment_user1_project5.save!
 
@@ -455,11 +461,6 @@ commitment_user4_project4.save!
 
 puts 'creating empty commitments for neo'
 
-commitment_user2_project5 = Commitment.new
-commitment_user2_project5.skill = full_stack_developer
-commitment_user2_project5.project = project_neo
-commitment_user2_project5.save!
-
 commitment_user3_project5 = Commitment.new
 commitment_user3_project5.skill = data_scientist
 commitment_user3_project5.project = project_neo
@@ -494,12 +495,39 @@ commitment_user4_project6.save!
 
 # Tasks ----------------------------------------------------------------------
 
-task_user1_project1 = Task.new
-task_user1_project1.status =
-task_user1_project1.description =
-task_user1_project1.name =
-task_user1_project1.priority_level =
+task1_project1 = Task.new
+task1_project1.name = "Test du bot"
+task1_project1.project = project_spa
+task1_project1.user = ignatius
+task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
+task1_project1.status = "A faire"
+task1_project1.priority_level = "Urgente"
+task1_project1.end_date = Date.new(2019,9,23)
 
+task2_project1 = Task.new
+task2_project1.name = "API Twitter"
+task2_project1.project = project_spa
+task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
+task2_project1.status = "A faire"
+task2_project1.priority_level = "Normale"
+task2_project1.end_date = Date.new(2019,10,12)
+
+task1_project2 = Task.new
+task1_project2.name = "Photos"
+task1_project2.project = project_neo
+task1_project2.description = "Scraper les sites de photos libres de droits pour récupérer des tofs correctes de petites bêtes pour nos cards."
+task1_project2.status = "A faire"
+task1_project2.priority_level = "Prioritaire"
+task1_project2.end_date = Date.new(2019,9,28)
+
+task2_project2 = Task.new
+task1_project2.name = "Mapbox et JS"
+task2_project2.project = project_neo
+task1_project2.user = mark
+task1_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
+task2_project2.status = "Terminée"
+task2_project2.priority_level = "Normale"
+task2_project2.end_date = Date.new(2019,6,8)
 
 # Super User ----------------------------------------------------------------------
 
