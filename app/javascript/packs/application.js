@@ -10,6 +10,11 @@ if (document.querySelector(".home-page")) {
 import { initSweetalert } from '../components/init_sweetalert';
 window.initSweetalert = initSweetalert;
 
+
+
+
+
+
 // PROGRESS BAR
 const display = document.querySelector('.progress_bar');
 const transitionDuration = 900;
