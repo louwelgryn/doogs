@@ -36,7 +36,9 @@
 
 .project-task-date {
   display: flex;
-  margin-right: 0;
+  margin: 0;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .croped-image-bord {
@@ -65,13 +67,16 @@ border-radius: 50%;
 .project-task-informations {
   background-color: white;
     padding: 8px;
+    border-radius: 8px;
 }
 
 .finished {
   padding: 3px;
   height: 30px;
-  width: 160px;
+  width: 200px;
   margin: 0 auto;
+    display: block;
+    margin-top: 8px;
 }
 
 .task-status {
@@ -90,7 +95,7 @@ border-radius: 50%;
 }
 
 .task-description {
-  padding: 8px;
+  padding: 20px;
     margin: 0px;
 }
 
