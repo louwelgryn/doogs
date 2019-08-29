@@ -13,56 +13,55 @@
   </ul>
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
-    <br>
+      <br>
       <div class="row">
-    <div class="project-cards">
-      <div class="project-card col-5">
-        <%= cl_image_tag @project.image, class: "croped-image-bord"  %>
-        <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
-      </div>
+        <div class="project-cards">
+          <div class="project-card col-5">
+            <%= cl_image_tag @project.image, class: "croped-image-bord"  %>
+            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+          </div>
 
 
-      <div class="project-card col-5">
-        <h4>Prochaine tâche à venir</h4>
-        <div class="project-task-card">
-          <% if @project.tasks.where("status ='A faire'").any? %>
-              <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
-              <%= @upcoming_task.name %>
-              <div class="project-task-informations">
-                <% if @upcoming_task.priority_level == "Normale" %>
-                <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-              <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                <p class="task-status btn-orange btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                <% else %>
-                <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-              <% end %>
+          <div class="project-card col-5">
+            <h4>Prochaine tâche à venir</h4>
+            <div class="project-task-card">
+              <% if @project.tasks.where("status ='A faire'").any? %>
+                <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
 
-                <p class="task-description"><%= @upcoming_task.description %></p>
-                <div class="project-task-date">
-                  <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-                  <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
+                <div class="project-task-informations">
+                  <% if @upcoming_task.priority_level == "Normale" %>
+                    <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
+                    <p class="task-status btn-orange btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% else %>
+                    <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% end %>
+                 <p style= "margin-top: 8px"> <%= @upcoming_task.name %></p>
+                  <div class="project-task-date">
+                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                    <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
+                  </div>
                 </div>
-              </div>
                 <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
                   <%= simple_form_for [@project, @upcoming_task] do |f| %>
                     <%= f.submit "Marquer comme achevée", class: "btn-black finished" %>
                   <% end %>
                 <% end %>
               <% else %>
-              <h4 style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</h4>
-              <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+                <h4 style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</h4>
+                <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
               <% end %>
+            </div>
+          </div>
+
+
+          <div class="project-card col-5">
+            <h4>Prochain évènement </h4>
+          </div>
         </div>
       </div>
+     </div>
 
-
-      <div class="project-card col-5">
-        <h4>Prochain évènement </h4>
-      </div>
-    </div>
-    </div>
-
-    </div>
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
       <br>
       lililili
@@ -71,44 +70,49 @@
     </div>
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
       <% if @manager %>
+
+  
+
         <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
         Créer une nouvelle tâche!
 
         </button>
 
       <% end %>
+      <br>
 
-     <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 title-task">
+            Normale
+            <% @project.tasks.normale.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
 
+          </div>
+          <div class="col-sm-3 title-task">
+            Prioritaires
+            <% @project.tasks.prioritaire.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+          <div class="col-sm-3 title-task">
+            Urgentes
+            <% @project.tasks.urgente.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+          <div class="col-sm-3 title-task">
+            Terminée
+            <% @project.tasks.terminee.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

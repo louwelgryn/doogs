@@ -50,6 +50,10 @@ border-radius: 50%;
     z-index:1;
 }
 
+.title-task {
+  text-align: center;
+}
+
 .weirdo-orange {
  position: absolute;
   height: 250px;
@@ -58,9 +62,10 @@ border-radius: 50%;
 }
 
 .project-task-card {
- background-color: #C2E1BB;
- padding: 8px;
+ border: #C2E1BB solid;
+ padding-bottom: 8px;
  border-radius: 8px;
+
 
 }
 
@@ -70,18 +75,25 @@ border-radius: 50%;
     border-radius: 8px;
 }
 
+.wave-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
 .finished {
-  padding: 3px;
-  height: 30px;
-  width: 200px;
-  margin: 0 auto;
+ padding: 2px;
+    height: 20px;
+    width: 150px;
+    margin: 0 auto;
     display: block;
     margin-top: 8px;
+    font-size: 10px;
 }
 
 .task-status {
-    width: 80px;
-    height: 20px;
+    width: 60px;
+    height: 15px;
+    padding: 2px;
 }
 
 .task-owner {
