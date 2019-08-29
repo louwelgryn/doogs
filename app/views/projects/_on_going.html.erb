@@ -24,6 +24,7 @@
 
           <div class="project-card col-5">
             <h4>Prochaine tâche à venir</h4>
+            <br>
             <div class="project-task-card">
               <% if @project.tasks.where("status ='A faire'").any? %>
                 <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
@@ -46,7 +47,7 @@
 
 
                  <p style= "margin-top: 8px" class="title-task"> <%= @upcoming_task.name %></p>
-
+                    <div class="colored-style"></div>
                 <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
                   <%= simple_form_for [@project, @upcoming_task] do |f| %>
                     <%= f.submit "Marquer comme achevée", class: "btn-black finished" %>
@@ -76,7 +77,7 @@
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
       <% if @manager %>
 
-  
+
 
         <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
         Créer une nouvelle tâche!

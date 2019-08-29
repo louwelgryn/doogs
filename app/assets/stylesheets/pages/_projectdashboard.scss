@@ -55,10 +55,12 @@ border-radius: 50%;
     height: 250px;
     object-fit: cover;
     z-index:1;
+    position: relative;
 }
 
 .title-task {
   text-align: center;
+
 }
 
 .weirdo-orange {
@@ -72,7 +74,20 @@ border-radius: 50%;
  border: #C2E1BB solid;
  padding-bottom: 8px;
  border-radius: 8px;
+ transition: all .2s ease-in-out;
 
+}
+
+.colored-style {
+  background-color: #e48174;
+  width: 200px;
+  height: 20px;
+  position: absolute;
+}
+
+.project-task-card:hover {
+
+ transform: scale(1.02);
 
 }
 
