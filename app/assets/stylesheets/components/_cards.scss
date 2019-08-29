@@ -150,6 +150,19 @@
 
 }
 
+.blog-slider p {
+  background-color: #E58074;
+  opacity: 0.87;
+  width: 27%;
+  border-radius: inherit;
+  height: 11%;
+  color: white;
+  position: absolute;
+  bottom: -5%;
+  left: 71%;
+  text-align: center;
+}
+
 .pending {
 
     background: green;
@@ -166,4 +179,6 @@
   background: orange;
 }
 
-
+.blog-slider:hover {
+  transform: scale(1.02);
+}
