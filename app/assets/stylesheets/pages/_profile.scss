@@ -1,28 +1,26 @@
-.profile-image {
-border-radius: 50%;
-    width: 300px;
-    position: absolute;
-    height: 300px;
-    /* bottom: 78px; */
-    width: 300px;
-    object-fit: cover;
-    object-position: right;
-    z-index: 1;
-
-
-}
-
-.weirdo {
- position: absolute;
-  height: 300px;
-  left: 15px;
-
-}
-
-.profile {
+.user-DB {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.profile-design {
-  width: 400px;
+.profile-info {
+  text-align: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  object-position: right;
+  // z-index: 1;
+}
+
+#profile-photo {
+  width: 320px;
+  background: url(asset_path('weirdo.svg'));
+  background-repeat: no-repeat;
+  background-size: contain;
 }

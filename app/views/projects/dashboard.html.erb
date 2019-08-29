@@ -7,9 +7,9 @@
   </div>
 
 <div class="container">
-  <% if @project.status == 'pending'%>
+  <% if @project.status == 'En attente'%>
     <%= render 'pending' %>
-  <% elsif @project.status == 'on going' %>
+  <% elsif @project.status == 'En cours' %>
     <%= render 'on_going' %>
   <% else %>
     <%= render 'finished' %>

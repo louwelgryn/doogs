@@ -18,7 +18,7 @@
     <div class="project-cards">
 
 <div class="project-card">
-  <%= cl_image_tag @project.image,  %>
+  <%= cl_image_tag @project.image %>
 </div>
 
 <div class="project-card">
@@ -43,7 +43,7 @@
           <p>Attribuée à : <%= task.user.name %></p>
           <p>Niveau de priorité : <%= task.priority_level %> </p>
           <p><%= task.description %></p>
-          <% if task.status == "pending" && ((current_user == task.user) || @manager) %>
+          <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
             <%= simple_form_for [@project, task] do |f| %>
               <%= f.submit "Marquer cette tâche comme finie", class: "btn btn-primary" %>
             <% end %>
