@@ -28,8 +28,13 @@
       <h2>Mon projet en cours</h2>
 
       <% if @user_current_project.nil? %>
-        <p>Vous n'avez pas encore de projet en cours !</p>
-        <p><%= link_to 'Découvrez les projets', projects_path  %></p>
+        <% if @user_upcoming_project.nil? %>
+          <p>Vous n'avez pas encore de projet en cours !</p>
+          <p><%= link_to 'Découvrez les projets', projects_path  %></p>
+
+        <% else %>
+          <p>Vous êtes inscrit au projet <%= link_to @user_upcoming_project.name, project_path(@user_upcoming_project) %>, l'équipe est encore en cours de formation!</p>
+        <% end %>
 
       <% else %>
 
