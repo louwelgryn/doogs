@@ -8,8 +8,8 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @statuses = ApplicationRecord::PROJECT_STATUS
-    @thematics = ApplicationRecord::DEVELOPMENT_GOAL
+    @statuses = Project::PROJECT_STATUS
+    @thematics = Project::DEVELOPMENT_GOAL
     @projects = policy_scope(Project)
 
     if params["search"] && params["search"]["status"]
@@ -26,7 +26,7 @@ class ProjectsController < ApplicationController
 
     if params["search"] && params["search"]["thematics"]
       @thematics = params["search"]["thematics"]
-      ApplicationRecord::DEVELOPMENT_GOAL.each do |thematic|
+      Project::DEVELOPMENT_GOAL.each do |thematic|
         @projects = @projects.where(development_goal: thematic) if params["search"]["thematics"] == thematic
       end
     end
