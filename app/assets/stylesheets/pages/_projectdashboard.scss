@@ -20,6 +20,10 @@
    font-color:  black;
 }
 
+.top-left{
+      margin-left: 0;
+}
+
 .project-cards {
   display: flex;
   position: space-between;
@@ -30,6 +34,10 @@
   width: 250px;
 }
 
+.project-task-date {
+  display: flex;
+  margin-right: 0;
+}
 
 .croped-image-bord {
 border-radius: 50%;
@@ -48,17 +56,21 @@ border-radius: 50%;
 }
 
 .project-task-card {
- background-color: #ebecf0;
+ background-color: #C2E1BB;
+ padding: 8px;
+ border-radius: 8px;
+
 }
 
 .project-task-informations {
   background-color: white;
-  display: flex;
+    padding: 8px;
 }
 
 .finished {
+  padding: 3px;
   height: 30px;
-  width:150px;
+  width: 160px;
   margin: 0 auto;
 }
 
@@ -75,6 +87,11 @@ border-radius: 50%;
 
 .task-priority {
 
+}
+
+.task-description {
+  padding: 8px;
+    margin: 0px;
 }
 
 .roadmap {
