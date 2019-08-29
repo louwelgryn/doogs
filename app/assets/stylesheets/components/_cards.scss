@@ -156,16 +156,17 @@
 }
 
 .blog-slider p {
-  background-color: #E58074;
-  opacity: 0.87;
+  opacity: 1;
   width: 27%;
-  border-radius: inherit;
+  border-radius: 0%;
   height: 11%;
   color: white;
   position: absolute;
   bottom: -5%;
-  left: 71%;
+  left: 12%;
   text-align: center;
+  top: 0%;
+  background-color: #CF796B;
 }
 
 .pending {
