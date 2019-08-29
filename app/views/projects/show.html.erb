@@ -3,7 +3,7 @@
   <p>Un projet de <strong><%= @project.charity.name %></strong></p>
   <p><%= @project.description %></p>
   <p class="btn btn-warning"><%= @project.status %></p>
-  <% if current_user && @project.status = "on going" && @volunteers.include?(current_user)  %>
+  <% if current_user && @project.status = "En cours" && @volunteers.include?(current_user)  %>
     <p><%= link_to "Accéder au tableau de bord du projet", project_dashboard_path(@project) %></p>
   <% end %>
 

@@ -7,7 +7,7 @@ class CommitmentsController < ApplicationController
     if @user.skills.include?(@commitment.skill)
       @commitment.update(user: @user)
       if @project.commitments.all? { |commitment| commitment.user.present? }
-        @project.status = "on going"
+        @project.status = "En cours"
         @project.save
         flash[:notice] = "Welcome in #{@project.name} ! You were the last Doogie to join so the project can start thanks to you :) "
       else
