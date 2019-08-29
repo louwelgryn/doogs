@@ -1,15 +1,15 @@
  <div class="yellow-banner">
     <%= image_tag 'yellow-wave.svg', class: "wave"%>
-    <h2 style="text-align: center;">Tableau de Bord </h2>
+    <h2 style="text-align: center;"><%= @project.name %> </h2>
     <div class="banner-info">
 
     </div>
   </div>
 
 <div class="container">
-  <% if @project.status == 'pending'%>
+  <% if @project.status == 'En attente'%>
     <%= render 'pending' %>
-  <% elsif @project.status == 'on going' %>
+  <% elsif @project.status == 'En cours' %>
     <%= render 'on_going' %>
   <% else %>
     <%= render 'finished' %>
