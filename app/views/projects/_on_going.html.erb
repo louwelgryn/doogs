@@ -27,6 +27,9 @@
               <% if @project.tasks.where("status ='A faire'").any? %>
                 <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
 
+                   <div class="project-task-date">
+                    <div class="test">
+                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
                 <div class="project-task-informations">
                   <% if @upcoming_task.priority_level == "Normale" %>
                     <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
@@ -35,12 +38,14 @@
                   <% else %>
                     <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
                   <% end %>
-                 <p style= "margin-top: 8px"> <%= @upcoming_task.name %></p>
-                  <div class="project-task-date">
-                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                  </div>
+                  </div>
                     <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
                   </div>
-                </div>
+
+
+                 <p style= "margin-top: 8px" class="title-task"> <%= @upcoming_task.name %></p>
+
                 <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
                   <%= simple_form_for [@project, @upcoming_task] do |f| %>
                     <%= f.submit "Marquer comme achevée", class: "btn-black finished" %>
