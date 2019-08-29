@@ -57,9 +57,9 @@
   opacity: 0.7;
 }
 
-.empty-avatar:hover span {display:none}
+.avatar-container:hover .empty-avatar span {display:none}
 
-.empty-avatar:hover:before {content:"JOIN!"; opacity: 1; color: rgba(0,0,0,1)}
+.empty-avatar:hover:before {opacity: 1; color: rgba(0,0,0,1)}
 
 .avatar-container:hover img {
   opacity: 0.2;
@@ -74,3 +74,6 @@
 }
 
 .avatar-container:hover .middle {opacity: 1; color: rgba(0,0,0,1)}
+
+.avatar-container .submit-text {display:none}
+.avatar-container:hover .submit-text {display: inline; opacity: 1}

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     authorize @project
-    @volunteers = project_volunteers
+    @volunteers = @project.volunteers
   end
 
   def index

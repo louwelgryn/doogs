@@ -2,21 +2,45 @@ class CommitmentsController < ApplicationController
   def update
     @commitment = Commitment.find(params[:id])
     authorize @commitment
+
     @user = User.find(commitment_params[:user_id])
     @project = @commitment.project
-    if @user.skills.include?(@commitment.skill)
+
+    @current_project_count = @user.projects.where(status: "pending").length + current_user.projects.where(status: "on going").length
+
+    if @user.skills.include?(@commitment.skill) && @current_project_count.zero?
       @commitment.update(user: @user)
       if @project.commitments.all? { |commitment| commitment.user.present? }
         @project.status = "En cours"
         @project.save
-        flash[:notice] = "Welcome in #{@project.name} ! You were the last Doogie to join so the project can start thanks to you :) "
+        # POPUP MESSAGE
+        @message = "Il ne manquait plus que vous pour compléter l'équipe, le projet peut maintenant commencer! "
+        @icon = "success"
+        @title = "Bienvenue dans ce projet!"
+
       else
-        flash[:notice] = "Welcome in #{@project.name} ! Thanks for joining, we are still missing volunteers to start the project"
+        # POPUP MESSAGE
+        @message = "Il manque encore d'autres bénévoles pour que le projet puisse démarrer."
+        @icon = "success"
+        @title = "Bienvenue dans ce projet!"
       end
+    elsif @current_project_count.zero?
+      # POPUP MESSAGE
+      @message = "Vous n'avez pas les compétences requises pour rejoindre ce projet à ce poste."
+      @title = "Désolés!"
+      @icon = "error"
     else
-      flash[:alert] = "Vous n'avez pas les compétences nécessaires ! Ciaos"
+      # POPUP MESSAGE
+      @message = "Vous êtes déjà impliqué dans un autre projet !"
+      @icon = "error"
+      @title = "Désolés!"
     end
-    redirect_to project_path(@project)
+    @volunteers = @project.volunteers
+
+    respond_to do |format|
+      format.html { render 'projects/show' }
+      format.js  # <-- will render `app/views/reviews/create.js.erb`
+    end
   end
 
   private
