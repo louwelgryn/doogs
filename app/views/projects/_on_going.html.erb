@@ -71,7 +71,11 @@
     </div>
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
       <% if @manager %>
-        <%= link_to "Créer une nouvelle tâche", new_project_task_path(@project), class: "btn-black finished", style: "" %>
+        <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
+        Créer une nouvelle tâche!
+
+        </button>
+
       <% end %>
 
      <div class="container">
@@ -108,3 +112,4 @@
     </div>
   </div>
 </div>
+
