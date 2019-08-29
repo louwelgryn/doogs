@@ -495,39 +495,47 @@ commitment_user4_project6.save!
 
 # Tasks ----------------------------------------------------------------------
 
+puts "creating tasks"
+
 task1_project1 = Task.new
 task1_project1.name = "Test du bot"
 task1_project1.project = project_spa
-task1_project1.user = ignatius
+task1_project1.user = elizabeth
 task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
 task1_project1.status = "A faire"
 task1_project1.priority_level = "Urgente"
 task1_project1.end_date = Date.new(2019,9,23)
+task1_project1.save!
 
 task2_project1 = Task.new
 task2_project1.name = "API Twitter"
 task2_project1.project = project_spa
+task2_project1.user = ignatius
 task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
 task2_project1.status = "A faire"
 task2_project1.priority_level = "Normale"
 task2_project1.end_date = Date.new(2019,10,12)
+task2_project1.save!
 
 task1_project2 = Task.new
 task1_project2.name = "Photos"
 task1_project2.project = project_neo
+task1_project2.user = aurelie
 task1_project2.description = "Scraper les sites de photos libres de droits pour récupérer des tofs correctes de petites bêtes pour nos cards."
 task1_project2.status = "A faire"
 task1_project2.priority_level = "Prioritaire"
 task1_project2.end_date = Date.new(2019,9,28)
+task1_project2.save!
 
 task2_project2 = Task.new
-task1_project2.name = "Mapbox et JS"
+task2_project2.name = "Mapbox et JS"
 task2_project2.project = project_neo
-task1_project2.user = mark
-task1_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
+task2_project2.user = mark
+task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
 task2_project2.status = "Terminée"
 task2_project2.priority_level = "Normale"
 task2_project2.end_date = Date.new(2019,6,8)
+task2_project2.save!
 
 # Super User ----------------------------------------------------------------------
 
