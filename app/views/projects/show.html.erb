@@ -18,12 +18,12 @@
 
         <% if commitment.user %>
           <div class="avatar-container">
-            <div class="full-avatar">
+
               <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big"%>
-              <span>
-                hello
-              </span>
-            </div>
+              <div class="middle">
+                <span> <%= commitment.skill.name %> </span>
+              </div>
+
           </div>
 
         <% elsif !current_user %>
