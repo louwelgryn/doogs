@@ -1,0 +1,28 @@
+.profile-image {
+border-radius: 50%;
+    width: 300px;
+    position: absolute;
+    height: 300px;
+    /* bottom: 78px; */
+    width: 300px;
+    object-fit: cover;
+    object-position: right;
+    z-index: 1;
+
+
+}
+
+.weirdo {
+ position: absolute;
+  height: 300px;
+  left: 15px;
+
+}
+
+.profile {
+  display: flex;
+}
+
+.profile-design {
+  width: 400px;
+}
