@@ -20,13 +20,58 @@
               <!-- <div class="status <%= project.status %>"></div> -->
 
 
-              <div class="development"> <% if project.development_goal == 'Éducation de qualité' %>
-                                          <div class="icone"><i class="fas fa-graduation-cap"></i></div>
-                                        <% elsif project.development_goal == 'Vie  terrestre' %>
-                                          <div class="icone"><i class="fas fa-tree"></i></div>
-                                        <% elsif project.development_goal == 'Mesures relatives à la lutte contre les changements climatiques' %>
-                                          <div class="icone"><i class="fas fa-globe-americas"></i></div>
-                                        <% end %>
+              <div class="development">
+                <% if project.development_goal == 'Éducation de qualité' %>
+                  <div class="icone"><i class="fas fa-graduation-cap"></i></div>
+
+                <% elsif project.development_goal == 'Vie  terrestre' %>
+                  <div class="icone"><i class="fas fa-tree"></i></div>
+
+                <% elsif project.development_goal == 'Mesures relatives à la lutte contre les changements climatiques' %>
+                  <div class="icone"><i class="fas fa-globe-americas"></i></div>
+
+                  <% elsif project.development_goal == 'Pas de pauvreté' %>
+                  <div class="icone"><i class="fas fa-euro-sign"></i></div>
+
+                  <% elsif project.development_goal == 'Faim zéro' %>
+                  <div class="icone"><i class="fas fa-hamburger"></i></div>
+
+                  <% elsif project.development_goal == 'Bonne santé et bien-être' %>
+                  <div class="icone"><i class="fas fa-heartbeat"></i></div>
+
+                  <% elsif project.development_goal == 'Égalité entre les sexes' %>
+                  <div class="icone"><i class="fas fa-venus-mars"></i></div>
+
+                  <% elsif project.development_goal == 'Eau propre et assainissement' %>
+                  <div class="icone"><i class="fas fa-tint"></i></div>
+
+                  <% elsif project.development_goal == "Énergie propre et d'un coût abordable" %>
+                  <div class="icone"><i class="fas fa-solar-panel"></i></div>
+
+                  <% elsif project.development_goal == 'Travail décent et croissance économique' %>
+                  <div class="icone"><i class="fas fa-chart-line"></i></div>
+
+                  <% elsif project.development_goal == 'industrie innovation et infrastructure' %>
+                  <div class="icone"><i class="fas fa-industry"></i></div>
+
+                  <% elsif project.development_goal == 'Inégalités  réduites' %>
+                  <div class="icone"><i class="fas fa-not-equal"></i></div>
+
+                  <% elsif project.development_goal == 'Villes et communautés durables' %>
+                  <div class="icone"><i class="fas fa-calendar-week"></i></div>
+
+                  <% elsif project.development_goal == 'Consommation et production responsables' %>
+                  <div class="icone"><i class="fas fa-shopping-basket"></i></div>
+
+                  <% elsif project.development_goal == 'Vie  aquatique' %>
+                  <div class="icone"><i class="fas fa-fish"></i></div>
+
+                  <% elsif project.development_goal == 'Paix, justice et institutions efficaces' %>
+                  <div class="icone"><i class="fas fa-balance-scale-right"></i></div>
+
+                  <% elsif project.development_goal == 'Partenariat pour la réalisation des objectifs' %>
+                  <div class="icone"><i class="far fa-handshake"></i></div>
+                <% end %>
               </div>
 
 
