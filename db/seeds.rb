@@ -153,7 +153,7 @@ aya = User.new
 aya.name ="Aya Nakamura"
 aya.description = "Tu parles sur moi y'a R"
 aya.level = "Piou-piou"
-aya.remote_image_url = "https://www.calvados-tourisme.com/wp-content/uploads/tourinsoft/Aya-Nakamura-Parlophone-Warner-Music.jpg"
+aya.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566998084/ayanakamura_shwg9f.jpg"
 aya.email = "ayanakamura@gmail.com"
 aya.password = "qwerty"
 aya.save!
