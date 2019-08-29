@@ -3,12 +3,34 @@
   <h1>Découvrez nos projets !</h1>
   <h3>Et ceux dans lesquels vous aimeriez vous impliquer</h3>
 
+
+  <%= simple_form_for :search, url: projects_path, method: "get" do |f| %>
+    <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :status, collection: @statuses, required: false %>
+    <%= f.input :thematics, collection: ApplicationRecord::DEVELOPMENT_GOAL, required: false %>
+    <%= f.submit "Go", class: "btn btn-primary" %>
+  <% end %>
+
   <div class="row row-project-card d-flex">
     <% @projects.each do |project| %>
       <div class="blog-slider">
         <div class="blog-slider__wrp swiper-wrapper">
             <div class="blog-slider__img" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(<%= cl_image_path project.image %>);">
               <p><%= project.status %></p>
+              <!-- <div class="status <%= project.status %>"></div> -->
+
+
+              <div class="development"> <% if project.development_goal == 'Éducation de qualité' %>
+                                          <div class="icone"><i class="fas fa-graduation-cap"></i></div>
+                                        <% elsif project.development_goal == 'Vie  terrestre' %>
+                                          <div class="icone"><i class="fas fa-tree"></i></div>
+                                        <% elsif project.development_goal == 'Mesures relatives à la lutte contre les changements climatiques' %>
+                                          <div class="icone"><i class="fas fa-globe-americas"></i></div>
+                                        <% end %>
+              </div>
+
+
+
             </div>
             <div class="blog-slider__content">
               <div class="blog-slider__code"> <h5> <%= project.name %> </h5></div>

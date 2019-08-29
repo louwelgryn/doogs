@@ -147,6 +147,11 @@
     position: absolute;
     right: 10px;
     bottom: 10px;
+    position: relative;
+
+    bottom: -85%;
+
+    left: 3%;
 
 }
 
@@ -181,4 +186,26 @@
 
 .blog-slider:hover {
   transform: scale(1.02);
+}
+
+.fa-globe-americas {
+  color: white;
+  margin-left: 16%;
+  margin-top: 16%;
+}
+
+.fa-tree {
+  color: white;
+}
+
+.fa-graduation-cap {
+  color: white;
+}
+
+.icone {
+  background-color: #CF796B;
+  width: 3%;
+  height: 3%;
+  border-radius: 50%;
+  width: 8%;
 }
