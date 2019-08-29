@@ -8,7 +8,28 @@ class ProjectsController < ApplicationController
   end
 
   def index
+    @statuses = ApplicationRecord::PROJECT_STATUS
+    @thematics = ApplicationRecord::DEVELOPMENT_GOAL
     @projects = policy_scope(Project)
+
+    if params["search"] && params["search"]["status"]
+      @status = params["search"]["status"]
+      case params["search"]["status"]
+      when "on going"
+        @projects = @projects.where(status: 'on going')
+      when "finished"
+        @projects = @projects.where(status: 'finished')
+      when "pending"
+        @projects = @projects.where(status: 'pending')
+      end
+    end
+
+    if params["search"] && params["search"]["thematics"]
+      @thematics = params["search"]["thematics"]
+      ApplicationRecord::DEVELOPMENT_GOAL.each do |thematic|
+        @projects = @projects.where(development_goal: thematic) if params["search"]["thematics"] == thematic
+      end
+    end
   end
 
   def dashboard
@@ -17,6 +38,9 @@ class ProjectsController < ApplicationController
     @volunteers = @project.volunteers
     authorize @project
     @manager = manager?
+  end
+
+  def search
   end
 
   private
