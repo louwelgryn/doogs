@@ -1,10 +1,7 @@
- <div class="yellow-banner">
-    <%= image_tag 'yellow-wave.svg', class: " wave-bottom"%>
-    <h2 style="text-align: center;"><%= @project.name %> </h2>
-    <div class="banner-info">
-
-    </div>
-  </div>
+<div class="yellow-banner">
+  <%= image_tag 'yellow-wave.svg', class: "wave-bottom" %>
+  <h1><%= @project.name %></h1>
+</div>
 
 
 <!-- Progress bar -->
@@ -40,3 +37,4 @@
 </div>
 
 <%= render 'modal' %>
+<%= render 'modal_event' %>

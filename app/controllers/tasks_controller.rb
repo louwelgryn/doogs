@@ -29,9 +29,11 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    @project = Project.find(params[:project_id])
     @task.status = "Achevée"
     authorize @task
     @task.save
+    redirect_to project_dashboard_path(@project)
     flash[:notice] = "La tâche est désormais achevée"
   end
 

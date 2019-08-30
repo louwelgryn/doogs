@@ -6,7 +6,7 @@ class CommitmentsController < ApplicationController
     @user = User.find(commitment_params[:user_id])
     @project = @commitment.project
 
-    @current_project_count = @user.projects.where(status: "pending").length + current_user.projects.where(status: "on going").length
+    @current_project_count = @user.projects.where(status: "En attente").length + current_user.projects.where(status: "En cours").length
 
     if @user.skills.include?(@commitment.skill) && @current_project_count.zero?
       @commitment.update(user: @user)
@@ -17,7 +17,6 @@ class CommitmentsController < ApplicationController
         @message = "Il ne manquait plus que vous pour compléter l'équipe, le projet peut maintenant commencer! "
         @icon = "success"
         @title = "Bienvenue dans ce projet!"
-
       else
         # POPUP MESSAGE
         @message = "Il manque encore d'autres bénévoles pour que le projet puisse démarrer."
