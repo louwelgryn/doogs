@@ -127,6 +127,10 @@
 
 }
 
+.drag-drop {
+  min-height: 50px;
+}
+
 .task-description {
   padding: 20px;
   margin: 0px;
@@ -135,6 +139,7 @@
 .roadmap {
   z-index: 1;
 }
+
 
 /// Tabs ///
 
@@ -194,4 +199,5 @@
 
 .nav-dashboard {
   justify-content: center;
+
 }

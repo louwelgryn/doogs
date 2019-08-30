@@ -51,6 +51,15 @@
   transition: 0.3s;
 }
 
+ .btn-rose {
+  background-color: #e48174;
+  border-radius: 8px;
+    border: #e48174;
+    font-color: white;
+    font-color: white;
+    color: white;
+ }
+
 .btn-calendar {
  background-color: #ff9f1a;
  width: 60px;
@@ -120,3 +129,26 @@ a.blog-slider__button:hover {
   background-color: $blanc-semi-transparent;
 
 }
+
+.clearFilterButton {
+  color: white;
+  background-color: #E38076;
+  border-radius: 20%;
+  border: none;
+  height: fit-content;
+  right: 38% !important;
+  position: absolute !important;
+  border-radius: 1% !important;
+  bottom: 22% !important;
+}
+
+.clearFilterButton:hover {
+  color: #E38076;
+  background-color: white;
+  border-color: #E38076;
+  border-radius: 20%;
+  border: none;
+  height: fit-content;
+}
+
+

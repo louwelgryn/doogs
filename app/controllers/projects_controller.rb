@@ -15,12 +15,12 @@ class ProjectsController < ApplicationController
     if params["search"] && params["search"]["status"]
       @status = params["search"]["status"]
       case params["search"]["status"]
-      when "on going"
-        @projects = @projects.where(status: 'on going')
-      when "finished"
-        @projects = @projects.where(status: 'finished')
-      when "pending"
-        @projects = @projects.where(status: 'pending')
+      when "En cours"
+        @projects = @projects.where(status: 'En cours')
+      when "Terminé"
+        @projects = @projects.where(status: 'Terminé')
+      when "En attente"
+        @projects = @projects.where(status: 'En attente')
       end
     end
 
@@ -36,6 +36,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @task = Task.new
     @volunteers = @project.volunteers
+    @event = Event.new
     authorize @project
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)
