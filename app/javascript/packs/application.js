@@ -13,10 +13,10 @@ if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
 
-calendarInit();
+if (document.getElementById('calendar')) {
+  calendarInit();
+}
 
-
-// SWEET ALERT //
 window.initSweetalert = initSweetalert;
 
 const options = {
@@ -149,11 +149,3 @@ initSortableThree()
 // });
 
 // bar.animate(1.0);  // Number from 0.0 to 1.0
-
-
-
-
-
-window.initSweetalert = initSweetalert;
-
-
