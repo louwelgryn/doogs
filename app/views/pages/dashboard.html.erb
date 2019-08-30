@@ -1,7 +1,12 @@
+<div class="yellow-banner">
+  <%= image_tag 'yellow-wave.svg', class: "wave-bottom" %>
+</div>
+
 <div class="container user-DB">
 
   <div class="profile-image-wraper">
     <%= cl_image_tag @user.image,:transformation=>[{:width=>1600, :height=>1600, :gravity=>"face", :crop=>"crop"}], class: "profile-image" %>
+
     <% if @user.notifications > 0 %>
       <div class="user-notif">
         <h4>Tâches en attente :</h2>
