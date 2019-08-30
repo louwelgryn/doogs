@@ -7,8 +7,6 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 const calendarInit = () => {
-  console.log('Calendar');
-  console.log(gon.events);
 
   const calendarEl = document.getElementById('calendar');
 

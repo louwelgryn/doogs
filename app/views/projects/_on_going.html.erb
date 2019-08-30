@@ -14,7 +14,6 @@
 
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
-      <br>
       <div class="row">
         <div class="project-cards">
           <div class="project-card col-5">
@@ -54,7 +53,7 @@
                 <% end %>
               <% else %>
 
-              
+
 
 
                 <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
@@ -100,7 +99,7 @@
             Normale
 
             <div id="Normale" class="drag-drop">
-            
+
             <% @project.tasks.normale.a_faire.each do |task| %>
 
               <%= render 'Tasks_cards', task: task  %>
@@ -109,10 +108,10 @@
           </div>
 
           <div class="col-sm-3 title-task">
-            Prioritaires
+            Urgentes
 
-            <div id="Prioritaire" class="drag-drop">
-            <% @project.tasks.prioritaire.a_faire.each do |task| %>
+            <div id="Urgente" class="drag-drop">
+            <% @project.tasks.urgente.a_faire.each do |task| %>
 
 
               <%= render 'Tasks_cards', task: task  %>
@@ -120,21 +119,15 @@
           </div>
           </div>
           <div class="col-sm-3 title-task" >
-            Urgentes
-            <div id="Urgente" class="drag-drop">
-              <% @project.tasks.urgente.a_faire.each do |task| %>
+            Prioritaires
+            <div id="Prioritaire" class="drag-drop">
+              <% @project.tasks.prioritaire.a_faire.each do |task| %>
                 <%= render 'Tasks_cards', task: task  %>
               <% end %>
               </div>
             </div>
           </div>
-          <div class="col-sm-3 title-task">
-            Terminée
-            <div id="Terminée" class="drag-drop">
-              <% @project.tasks.terminee.each do |task| %>
-                <%= render 'Tasks_cards', task: task  %>
-              <% end %>
-            </div>
+
 
           </div>
         </div>
