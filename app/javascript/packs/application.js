@@ -7,6 +7,7 @@ import { initSweetalert } from '../components/init_sweetalert';
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { submitForm } from '../components/submitForm';
 
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
@@ -91,13 +92,19 @@ const initSortableOne = () => {
 
 initSortableOne()
 
+if (document.querySelector('.filter-search')) {
+  submitForm();
+}
+
 const listWithHandletwo = document.querySelector("#Prioritaire")
 const initSortableTwo = () => {
   // Sortable.create(listWithHandletwo);
   const sortable = new Sortable(listWithHandletwo, options)
 };
 
+
 initSortableTwo()
+
 
 const listWithHandlethree = document.querySelector("#Urgente")
 const initSortableThree = () => {
@@ -148,4 +155,5 @@ initSortableThree()
 
 
 window.initSweetalert = initSweetalert;
+
 
