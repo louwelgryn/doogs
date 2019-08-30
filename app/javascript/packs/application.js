@@ -1,22 +1,17 @@
 import "bootstrap";
 
 import Sortable from 'sortablejs';
-import { initSweetalert } from '../components/init_sweetalert';
 
 
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
-import { submitForm } from '../components/submitForm';
 
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
 
-if (document.getElementById('calendar')) {
-  calendarInit();
-}
-
+calendarInit();
 window.initSweetalert = initSweetalert;
 
 const options = {
@@ -43,6 +38,7 @@ console.log(task_status.classList)
       task_status.classList.remove("btn-red")
     } else {
     }
+
     task_status.classList.add('btn-yellow')
      } else if (event.to.id === "Urgente") {
 
@@ -52,6 +48,7 @@ console.log(task_status.classList)
       task_status.classList.remove("btn-red")
     } else {
     }
+
       task_status.classList.add('btn-orange')
     } else {
 
@@ -92,19 +89,13 @@ const initSortableOne = () => {
 
 initSortableOne()
 
-if (document.querySelector('.filter-search')) {
-  submitForm();
-}
-
 const listWithHandletwo = document.querySelector("#Prioritaire")
 const initSortableTwo = () => {
   // Sortable.create(listWithHandletwo);
   const sortable = new Sortable(listWithHandletwo, options)
 };
 
-
 initSortableTwo()
-
 
 const listWithHandlethree = document.querySelector("#Urgente")
 const initSortableThree = () => {
@@ -149,3 +140,7 @@ initSortableThree()
 // });
 
 // bar.animate(1.0);  // Number from 0.0 to 1.0
+
+
+
+
