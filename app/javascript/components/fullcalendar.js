@@ -8,6 +8,7 @@ import '@fullcalendar/daygrid/main.css';
 
 const calendarInit = () => {
   console.log('Calendar');
+  console.log(gon.events);
 
   const calendarEl = document.getElementById('calendar');
 
@@ -15,7 +16,8 @@ const calendarInit = () => {
     document.addEventListener('DOMContentLoaded', function() {
       var calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin, interactionPlugin, timeGridPlugin ],
-        themeSystem: 'bootstrap', height: 800, width: 400
+        themeSystem: 'bootstrap', height: 800, width: 400,
+        events: gon.events
       });
 
       calendar.render();

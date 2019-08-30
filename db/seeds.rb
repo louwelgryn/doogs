@@ -585,5 +585,15 @@ marie_skill7.skill = product_manager
 marie_skill7.user = marie
 marie_skill7.save
 
+puts 'creating events'
+event = Event.new
+event.name = "meeting"
+event.start_time = DateTime.now
+event.end_time = DateTime.now + 2.hour
+event.project = project_spa
+event.save!
+
 puts 'finished!'
+
+
 

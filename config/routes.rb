@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index, :show] do
     resources :tasks, only: [:new, :create, :update]
+    resources :events, only: [:create]
   end
 
   resources :commitments, only: [:update]
@@ -15,5 +16,8 @@ Rails.application.routes.draw do
 
   get '/projects/:id/search', to: 'projects#search', as: 'project_search'
 
-  resources :events, only: [:new, :create, :index, :show, :destroy]
+
+  get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
+
+
 end
