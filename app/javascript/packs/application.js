@@ -7,6 +7,8 @@ if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
 
-calendarInit();
+if (document.getElementById('calendar')) {
+  calendarInit();
+}
 
 window.initSweetalert = initSweetalert;
