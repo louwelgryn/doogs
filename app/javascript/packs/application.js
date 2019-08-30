@@ -2,6 +2,8 @@ import "bootstrap";
 
 import Sortable from 'sortablejs';
 
+import '@fullcalendar/core/main.css';
+import '@fullcalendar/daygrid/main.css';
 
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
