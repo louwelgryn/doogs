@@ -1,5 +1,5 @@
-.navbar a {
-
+.navbar {
+  display:flex
 }
 
 .navbar-lewagon {
@@ -29,10 +29,6 @@
   width: 40px;
 }
 
-.navbar {
-  display:flex
-}
-
 #navbar-notif-badge {
   display: inline-block;
   height: 18px;
@@ -45,6 +41,10 @@
   font-size: 0.7rem;
   font-weight: 700;
   margin-left: 10px;
+}
+
+#btn-navbar {
+  margin-right: 20px;
 }
 
 #badge-wraper {
@@ -65,7 +65,7 @@
 // force bootstrap
 
 .nav-link {
-  padding: 0 !important;
+  padding: 16px 0 !important;
 }
 
 .dropdown-item {
