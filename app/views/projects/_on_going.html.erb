@@ -25,8 +25,8 @@
           <div class="project-card col-5">
             <h4>Prochaine tâche à venir</h4>
             <div class="project-task-card">
-              <% if @project.tasks.where("status ='A faire'").any? %>
-                <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
+              <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
+                <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
 
                    <div class="project-task-date">
                     <div class="test">
@@ -93,28 +93,28 @@
         <div class="row">
           <div class="col-sm-3 title-task">
             Normale
-            <% @project.tasks.normale.a_faire.each do |task| %>
+            <% @project.tasks.where("user_id = ?", current_user.id).normale.a_faire.each do |task| %>
               <%= render 'Tasks_cards', task: task  %>
             <% end %>
 
           </div>
           <div class="col-sm-3 title-task">
             Prioritaires
-            <% @project.tasks.prioritaire.a_faire.each do |task| %>
+            <% @project.tasks.where("user_id = ?", current_user.id).prioritaire.a_faire.each do |task| %>
               <%= render 'Tasks_cards', task: task  %>
             <% end %>
 
           </div>
           <div class="col-sm-3 title-task">
             Urgentes
-            <% @project.tasks.urgente.a_faire.each do |task| %>
+            <% @project.tasks.where("user_id = ?", current_user.id).urgente.a_faire.each do |task| %>
               <%= render 'Tasks_cards', task: task  %>
             <% end %>
 
           </div>
           <div class="col-sm-3 title-task">
             Terminée
-            <% @project.tasks.terminee.each do |task| %>
+            <% @project.tasks.where("user_id = ?", current_user.id).terminee.each do |task| %>
               <%= render 'Tasks_cards', task: task  %>
             <% end %>
 
