@@ -1,5 +1,5 @@
 
-<div class="project-cards">
+<div class="project-cards" >
   <div class="project-card">
     <div class="project-task-card">
       <%= task.name %>
@@ -19,9 +19,10 @@
       </div>
       <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
         <%= simple_form_for [@project, task] do |f| %>
-          <%= f.submit "Marquer comme achevée", class: "btn-black finished" %>
+          <%= f.submit "Marquer comme achevée", class: "btn-rose finished" %>
         <% end %>
       <% end %>
+       <%= link_to '' , status_update_path(task), hidden: true, remote: true %>
     </div>
   </div>
 </div>

@@ -16,4 +16,8 @@ Rails.application.routes.draw do
 
   get '/projects/:id/search', to: 'projects#search', as: 'project_search'
 
+
+  get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
+
+
 end
