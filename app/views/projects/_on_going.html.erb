@@ -1,16 +1,17 @@
 
 <div class="mx-auto">
-  <ul class="nav margin-left" id="myTab" role="tablist">
+  <ul class="nav nav-dashboard" id="myTab" role="tablist">
     <li class="nav-item">
       <a class="nav-link active tab-label cool-link" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
+    <li class="nav-item" style="margin-right: 20px;">
+      <a class="nav-link tab-label cool-link reset-css" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
+    <li class="nav-item" style="margin-right: 20px;">
+      <a class="nav-link tab-label cool-link reset-css" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
     </li>
   </ul>
+
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
       <br>
@@ -21,10 +22,8 @@
             <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
           </div>
 
-
           <div class="project-card col-5">
             <h4>Prochaine tâche à venir</h4>
-            <br>
             <div class="project-task-card">
               <% if @project.tasks.where("status ='A faire'").any? %>
                 <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
@@ -54,8 +53,7 @@
                   <% end %>
                 <% end %>
               <% else %>
-                <h4 style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</h4>
-                <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+                <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
               <% end %>
             </div>
           </div>
@@ -70,7 +68,11 @@
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
       <br>
-      lililili
+      <button type="button" class="btn-black finished">
+        Créer un nouvel évènement
+      </button>
+
+       <div id="calendar" class="calendar-box"></div>
 
 
     </div>
@@ -121,5 +123,5 @@
       </div>
     </div>
   </div>
-</div>
 
+</div>

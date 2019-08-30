@@ -1,3 +1,7 @@
+.navbar a {
+
+}
+
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
@@ -53,6 +57,11 @@
   display: flex;
 }
 
+.dropdown-menu > span {
+  font-weight: bold;
+  color: rgb(60, 60, 60);
+}
+
 // force bootstrap
 
 .nav-link {
@@ -68,7 +77,6 @@
   border-radius: 11px 0 11px 11px;
   box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 4px 0px !important;
   margin-right: 48px;
-  border: 0;
 }
 
 .show > .dropdown-menu {
