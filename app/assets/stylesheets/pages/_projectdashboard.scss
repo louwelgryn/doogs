@@ -1,5 +1,6 @@
-.yellow-banner {
-
+.yellow-banner h1 {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .cool-link::after {
@@ -185,11 +186,7 @@
 
 .tab-label {
   font-size: 32px;
-  padding-left: 0px;
-  padding-right: 0px;
-  margin: 4px;
-  margin-right: 16px;
-  margin-left: 16px;
+  margin: 8px 16px;
 }
 
 .nav-dashboard {
