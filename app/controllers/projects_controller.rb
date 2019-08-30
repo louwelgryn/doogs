@@ -36,6 +36,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @task = Task.new
     @volunteers = @project.volunteers
+    @event = Event.new
     authorize @project
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)
