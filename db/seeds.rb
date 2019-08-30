@@ -179,7 +179,7 @@ rihanna.save!
 # User 6- Skills
 
 rihanna_skill1 = UserSkill.new
-rihanna_skill1.skill = data_analyst
+rihanna_skill1.skill = product_manager
 rihanna_skill1.user = rihanna
 rihanna_skill1.save
 
@@ -363,19 +363,19 @@ project_bv.save!
 
 puts 'Commiting people to projects'
 
-puts 'Commiting Aya Nakamura, Sheldon Cooper and Mark Zuckerberg to open_food_facts (finished)'
+puts 'Creating empty commitments to open_food_facts (finished)'
 
 commitment_user1_project1 = Commitment.new
 commitment_user1_project1.skill = product_manager
-commitment_user1_project1.user = aya
 commitment_user1_project1.project = project_open_food_facts
 commitment_user1_project1.save
 
 commitment_user2_project1 = Commitment.new
 commitment_user2_project1.skill = developer_front
-commitment_user2_project1.user = mark
 commitment_user2_project1.project = project_open_food_facts
 commitment_user2_project1.save
+
+puts 'Assigning Sheldon to open_food_facts'
 
 commitment_user3_project1 = Commitment.new
 commitment_user3_project1.skill = data_scientist
@@ -383,21 +383,19 @@ commitment_user3_project1.user = sheldon
 commitment_user3_project1.project = project_open_food_facts
 commitment_user3_project1.save
 
-puts 'Commiting Elizabeth Windsor and Ignatius Reilly to spa (ongoing)'
+puts 'Creating empty comitment to spa (ongoing)'
 
 commitment_user1_project2 = Commitment.new
 commitment_user1_project2.skill = product_manager
-commitment_user1_project2.user = elizabeth
 commitment_user1_project2.project = project_spa
 commitment_user1_project2.save!
 
 commitment_user2_project2 = Commitment.new
 commitment_user2_project2.skill = developer_front
-commitment_user2_project2.user = ignatius
 commitment_user2_project2.project = project_spa
 commitment_user2_project2.save!
 
-puts 'Commiting Aurelie Delpeche and Mark to neo (ongoing)'
+puts 'Commiting Aurelie Delpeche and Rihanna to neo (ongoing)'
 
 commitment_user1_project5 = Commitment.new
 commitment_user1_project5.skill = product_manager
@@ -406,8 +404,7 @@ commitment_user1_project5.project = project_neo
 commitment_user1_project5.save!
 
 commitment_user1_project5 = Commitment.new
-commitment_user1_project5.skill = full_stack_developer
-commitment_user1_project5.user = mark
+commitment_user1_project5.skill = data_analyst
 commitment_user1_project5.project = project_neo
 commitment_user1_project5.save!
 
@@ -415,7 +412,7 @@ commitment_user1_project5.save!
 
 puts 'Creating empty commitments'
 
-puts 'creating empty commitments for ahp'
+puts 'creating empty commitment for ahp and assigning Mark, UK Queen and Ignatius'
 
 commitment_user1_project3 = Commitment.new
 commitment_user1_project3.skill = product_manager
@@ -423,17 +420,20 @@ commitment_user1_project3.project = project_ahp
 commitment_user1_project3.save!
 
 commitment_user2_project3 = Commitment.new
-commitment_user2_project3.skill = developer_front
+commitment_user2_project3.skill = developer_back
+commitment_user2_project3.user = mark
 commitment_user2_project3.project = project_ahp
 commitment_user2_project3.save!
 
 commitment_user3_project3 = Commitment.new
 commitment_user3_project3.skill = data_analyst
+commitment_user3_project3.user = elizabeth
 commitment_user3_project3.project = project_ahp
 commitment_user3_project3.save!
 
 commitment_user4_project3 = Commitment.new
-commitment_user4_project3.skill = data_analyst
+commitment_user4_project3.skill = developer_front
+commitment_user4_project3.user = ignatius
 commitment_user4_project3.project = project_ahp
 commitment_user4_project3.save!
 
@@ -467,7 +467,7 @@ commitment_user3_project5.project = project_neo
 commitment_user3_project5.save!
 
 commitment_user4_project5 = Commitment.new
-commitment_user4_project5.skill = data_analyst
+commitment_user4_project5.skill = web_designer
 commitment_user4_project5.project = project_neo
 commitment_user4_project5.save!
 
@@ -497,25 +497,25 @@ commitment_user4_project6.save!
 
 puts "creating tasks"
 
-task1_project1 = Task.new
-task1_project1.name = "Test du bot"
-task1_project1.project = project_spa
-task1_project1.user = elizabeth
-task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
-task1_project1.status = "A faire"
-task1_project1.priority_level = "Urgente"
-task1_project1.end_date = Date.new(2019,9,23)
-task1_project1.save!
+# task1_project1 = Task.new
+# task1_project1.name = "Test du bot"
+# task1_project1.project = project_spa
+# task1_project1.user = elizabeth
+# task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
+# task1_project1.status = "A faire"
+# task1_project1.priority_level = "Urgente"
+# task1_project1.end_date = Date.new(2019,9,23)
+# task1_project1.save!
 
-task2_project1 = Task.new
-task2_project1.name = "API Twitter"
-task2_project1.project = project_spa
-task2_project1.user = ignatius
-task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
-task2_project1.status = "A faire"
-task2_project1.priority_level = "Normale"
-task2_project1.end_date = Date.new(2019,10,12)
-task2_project1.save!
+# task2_project1 = Task.new
+# task2_project1.name = "API Twitter"
+# task2_project1.project = project_spa
+# task2_project1.user = ignatius
+# task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
+# task2_project1.status = "A faire"
+# task2_project1.priority_level = "Normale"
+# task2_project1.end_date = Date.new(2019,10,12)
+# task2_project1.save!
 
 task1_project2 = Task.new
 task1_project2.name = "Photos"
@@ -527,15 +527,15 @@ task1_project2.priority_level = "Prioritaire"
 task1_project2.end_date = Date.new(2019,9,28)
 task1_project2.save!
 
-task2_project2 = Task.new
-task2_project2.name = "Mapbox et JS"
-task2_project2.project = project_neo
-task2_project2.user = mark
-task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
-task2_project2.status = "Terminée"
-task2_project2.priority_level = "Normale"
-task2_project2.end_date = Date.new(2019,6,8)
-task2_project2.save!
+# task2_project2 = Task.new
+# task2_project2.name = "Mapbox et JS"
+# task2_project2.project = project_neo
+# task2_project2.user = mark
+# task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
+# task2_project2.status = "Terminée"
+# task2_project2.priority_level = "Normale"
+# task2_project2.end_date = Date.new(2019,6,8)
+# task2_project2.save!
 
 # Super User ----------------------------------------------------------------------
 
