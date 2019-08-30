@@ -129,6 +129,10 @@ border-radius: 50%;
 
 }
 
+.drag-drop {
+  min-height: 50px;
+}
+
 .task-description {
   padding: 20px;
     margin: 0px;
@@ -136,4 +140,9 @@ border-radius: 50%;
 
 .roadmap {
   z-index: 1;
+}
+
+.glyphicon-move {
+  cursor: move;
+  cursor: -webkit-grabbing;
 }

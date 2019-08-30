@@ -19,6 +19,14 @@ class TasksController < ApplicationController
     end
   end
 
+  def status_update
+    @task = Task.find(params[:id])
+    authorize @task
+    @priority_level = params[:priority_level]
+    @task.priority_level = @priority_level
+    @task.save
+  end
+
   def update
     @task = Task.find(params[:id])
     @task.status = "Achevée"
@@ -34,6 +42,8 @@ class TasksController < ApplicationController
       commitment.user
     end
   end
+
+
 
   def tasks_params
     params.require(:task).permit(:name, :description, :priority_level, :user_id, :end_date)

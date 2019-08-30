@@ -16,4 +16,8 @@ class TaskPolicy < ApplicationPolicy
   def update?
     true
   end
+
+  def status_update?
+    true
+  end
 end
