@@ -1,7 +1,6 @@
 import "bootstrap";
 
 import Sortable from 'sortablejs';
-import { initSweetalert } from '../components/init_sweetalert';
 
 
 import { initSweetalert } from '../components/init_sweetalert';
