@@ -4,11 +4,11 @@
   <h3>Et ceux dans lesquels vous aimeriez vous impliquer</h3>
 
 
-  <%= simple_form_for :search, url: projects_path, method: "get" do |f| %>
+  <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
     <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
-    <%= f.input :status, collection: @statuses, required: false %>
-    <%= f.input :thématique, collection: Project::DEVELOPMENT_GOAL, required: false %>
-    <%= f.submit "Go", class: "btn btn-primary" %>
+    <%= f.input :status, collection: @statuses, required: false, label: 'Statut' %>
+    <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, label: 'Thème' %>
+    <%#= f.submit "Go", class: "btn btn-primary" %>
   <% end %>
 
   <div class="row row-project-card d-flex">

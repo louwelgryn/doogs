@@ -11,7 +11,9 @@ import { initSweetalert } from '../components/init_sweetalert';
 window.initSweetalert = initSweetalert;
 
 
+// SUBMIT FORM //
 
+import { submitForm } from '../components/submitForm';
 
 
 
@@ -47,3 +49,9 @@ var bar = new ProgressBar.Line(container, {
 });
 
 bar.animate(1.0);  // Number from 0.0 to 1.0
+
+
+
+if (document.getElementById('filter-search')) {
+  submitForm();
+}
