@@ -1,15 +1,13 @@
 import "bootstrap";
-
+import { initSweetalert } from '../components/init_sweetalert';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
 
-
 // SWEET ALERT //
-import { initSweetalert } from '../components/init_sweetalert';
 window.initSweetalert = initSweetalert;
-
+// initSweetalert();
 
 
 
