@@ -67,24 +67,22 @@
      </div>
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
-      <br>
-      <button type="button" class="btn-black finished">
+
+      <button type="button" class="btn-black finished" data-toggle="modal" data-target="#eventModal">
         Créer un nouvel évènement
       </button>
 
        <div id="calendar" class="calendar-box"></div>
 
-
     </div>
+
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
       <% if @manager %>
-
-
-
-        <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
-        Créer une nouvelle tâche!
-
-        </button>
+        <div>
+          <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
+          Créer une nouvelle tâche!
+          </button>
+        </div>
 
       <% end %>
       <br>
