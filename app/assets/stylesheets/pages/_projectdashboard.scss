@@ -1,0 +1,139 @@
+.yellow-banner {
+
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+    transition: width .3s;
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    //transition: width .3s;
+}
+
+.cool-link {
+   font-color:  black;
+}
+
+.top-left{
+      margin-left: 0;
+}
+
+.test {
+display: flex;
+margin-left: 5px;
+  align-items: center;
+
+}
+
+.project-cards {
+  display: flex;
+  position: space-between;
+}
+
+.project-card{
+  padding: 10px;
+  width: 250px;
+}
+
+.project-task-date {
+ display: flex;
+    margin: 0;
+    justify-content: space-between;
+    align-items: self-end;
+}
+
+.croped-image-bord {
+border-radius: 50%;
+    width: 250px;
+    position: absolute;
+    height: 250px;
+    object-fit: cover;
+    z-index:1;
+    position: relative;
+}
+
+.title-task {
+  text-align: center;
+
+}
+
+.weirdo-orange {
+ position: absolute;
+  height: 250px;
+  left: 15px;
+
+}
+
+.project-task-card {
+ border: #C2E1BB solid;
+ padding-bottom: 8px;
+ border-radius: 8px;
+ transition: all .2s ease-in-out;
+
+}
+
+.colored-style {
+  background-color: #e48174;
+  width: 200px;
+  height: 20px;
+  position: absolute;
+}
+
+.project-task-card:hover {
+
+ transform: scale(1.02);
+
+}
+
+.project-task-informations {
+  background-color: white;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.wave-bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.finished {
+ padding: 2px;
+    height: 20px;
+    width: 150px;
+    margin: 0 auto;
+    display: block;
+    margin-top: 8px;
+    font-size: 10px;
+}
+
+.task-status {
+    width: 60px;
+    height: 15px;
+    padding: 2px;
+}
+
+.task-owner {
+width: 40px;
+height: 40px;
+border-radius: 50%;
+ padding: 5px;
+}
+
+.task-priority {
+
+}
+
+.task-description {
+  padding: 20px;
+    margin: 0px;
+}
+
+.roadmap {
+  z-index: 1;
+}

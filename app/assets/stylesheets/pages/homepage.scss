@@ -1,0 +1,144 @@
+.green-banner {
+ // background-image: url('Vectorvector.svg');
+ background-color: #A4C5C6;
+ background-repeat: no-repeat;
+ height: 100vh;
+ position: relative;
+}
+
+.banner-info {
+  position: absolute;
+        top: 261px;
+    left: 978px;
+    width: 350px;
+}
+
+.wave {
+  position: absolute;
+  bottom:0;
+}
+
+.image-homepage {
+  width: 300px;
+  height: 300px;
+  background: red;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  animation: 5s poly infinite alternate ease-in-out;
+  margin: 1em auto;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes poly {
+  from {
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+  to {
+    clip-path: polygon(44% 26%, 58% 38%, 58% 38%, 44% 81%, 44% 81%, 25% 49%);
+  }
+}
+
+.cards-container{
+  display:flex;
+
+  margin: auto auto;
+  width: 1200px;
+}
+
+.cards h4 {
+ text-align: center;
+
+}
+
+.cards {
+  padding: 10px;
+  z-index: 1;
+}
+// .image-two {
+// clip-path: polygon(10% 0,94% 36%,98% 100%,0 100%,0 20%);
+//  object-fit: cover;
+//   object-position: right;
+//   position: absolute;
+//   height: 200px;
+// }
+
+@keyframes imageone {
+  from{
+transform: rotate(0);
+  }
+  to {
+  transform: rotate(-100 164.58165396 189.78497846);
+  }
+}
+
+.orange-circle {
+  height: 100px;
+  position: absolute;
+      top: 138px;
+    left: 600px;
+}
+
+.orange-shape {
+ position: absolute;
+  top: -200px;
+  height: 600px;
+  right: 371px;
+  animation-name: leafRoll;
+  animation-duration: 2s;
+}
+
+@keyframes leafRoll {
+  from {
+    transform: rotate(-30deg);
+    top: -700px;
+  }
+  to {
+    top: -200px;
+    transform: rotate(0deg);
+  }
+}
+
+.croped-image {
+clip-path: polygon(10% 0,94% 36%,98% 100%,0 100%,0 20%);
+position: absolute;
+height: 400px;
+    bottom: 78px;
+    width: 50vw;
+    object-fit: cover;
+  object-position: right;
+}
+
+.home-page {
+  background-color: white;
+  border: white;
+}
+
+.title {
+  position: absolute;
+    height: 200px;
+    top: 95px;
+    left: 331px;
+
+}
+.doog-mission {
+  position: relative;
+  background-color: white;
+  height: 100vh;
+  border:white;
+  display: flex;
+}
+
+.yellow-shape {
+ position: absolute;
+  height: 400px;
+  left: -129px;
+
+}
+
+.big-title {
+  font-size: 200px;
+}
+
+
+

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :projects, only: [:index, :show] do
-    resources :tasks, only: [:new, :create]
+    resources :tasks, only: [:new, :create, :update]
   end
 
   resources :commitments, only: [:update]
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
 
   get '/projects/:id/dashboard', to: 'projects#dashboard', as: 'project_dashboard'
 
+  get '/projects/:id/search', to: 'projects#search', as: 'project_search'
 end

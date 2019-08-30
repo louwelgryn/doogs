@@ -1,9 +1,81 @@
+.btn-black {
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #062521;
+  transition: 0.3s;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  p {
+    margin-bottom: 0 !important;
+  }
+}
+
+.btn-black:hover {
+  text-decoration: none;
+  color: #062521;
+  background-color: $blanc-semi-transparent;
+  border-color: #062521;
+  border: solid 1px;
+}
+
+.btn-basic {
+  text-transform: none;
+    border-radius: 50px;
+    text-align: center;
+    transition: 0.3s;
+    color: #fff;
+    /* padding: 12px 20px; */
+    text-decoration: none;
+    margin: 0 auto;
+    /* justify-content: center; */
+    /* align-content: center; */
+    text-align: center;
+    font-size: 10px;
+    /* padding: 10px; */
+}
+
+.btn-red {
+  background-color: #b04632;
+  font-color: black;
+  transition: 0.3s;
+}
+
+.btn-orange {
+  background-color: #ff9f1a;
+  transition: 0.3s;
+}
+.btn-yellow {
+  background-color: #f5dd29;
+  transition: 0.3s;
+}
+
+.btn-calendar {
+ background-color: #ff9f1a;
+ width: 60px;
+ height: 15px;
+ padding: 2px;
+ margin: 0;
+ font-size: x-small;
+}
+
+
+
+.btn-status {
+  height: 25px;
+  transition: 0.3s;
+
+}
+
+
 .button-default.turquoise {
   background-color: #fffb46;
+  transition: 0.3s;
   color: white;
   border-radius: 5px;
 
-  // font-weight: bold;
+  font-weight: bold;
   a:hover {
     background-color: rgba(255,255,255,0.7);
     border-color: #0198AE;
@@ -17,4 +89,34 @@
   background-color: #e8e9f3;
   border-color: #ede7b1;
   color: #ede7b1;
+}
+
+a.blog-slider__button {
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    padding: 3px 23px;
+    border: 1px solid;
+    border-radius: 50px;
+    line-height: 34px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    color: #E58074;
+    border-color: #E58074;
+    background-color: #E58074;
+    color: white;
+    text-decoration: none;
+    margin-top: 5%;
+    // background-color:green;
+}
+
+a.blog-slider__button:hover {
+
+  color: #E58074;
+  border-color: #E58074;
+  background-color: $blanc-semi-transparent;
+
 }

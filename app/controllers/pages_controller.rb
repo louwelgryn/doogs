@@ -6,7 +6,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @user_current_project = current_user.projects.find_by(status: "on going")
-    @user_past_projects = current_user.projects.where(status: "finished")
+    @user_upcoming_project = current_user.projects.find_by(status: "En attente")
+    @user_current_project = current_user.projects.find_by(status: "En cours")
+    @user_past_projects = current_user.projects.where(status: "Terminé")
   end
 end

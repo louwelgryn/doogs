@@ -1,27 +1,125 @@
-<p>Ce projet est en cours ! </p>
-
 
 <div class="mx-auto">
   <ul class="nav margin-left" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-label" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Vue d'ensemble</a>
+      <a class="nav-link active tab-label cool-link" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Calendrier</a>
+      <a class="nav-link tab-label cool-link" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Roadmap</a>
+      <a class="nav-link tab-label cool-link" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active tab-content" id="home" role="tabpanel" aria-labelledby="home-tab">
-      lalala
+    <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+      <br>
+      <div class="row">
+        <div class="project-cards">
+          <div class="project-card col-5">
+            <%= cl_image_tag @project.image, class: "croped-image-bord"  %>
+            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+          </div>
+
+
+          <div class="project-card col-5">
+            <h4>Prochaine tâche à venir</h4>
+            <br>
+            <div class="project-task-card">
+              <% if @project.tasks.where("status ='A faire'").any? %>
+                <% @upcoming_task = @project.tasks.where("status = 'A faire'").order("end_date ASC").first %>
+
+                   <div class="project-task-date">
+                    <div class="test">
+                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                <div class="project-task-informations">
+                  <% if @upcoming_task.priority_level == "Normale" %>
+                    <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
+                    <p class="task-status btn-orange btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% else %>
+                    <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
+                  <% end %>
+                  </div>
+                  </div>
+                    <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
+                  </div>
+
+
+                 <p style= "margin-top: 8px" class="title-task"> <%= @upcoming_task.name %></p>
+                    <div class="colored-style"></div>
+                <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
+                  <%= simple_form_for [@project, @upcoming_task] do |f| %>
+                    <%= f.submit "Marquer comme achevée", class: "btn-black finished" %>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <h4 style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</h4>
+                <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+              <% end %>
+            </div>
+          </div>
+
+
+          <div class="project-card col-5">
+            <h4>Prochain évènement </h4>
+          </div>
+        </div>
+      </div>
+     </div>
+
+    <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
+      <br>
+      lililili
+
+
     </div>
-    <div class="tab-pane fade tab-content" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      lilili
-    </div>
-    <div class="tab-pane fade tab-content" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      lululu
+    <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
+      <% if @manager %>
+
+
+
+        <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
+        Créer une nouvelle tâche!
+
+        </button>
+
+      <% end %>
+      <br>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3 title-task">
+            Normale
+            <% @project.tasks.normale.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+          <div class="col-sm-3 title-task">
+            Prioritaires
+            <% @project.tasks.prioritaire.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+          <div class="col-sm-3 title-task">
+            Urgentes
+            <% @project.tasks.urgente.a_faire.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+          <div class="col-sm-3 title-task">
+            Terminée
+            <% @project.tasks.terminee.each do |task| %>
+              <%= render 'Tasks_cards', task: task  %>
+            <% end %>
+
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

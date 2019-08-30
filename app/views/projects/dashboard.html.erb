@@ -1,9 +1,10 @@
-<h1>DASHBOARD PROJET</h>
-<br>
-<p> <%= @project.name %> </p>
+ <div class="yellow-banner">
+    <%= image_tag 'yellow-wave.svg', class: " wave-bottom"%>
+    <h2 style="text-align: center;"><%= @project.name %> </h2>
+    <div class="banner-info">
 
-<% if @project.status == 'pending'%>
-  <%= render 'pending' %>
+    </div>
+  </div>
 
 <% elsif @project.status == 'on going' %>
   <%= render 'on_going' %>
@@ -11,7 +12,36 @@
 <% else %>
   <%= render 'finished' %>
 
-<% end %>
+<!-- Progress bar -->
+
+<!-- LA BARRE !!!!
 
 
+<div class="progress_bar">
 
+  <svg height="210" width="500">
+    <line x1="0" y1="0" x2="1000" y2="0" class="line__progress line__progress--path" style="stroke:rgb(255,0,0);stroke-width:5" />
+    <line x1="0" y1="0" x2="1000" y2="0" class="line__progress line__progress--fill" style="stroke:rgb(255,0,0);stroke-width:5" />
+  </svg>
+</div> -->
+<!--
+<div id="container">
+  <svg viewBox="0 0 100 4" preserveAspectRatio="none" style="width: 100%; height: 100%;">
+    <path d="M 0,2 L 100,2" stroke="#eee" stroke-width="1" fill-opacity="0"></path>
+    <path d="M 0,2 L 100,2" stroke="rgb(237,106,90)" stroke-width="4" fill-opacity="0" style="stroke-dasharray: 100, 100; stroke-dashoffset: 0;"></path>
+  </svg>
+</div> -->
+
+<!-- Fin progress bar -->
+
+<div class="container">
+  <% if @project.status == 'En attente'%>
+    <%= render 'pending' %>
+  <% elsif @project.status == 'En cours' %>
+    <%= render 'on_going' %>
+  <% else %>
+    <%= render 'finished' %>
+  <% end %>
+</div>
+
+<%= render 'modal' %>

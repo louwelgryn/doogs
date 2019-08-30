@@ -1,6 +1,20 @@
 .navbar-lewagon {
+  display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  height: 64px;
+  padding: 24px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  background-color: transparent;
+  transition: 0.5s background-color ease;
+  text-decoration: none;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +23,80 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.navbar {
+  display:flex
+}
+
+#navbar-notif-badge {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  border-radius: 12px;
+  text-align: center;
+  background: #e48174;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+#badge-wraper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#navbar-flexbox {
+  display: flex;
+}
+
+// force bootstrap
+
+.nav-link {
+  padding: 0 !important;
+}
+
+.dropdown-item {
+  padding: 0 !important;
+}
+
+.dropdown-menu {
+  padding: 20px;
+  border-radius: 11px 0 11px 11px;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 4px 4px 0px !important;
+  margin-right: 48px;
+  border: 0;
+}
+
+.show > .dropdown-menu {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.dropdown-menu {
+  -webkit-transform-origin: top;
+  transform-origin: top;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-transform: scale(1, 0);
+  display: block;
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+}
+
+.dropup .dropdown-menu {
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+
+.dropup > .dropdown-menu:after {
+  top: auto;
+  display: inline-block;
+  bottom: -6px;
+  content: '';
+  position: absolute;
+  left: 50%;
 }

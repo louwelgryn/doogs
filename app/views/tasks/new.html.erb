@@ -13,8 +13,13 @@
       <%= f.input :priority_level, collection: Task::PRIORITY_LEVEL %>
     </div>
     <div class="form-inputs">
+      <%= f.input :end_date %>
+    </div>
+    <div class="form-inputs">
       <%= f.input :user_id, collection: @volunteers %>
     </div>
+
+
     <div class="form-actions">
       <%= f.submit "Créer la tâche", class: "btn btn-primary" %>
     </div>

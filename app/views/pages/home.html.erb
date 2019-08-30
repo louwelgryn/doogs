@@ -1,8 +1,51 @@
 
+
+
 <div class="home-page">
-<h1>DOOG</h1>
-<p>Sauvez le monde depuis votre canapé!</p>
-<%= link_to 'découvrir les projets', projects_path  %>
+
+  <div class="green-banner">
+    <%= image_tag 'orange_shape.svg', class: "orange-shape"%>
+    <%= image_tag 'devs.jpg', class: "croped-image"%>
+    <%= image_tag 'Vectorvector.svg', class: "wave"%>
+    <%= image_tag 'Doogtitle.svg', class: "title"%>
+    <div class="banner-info">
+      <h4>Sauvez le monde depuis votre canapé</h4>
+    <p> Doog est une communauté de Data scientists, data analysts et développeurs qui donnent de leurs temps pour accompagner des projets à fort impact social et environnemental</p>
+    <br>
+    <%= link_to 'Découvrir les projets', projects_path, class: "btn-black" %>
+    </div>
+  </div>
+
+ <h4 style="text-align: center; font-size:60px"> Ce que nous faisons </h4>
+
+  <div class="doog-mission">
+    <%= image_tag 'yellow-shape.svg', class: "yellow-shape"%>
+
+
+    <div class="cards-container">
+      <div class="cards">
+        <h4>Trouvez </h4>
+        <br>
+        <p> Un projet qui vous tient à coeur et pour lequel vous voulez vous engager </p>
+        <%= cl_image_tag 'jamie-street-JO9AAhsAVXE-unsplash_fjjcxp', class: "image-one image-homepage"%>
+      </div>
+
+      <div class="cards" >
+        <h4>Rejoignez </h4>
+        <br>
+        <p> Un projet qui vous tient à coeur et pour lequel vous voulez vous engager </p>
+        <%= cl_image_tag 'ray-sangga-kusuma-7uSrOyY1U0I-unsplash_ncyjc7', class: "image-two image-homepage"%>
+      </div>
+
+      <div class="cards">
+        <h4>Partagez </h4>
+        <br>
+        <p> Des moments exceptionnels avec les membres de votre équipe tout en vous sentant utiles </p>
+        <%= cl_image_tag 'perry-grone-lbLgFFlADrY-unsplash_yghrc7', class: "image-three image-homepage"%>
+      </div>
+    </div>
+
+  </div>
+
+
 </div>
-
-
