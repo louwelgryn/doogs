@@ -7,8 +7,6 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 // import '@fullcalendar/daygrid/main.css';
 
 const calendarInit = () => {
-  console.log('Calendar');
-  console.log(gon.events);
 
   const calendarEl = document.getElementById('calendar');
 
