@@ -27,7 +27,17 @@ window.initSweetalert = initSweetalert;
 
 if (document.querySelector("#roadmap")) {
   taskFunction()
-}
+};
+
+
+// TAB NAVIGATION //
+const redirection = document.getElementById("submit-calendar")
+
+redirection.addEventListener("click", (event) => {
+  console.log("hello");
+  console.log("goodbye");
+});
+
 
 
 
