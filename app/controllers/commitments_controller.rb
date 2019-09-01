@@ -38,7 +38,7 @@ class CommitmentsController < ApplicationController
 
     respond_to do |format|
       format.html { render 'projects/show' }
-      format.js  # <-- will render `app/views/reviews/create.js.erb`
+      format.js  # <-- will render `app/views/commitments/create.js.erb`
     end
   end
 
