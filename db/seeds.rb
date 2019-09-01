@@ -220,8 +220,8 @@ spa.name = "Société Protectrice des Animaux"
 spa.description = "L'association lutte au quotidien pour la protection animale. Suivez l'actualité dans notre combat pour le bien être des animaux. Recherchez votre compagnon idéal et aidez nous en réalisant un don ou en devenant bénévole."
 spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
-spa.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
-spa.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
+spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
 spa.save!
 
 puts "Creating charity AHP"
@@ -231,8 +231,8 @@ ahp.name = "Amicale des Hygiénistes Psychorigides"
 ahp.description = "L'amicale promeut une société libérée de tous germes, fleurant bon l'eau de javel ou les arômes articiels de pin des Landes. Rejoignez-nous dans ce combat pour un monde plus pur mais n'oubliez pas de vous laver les mains avant."
 ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
-ahp.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
-ahp.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
+ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
 ahp.save!
 
 puts "Creating charity Article 1"
@@ -242,8 +242,8 @@ article1.name = "Article 1"
 article1.description = "Article 1 développe et encadre le parrainage de jeunes étudiants boursiers à haut potentiel par des professionnels."
 article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
-article1.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
-article1.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
+article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
 article1.save!
 
 puts "Creating charity Open Food Facts"
@@ -253,8 +253,8 @@ open_food_facts.name = "Open Food Facts"
 open_food_facts.description = "Open Food Facts est une base de données sur les produits alimentaires faite par tout le monde, pour tout le monde. Elle vous permet de faire des choix plus informés, et comme les données sont ouvertes (open data), tout le monde peut les utiliser pour tout usage."
 open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
-open_food_facts.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
-open_food_facts.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
+open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
 open_food_facts.save!
 
 puts "Creating charity Nature en Occitanie"
@@ -264,8 +264,8 @@ nature_en_occitanie.name = "Nature en Occitanie"
 nature_en_occitanie.description = "Nature En Occitanie agit depuis 1969 pour la protection de la faune et de la flore sauvages ainsi que pour la préservation des milieux naturels de la région."
 nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
-nature_en_occitanie.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
-nature_en_occitanie.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
+nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -275,8 +275,8 @@ bretagne_vivante.name = "Bretagne Vivante"
 bretagne_vivante.description = "Créée en 1958, association Loi 1901 reconnue d’utilité publique en 1968, agréée pour la protection de l’environnement, Bretagne Vivante est membre fondateur de grandes structures nationales et régionales telles que France Nature Environnement, Réserves Naturelles de France et le Réseau d’Éducation à l’Environnement en Bretagne (REEB)."
 bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
-bretagne_vivante.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
-bretagne_vivante.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
+bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
 bretagne_vivante.save!
 
 # Projects ----------------------------------------------------------------------

@@ -1,76 +1,91 @@
-<div class="container">
-  <h1><%= @project.name %></h1>
-  <p>Un projet de <strong><%= @project.charity.name %></strong></p>
-  <p><%= @project.description %></p>
-  <p class="btn btn-warning"><%= @project.status %></p>
-  <% if current_user && @project.status = "En cours" && @volunteers.include?(current_user)  %>
-    <p><%= link_to "Accéder au tableau de bord du projet", project_dashboard_path(@project) %></p>
-  <% end %>
+<div class="yellow-banner">
+  <%= image_tag 'blue-wave.svg', class: "wave-bottom" %>
+</div>
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @project.image %>'); ">
+  <div class="container">
+    <h1><%= @project.name %></h1>
+    <p>Un projet de <em><%= @charity.name %></em></p>
+  </div>
+</div>
 
- <!--  MODAL TEST -->
-  <!-- Trigger/Open The Modal -->
+<div class="container project-view-container">
 
-<!-- The Modal -->
+  <div class="project-view-charity">
+    <div class="charity-logo-container">
+      <%= cl_image_tag @charity.logo, width: 120, class: "charity-logo-image" %>
+    </div>
+    <h4>L'association</h2>
+    <p><%= @charity.description %></p>
+    <p>Référent.e :</p>
+    <div class="charity-referent">
+      <%= cl_image_tag(@charity.referent_image, :transformation=>[
+        {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
+        {:width=>120, :crop=>"scale"}
+        ])
+      %>
+      <p><strong><%= @charity.referent_name %></strong>, <%= @charity.referent_position %></p>
+    </div>
+  </div>
 
+  <div class="project-view-project">
 
-  <hr>
-  <h2>L'équipe</h2>
+    <p><em>Statut: <%= @project.status %></em></p>
+    <p><%= @project.description %></p>
+    <% if current_user && @project.status = "En cours" && @volunteers.include?(current_user)  %>
+      <p class="btn-dashboard"><%= link_to "Accéder au tableau de bord du projet", project_dashboard_path(@project), class: "btn-black btn-dashboard" %></p>
+    <% end %>
 
-  <button id="sweet-alert-button" class="d-none">Click me!</button>
+    <!--  MODAL TEST -->
+    <!-- Trigger/Open The Modal -->
+    <!-- The Modal -->
 
-  <ul class="d-flex">
-    <% @project.commitments.each do |commitment| %>
+    <hr>
 
-      <li class="d-inline">
+    <h2>Les Doogies</h2>
 
-        <% if commitment.user %>
-          <div class="avatar-container">
+    <button id="sweet-alert-button" class="d-none">Click me!</button>
 
-              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big"%>
+    <ul class="volunteers-list">
+      <% @project.commitments.each do |commitment| %>
+
+        <li>
+
+          <% if commitment.user %>
+            <div class="avatar-container">
+              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big" %>
               <div class="middle">
-                <span> <%= commitment.skill.name %> </span>
+                <span><%= commitment.skill.name %></span>
               </div>
-
-          </div>
-
-        <% elsif !current_user %>
-
-
-
+            </div>
+          <% elsif !current_user %>
             <div type="submit" class="reset-css">
               <div class="avatar-container">
                 <div class="empty-avatar">
-
-                  <p class="reset-css submit-text"><%= link_to 'JOIN!', new_user_session_path, class: "reset-css" %>
-                  </p>
-                  <span class="empty-avatar-text">
-                    <%= commitment.skill.name %>
-                  </span>
+                  <p class="reset-css submit-text"><%= link_to 'JOIN!', new_user_session_path, class: "reset-css" %></p>
+                  <span class="empty-avatar-text"><%= commitment.skill.name %></span>
                 </div>
               </div>
             </div>
-
-        <% else commitment.user.nil? %>
-          <%= simple_form_for(commitment, remote: true) do |f| %>
-            <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-            <div type="submit" class="reset-css">
-              <div class="avatar-container">
-                <div class="empty-avatar">
-                  <%= f.submit "JOIN!", class: "reset-css submit-text"%>
-                  <span class="empty-avatar-text">
-                    <%= commitment.skill.name %>
-                  </span>
+          <% else commitment.user.nil? %>
+            <%= simple_form_for(commitment, remote: true) do |f| %>
+              <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
+              <div type="submit" class="reset-css">
+                <div class="avatar-container">
+                  <div class="empty-avatar">
+                    <%= f.submit "JOIN!", class: "reset-css submit-text"%>
+                    <span class="empty-avatar-text"><%= commitment.skill.name %></span>
+                  </div>
                 </div>
               </div>
-            </div>
-
+            <% end %>
           <% end %>
 
-        <% end %>
-     </li>
-    <% end %>
-  </ul>
+       </li>
+
+      <% end %>
+    </ul>
+  </div>
 
   <%= link_to '', project_path(@project), hidden: true, class: "hidden-link" %>
 
@@ -87,4 +102,5 @@
 
   <svg viewBox="0 0 361 329" class="current-resident-card"></svg>
   <path fill="#C2E1BB" fill-rule="evenodd" d="M327.775 185.887c-100.942 116.027-98.05 152.438-194.445 140.61-96.395-11.828-62.76-60.837-118.302-170.13C-40.514 47.076 76.749-9.384 173.144 2.445 269.54 14.272 428.718 69.86 327.775 185.887z"></path>
+
 </div>
