@@ -31,12 +31,39 @@ if (document.querySelector("#roadmap")) {
 
 
 // TAB NAVIGATION //
-const redirection = document.getElementById("submit-calendar")
+$(document).ready(() => {
+  let url = location.href.replace(/\/$/, "");
 
-redirection.addEventListener("click", (event) => {
-  console.log("hello");
-  console.log("goodbye");
+  if (location.hash) {
+    const hash = url.split("#");
+    $('#myTab a[href="#'+hash[1]+'"]').tab("show");
+    url = location.href.replace(/\/#/, "#");
+    history.replaceState(null, null, url);
+    setTimeout(() => {
+      $(window).scrollTop(0);
+    }, 400);
+  }
+
+  $('a[data-toggle="tab"]').on("click", function() {
+    let newUrl;
+    const hash = $(this).attr("href");
+    if(hash == "#home") {
+      newUrl = url.split("#")[0];
+    } else {
+      newUrl = url.split("#")[0] + hash;
+    }
+    newUrl += "/";
+    history.replaceState(null, null, newUrl);
+  });
 });
+
+// const redirection = document.getElementById("submit-calendar")
+
+// redirection.addEventListener("click", (event) => {
+//   console.log("hello");
+//   console.log("goodbye");
+//   console.log(document.location.toString());
+// });
 
 
 
