@@ -60,9 +60,9 @@ $(document).ready(() => {
 // const redirection = document.getElementById("submit-calendar")
 
 // redirection.addEventListener("click", (event) => {
-//   console.log("hello");
-//   console.log("goodbye");
-//   console.log(document.location.toString());
+// //   console.log("hello");
+// //   console.log("goodbye");
+//   window.location = document.location.toString();
 // });
 
 
