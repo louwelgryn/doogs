@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     # redirect_to project_dashboard_path(@event.project)
     respond_to do |format|
       format.html { render 'projects/show' }
-      format.js  # <-- will render `app/views/commitments/create.js.erb`
+      format.js # <-- will render `app/views/commitments/create.js.erb`
     end
   end
 

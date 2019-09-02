@@ -57,13 +57,13 @@ $(document).ready(() => {
   });
 });
 
-// const redirection = document.getElementById("submit-calendar")
+const redirection = document.getElementById("submit-calendar")
 
-// redirection.addEventListener("click", (event) => {
-// //   console.log("hello");
-// //   console.log("goodbye");
-//   window.location = document.location.toString();
-// });
+redirection.addEventListener("click", (event) => {
+//   console.log("hello");
+//   console.log("goodbye");
+  window.location = document.location
+});
 
 
 
