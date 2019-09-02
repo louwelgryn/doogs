@@ -14,6 +14,12 @@ import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
+// MAPBOX
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { initMapbox } from '../components/init_mapbox';
+
+
+
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
@@ -67,6 +73,7 @@ $(document).ready(() => {
 
 
 
+initMapbox();
 
 
 
