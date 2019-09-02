@@ -36,7 +36,6 @@ const options = {
       task_status.classList.remove('btn-yellow')
       task_status.classList.remove('btn-red')
       task_status.classList.remove('btn-orange')
-
       task_status.classList.add('btn-orange')
     } else {
 

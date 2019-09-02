@@ -11,6 +11,7 @@ import { submitForm } from '../components/submitForm';
 
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
+// import onClickDescription from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
@@ -24,6 +25,8 @@ if (document.querySelector(".filter-search")) {
 
 calendarInit();
 window.initSweetalert = initSweetalert;
+
+// onClickDescription();
 
 if (document.querySelector("#roadmap")) {
   taskFunction()
@@ -56,6 +59,9 @@ $(document).ready(() => {
     history.replaceState(null, null, newUrl);
   });
 });
+
+/// CHECKER L EVENT CLIQUE ///
+
 
 // const redirection = document.getElementById("submit-calendar")
 

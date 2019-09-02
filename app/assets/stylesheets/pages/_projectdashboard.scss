@@ -1,6 +1,7 @@
 .yellow-banner h1 {
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 110px;
+  margin-bottom: 0;
 }
 
 .cool-link::after {
@@ -17,13 +18,16 @@
   //transition: width .3s;
 }
 
+
 .cool-link, .cool-link:hover {
-  // color: black;
   color: rgb(130, 130, 130);
 }
 
 .top-left{
   margin-left: 0;
+}
+
+.container-tasks{
 }
 
 .test {
@@ -35,19 +39,182 @@
 .project-cards {
   display: flex;
   position: space-between;
+
 }
 
-.project-card{
-  padding: 10px;
-  width: 250px;
+.project-card-small{
+  background-color: white;
+    margin: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+    border-radius: 11px;
+    text-align: center;
 }
 
-.project-task-date {
-  display: flex;
+#myTabContent {
   margin: 0;
-  justify-content: space-between;
-  align-items: self-end;
 }
+
+.drag-drop {
+  min-height: 50px;
+  min-width: 50px;
+
+}
+
+
+
+// .title-task {
+//     background-color: white;
+//     width: 300px;
+//     padding-top: 15px;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+//     border-radius: 11px;
+//     text-align: center;
+// }
+
+.test-card {
+  width: 95%;
+  background-color: white;
+    padding-top: 15px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+    border-radius: 11px;
+    height: 125%;
+    position: relative;
+}
+
+
+// .project-card{
+//   width: 95%;
+//     background-color: white;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+//     padding: 20px;
+//     border-radius: 25px;
+//     text-align: center;
+// }
+
+.task-button {
+  position: absolute;
+    bottom: 4px;
+    left: 10px;
+    color:#A4C5C6;
+}
+.project-task-card {
+  height: 75px;
+  width: 100%;
+  position: relative;
+  background-color: white;
+   text-align: center;
+}
+
+.avatar-smaller{
+  position: absolute;
+  left: 116px;
+}
+
+.task-owner{
+      margin: 0;
+    position: absolute;
+    top: 13px;
+    left: 192px;
+}
+
+.project-task-informations {
+      text-align: initial;
+      margin-top: 4px;
+       display: flex;
+           color: grey;
+}
+
+.task-button {
+  font-color:grey;
+  background-color:white;
+  border: white;
+}
+
+.colored-info{
+  display: flex;
+
+}
+
+.project-task-card {
+   padding: 8px;
+}
+
+.task-status {
+ margin-right: 5px;
+ width: 60px;
+
+}
+
+.task-title {
+      margin-left: 16px;
+    font-size: larger;
+    color: grey;
+}
+
+#dashboard {
+  left: 28px;
+    top: 13px;
+}
+
+.for-dashboard {
+ height: 110%;
+}
+
+.avatar-dashboard{
+      left: 63px;
+}
+
+// .project-task-date {
+//   display: flex;
+//   margin: 0;
+//   justify-content: space-between;
+//   align-items: self-end;
+// }
+
+
+// .project-task-card {
+//   border: #C2E1BB solid;
+//   padding-bottom: 8px;
+//   border-radius: 8px;
+//   transition: all .2s ease-in-out;
+// }
+
+// .project-task-card:hover {
+//   transform: scale(1.02);
+// }
+.test-card:hover {
+  transform: scale(1.02);
+}
+
+// .project-task-informations {
+//   background-color: white;
+//     padding: 8px;
+//     border-radius: 8px;
+// }
+
+// .task-status {
+//   width: 60px;
+//   height: 15px;
+//   padding: 2px;
+// }
+
+// .task-owner {
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+//   padding: 5px;
+// }
+
+// .task-priority {
+
+// }
+
+// .task-description {
+//   padding: 20px;
+//   margin: 0px;
+// }
+
+
 
 .croped-image-bord {
   border-radius: 50%;
@@ -59,23 +226,16 @@
   position: relative;
 }
 
-.title-task {
-  text-align: center;
-}
+// .title-task {
+//   text-align: center;
+// }
 
 .weirdo-orange {
- position: absolute;
+  position: absolute;
   height: 250px;
   left: 15px;
-
 }
 
-.project-task-card {
-  border: #C2E1BB solid;
-  padding-bottom: 8px;
-  border-radius: 8px;
-  transition: all .2s ease-in-out;
-}
 
 .colored-style {
   background-color: #e48174;
@@ -84,15 +244,7 @@
   position: absolute;
 }
 
-.project-task-card:hover {
-  transform: scale(1.02);
-}
 
-.project-task-informations {
-  background-color: white;
-    padding: 8px;
-    border-radius: 8px;
-}
 
 .wave-bottom {
     position: fixed;
@@ -110,22 +262,10 @@
   font-size: 10px;
 }
 
-.task-status {
-  width: 60px;
-  height: 15px;
-  padding: 2px;
-}
 
-.task-owner {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  padding: 5px;
-}
 
-.task-priority {
 
-}
+
 
 .drag-drop {
   min-height: 50px;
@@ -135,6 +275,7 @@
   padding: 20px;
   margin: 0px;
 }
+
 
 .roadmap {
   z-index: 1;
@@ -148,23 +289,22 @@
   position: relative;
   margin: 0 auto;
   margin-left: 300px;
-   /* you can either manually set a min-height here or do it via JS ---> */
 }
 
 .tab-label.active {
-  // border-bottom: solid 1px;
-  // color: #A4C5C6;
   color: rgb(15, 15, 15);
 }
+
 
 .tab {
   // float: left;
 }
 
-.tab-content {
-  // height: 100vh;
-  margin-left: 100px;
-}
+// .tab-content {
+//   // height: 100vh;
+//   margin-left: 100px;
+// }
+
 
 
 .tab [type=radio] {
@@ -172,7 +312,7 @@
 }
 
 .tab__content {
-   position: relative;
+  position: relative;
   top: 40px;
   left: 0;
   right: 0;
@@ -193,11 +333,10 @@
 }
 
 .tab-label {
-  font-size: 32px;
-  margin: 8px 16px;
+  font-size: 24px;
+  margin: 8px 40px;
 }
 
 .nav-dashboard {
   justify-content: center;
-
 }
