@@ -9,7 +9,14 @@ class EventsController < ApplicationController
     @event.save
     authorize @event
 
-    redirect_to project_dashboard_path(@event.project)
+    @project = Project.find(params[:project_id])
+    @volunteers = @project.volunteers
+
+    # redirect_to project_dashboard_path(@event.project)
+    respond_to do |format|
+      format.html { render 'projects/show' }
+      format.js # <-- will render `app/views/commitments/create.js.erb`
+    end
   end
 
   private
@@ -18,4 +25,5 @@ class EventsController < ApplicationController
     params.require(:event).permit(:project_id, :name, :start_time, :end_time, :status, :description, :hub)
   end
 end
+
 
