@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     authorize @project
     @volunteers = @project.volunteers
+    @charity = @project.charity
   end
 
   def index

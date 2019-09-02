@@ -1,0 +1,31 @@
+.project-view-container {
+  h1, h2, h3, h4, p {
+    color: rgb(100, 100, 100);
+  }
+
+  p {
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h2 {
+    margin: 32px 0;
+  }
+}
+
+.project-view-project {
+  width: 100%;
+}
+
+p.btn-dashboard {
+  font-size: 0.8rem;
+  margin: 32px 0;
+}
+
+.volunteers-list {
+  display: flex;
+  align-items: flex-end;
+  padding: 0;
+  li {
+    display: inline;
+  }
+}
