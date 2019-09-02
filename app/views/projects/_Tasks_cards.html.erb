@@ -1,30 +1,31 @@
 
 <div class="project-cards" >
-  <div class="project-card">
-    <div class="project-task-card">
-      <%= task.name %>
-      <div class="project-task-informations">
-        <% if task.priority_level == "Normale" %>
-        <p class="task-status btn-yellow btn-basic top-left"> <%= task.priority_level%></p>
-        <% elsif task.priority_level == "Prioritaire" %>
-        <p class="task-status btn-orange btn-basic top-left"> <%= task.priority_level%></p>
-        <% else %>
-        <p class="task-status btn-red btn-basic top-left"> <%= task.priority_level%></p>
-        <% end %>
+  <!-- <div class="project-card-small"> -->
+    <div class="project-task-card border-top border-bottom">
 
-        <div class="project-task-date">
-          <p class="task-owner"> <%= cl_image_tag task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar", style:"margin: 0;" %> </p>
-          <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= task.end_date.strftime('%d %b') %></p>
-        </div>
-      </div>
-      <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
-        <%= simple_form_for [@project, task] do |f| %>
-          <%= f.submit "Marquer comme achevée", class: "btn-rose finished" %>
+          <div class="colored-info">
+        <% if task.priority_level == "Normale" %>
+        <p class="task-status btn-yellow btn-basic top-left" > <%= task.priority_level%></p>
+        <% elsif task.priority_level == "Prioritaire" %>
+        <p class="task-status btn-red btn-basic top-left" > <%= task.priority_level%></p>
+        <% else %>
+        <p class="task-status btn-orange btn-basic top-left" > <%= task.priority_level%></p>
         <% end %>
+        <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= task.end_date.strftime('%d %b') %></p>
+        </div>
+        <div class="project-task-informations">
+         <%= task.name %> <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
+          <%= simple_form_for [@project, task] do |f| %>
+            <%= f.submit "Done", class: " btn-basic task-button" %>
+          <% end %>
       <% end %>
+      </div>
+          <p class="task-owner"> <%= cl_image_tag task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller", style:"margin: 0;" %> </p>
+
+
        <%= link_to '' , status_update_path(task), hidden: true, remote: true %>
     </div>
-  </div>
+ <!--  </div> -->
 </div>
 
 
