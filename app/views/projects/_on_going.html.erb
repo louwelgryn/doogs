@@ -68,7 +68,6 @@
                 </div>
 
               <% else %>
-
                 <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
 
               <% end %>
@@ -88,9 +87,10 @@
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
 
-      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal">
+      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal" id="new-event-button">
         Créer un nouvel évènement
       </button>
+
 
        <div id="calendar" class="calendar-box"></div>
 
