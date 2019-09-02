@@ -10,22 +10,40 @@ const calendarInit = () => {
 
   const calendarEl = document.getElementById('calendar');
 
+
   if (calendarEl) {
     document.addEventListener('DOMContentLoaded', function() {
       var calendar = new Calendar(calendarEl, {
         plugins: [ dayGridPlugin, interactionPlugin, timeGridPlugin ],
         themeSystem: 'bootstrap', height: 800, width: 400,
-        events: gon.events
+        events: gon.events,
+
+        eventClick: function(info) {
+          alert('Event: ' + info.event.title + info.event.description);
+        }
       });
 
       calendar.render();
 
 
-      /// ON CLICK DESCRIPTION ////
+      /// AVOIR LA DESCRIPTION D UN EVENEMENT ///
+      // const existingEvents = document.querySelectorAll(".fc-event-container")
+      // existingEvents.forEach((existingEvent) => {
+      //   existingEvent.addEventListener("click", (event) => {
+      //     console.log('lala');
+      //     alert('hello');
+      //   });
+      // });
+
+      // events.forEach((existing) => {
+      //   existing.addEventListener("click", (event) => {
+      //     console.log('victoire!');
+      //   })
+      // })
+
+
+      /// CREER UN NOUVEL EVENEMENT ////
       const dates = document.querySelectorAll(".fc-future");
-      // console.log(dates);
-      // const datesFuture = dates.querySelectorAll(".fc-future");
-      // console.log(datesFuture);
       const eventLink = document.getElementById('new-event-button');
 
       dates.forEach((day) => {
