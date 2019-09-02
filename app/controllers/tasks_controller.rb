@@ -13,7 +13,8 @@ class TasksController < ApplicationController
     @task.project = @project
     authorize @task
     if @task.save
-      redirect_to project_dashboard_path(@project)
+      url = 'http://localhost:3000/projects/' + @project.id.to_s + '/dashboard#roadmap/'
+      redirect_to url
     else
       render :new
     end

@@ -57,13 +57,13 @@ $(document).ready(() => {
   });
 });
 
-const redirection = document.getElementById("submit-calendar")
+// const redirection = document.getElementById("submit-calendar")
 
-redirection.addEventListener("click", (event) => {
-//   console.log("hello");
-//   console.log("goodbye");
-  window.location = document.location
-});
+// redirection.addEventListener("click", (event) => {
+// //   console.log("hello");
+// //   console.log("goodbye");
+//   window.location = 'http://localhost:3000/projects/4/dashboard#calendar/'
+// });
 
 
 
