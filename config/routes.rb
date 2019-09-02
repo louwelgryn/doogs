@@ -18,6 +18,6 @@ Rails.application.routes.draw do
 
 
   get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
-
-
+  get '/chat_room/:id' , to: 'chat_rooms#show', as: 'chat_room'
+  post '/chat_room/:chat_room_id/messages', to: 'messages#create', as: 'chat_room_messages'
 end
