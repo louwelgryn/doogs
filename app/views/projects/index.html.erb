@@ -1,23 +1,23 @@
-<div class="container">
+<div class="container" style="max-width: 1200px;">
 
   <h1>Découvrez nos projets !</h1>
   <h3>Et ceux dans lesquels vous aimeriez vous impliquer</h3>
 
-  <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
-    <div class='container-search-bar'>
-      <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :status, collection: @statuses, required: false, label: 'Statut' %>
-      <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, label: 'Thème' %>
-      <%= f.submit "Effacer les filtres", class: "clearFilterButton"  %>
+    <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
+      <div class='container-search-bar mb-3'>
+          <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :status, collection: @statuses, required: false, label: 'Statut' %>
+          <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, label: 'Thème' %>
+          <%= f.submit "Effacer les filtres", class: "clearFilterButton"  %>
+      </div>
     <% end %>
     <span class="c-toggle">
       <input type="checkbox" id="toggle" />
       <label for="toggle">Voir la carte</label>
     </span>
-  </div>
 
   <div class="d-flex">
-    <div class="cards-wrapper" style="width: 50%">
+    <div class="cards-wrapper">
       <div class="row row-project-card d-flex">
         <% @projects.each do |project| %>
           <div class="blog-slider">
@@ -96,21 +96,20 @@
       </div>
     </div>
 
-    <div class="map-wrapper" style="width: 50%">
+    <div class="map-wrapper" style="margin-right: 20px;">
       <div
         id="map"
-        style="width: 100%;
-        height: 600px;"
+
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
       ></div>
     </div>
   </div>
 
-  </div>
 
-  </div>
+
+<!--   </div>
     <div class="blog-slider__pagination"></div>
-  </div>
+  </div> -->
 
 
 

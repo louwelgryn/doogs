@@ -1,13 +1,13 @@
-const toggle = getElementById('toggle')
+const openMap = () => {
+  const toggle = document.querySelector('#toggle');
 
-toggle.onClick = function() {
-  const map = getElementById('map');
-  if () {
-    #addMap
-  }
-  else
-    #removeMap
-
+  toggle.addEventListener("click", (event) => {
+    const map = document.querySelector('.map-wrapper');
+    const cardsWrapper = document.querySelector('.cards-wrapper');
+    map.classList.toggle("map-display");
+    cardsWrapper.classList.toggle("map-display");
+  });
 };
 
-export { open_map };
+
+export { openMap };
