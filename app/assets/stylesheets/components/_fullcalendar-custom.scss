@@ -1,0 +1,49 @@
+.fc-event {
+    position: relative;
+    display: block;
+    font-size: 1em !important;
+    line-height: 1.8 !important;
+    border-radius: 26px !important;
+    background-color: #7ac29a !important;
+    border: 1px solid #7ac29a !important;
+    text-align: center;
+    margin-bottom: 4px !important;
+    transition: 0.3s !important;
+}
+
+.fc-event:hover {
+  opacity: 0.8 !important;
+  cursor: pointer !important;
+}
+
+.fc-title {
+  color: white;
+  padding: 1px;
+}
+
+.fc-time {
+  display: none !important;
+}
+
+.fc-today-button {
+  display: none !important;
+}
+
+.fc-button-primary {
+    color: #fff;
+    background-color: #FACAC6 !important;
+    border-color: #ffb3af !important;
+    transition: 0.3s;
+}
+
+.fc-button-primary:hover {
+  background-color: #ffb3af !important;
+}
+
+.fc-past.fc-day.fc-widget-content {
+    color: rgba(152, 160, 166, 0.6) !important;
+    background-color: #ffffff !important;
+    background-image: url('pastday2.svg') !important;
+    cursor: not-allowed;
+}
+
