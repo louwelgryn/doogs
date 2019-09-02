@@ -14,6 +14,7 @@ const calendarInit = () => {
   if (calendarEl) {
     document.addEventListener('DOMContentLoaded', function() {
       var calendar = new Calendar(calendarEl, {
+        fixedWeekCount: false,
         plugins: [ dayGridPlugin, interactionPlugin, timeGridPlugin ],
         themeSystem: 'bootstrap', height: 800, width: 400,
         events: gon.events,
