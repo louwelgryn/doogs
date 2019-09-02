@@ -33,6 +33,7 @@
             <div class="form-inputs">
               <%= f.input :end_time %>
             </div>
+              <%= f.hidden_field :participants %>
 
 
             <div class="form-actions">
@@ -40,6 +41,11 @@
             </div>
           <% end %>
 
+          <!-- PARTICIPATIONS -->
+          <% @project.users.each do |user| %>
+            <%= user.name  %>
+            <button class="participation-user-button"><%= user.id %></button>
+          <% end %>
         </div>
 
       </div>
