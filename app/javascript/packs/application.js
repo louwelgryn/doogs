@@ -63,12 +63,24 @@ $(document).ready(() => {
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
+const participantsInput = document.getElementById("event_participants");
+
 volunteers.forEach((volunteer) => {
   volunteer.addEventListener("click", (event) => {
     participants.push(Number.parseInt(volunteer.innerHTML,10));
     console.log(participants);
+    participantsInput.value = participants;
   });
 });
+
+// const newEventButton = document.getElementById("submit-calendar");
+// const participationsButtons = document.querySelectorAll(".submit-participation");
+// newEventButton.addEventListener("click", (event) => {
+//   participationsButtons.forEach((button) => {
+//     button.click();
+//     console.log("click effectué!")
+//   });
+// });
 
 
 
