@@ -7,6 +7,8 @@ puts "destroy all Commitments"
 Commitment.destroy_all
 puts "destroy all Tasks"
 Task.destroy_all
+puts "destroy all Events"
+Event.destroy_all
 puts "destroy all Project"
 Project.destroy_all
 puts "destroy all Charity"
@@ -179,7 +181,7 @@ rihanna.save!
 # User 6- Skills
 
 rihanna_skill1 = UserSkill.new
-rihanna_skill1.skill = data_analyst
+rihanna_skill1.skill = product_manager
 rihanna_skill1.user = rihanna
 rihanna_skill1.save
 
@@ -218,8 +220,8 @@ spa.name = "Société Protectrice des Animaux"
 spa.description = "L'association lutte au quotidien pour la protection animale. Suivez l'actualité dans notre combat pour le bien être des animaux. Recherchez votre compagnon idéal et aidez nous en réalisant un don ou en devenant bénévole."
 spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
-spa.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
-spa.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
+spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
 spa.save!
 
 puts "Creating charity AHP"
@@ -229,8 +231,8 @@ ahp.name = "Amicale des Hygiénistes Psychorigides"
 ahp.description = "L'amicale promeut une société libérée de tous germes, fleurant bon l'eau de javel ou les arômes articiels de pin des Landes. Rejoignez-nous dans ce combat pour un monde plus pur mais n'oubliez pas de vous laver les mains avant."
 ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
-ahp.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
-ahp.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
+ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
 ahp.save!
 
 puts "Creating charity Article 1"
@@ -240,8 +242,8 @@ article1.name = "Article 1"
 article1.description = "Article 1 développe et encadre le parrainage de jeunes étudiants boursiers à haut potentiel par des professionnels."
 article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
-article1.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
-article1.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
+article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
 article1.save!
 
 puts "Creating charity Open Food Facts"
@@ -251,8 +253,8 @@ open_food_facts.name = "Open Food Facts"
 open_food_facts.description = "Open Food Facts est une base de données sur les produits alimentaires faite par tout le monde, pour tout le monde. Elle vous permet de faire des choix plus informés, et comme les données sont ouvertes (open data), tout le monde peut les utiliser pour tout usage."
 open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
-open_food_facts.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
-open_food_facts.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
+open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
 open_food_facts.save!
 
 puts "Creating charity Nature en Occitanie"
@@ -262,8 +264,8 @@ nature_en_occitanie.name = "Nature en Occitanie"
 nature_en_occitanie.description = "Nature En Occitanie agit depuis 1969 pour la protection de la faune et de la flore sauvages ainsi que pour la préservation des milieux naturels de la région."
 nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
-nature_en_occitanie.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
-nature_en_occitanie.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
+nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -273,8 +275,8 @@ bretagne_vivante.name = "Bretagne Vivante"
 bretagne_vivante.description = "Créée en 1958, association Loi 1901 reconnue d’utilité publique en 1968, agréée pour la protection de l’environnement, Bretagne Vivante est membre fondateur de grandes structures nationales et régionales telles que France Nature Environnement, Réserves Naturelles de France et le Réseau d’Éducation à l’Environnement en Bretagne (REEB)."
 bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
-bretagne_vivante.referent_image = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
-bretagne_vivante.logo = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
+bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
 bretagne_vivante.save!
 
 # Projects ----------------------------------------------------------------------
@@ -363,19 +365,19 @@ project_bv.save!
 
 puts 'Commiting people to projects'
 
-puts 'Commiting Aya Nakamura, Sheldon Cooper and Mark Zuckerberg to open_food_facts (finished)'
+puts 'Creating empty commitments to open_food_facts (finished)'
 
 commitment_user1_project1 = Commitment.new
 commitment_user1_project1.skill = product_manager
-commitment_user1_project1.user = aya
 commitment_user1_project1.project = project_open_food_facts
 commitment_user1_project1.save
 
 commitment_user2_project1 = Commitment.new
 commitment_user2_project1.skill = developer_front
-commitment_user2_project1.user = mark
 commitment_user2_project1.project = project_open_food_facts
 commitment_user2_project1.save
+
+puts 'Assigning Sheldon to open_food_facts'
 
 commitment_user3_project1 = Commitment.new
 commitment_user3_project1.skill = data_scientist
@@ -383,21 +385,19 @@ commitment_user3_project1.user = sheldon
 commitment_user3_project1.project = project_open_food_facts
 commitment_user3_project1.save
 
-puts 'Commiting Elizabeth Windsor and Ignatius Reilly to spa (ongoing)'
+puts 'Creating empty comitment to spa (ongoing)'
 
 commitment_user1_project2 = Commitment.new
 commitment_user1_project2.skill = product_manager
-commitment_user1_project2.user = elizabeth
 commitment_user1_project2.project = project_spa
 commitment_user1_project2.save!
 
 commitment_user2_project2 = Commitment.new
 commitment_user2_project2.skill = developer_front
-commitment_user2_project2.user = ignatius
 commitment_user2_project2.project = project_spa
 commitment_user2_project2.save!
 
-puts 'Commiting Aurelie Delpeche and Mark to neo (ongoing)'
+puts 'Commiting Aurelie Delpeche and Rihanna to neo (ongoing)'
 
 commitment_user1_project5 = Commitment.new
 commitment_user1_project5.skill = product_manager
@@ -406,8 +406,7 @@ commitment_user1_project5.project = project_neo
 commitment_user1_project5.save!
 
 commitment_user1_project5 = Commitment.new
-commitment_user1_project5.skill = full_stack_developer
-commitment_user1_project5.user = mark
+commitment_user1_project5.skill = data_analyst
 commitment_user1_project5.project = project_neo
 commitment_user1_project5.save!
 
@@ -415,7 +414,7 @@ commitment_user1_project5.save!
 
 puts 'Creating empty commitments'
 
-puts 'creating empty commitments for ahp'
+puts 'creating empty commitment for ahp and assigning Mark, UK Queen and Ignatius'
 
 commitment_user1_project3 = Commitment.new
 commitment_user1_project3.skill = product_manager
@@ -423,17 +422,20 @@ commitment_user1_project3.project = project_ahp
 commitment_user1_project3.save!
 
 commitment_user2_project3 = Commitment.new
-commitment_user2_project3.skill = developer_front
+commitment_user2_project3.skill = developer_back
+commitment_user2_project3.user = mark
 commitment_user2_project3.project = project_ahp
 commitment_user2_project3.save!
 
 commitment_user3_project3 = Commitment.new
 commitment_user3_project3.skill = data_analyst
+commitment_user3_project3.user = elizabeth
 commitment_user3_project3.project = project_ahp
 commitment_user3_project3.save!
 
 commitment_user4_project3 = Commitment.new
-commitment_user4_project3.skill = data_analyst
+commitment_user4_project3.skill = developer_front
+commitment_user4_project3.user = ignatius
 commitment_user4_project3.project = project_ahp
 commitment_user4_project3.save!
 
@@ -467,7 +469,7 @@ commitment_user3_project5.project = project_neo
 commitment_user3_project5.save!
 
 commitment_user4_project5 = Commitment.new
-commitment_user4_project5.skill = data_analyst
+commitment_user4_project5.skill = web_designer
 commitment_user4_project5.project = project_neo
 commitment_user4_project5.save!
 
@@ -497,25 +499,25 @@ commitment_user4_project6.save!
 
 puts "creating tasks"
 
-task1_project1 = Task.new
-task1_project1.name = "Test du bot"
-task1_project1.project = project_spa
-task1_project1.user = elizabeth
-task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
-task1_project1.status = "A faire"
-task1_project1.priority_level = "Urgente"
-task1_project1.end_date = Date.new(2019,9,23)
-task1_project1.save!
+# task1_project1 = Task.new
+# task1_project1.name = "Test du bot"
+# task1_project1.project = project_spa
+# task1_project1.user = elizabeth
+# task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
+# task1_project1.status = "A faire"
+# task1_project1.priority_level = "Urgente"
+# task1_project1.end_date = Date.new(2019,9,23)
+# task1_project1.save!
 
-task2_project1 = Task.new
-task2_project1.name = "API Twitter"
-task2_project1.project = project_spa
-task2_project1.user = ignatius
-task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
-task2_project1.status = "A faire"
-task2_project1.priority_level = "Normale"
-task2_project1.end_date = Date.new(2019,10,12)
-task2_project1.save!
+# task2_project1 = Task.new
+# task2_project1.name = "API Twitter"
+# task2_project1.project = project_spa
+# task2_project1.user = ignatius
+# task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
+# task2_project1.status = "A faire"
+# task2_project1.priority_level = "Normale"
+# task2_project1.end_date = Date.new(2019,10,12)
+# task2_project1.save!
 
 task1_project2 = Task.new
 task1_project2.name = "Photos"
@@ -527,15 +529,15 @@ task1_project2.priority_level = "Prioritaire"
 task1_project2.end_date = Date.new(2019,9,28)
 task1_project2.save!
 
-task2_project2 = Task.new
-task2_project2.name = "Mapbox et JS"
-task2_project2.project = project_neo
-task2_project2.user = mark
-task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
-task2_project2.status = "Terminée"
-task2_project2.priority_level = "Normale"
-task2_project2.end_date = Date.new(2019,6,8)
-task2_project2.save!
+# task2_project2 = Task.new
+# task2_project2.name = "Mapbox et JS"
+# task2_project2.project = project_neo
+# task2_project2.user = mark
+# task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
+# task2_project2.status = "Terminée"
+# task2_project2.priority_level = "Normale"
+# task2_project2.end_date = Date.new(2019,6,8)
+# task2_project2.save!
 
 # Super User ----------------------------------------------------------------------
 
