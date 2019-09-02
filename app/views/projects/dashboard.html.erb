@@ -1,6 +1,11 @@
 <div class="yellow-banner">
-  <%= image_tag 'yellow-wave.svg', class: "wave-bottom" %>
-  <h1><%= @project.name %></h1>
+  <%= image_tag 'blue-wave.svg', class: "wave-bottom" %>
+</div>
+
+<div class="banner dashboard-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @project.image %>'); ">
+  <div class="container">
+    <h1><%= @project.name %></h1>
+  </div>
 </div>
 
 <div class="container">

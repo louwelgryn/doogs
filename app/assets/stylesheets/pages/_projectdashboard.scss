@@ -4,23 +4,55 @@
   margin-bottom: 0;
 }
 
-.cool-link::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #000;
-  transition: width .3s;
+.nav-dashboard {
+  justify-content: center;
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 32px;
 }
 
-.cool-link:hover::after {
-  width: 100%;
-  //transition: width .3s;
+.pdb-ensemble {
+  justify-content: center;
 }
 
+// onglets
 
-.cool-link, .cool-link:hover {
-  color: rgb(130, 130, 130);
+.tab-label {
+  margin: 0 16px;
+  padding: 16px 32px;
+}
+
+.nav-item a {
+  color: white;
+  font-size: 20px;
+  font-weight: 100;
+}
+
+.nav-item a:hover {
+  color: rgb(65, 65, 65);
+  border-radius: 10px;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0.3) 25%, transparent 50%, transparent);
+  background-position: 0 100%;
+  background-size: 100% 200%;
+  transition: all .25s ease-in;
+}
+
+.tab-label.active {
+  color: rgb(65, 65, 65);
+  border-radius: 10px;
+  background-color: white;
+}
+
+// Team
+
+.pdb-team-member {
+  margin: 20px 20px;
+  span {
+    margin-left: 8px;
+    color: rgb(65, 65, 65);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+  }
 }
 
 .top-left{
@@ -38,8 +70,7 @@
 
 .project-cards {
   display: flex;
-  position: space-between;
-
+  justify-content: center;
 }
 
 .project-card-small{
@@ -262,11 +293,6 @@
   font-size: 10px;
 }
 
-
-
-
-
-
 .drag-drop {
   min-height: 50px;
 }
@@ -279,64 +305,4 @@
 
 .roadmap {
   z-index: 1;
-}
-
-
-/// Tabs ///
-
-.tabs {
-  clear: both;
-  position: relative;
-  margin: 0 auto;
-  margin-left: 300px;
-}
-
-.tab-label.active {
-  color: rgb(15, 15, 15);
-}
-
-
-.tab {
-  // float: left;
-}
-
-// .tab-content {
-//   // height: 100vh;
-//   margin-left: 100px;
-// }
-
-
-
-.tab [type=radio] {
-  display: none;
-}
-
-.tab__content {
-  position: relative;
-  top: 40px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transition: opacity .2s cubic-bezier(.42,0,.34,1.01);
-  opacity: 0;
-}
-
-[type=radio]:checked ~ label {
-  border-bottom: 2px solid #1d1d1d;
-  color: #1d1d1d;
-  z-index: 2;
-}
-
-[type=radio]:checked ~ label ~ .tab__content {
-  z-index: 1;
-  opacity: 1;
-}
-
-.tab-label {
-  font-size: 24px;
-  margin: 8px 40px;
-}
-
-.nav-dashboard {
-  justify-content: center;
 }
