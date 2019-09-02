@@ -2,7 +2,7 @@
   <%= image_tag 'blue-wave.svg', class: "wave-bottom" %>
 </div>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @project.image %>'); ">
+<div class="banner project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @project.image %>'); ">
   <div class="container">
     <h1><%= @project.name %></h1>
     <p>Un projet de <em><%= @charity.name %></em></p>

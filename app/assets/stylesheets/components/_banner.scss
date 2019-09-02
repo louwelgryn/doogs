@@ -1,5 +1,4 @@
 .banner {
-  height: 400px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -13,4 +12,13 @@
   h1 {
    font-size: 3.5rem;
   }
+}
+
+.dashboard-banner {
+  text-align: center;
+  height: 200px;
+}
+
+.project-banner {
+  height: 400px;
 }
