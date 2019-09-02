@@ -1,7 +1,7 @@
 import "bootstrap";
 
 import Sortable from 'sortablejs';
-
+import { initCounter } from '../components/init_counter';
 
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
@@ -14,6 +14,10 @@ import calendarInit from '../components/fullcalendar.js';
 // import onClickDescription from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
+
+
+initCounter();
+
 
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
