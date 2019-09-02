@@ -24,6 +24,7 @@ gem 'acts_as_list'
 gem 'momentjs-rails'
 gem 'gon'
 
+gem 'jquery-rails'
 
 
 group :development do
