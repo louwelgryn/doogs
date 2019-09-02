@@ -8,6 +8,7 @@ class EventsController < ApplicationController
     @event.project = Project.find(params[:project_id])
     @event.save
     authorize @event
+
     redirect_to project_dashboard_path(@event.project)
   end
 
