@@ -2,6 +2,11 @@
   color: #212529;
 }
 
+a.navbar-signin, a.navbar-signin:hover {
+  color: #212529;
+  text-decoration: none;
+}
+
 .navbar-lewagon {
   display: flex;
   justify-content: space-between;
