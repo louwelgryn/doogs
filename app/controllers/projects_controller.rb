@@ -38,6 +38,7 @@ class ProjectsController < ApplicationController
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
+    @user_participations = ["lalala"]
     authorize @project
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)

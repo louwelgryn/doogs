@@ -40,6 +40,11 @@
             </div>
           <% end %>
 
+          <!-- PARTICIPATIONS -->
+          <% @project.users.each do |user| %>
+            <%= user.name  %>
+            <button class="participation-user-button"><%= user.id %></button>
+          <% end %>
         </div>
 
       </div>

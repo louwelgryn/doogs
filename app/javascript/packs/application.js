@@ -60,7 +60,17 @@ $(document).ready(() => {
   });
 });
 
-/// CHECKER L EVENT CLIQUE ///
+/// PARTICIPATION A UN EVENEMENT ///
+const participants = [];
+const volunteers = document.querySelectorAll(".participation-user-button");
+volunteers.forEach((volunteer) => {
+  volunteer.addEventListener("click", (event) => {
+    participants.push(Number.parseInt(volunteer.innerHTML,10));
+    console.log(participants);
+  });
+});
+
+
 
 
 // const redirection = document.getElementById("submit-calendar")

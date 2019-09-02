@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :projects, only: [:index, :show] do
     resources :tasks, only: [:new, :create, :update]
-    resources :events, only: [:create]
+    resources :events, only: [:create] do
+      resources :participations, only: [:create, :update]
+    end
   end
 
   resources :commitments, only: [:update]
