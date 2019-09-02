@@ -13,58 +13,67 @@
   </ul>
 
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
+    <div class="tab-pane fade show active tab-content " id="summary" role="tabpanel" aria-labelledby="summary-tab">
       <div class="row">
         <div class="project-cards">
-          <div class="project-card col-5">
-            <%= cl_image_tag @project.image, class: "croped-image-bord"  %>
-            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
+          <div class="project-card col-sm-6">
+            <div class="test-card for-dashboard">
+            <%= cl_image_tag @project.image, class: "croped-image-bord", style: "display: block;
+    margin: auto auto;"  %>
+            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange", id: "dashboard"%>
+            </div>
           </div>
 
-          <div class="project-card col-5">
-            <h4>Prochaine tâche à venir</h4>
+          <div class="project-card col-sm-6">
+            <div class="test-card for-dashboard" >
+            <h4 class="task-title">Prochaine tâche à venir</h4>
             <div class="project-task-card">
               <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
                 <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
 
-                   <div class="project-task-date">
-                    <div class="test">
-                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-                <div class="project-task-informations">
-                  <% if @upcoming_task.priority_level == "Normale" %>
-                    <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                    <p class="task-status btn-orange btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% else %>
-                    <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% end %>
-                  </div>
-                  </div>
-                    <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
-                  </div>
+                   <div class="project-cards" >
+  <!-- <div class="project-card-small"> -->
+                  <div class="project-task-card border-top border-bottom">
+
+                        <div class="colored-info">
+                      <% if @upcoming_task.priority_level == "Normale" %>
+                      <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                      <% elsif @upcoming_task.priority_level == "Prioritaire" %>
+                      <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                      <% else %>
+                      <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                      <% end %>
+                      <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                      </div>
+                      <div class="project-task-informations">
+                       <%= @upcoming_task.name %> <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
+                        <%= simple_form_for [@project, @upcoming_task] do |f| %>
+                          <%= f.submit "Done", class: " btn-basic task-button" %>
+                        <% end %>
+                    <% end %>
+                    </div>
+                        <p class="task-owner"> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller avatar-dashboard", style:"margin: 0;" %> </p>
 
 
-                 <p style= "margin-top: 8px" class="title-task"> <%= @upcoming_task.name %></p>
+                     <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
+                  </div>
+                <!--  </div> -->
+                </div>
 
-                <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
-                  <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                    <%= f.submit "Marquer comme achevée", class: "btn-rose finished" %>
-                  <% end %>
-                <% end %>
               <% else %>
-
-
-
 
                 <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
 
               <% end %>
+              </div>
             </div>
           </div>
 
 
-          <div class="project-card col-5">
-            <h4>Prochain évènement </h4>
+          <div class="project-card col-sm-6">
+            <div class="test-card for-dashboard">
+            <h4 class="task-title">Prochain évènement </h4>
+          </div>
           </div>
         </div>
       </div>
@@ -72,7 +81,7 @@
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
 
-      <button type="button" class="btn-black finished" data-toggle="modal" data-target="#eventModal">
+      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal">
         Créer un nouvel évènement
       </button>
 
@@ -81,55 +90,68 @@
     </div>
 
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
-      <% if @manager %>
 
-        <div>
-          <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
-          Créer une nouvelle tâche!
-          </button>
-        </div>
-
-
-      <% end %>
       <br>
 
-      <div class="container">
+      <div class="">
         <div class="row">
-          <div class="col-sm-3 title-task">
-            Normale
+          <div class="col-sm-4  title-task" style="padding:0">
+            <div class="test-card">
+            <p class="task-title">Normales</p>
 
             <div id="Normale" class="drag-drop">
 
             <% @project.tasks.normale.a_faire.each do |task| %>
-
               <%= render 'Tasks_cards', task: task  %>
              <% end %>
+               <% if @manager %>
+            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+          Créer
+          </button>
+          <% end %>
+            </div>
             </div>
           </div>
 
-          <div class="col-sm-3 title-task">
-            Urgentes
+          <div class="col-sm-4  title-task" style="padding:0">
+          <div class="test-card">
+            <p class="task-title">Urgentes</p>
 
             <div id="Urgente" class="drag-drop">
             <% @project.tasks.urgente.a_faire.each do |task| %>
-
-
               <%= render 'Tasks_cards', task: task  %>
             <% end %>
+            <% if @manager %>
+            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+          Créer
+          </button>
+          <% end %>
+            </div>
           </div>
           </div>
-          <div class="col-sm-3 title-task" >
-            Prioritaires
+
+          <div class="col-sm-4 title-task" style="padding:0" >
+            <div class="test-card">
+            <p class="task-title">Prioritaires</p>
             <div id="Prioritaire" class="drag-drop">
               <% @project.tasks.prioritaire.a_faire.each do |task| %>
                 <%= render 'Tasks_cards', task: task  %>
               <% end %>
+              <% if @manager %>
+            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+          Créer
+          </button>
+          <% end %>
               </div>
+            </div>
             </div>
           </div>
 
 
           </div>
+
+
+
         </div>
       </div>
     </div>
