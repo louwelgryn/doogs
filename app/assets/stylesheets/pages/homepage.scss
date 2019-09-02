@@ -8,9 +8,9 @@
 
 .banner-info {
   position: absolute;
-        top: 261px;
-    right: 2%;
-    width: 350px;
+  top: 280px;
+  right: 16%;
+  width: 350px;
 }
 
 .wave {
@@ -41,8 +41,7 @@
 
 .cards-container{
   display:flex;
-
-  margin: auto auto;
+  margin: 4% auto;
   width: 1200px;
 }
 
@@ -100,12 +99,12 @@ transform: rotate(0);
 }
 
 .croped-image {
-clip-path: polygon(10% 0,94% 36%,98% 100%,0 100%,0 20%);
-position: absolute;
-height: 400px;
-    bottom: 78px;
-    width: 50vw;
-    object-fit: cover;
+  clip-path: polygon(10% 0, 80% 8%, 104% 82%, 0 100%, 0 12%);
+  position: absolute;
+  height: 400px;
+  bottom: 78px;
+  width: 50vw;
+  object-fit: cover;
   object-position: right;
 }
 
