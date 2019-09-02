@@ -7,6 +7,7 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
 
 import { initSweetalert } from '../components/init_sweetalert';
@@ -65,10 +66,16 @@ $(document).ready(() => {
 //   window.location = 'http://localhost:3000/projects/4/dashboard#calendar/'
 // });
 
+function scrollLastMessageIntoView() {
+  const messages = document.querySelectorAll('.message');
+  const lastMessage = messages[messages.length - 1];
+  if (lastMessage !== undefined) {
+    lastMessage.scrollIntoView();
+    console.log(lastMessage)
+  }
+}
 
-
-
-
+scrollLastMessageIntoView()
 
 
 // // PROGRESS BAR

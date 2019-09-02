@@ -5,6 +5,10 @@ puts "destroy all UserSkill"
 UserSkill.destroy_all
 puts "destroy all Commitments"
 Commitment.destroy_all
+puts "destroy all Messages"
+Message.destroy_all
+puts "destroy all Chat_rooms"
+ChatRoom.destroy_all
 puts "destroy all Tasks"
 Task.destroy_all
 puts "destroy all Events"
@@ -279,6 +283,8 @@ bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxu
 bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
 bretagne_vivante.save!
 
+
+
 # Projects ----------------------------------------------------------------------
 
 puts 'creating 6 projects'
@@ -319,6 +325,7 @@ project_spa.development_goal = "Vie terrestre"
 project_spa.status = "En cours"
 project_spa.start_date = Date.new(2019,7,5)
 project_spa.end_date = Date.new(2019,11,10)
+
 project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902057/photo-1494256997604-768d1f608cac_ktmift.jpg"
 project_spa.save
 
@@ -332,6 +339,7 @@ project_ahp.development_goal = "Éducation de qualité"
 project_ahp.status = "En attente"
 project_ahp.start_date = Date.new(2019,8,1)
 project_ahp.end_date = Date.new(2020,2,29)
+
 project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902207/katie-smith-uQs1802D0CQ-unsplash_ax9lud.jpg"
 project_ahp.save
 
@@ -360,6 +368,17 @@ project_bv.start_date = Date.new(2018,2,9)
 project_bv.end_date = Date.new(2018,6,12)
 project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567070322/project_bv_i3xnzi.jpg"
 project_bv.save!
+
+# Chatroom ----------------------------------------------------------------------
+puts 'creating 6 chatrooms'
+
+puts 'creating chatroom Open food facts'
+
+chatroom_open_food_facts = ChatRoom.new
+chatroom_open_food_facts.name = "Open Food Facts Chat"
+chatroom_open_food_facts.project = project_open_food_facts
+chatroom_open_food_facts.save
+
 
 # Commitments ----------------------------------------------------------------------
 

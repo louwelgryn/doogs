@@ -7,6 +7,8 @@ class Project < ApplicationRecord
   has_many :users, through: :commitments
   has_many :events
   has_many :tasks
+  has_one :chat_room
+  has_many :messages, through: :chat_rooms
   validates :name, :description, :development_goal, :end_date, presence: true
   validates :development_goal, inclusion: { in: DEVELOPMENT_GOAL }
   validates :name, uniqueness: true
