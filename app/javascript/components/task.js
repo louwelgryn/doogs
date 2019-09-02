@@ -8,14 +8,21 @@ const options = {
   animation: 150,
   onAdd: function (event) {
     const element = event.item;
-    console.log(event.from.id)
+
     const link = element.querySelector("a");
-   const newLink = link.href + "?priority_level=" + event.to.id;
-    link.setAttribute('href', newLink);
+    console.log(link)
+    const newLink = (link.getAttribute('href').match(/.*status\/\d*/))[0];
+    // let newLink = link.getAttribute('href').match(/.*status\/\d*/);
+
+    console.log(newLink)
+    const newLinkTwo = newLink + "?priority_level=" + event.to.id;
+    console.log(newLinkTwo)
+   // const newLink = link.getAttribute('href').match(/.*priority_level=(Urgente|Prioritaire|Normale)/)[0];
+    link.setAttribute('href', newLinkTwo);
     link.click()
    const task_status = element.querySelector(".task-status")
     task_status.innerHTML = event.to.id
-console.log(task_status.classList)
+
 
 
     if (event.to.id === "Normale") {
