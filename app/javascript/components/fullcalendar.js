@@ -19,7 +19,15 @@ const calendarInit = () => {
         events: gon.events,
 
         eventClick: function(info) {
-          alert('Event: ' + info.event.title + info.event.description);
+          $('#calendarModal').modal('show');
+          const eventName = document.getElementById('event-title');
+          eventName.innerHTML = info.event.title;
+
+          const eventDescription = document.getElementById('event-description');
+          eventDescription.innerHTML = info.event.extendedProps.description;
+
+          const eventStartTime = document.getElementById('event-start-date');
+          eventStartTime.innerHTML = info.event.extendedProps.start_time;
         }
       });
 
