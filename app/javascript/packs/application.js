@@ -1,7 +1,8 @@
 import "bootstrap";
 
 import Sortable from 'sortablejs';
-import { initCounter } from '../components/init_counter';
+
+import initCounter from '../components/init_counter';
 
 import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
@@ -15,10 +16,6 @@ import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
-
-initCounter();
-
-
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
@@ -27,6 +24,7 @@ if (document.querySelector(".filter-search")) {
   submitForm();
 }
 
+initCounter();
 calendarInit();
 window.initSweetalert = initSweetalert;
 
@@ -64,7 +62,29 @@ $(document).ready(() => {
   });
 });
 
-/// CHECKER L EVENT CLIQUE ///
+/// PARTICIPATION A UN EVENEMENT ///
+const participants = [];
+const volunteers = document.querySelectorAll(".participation-user-button");
+const participantsInput = document.getElementById("event_participants");
+
+volunteers.forEach((volunteer) => {
+  volunteer.addEventListener("click", (event) => {
+    participants.push(Number.parseInt(volunteer.innerHTML,10));
+    console.log(participants);
+    participantsInput.value = participants;
+  });
+});
+
+// const newEventButton = document.getElementById("submit-calendar");
+// const participationsButtons = document.querySelectorAll(".submit-participation");
+// newEventButton.addEventListener("click", (event) => {
+//   participationsButtons.forEach((button) => {
+//     button.click();
+//     console.log("click effectué!")
+//   });
+// });
+
+
 
 
 // const redirection = document.getElementById("submit-calendar")
@@ -113,7 +133,6 @@ $(document).ready(() => {
 // });
 
 // bar.animate(1.0);  // Number from 0.0 to 1.0
-
 
 
 
