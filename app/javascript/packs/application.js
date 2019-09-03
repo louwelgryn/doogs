@@ -98,7 +98,7 @@ volunteers.forEach((volunteer) => {
   volunteer.addEventListener("click", (event) => {
     event.preventDefault();
     volunteer.classList.add("avatar-clicked");
-    participants.push(Number.parseInt(volunteer.innerHTML[0],10));
+    participants.push(Number.parseInt(volunteer.innerHTML.slice(0,7).trim(),10));
     participantsInput.value = participants;
   });
 });
