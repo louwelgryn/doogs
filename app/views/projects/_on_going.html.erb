@@ -82,8 +82,18 @@
 
           <div class="project-card col-sm-6">
             <div class="test-card for-dashboard">
-            <h4 class="task-title">Prochain évènement </h4>
-          </div>
+              <h4 class="task-title">Prochain évènement </h4>
+              <div class="next-event-card">
+                <div class="card-image-wraper background-dashboard-card">
+                  <div class="next-event-details">
+                    <h2><strong><%= @next_participation.event.name %></strong></h2>
+                    <h3><%= @next_participation.start_time.day %> <%= @next_participation_month %></h2>
+                    <h3><%= @next_participation.start_time.hour %>h</h2>
+                    <p><%= @next_participation.event.description%></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
