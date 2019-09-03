@@ -8,6 +8,7 @@ import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
 
 import { initSweetalert } from '../components/init_sweetalert';
@@ -29,6 +30,12 @@ window.initSweetalert = initSweetalert;
 if (document.querySelector("#roadmap")) {
   taskFunction()
 };
+
+function scrollLastMessageIntoView() {
+const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.scrollIntoView();
+}
 
 
 // TAB NAVIGATION //
@@ -57,6 +64,7 @@ $(document).ready(() => {
     history.replaceState(null, null, newUrl);
   });
 });
+
 
 // const redirection = document.getElementById("submit-calendar")
 
