@@ -22,6 +22,25 @@
   padding: 16px 32px;
 }
 
+.small-weirdo {
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  left: 14px;
+}
+
+.medium-weirdo {
+  width: 120px;
+    height: 150px;
+    position: absolute;
+    left: -2px;
+    top: -25px;
+}
+
+.relative-weirdo {
+  position: relative;
+}
+
 .nav-item a {
   color: white;
   font-size: 20px;

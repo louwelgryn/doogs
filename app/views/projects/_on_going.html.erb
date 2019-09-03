@@ -33,7 +33,17 @@
     </div>
 
     <div class="tab-pane fade tab-content" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab">
-      <%= render 'db_chatroom'%>
+      <div class="container-search">
+        <%= form_tag chat_room_path(@chat_room), method: :get, class: "form-inline my-2 my-lg-0 search-flex container-search-form", remote: true do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: " form-control mr-sm-2 ",
+            placeholder: "Find a message"
+          %>
+         <%= submit_tag "Search", class: " btn-rose my-2 my-sm-0" %>
+        <% end %>
+      </div>
+     <div id="chat-room"> <%= render 'db_chatroom'%> </div>
     </div>
 
     <div class="tab-pane fade tab-content" id="fichiers" role="tabpanel" aria-labelledby="fichiers-tab">
