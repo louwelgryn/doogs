@@ -38,8 +38,11 @@ class ProjectsController < ApplicationController
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
+
+    @chat_room = @project.chat_room
     @user_participations = ["lalala"]
     authorize @project
+
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)
 
@@ -63,6 +66,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image)
+    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image, :chat_room)
   end
 end

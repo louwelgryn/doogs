@@ -22,9 +22,11 @@
           </div>
           <p>Plus que <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> jours avant lancement !</p>
         </div>
+
         <div class="project-cards">
           <div class="project-card col-sm-6">
             <div class="test-card for-dashboard">
+
               <h4 class="task-title">La team</h4>
               <% @project.commitments.each do |commitment| %>
                 <div class="pdb-team-member">
@@ -32,6 +34,7 @@
                   <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
                 </div>
               <% end %>
+             <%= link_to 'Chat room', chat_room_path( @chat_room) %>
             </div>
           </div>
 
@@ -98,6 +101,7 @@
         </div>
       </div>
      </div>
+
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
 

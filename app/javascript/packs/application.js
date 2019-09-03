@@ -7,6 +7,8 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
@@ -49,6 +51,12 @@ if (document.querySelector("#roadmap")) {
   taskFunction()
 };
 
+function scrollLastMessageIntoView() {
+const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.scrollIntoView();
+}
+
 
 // TAB NAVIGATION //
 $(document).ready(() => {
@@ -77,6 +85,10 @@ $(document).ready(() => {
   });
 });
 
+
+
+// const redirection = document.getElementById("submit-calendar")
+
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
@@ -91,6 +103,7 @@ volunteers.forEach((volunteer) => {
   });
 });
 
+
 // const newEventButton = document.getElementById("submit-calendar");
 // const participationsButtons = document.querySelectorAll(".submit-participation");
 // newEventButton.addEventListener("click", (event) => {
@@ -102,11 +115,3 @@ volunteers.forEach((volunteer) => {
 
 
 
-
-// const redirection = document.getElementById("submit-calendar")
-
-// redirection.addEventListener("click", (event) => {
-// //   console.log("hello");
-// //   console.log("goodbye");
-//   window.location = 'http://localhost:3000/projects/4/dashboard#calendar/'
-// });

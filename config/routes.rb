@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
+
   devise_for :users
 
   root to: 'pages#home'
@@ -6,9 +8,13 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show] do
     resources :tasks, only: [:new, :create, :update]
     resources :events, only: [:create]
+
   end
 
   resources :commitments, only: [:update]
+  resources :chat_rooms, only: [:show] do
+    resources :messages, only: [:create]
+  end
 
   get '/dashboard', to: 'pages#dashboard'
 
@@ -18,3 +24,4 @@ Rails.application.routes.draw do
 
   get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
 end
+
