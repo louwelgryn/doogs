@@ -25,6 +25,7 @@ gem 'momentjs-rails'
 gem 'gon'
 
 gem 'jquery-rails'
+gem 'geocoder'
 
 
 group :development do
