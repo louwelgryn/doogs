@@ -20,7 +20,7 @@
           <div class="progress">
             <div class="progress-bar progress-bar-success" style="width: <%= @project.progression_percent %>%"></div>
           </div>
-          <p>J - <%= @project.progression_days %> !</p>
+          <p>Plus que <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> jours avant lancement !</p>
         </div>
         <div class="project-cards">
           <div class="project-card col-sm-6">
