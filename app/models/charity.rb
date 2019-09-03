@@ -6,4 +6,7 @@ class Charity < ApplicationRecord
   validates :name, uniqueness: true
   mount_uploader :logo, PhotoUploader
   mount_uploader :referent_image, PhotoUploader
+
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end

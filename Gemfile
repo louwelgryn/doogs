@@ -25,8 +25,13 @@ gem 'momentjs-rails'
 gem 'gon'
 
 gem 'jquery-rails'
+
+gem 'geocoder'
+
+
 gem 'sprockets', '>= 3.0.0'
 gem 'sprockets-es6'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

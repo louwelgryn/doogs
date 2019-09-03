@@ -228,6 +228,7 @@ spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
 spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
 spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.address = "39 Boulevard Berthier 75017 Paris"
 spa.save!
 
 puts "Creating charity AHP"
@@ -239,6 +240,7 @@ ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
 ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.address = "39 Boulevard de la Madeleine 75008 Paris"
 ahp.save!
 
 puts "Creating charity Article 1"
@@ -250,6 +252,7 @@ article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
 article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
 article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.address = "29 Boulevard Bourdon 75004 Paris"
 article1.save!
 
 puts "Creating charity Open Food Facts"
@@ -261,6 +264,7 @@ open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
 open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
 open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.address = "21 rue des Iles 94100 Saint Maur Des Fosses"
 open_food_facts.save!
 
 puts "Creating charity Nature en Occitanie"
@@ -272,6 +276,7 @@ nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
 nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
 nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.address = "14 Rue de Tivoli 31000 Toulouse"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -283,6 +288,7 @@ bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
 bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
 bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.address = " 19 Rue de Gouesnou 29200 Brest"
 bretagne_vivante.save!
 
 

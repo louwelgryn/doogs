@@ -31,6 +31,26 @@ class ProjectsController < ApplicationController
         @projects = @projects.where(development_goal: thematic) if params["search"]["thematics"] == thematic
       end
     end
+
+    @charities = @projects.map { |p| p.charity }
+
+    @markers = @projects.map do |project|
+      {
+        lat: project.charity.latitude,
+        lng: project.charity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
+        image_url: helpers.asset_url('maps-and-flags.png')
+      }
+    end
+
+    # @markers = @charities.map do |charity|
+    #   {
+    #     lat: charity.latitude,
+    #     lng: charity.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { project: @project }),
+    #     image_url: helpers.asset_url('maps-and-flags.png')
+    #   }
+    # end
   end
 
   def dashboard
