@@ -38,11 +38,16 @@ class ProjectsController < ApplicationController
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
+
     @chat_room = @project.chat_room
+    @user_participations = ["lalala"]
     authorize @project
 
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)
+
+    @next_participation = @project.participations.where('user_id = ?', current_user.id).order(:start_time).first
+    @next_participation_month = Project::CORRESPONDANCE_MOIS_CHIFFRE[@next_participation.start_time.month]
   end
 
   def search

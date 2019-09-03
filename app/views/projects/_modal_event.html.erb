@@ -22,18 +22,31 @@
               <%= f.input :description %>
             </div>
             <div class="form-inputs">
+              Date de l'évènement: <span id="start_date"></span>
+            </div>
+            <div class="form-inputs">
+              <%= f.input :hub %>
+            </div>
+            <div class="form-inputs">
               <%= f.input :start_time %>
             </div>
             <div class="form-inputs">
               <%= f.input :end_time %>
             </div>
+              <%= f.hidden_field :participants %>
 
+          <% @project.users.each do |user| %>
+            <span class="participation-user-button avatar-participation"><%= user.id %>
+            <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+            </span>
+          <% end %>
 
             <div class="form-actions">
               <%= f.submit "Créer l'évènement", class: "btn btn-primary", id: "submit-calendar" %>
             </div>
           <% end %>
 
+          <!-- PARTICIPATIONS -->
         </div>
 
       </div>

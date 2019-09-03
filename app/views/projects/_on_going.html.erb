@@ -2,33 +2,38 @@
 <div class="mx-auto">
   <ul class="nav nav-dashboard" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-label cool-link" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
+      <a class="nav-link active tab-label" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
+      <a class="nav-link tab-label" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
+      <a class="nav-link tab-label" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
     </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade show active tab-content " id="summary" role="tabpanel" aria-labelledby="summary-tab">
-      <div class="row">
+      <div class="row pdb-ensemble">
         <div class="project-bar">
           <p>Avancement :</p>
           <div class="progress">
             <div class="progress-bar progress-bar-success" style="width: <%= @project.progression_percent %>%"></div>
           </div>
-          <p>J - <%= @project.progression_days %> !</p>
+          <p>Plus que <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> jours avant lancement !</p>
         </div>
 
         <div class="project-cards">
           <div class="project-card col-sm-6">
             <div class="test-card for-dashboard">
-            <%= cl_image_tag @project.image, class: "croped-image-bord", style: "display: block;
-    margin: auto auto;"  %>
-            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange", id: "dashboard"%>
+
+              <h4 class="task-title">La team</h4>
+              <% @project.commitments.each do |commitment| %>
+                <div class="pdb-team-member">
+                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar" %>
+                  <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
+                </div>
+              <% end %>
              <%= link_to 'Chat room', chat_room_path( @chat_room) %>
             </div>
           </div>
@@ -70,7 +75,6 @@
                 </div>
 
               <% else %>
-
                 <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
 
               <% end %>
@@ -81,8 +85,18 @@
 
           <div class="project-card col-sm-6">
             <div class="test-card for-dashboard">
-            <h4 class="task-title">Prochain évènement </h4>
-          </div>
+              <h4 class="task-title">Prochain évènement </h4>
+              <div class="next-event-card">
+                <div class="card-image-wraper background-dashboard-card">
+                  <div class="next-event-details">
+                    <h2><strong><%= @next_participation.event.name %></strong></h2>
+                    <h3><%= @next_participation.start_time.day %> <%= @next_participation_month %></h2>
+                    <h3><%= @next_participation.start_time.hour %>h</h2>
+                    <p><%= @next_participation.event.description%></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -91,9 +105,12 @@
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
 
-      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal">
+      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal" id="new-event-button">
         Créer un nouvel évènement
       </button>
+
+
+
 
        <div id="calendar" class="calendar-box"></div>
 

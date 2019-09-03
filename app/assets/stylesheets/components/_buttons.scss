@@ -1,3 +1,7 @@
+#new-event-button {
+  display: none;
+}
+
 .btn-black {
   text-transform: none;
   border-radius: 50px;
@@ -118,7 +122,7 @@ a.blog-slider__button {
     background-color: #E58074;
     color: white;
     text-decoration: none;
-    margin-top: 5%;
+    margin-top: 20%;
     // background-color:green;
 }
 
@@ -133,22 +137,25 @@ a.blog-slider__button:hover {
 .clearFilterButton {
   color: white;
   background-color: #E38076;
-  border-radius: 20%;
+  border-radius: 50px !important;
   border: none;
   height: fit-content;
-  right: 38% !important;
-  position: absolute !important;
-  border-radius: 1% !important;
-  bottom: 22% !important;
+  padding: 12px 20px;
+  border-radius: 50%;
 }
 
 .clearFilterButton:hover {
   color: #E38076;
   background-color: white;
-  border-color: #E38076;
-  border-radius: 20%;
+  border: 1px solid #E38076 !important;
+  border-radius: 50px !important;
   border: none;
   height: fit-content;
 }
+
+.participation-user-button {
+  color: transparent !important;
+}
+
 
 
