@@ -34,14 +34,23 @@ class ProjectsController < ApplicationController
 
     @charities = @projects.map { |p| p.charity }
 
-    @markers = @charities.map do |charity|
+    @markers = @projects.map do |project|
       {
-        lat: charity.latitude,
-        lng: charity.longitude
-        # infoWindow: render_to_string(partial: "infowindow", locals: { flat: flat }),
-        # image_url: helpers.asset_url('REPLACE_THIS_WITH_YOUR_IMAGE_IN_ASSETS')
+        lat: project.charity.latitude,
+        lng: project.charity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
+        image_url: helpers.asset_url('maps-and-flags.png')
       }
     end
+
+    # @markers = @charities.map do |charity|
+    #   {
+    #     lat: charity.latitude,
+    #     lng: charity.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { project: @project }),
+    #     image_url: helpers.asset_url('maps-and-flags.png')
+    #   }
+    # end
   end
 
   def dashboard
