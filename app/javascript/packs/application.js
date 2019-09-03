@@ -21,6 +21,7 @@ import { initCounter } from '../components/init_counter';
 // MAPBOX
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
 import { openMap } from '../components/init_mapbox';
+// import { initMapbox } from '../components/init_mapbox';
 
 // import { openMap } from '../components/open_map';
 
@@ -86,9 +87,6 @@ $(document).ready(() => {
 });
 
 
-
-// const redirection = document.getElementById("submit-calendar")
-
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
@@ -103,15 +101,6 @@ volunteers.forEach((volunteer) => {
   });
 });
 
-
-// const newEventButton = document.getElementById("submit-calendar");
-// const participationsButtons = document.querySelectorAll(".submit-participation");
-// newEventButton.addEventListener("click", (event) => {
-//   participationsButtons.forEach((button) => {
-//     button.click();
-//     console.log("click effectué!")
-//   });
-// });
 
 
 

@@ -15,11 +15,11 @@
               <h4 class="task-title">La team</h4>
               <% @project.commitments.each do |commitment| %>
                 <div class="pdb-team-member">
-                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar" %>
+                  <%= image_tag 'weirdo.svg', class: "small-weirdo"%>
+                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar relative-weirdo" %>
                   <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
                 </div>
               <% end %>
-             <%= link_to 'Chat room', chat_room_path( @chat_room) %>
             </div>
           </div>
 

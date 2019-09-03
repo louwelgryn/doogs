@@ -53,9 +53,10 @@
 
           <% if commitment.user %>
             <div class="avatar-container">
-              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big" %>
+              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1",:quality=>30, class:"avatar-big" %>
               <div class="middle">
                 <span><%= commitment.skill.name %></span>
+                <%= image_tag 'weirdo.svg', class: "medium-weirdo"%>
               </div>
             </div>
           <% elsif !current_user %>

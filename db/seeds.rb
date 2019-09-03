@@ -64,7 +64,7 @@ aurelie = User.new
 aurelie.name = 'Aurelie Delpeche'
 aurelie.description = "Je manipule des données depuis que j'ai 7 ans."
 aurelie.level = 'Piou-piou'
-aurelie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1566392276/gnluzho9jn2khwwok13h.jpg"
+aurelie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566392276/gnluzho9jn2khwwok13h.jpg"
 aurelie.email = 'aureliedelpeche@gmail.com'
 aurelie.password = 'qwerty'
 aurelie.save!
@@ -83,7 +83,7 @@ lou = User.new
 lou.name = 'Lou Welgryn'
 lou.description = "J'ai hacké facebook à l'âge de 13 ans."
 lou.level = 'Piou-piou'
-lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506450/_JBU8547-1_Lou_Welgryn_iv1xmm.jpg"
+lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506450/_JBU8547-1_Lou_Welgryn_iv1xmm.jpg"
 lou.email = 'louwelgryn@gmail.com'
 lou.password = 'qwerty'
 lou.save!
@@ -141,7 +141,7 @@ marie = User.new
 marie.name ="marie Stoppa"
 marie.description = "I like to data data. I like to data !"
 marie.level = "Piou-piou"
-marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
+marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
 marie.email = "mariestoppa@gmail.com"
 marie.password = "qwerty"
 marie.save!
@@ -160,7 +160,7 @@ maxence = User.new
 maxence.name ="Maxence Ballende"
 maxence.description = "Tu parles sur moi y'a R"
 maxence.level = "Piou-piou"
-maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567507259/_JBU8747-1_xt8bxo.jpg"
+maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507259/_JBU8747-1_xt8bxo.jpg"
 maxence.email = "maxenceballende@gmail.com"
 maxence.password = "qwerty"
 maxence.save!
@@ -179,7 +179,7 @@ arnaud = User.new
 arnaud.name ="Arnaud de Castelbajac"
 arnaud.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
 arnaud.level = "Piou-piou"
-arnaud.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567507210/_JBU8336-1_cafybx.jpg"
+arnaud.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507210/_JBU8336-1_cafybx.jpg"
 arnaud.email = "arnaud@gmail.com"
 arnaud.password = "qwerty"
 arnaud.save!
@@ -198,7 +198,7 @@ thomas = User.new
 thomas.name ="Thomas Bozzo"
 thomas.description = "J'aime le développement web et le cinéma."
 thomas.level = "Piou-piou"
-thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567507235/_JBU8663-1_l2rzoh.jpg"
+thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507235/_JBU8663-1_l2rzoh.jpg"
 thomas.email = "thomasbozzo@gmail.com"
 thomas.password = "qwerty"
 thomas.save!
@@ -228,6 +228,7 @@ spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
 spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
 spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.address = "39 Boulevard Berthier 75017 Paris"
 spa.save!
 
 puts "Creating charity AHP"
@@ -239,6 +240,7 @@ ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
 ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.address = "39 Boulevard de la Madeleine 75008 Paris"
 ahp.save!
 
 puts "Creating charity Article 1"
@@ -250,6 +252,7 @@ article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
 article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
 article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.address = "29 Boulevard Bourdon 75004 Paris"
 article1.save!
 
 puts "Creating charity Open Food Facts"
@@ -261,6 +264,7 @@ open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
 open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
 open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.address = "21 rue des Iles 94100 Saint Maur Des Fosses"
 open_food_facts.save!
 
 puts "Creating charity Nature en Occitanie"
@@ -272,6 +276,7 @@ nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
 nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
 nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.address = "14 Rue de Tivoli 31000 Toulouse"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -283,6 +288,7 @@ bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
 bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
 bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.address = " 19 Rue de Gouesnou 29200 Brest"
 bretagne_vivante.save!
 
 
@@ -385,35 +391,35 @@ chatroom_open_food_facts.save
 puts 'creating chatroom Article1'
 
 chatroom_article1 = ChatRoom.new
-chatroom_article1.name = "Open Food Facts Chat"
+chatroom_article1.name = "Article1 chat"
 chatroom_article1.project = project_article1
 chatroom_article1.save
 
 puts 'creating chatroom spa'
 
 chatroom_spa = ChatRoom.new
-chatroom_spa.name = "Open Food Facts Chat"
+chatroom_spa.name = "SPA"
 chatroom_spa.project = project_spa
 chatroom_spa.save
 
 puts 'creating chatroom ahp'
 
 chatroom_ahp = ChatRoom.new
-chatroom_ahp.name = "Open Food Facts Chat"
+chatroom_ahp.name = "Amicale des Hygiénistes Psychorigides chat "
 chatroom_ahp.project = project_ahp
 chatroom_ahp.save
 
 puts 'creating chatroom Nature en Oxitanie'
 
 chatroom_neo = ChatRoom.new
-chatroom_neo.name = "Open Food Facts Chat"
+chatroom_neo.name = "Nature en Oxitanie chat"
 chatroom_neo.project = project_neo
 chatroom_neo.save
 
 puts 'creating chatroom Bretagne vivante'
 
 chatroom_bv = ChatRoom.new
-chatroom_bv.name = "Open Food Facts Chat"
+chatroom_bv.name = "Bretagne vivante Chat"
 chatroom_bv.project = project_bv
 chatroom_bv.save
 
@@ -600,49 +606,49 @@ task1_project2.save!
 
 puts "creating Super User Marie"
 
-marie = User.new
-marie.name ="Marie Zuckerberg"
-marie.description = "J'ai pas mal de temps libre."
-marie.level = "Piou-piou"
-marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
-marie.email = "mariezuckerberg@gmail.com"
-marie.password = "qwerty"
-marie.save!
+mariette = User.new
+mariette.name ="mariette Zuckerberg"
+mariette.description = "J'ai pas mal de temps libre."
+mariette.level = "Piou-piou"
+mariette.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
+mariette.email = "mariettezuckerberg@gmail.com"
+mariette.password = "qwerty"
+mariette.save!
 
-marie_skill1 = UserSkill.new
-marie_skill1.skill = full_stack_developer
-marie_skill1.user = marie
-marie_skill1.save
+mariette_skill1 = UserSkill.new
+mariette_skill1.skill = full_stack_developer
+mariette_skill1.user = mariette
+mariette_skill1.save
 
-marie_skill2 = UserSkill.new
-marie_skill2.skill = web_designer
-marie_skill2.user = marie
-marie_skill2.save
+mariette_skill2 = UserSkill.new
+mariette_skill2.skill = web_designer
+mariette_skill2.user = mariette
+mariette_skill2.save
 
-marie_skill3 = UserSkill.new
-marie_skill3.skill = developer_front
-marie_skill3.user = marie
-marie_skill3.save
+mariette_skill3 = UserSkill.new
+mariette_skill3.skill = developer_front
+mariette_skill3.user = mariette
+mariette_skill3.save
 
-marie_skill4 = UserSkill.new
-marie_skill4.skill = developer_back
-marie_skill4.user = marie
-marie_skill4.save
+mariette_skill4 = UserSkill.new
+mariette_skill4.skill = developer_back
+mariette_skill4.user = mariette
+mariette_skill4.save
 
-marie_skill5 = UserSkill.new
-marie_skill5.skill = data_analyst
-marie_skill5.user = marie
-marie_skill5.save
+mariette_skill5 = UserSkill.new
+mariette_skill5.skill = data_analyst
+mariette_skill5.user = mariette
+mariette_skill5.save
 
-marie_skill6 = UserSkill.new
-marie_skill6.skill = data_scientist
-marie_skill6.user = marie
-marie_skill6.save
+mariette_skill6 = UserSkill.new
+mariette_skill6.skill = data_scientist
+mariette_skill6.user = mariette
+mariette_skill6.save
 
-marie_skill7 = UserSkill.new
-marie_skill7.skill = product_manager
-marie_skill7.user = marie
-marie_skill7.save
+mariette_skill7 = UserSkill.new
+mariette_skill7.skill = product_manager
+mariette_skill7.user = mariette
+mariette_skill7.save
 
 puts 'creating events'
 event = Event.new
