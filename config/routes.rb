@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
+
   devise_for :users
 
   root to: 'pages#home'
@@ -22,5 +24,5 @@ Rails.application.routes.draw do
 
 
   get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
-
 end
+

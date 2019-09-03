@@ -370,6 +370,7 @@ project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload
 project_bv.save!
 
 # Chatroom ----------------------------------------------------------------------
+
 puts 'creating 6 chatrooms'
 
 puts 'creating chatroom Open food facts'
@@ -378,6 +379,41 @@ chatroom_open_food_facts = ChatRoom.new
 chatroom_open_food_facts.name = "Open Food Facts Chat"
 chatroom_open_food_facts.project = project_open_food_facts
 chatroom_open_food_facts.save
+
+puts 'creating chatroom Article1'
+
+chatroom_article1 = ChatRoom.new
+chatroom_article1.name = "Open Food Facts Chat"
+chatroom_article1.project = project_article1
+chatroom_article1.save
+
+puts 'creating chatroom spa'
+
+chatroom_spa = ChatRoom.new
+chatroom_spa.name = "Open Food Facts Chat"
+chatroom_spa.project = project_spa
+chatroom_spa.save
+
+puts 'creating chatroom ahp'
+
+chatroom_ahp = ChatRoom.new
+chatroom_ahp.name = "Open Food Facts Chat"
+chatroom_ahp.project = project_ahp
+chatroom_ahp.save
+
+puts 'creating chatroom Nature en Oxitanie'
+
+chatroom_neo = ChatRoom.new
+chatroom_neo.name = "Open Food Facts Chat"
+chatroom_neo.project = project_neo
+chatroom_neo.save
+
+puts 'creating chatroom Bretagne vivante'
+
+chatroom_bv = ChatRoom.new
+chatroom_bv.name = "Open Food Facts Chat"
+chatroom_bv.project = project_bv
+chatroom_bv.save
 
 
 # Commitments ----------------------------------------------------------------------
