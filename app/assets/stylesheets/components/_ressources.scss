@@ -1,11 +1,14 @@
 .ressources-container {
   display: flex;
   justify-content: space-between;
+
   div, span, p, h1, h2, h3, h4 {
     color: rgb(65, 65, 65);
-    font-family: 'Open Sans', sans-serif;
   }
+
   div, span, p {
+    color: rgb(65, 65, 65);
+    font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
   }
 }
@@ -14,6 +17,10 @@
   margin: 8px;
   padding: 8px;
   width: 45%;
+
+  h4 {
+    margin-bottom: 16px;
+  }
 }
 
 .ressource {
@@ -23,4 +30,24 @@
 
 .ressource-info {
   margin-left: 16px;
+}
+
+.btn-ressource {
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: #e48174;
+  transition: 0.3s;
+  color: #fff;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.btn-ressource:hover {
+  text-decoration: none;
+  color: #e48174;
+  background-color: $blanc-semi-transparent;
+  border-color: #e48174;
+  border: solid 1px;
 }

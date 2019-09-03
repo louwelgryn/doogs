@@ -1,6 +1,7 @@
 <div class="ressources-container">
 
   <div class="ressources-block ressources-list">
+    <h4>Fichiers à télécharger</h4>
     <% @project.ressources.each do |ressource| %>
       <div class="ressource">
         <div class="ressource-icon">
@@ -25,7 +26,7 @@
         <%= f.input :name %>
         <%= f.input :source %>
         <%= f.input :source_cache, as: :hidden %>
-        <%= f.button :submit, class: "btn btn-primary", value: "Créer la ressource" %>
+        <%= f.button :submit, class: "btn-ressource", value: "Créer la ressource" %>
       <% end %>
     </div>
   </div>
