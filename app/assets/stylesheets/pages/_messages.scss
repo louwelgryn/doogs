@@ -38,6 +38,16 @@
  #query{
     border-radius: 8px;
     width: 1000px;
+    font-size: 20px;
+}
+
+.englobing{
+  display: flex;
+
+}
+.message-styling {
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -63,26 +73,33 @@ input.form-control {
   }
 }
 
+#chat-room {
+  background-color: white;
+  padding-top: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  border-radius: 11px;
+  position: relative;
+
+}
+
 #message_content {
   border-radius: 8px;
 }
 
 #create-message{
-background-color: white;
-  padding-top: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  border: none;
   border-radius: 11px;
-  position: relative;
+
 }
 
-.messages{
-background-color: white;
-  padding-top: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-  border-radius: 11px;
-  position: relative;
-  margin-bottom: 10px;
-}
+// .messages{
+// background-color: white;
+//   padding-top: 15px;
+//   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+//   border-radius: 11px;
+//   position: relative;
+//   margin-bottom: 10px;
+// }
 
 .container-search-form{
     justify-content: center;

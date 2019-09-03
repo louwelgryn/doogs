@@ -1,5 +1,10 @@
 
 <div class= "message <%= user_is_messages_author ? "right" : "" %>">
-<%= image_tag message.user.image_url, class: "avatar" %>
-  <div class="message-content"><%= message.content %></div>
+  <div class="englobing">
+  <div class="message-styling">
+    <div class="message-content"><%= message.content %></div>
+    <div class="created_at"><%= message.created_at.strftime("%b %d, %I:%M%P") %></div>
+  </div>
+  <%= image_tag message.user.image_url, class: "avatar" %>
+  </div>
 </div>
