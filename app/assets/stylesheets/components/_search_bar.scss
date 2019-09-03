@@ -1,5 +1,14 @@
 .container-search-bar {
-    display: inline-flex !important;
-    justify-content: space-between !important;
-    width: 55% !important;
+  display: flex;
+  justify-content: space-between !important;
+  width: 60% !important;
+  align-items: end;
+}
+
+
+.container-search-bar .form-group, .container-search-bar .clearFilterButton {
+
+    margin-right: 20px;
+    margin-bottom: 0;
+
 }

@@ -16,8 +16,12 @@ class Project < ApplicationRecord
   validates :status, inclusion: { in: PROJECT_STATUS }
   mount_uploader :image, PhotoUploader
 
-  def progression_days
+  def remaining_days
     (end_date - Date.today).to_i
+  end
+
+  def total_days
+    (end_date - start_date).to_i
   end
 
   def progression_percent
