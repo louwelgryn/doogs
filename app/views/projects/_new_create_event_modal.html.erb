@@ -1,0 +1,101 @@
+
+<div class="modal modal-calendar fade " id="toggleEventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style='z-index: 50000;'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="margin: 0 !important; padding: 0!important;">
+
+    <div class="container-toggle-form">
+      <div class="message signup">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="btn-wrapper">
+          <button class="button-toggle" id="signup">Créer un évènement solo</button>
+          <button class="button-toggle" id="login">Organiser une réunion</button>
+        </div>
+      </div>
+
+      <div class="form-toggle form--signup">
+        <div class="form--heading">Créer un event perso</div>
+        <%= simple_form_for [@project, @event] do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <div class="form-inputs">
+                  <%= f.input :name, placeholder: "Nom de l'évènement", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :description, placeholder: "Description de l'évènement", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :hub, placeholder: "Lieu/plateforme de rendez-vous", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de début:</p>
+                  <%= f.input :start_time, label: false, :minute_step => 5 %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de fin:</p>
+                  <%= f.input :end_time, label: false, :minute_step => 5 %>
+                </div>
+                  <%= f.hidden_field :participants %>
+
+              <p class='form-label'>Sélectionner des participants</p>
+              <% @project.users.each do |user| %>
+                <% if user == current_user %>
+                  <span class="participation-user-button avatar-participation"><%= user.id %>
+                  <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+                  </span>
+                <% else %>
+                <% end %>
+              <% end %>
+
+                <div class="form-actions form-actions-centered">
+                  <%= f.submit "Créer un évènement solo", class: "btn-black", id: "submit-calendar" %>
+                </div>
+              <% end %>
+      </div>
+
+      <div class="form-toggle form--login">
+        <div class="form--heading">Créer un rdv avec d'autres </div>
+        <%= simple_form_for [@project, @event] do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <div class="form-inputs">
+                  <%= f.input :name, placeholder: "Nom de l'évènement", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :description, placeholder: "Description de l'évènement", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :hub, placeholder: "Lieu/plateforme de rendez-vous", label: false %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de début:</p>
+                  <%= f.input :start_time, label: false, :minute_step => 5 %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de fin:</p>
+                  <%= f.input :end_time, label: false, :minute_step => 5 %>
+                </div>
+                  <%= f.hidden_field :participants %>
+
+              <p class='form-label'>Sélectionner des participants</p>
+              <% @project.users.each do |user| %>
+                <% if user == current_user %>
+                <% else %>
+                <span class="participation-user-button avatar-participation"><%= user.id %>
+                <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+                </span>
+                <% end %>
+              <% end %>
+
+                <div class="form-actions form-actions-centered">
+                  <%= f.submit "Organiser une réunion", class: "btn-black", id: "submit-calendar" %>
+                </div>
+              <% end %>
+      </div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+

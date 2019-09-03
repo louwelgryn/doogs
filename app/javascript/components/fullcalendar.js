@@ -57,7 +57,7 @@ const calendarInit = () => {
         day.addEventListener("click", (event) => {
           const selectedDay = Number.parseInt(day.dataset.date.slice(-2),10);
           const selectedDateMonth = Number.parseInt(day.dataset.date.slice(-5,-3),10);
-          $('#eventModal').modal('show');
+          $('#toggleEventModal').modal('show');
           document.getElementById("start_date").innerHTML = selectedDay + " " + monthLetters[selectedDateMonth];
 
           // Set start date to selected
