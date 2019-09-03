@@ -1,1 +1,33 @@
-FICHIERS TAB
+<div class="ressources-container">
+
+  <div class="ressources-block ressources-list">
+    <% @project.ressources.each do |ressource| %>
+      <div class="ressource">
+        <div class="ressource-icon">
+          <%= link_to ressource.source.url, target: :_blank do %>
+            <%= image_tag ressource.icon_file_type(ressource.source.filename), width: 64 %>
+          <% end %>
+        </div>
+        <div class="ressource-info">
+          <span><strong><%= ressource.name %></strong></span><br>
+          <span class="ressource-info-user">Mise à disposition par <%= ressource.user.name %> le <%= ressource.created_at.strftime("%m/%d/%Y") %></span>
+        </div>
+      </div>
+      <hr>
+    <% end %>
+  </div>
+
+  <div class="ressources-block ressources-upload">
+    <h4>Ajouter une ressource</h4>
+    <p>Téléversez un fichier csv, jpg ou pdf</p>
+    <div class="file-upload">
+      <%= simple_form_for [@project, Ressource.new] do |f| %>
+        <%= f.input :name %>
+        <%= f.input :source %>
+        <%= f.input :source_cache, as: :hidden %>
+        <%= f.button :submit, class: "btn btn-primary", value: "Créer la ressource" %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
