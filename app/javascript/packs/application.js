@@ -67,8 +67,9 @@ const participantsInput = document.getElementById("event_participants");
 
 volunteers.forEach((volunteer) => {
   volunteer.addEventListener("click", (event) => {
-    participants.push(Number.parseInt(volunteer.innerHTML,10));
-    console.log(participants);
+    event.preventDefault();
+    volunteer.classList.add("avatar-clicked");
+    participants.push(Number.parseInt(volunteer.innerHTML[0],10));
     participantsInput.value = participants;
   });
 });

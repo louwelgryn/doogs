@@ -36,8 +36,9 @@
               <%= f.hidden_field :participants %>
 
           <% @project.users.each do |user| %>
-            <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar-big" %>
-            <button class="participation-user-button"><%= user.id %></button>
+            <span class="participation-user-button avatar-participation"><%= user.id %>
+            <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+            </span>
           <% end %>
 
             <div class="form-actions">
