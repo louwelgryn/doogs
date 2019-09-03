@@ -11,7 +11,7 @@
           <%= render 'Tasks_cards', task: task  %>
          <% end %>
            <% if @manager %>
-        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal" id="create-normale-task-btn"><i class="fas fa-plus"></i>
       Créer
       </button>
       <% end %>
@@ -28,7 +28,7 @@
           <%= render 'Tasks_cards', task: task  %>
         <% end %>
         <% if @manager %>
-        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#urgenteModal" id="create-urgente-task-btn"><i class="fas fa-plus"></i>
       Créer
       </button>
       <% end %>
@@ -44,7 +44,7 @@
             <%= render 'Tasks_cards', task: task  %>
           <% end %>
           <% if @manager %>
-        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#prioritaireModal" id="create-prioritaire-task-btn"><i class="fas fa-plus"></i>
       Créer
       </button>
       <% end %>

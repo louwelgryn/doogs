@@ -1,9 +1,12 @@
 
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style='z-index: 50000;'>
   <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="eventModalLabel">Créer un nouvel évènement!</h5>
+    <div class="modal-content modal-content-custom">
+      <div class="modal-header modal-header-custom">
+        <div class="form-header">
+          <h5 class="modal-title" id="eventModalLabel">Nouvel évènement</h5>
+          <p id="start_date"></p>
+        </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -16,33 +19,33 @@
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
             <div class="form-inputs">
-              <%= f.input :name %>
+              <%= f.input :name, placeholder: "Nom de l'évènement", label: false %>
             </div>
             <div class="form-inputs">
-              <%= f.input :description %>
+              <%= f.input :description, placeholder: "Description de l'évènement", label: false %>
             </div>
             <div class="form-inputs">
-              Date de l'évènement: <span id="start_date"></span>
+              <%= f.input :hub, placeholder: "Lieu/plateforme de rendez-vous", label: false %>
             </div>
             <div class="form-inputs">
-              <%= f.input :hub %>
+              <p class='form-label'>Heure de début:</p>
+              <%= f.input :start_time, label: false, :minute_step => 5 %>
             </div>
             <div class="form-inputs">
-              <%= f.input :start_time %>
-            </div>
-            <div class="form-inputs">
-              <%= f.input :end_time %>
+              <p class='form-label'>Heure de fin:</p>
+              <%= f.input :end_time, label: false, :minute_step => 5 %>
             </div>
               <%= f.hidden_field :participants %>
 
+          <p class='form-label'>Sélectionner des participants</p>
           <% @project.users.each do |user| %>
             <span class="participation-user-button avatar-participation"><%= user.id %>
             <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
             </span>
           <% end %>
 
-            <div class="form-actions">
-              <%= f.submit "Créer l'évènement", class: "btn btn-primary", id: "submit-calendar" %>
+            <div class="form-actions form-actions-centered">
+              <%= f.submit "Créer l'évènement", class: "btn-black", id: "submit-calendar" %>
             </div>
           <% end %>
 
