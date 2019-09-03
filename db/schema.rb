@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_03_095229) do
+
+
+ActiveRecord::Schema.define(version: 2019_09_03_081934) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +30,14 @@ ActiveRecord::Schema.define(version: 2019_09_03_095229) do
     t.string "address"
     t.float "latitude"
     t.float "longitude"
+  end
+
+  create_table "chat_rooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "project_id"
+    t.index ["project_id"], name: "index_chat_rooms_on_project_id"
   end
 
   create_table "commitments", force: :cascade do |t|
@@ -53,12 +64,23 @@ ActiveRecord::Schema.define(version: 2019_09_03_095229) do
     t.index ["project_id"], name: "index_events_on_project_id"
   end
 
+  create_table "messages", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "chat_room_id"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
   create_table "participations", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "event_id"
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_time"
     t.index ["event_id"], name: "index_participations_on_event_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
@@ -131,10 +153,13 @@ ActiveRecord::Schema.define(version: 2019_09_03_095229) do
     t.index ["user_id"], name: "index_volunteer_skills_on_user_id"
   end
 
+  add_foreign_key "chat_rooms", "projects"
   add_foreign_key "commitments", "projects"
   add_foreign_key "commitments", "skills"
   add_foreign_key "commitments", "users"
   add_foreign_key "events", "projects"
+  add_foreign_key "messages", "chat_rooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
   add_foreign_key "projects", "charities"

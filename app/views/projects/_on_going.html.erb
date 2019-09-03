@@ -10,170 +10,38 @@
     <li class="nav-item">
       <a class="nav-link tab-label" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
     </li>
+    <li class="nav-item">
+      <a class="nav-link tab-label" id="chatroom-tab" data-toggle="tab" href="#chatroom" role="tab" aria-controls="chatroom" aria-selected="false">Chatroom</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab-label" id="fichiers-tab" data-toggle="tab" href="#fichiers" role="tab" aria-controls="fichiers" aria-selected="false">Fichiers</a>
+    </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
+
     <div class="tab-pane fade show active tab-content " id="summary" role="tabpanel" aria-labelledby="summary-tab">
-      <div class="row pdb-ensemble">
-        <div class="project-bar">
-          <p>Avancement :</p>
-          <div class="progress">
-            <div class="progress-bar progress-bar-success" style="width: <%= @project.progression_percent %>%"></div>
-          </div>
-          <p>J - <%= @project.progression_days %> !</p>
-        </div>
-        <div class="project-cards">
-          <div class="project-card col-sm-6">
-            <div class="test-card for-dashboard">
-              <h4 class="task-title">La team</h4>
-              <% @project.commitments.each do |commitment| %>
-                <div class="pdb-team-member">
-                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar" %>
-                  <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
-                </div>
-              <% end %>
-            </div>
-          </div>
-
-          <div class="project-card col-sm-6">
-            <div class="test-card for-dashboard" >
-            <h4 class="task-title">Prochaine tâche à venir</h4>
-            <div class="project-task-card">
-              <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
-                <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
-
-                   <div class="project-cards" >
-  <!-- <div class="project-card-small"> -->
-                  <div class="project-task-card border-top border-bottom">
-
-                        <div class="colored-info">
-                      <% if @upcoming_task.priority_level == "Normale" %>
-                      <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                      <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                      <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                      <% else %>
-                      <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                      <% end %>
-                      <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-                      </div>
-                      <div class="project-task-informations">
-                       <%= @upcoming_task.name %> <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
-                        <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                          <%= f.submit "Done", class: " btn-basic task-button" %>
-                        <% end %>
-                    <% end %>
-                    </div>
-                        <p class="task-owner"> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller avatar-dashboard", style:"margin: 0;" %> </p>
-
-
-                     <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
-                  </div>
-                <!--  </div> -->
-                </div>
-
-              <% else %>
-                <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
-
-              <% end %>
-              </div>
-            </div>
-          </div>
-
-
-          <div class="project-card col-sm-6">
-            <div class="test-card for-dashboard">
-            <h4 class="task-title">Prochain évènement </h4>
-          </div>
-          </div>
-        </div>
-      </div>
-     </div>
+      <%= render 'db_summary'%>
+    </div>
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
-
-      <button type="button" class="btn-black" data-toggle="modal" data-target="#eventModal" id="new-event-button">
-        Créer un nouvel évènement
-      </button>
-
-
-
-
-       <div id="calendar" class="calendar-box"></div>
-
+      <%= render 'db_calendar'%>
     </div>
 
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
-
-      <br>
-
-      <div class="">
-        <div class="row">
-          <div class="col-sm-4  title-task" style="padding:0">
-            <div class="test-card">
-            <p class="task-title">Normales</p>
-
-            <div id="Normale" class="drag-drop">
-
-            <% @project.tasks.normale.a_faire.each do |task| %>
-              <%= render 'Tasks_cards', task: task  %>
-             <% end %>
-               <% if @manager %>
-            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
-          Créer
-          </button>
-          <% end %>
-            </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4  title-task" style="padding:0">
-          <div class="test-card">
-            <p class="task-title">Urgentes</p>
-
-            <div id="Urgente" class="drag-drop">
-            <% @project.tasks.urgente.a_faire.each do |task| %>
-              <%= render 'Tasks_cards', task: task  %>
-            <% end %>
-            <% if @manager %>
-            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
-          Créer
-          </button>
-          <% end %>
-            </div>
-          </div>
-          </div>
-
-          <div class="col-sm-4 title-task" style="padding:0" >
-            <div class="test-card">
-            <p class="task-title">Prioritaires</p>
-            <div id="Prioritaire" class="drag-drop">
-              <% @project.tasks.prioritaire.a_faire.each do |task| %>
-                <%= render 'Tasks_cards', task: task  %>
-              <% end %>
-              <% if @manager %>
-            <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
-          Créer
-          </button>
-          <% end %>
-              </div>
-            </div>
-            </div>
-          </div>
-
-
-          </div>
-
-
-
-        </div>
-      </div>
+      <%= render 'db_tasks'%>
     </div>
+
+    <div class="tab-pane fade tab-content" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab">
+      <%= render 'db_chatroom'%>
+    </div>
+
+    <div class="tab-pane fade tab-content" id="fichiers" role="tabpanel" aria-labelledby="fichiers-tab">
+      <%= render 'db_fichiers'%>
+    </div>
+
+
   </div>
-
-
-
-
-
 
 </div>
 

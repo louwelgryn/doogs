@@ -21,5 +21,6 @@
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
      <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+     <%= yield :after_js %>
   </body>
 </html>

@@ -1,3 +1,7 @@
+#new-event-button {
+  display: none;
+}
+
 .btn-black {
   text-transform: none;
   border-radius: 50px;
@@ -150,5 +154,10 @@ a.blog-slider__button:hover {
   border: none;
   height: fit-content;
 }
+
+.participation-user-button {
+  color: transparent !important;
+}
+
 
 

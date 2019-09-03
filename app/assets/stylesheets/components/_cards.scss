@@ -1,10 +1,43 @@
+
+// A REMETTRE AU BON ENDROIT
 @import url('https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800');
 * {
   box-sizing: border-box;
 }
 
+// DASHBOARD CARD (UI KIT WAGON)
 
+.card-product {
+  overflow: hidden;
+  height: 190px;
+  display: flex;
+  align-items: center;
+  margin: 24px;
+}
 
+.card-product img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 24px;
+}
 
 .blog-slider {
     width: 27%;
@@ -160,8 +193,6 @@
   transform: scale(1.02);
 }
 
-
-
 .icone {
   background-color: #CF796B;
   width: 3%;
@@ -178,9 +209,6 @@
     color:white;
   }
 }
-
-
-
 
 .blog-slider {
   flex-grow: 1;
@@ -208,5 +236,4 @@ width: 100%;
 .cards-wrapper.map-display {
   width: 60%;
 }
-
 

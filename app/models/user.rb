@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :commitments
+  has_many :messages, dependent: :destroy
   has_many :tasks
   has_many :user_skills
   has_many :skills, through: :user_skills

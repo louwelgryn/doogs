@@ -102,14 +102,46 @@
 //     text-align: center;
 // }
 
+.card-image-wraper {
+  background: url(asset_path('tache_card.svg'));
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: relative;
+}
+
 .test-card {
   width: 95%;
   background-color: white;
-    padding-top: 15px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-    border-radius: 11px;
-    height: 125%;
-    position: relative;
+  padding-top: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  border-radius: 11px;
+  height: 125%;
+  position: relative;
+}
+
+.next-event-card {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.background-dashboard-card {
+  height: 100%;
+  width: 100%;
+}
+
+.next-event-details {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px;
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -124,7 +156,7 @@
 
 .task-button {
   position: absolute;
-    bottom: 4px;
+    bottom: 0px;
     left: 10px;
     color:#A4C5C6;
 }
@@ -167,7 +199,7 @@
 }
 
 .project-task-card {
-   padding: 8px;
+   padding: 16px;
 }
 
 .task-status {
