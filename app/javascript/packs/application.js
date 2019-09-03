@@ -15,6 +15,19 @@ import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
+// MAPBOX
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { openMap } from '../components/init_mapbox';
+
+// import { openMap } from '../components/open_map';
+
+if (document.querySelector('.map-wrapper')) {
+  // initMapbox();
+  openMap();
+
+}
+
+
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
