@@ -66,16 +66,7 @@ $(document).ready(() => {
 //   window.location = 'http://localhost:3000/projects/4/dashboard#calendar/'
 // });
 
-function scrollLastMessageIntoView() {
-  const messages = document.querySelectorAll('.message');
-  const lastMessage = messages[messages.length - 1];
-  if (lastMessage !== undefined) {
-    lastMessage.scrollIntoView();
-    console.log(lastMessage)
-  }
-}
 
-scrollLastMessageIntoView()
 
 
 // // PROGRESS BAR
