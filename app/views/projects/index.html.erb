@@ -1,100 +1,120 @@
-<div class="container">
+<div class="container" style="max-width: 1200px;">
 
   <h1>Découvrez nos projets !</h1>
   <h3>Et ceux dans lesquels vous aimeriez vous impliquer</h3>
 
-  <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
-    <div class='container-search-bar'>
-      <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
-      <%= f.input :status, collection: @statuses, required: false, label: 'Statut' %>
-      <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, label: 'Thème' %>
-      <%= f.submit "Voir tout", class: "clearFilterButton"  %>
-    <% end %>
-  </div>
-
-
-  <div class="row row-project-card d-flex">
-    <% @projects.each do |project| %>
-      <div class="blog-slider">
-        <div class="blog-slider__wrp swiper-wrapper">
-            <div class="blog-slider__img" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(<%= cl_image_path project.image %>);">
-              <p><%= project.status %></p>
-              <!-- <div class="status <%= project.status %>"></div> -->
-
-
-              <div class="development">
-                <% if project.development_goal == 'Éducation de qualité' %>
-                  <div class="icone"><i class="fas fa-graduation-cap"></i></div>
-
-                <% elsif project.development_goal == 'Vie terrestre' %>
-                  <div class="icone"><i class="fas fa-tree"></i></div>
-
-                <% elsif project.development_goal == 'Mesures relatives à la lutte contre les changements climatiques' %>
-                  <div class="icone"><i class="fas fa-globe-americas"></i></div>
-
-                  <% elsif project.development_goal == 'Pas de pauvreté' %>
-                  <div class="icone"><i class="fas fa-euro-sign"></i></div>
-
-                  <% elsif project.development_goal == 'Faim zéro' %>
-                  <div class="icone"><i class="fas fa-hamburger"></i></div>
-
-                  <% elsif project.development_goal == 'Bonne santé et bien-être' %>
-                  <div class="icone"><i class="fas fa-heartbeat"></i></div>
-
-                  <% elsif project.development_goal == 'Égalité entre les sexes' %>
-                  <div class="icone"><i class="fas fa-venus-mars"></i></div>
-
-                  <% elsif project.development_goal == 'Eau propre et assainissement' %>
-                  <div class="icone"><i class="fas fa-tint"></i></div>
-
-                  <% elsif project.development_goal == "Énergie propre et d'un coût abordable" %>
-                  <div class="icone"><i class="fas fa-solar-panel"></i></div>
-
-                  <% elsif project.development_goal == 'Travail décent et croissance économique' %>
-                  <div class="icone"><i class="fas fa-chart-line"></i></div>
-
-                  <% elsif project.development_goal == 'industrie innovation et infrastructure' %>
-                  <div class="icone"><i class="fas fa-industry"></i></div>
-
-                  <% elsif project.development_goal == 'Inégalités réduites' %>
-                  <div class="icone"><i class="fas fa-not-equal"></i></div>
-
-                  <% elsif project.development_goal == 'Villes et communautés durables' %>
-                  <div class="icone"><i class="fas fa-calendar-week"></i></div>
-
-                  <% elsif project.development_goal == 'Consommation et production responsables' %>
-                  <div class="icone"><i class="fas fa-shopping-basket"></i></div>
-
-                  <% elsif project.development_goal == 'Vie aquatique' %>
-                  <div class="icone"><i class="fas fa-fish"></i></div>
-
-                  <% elsif project.development_goal == 'Paix, justice et institutions efficaces' %>
-                  <div class="icone"><i class="fas fa-balance-scale-right"></i></div>
-
-                  <% elsif project.development_goal == 'Partenariat pour  la réalisation des objectifs' %>
-                  <div class="icone"><i class="far fa-handshake"></i></div>
-                <% end %>
-              </div>
-
-
-
-            </div>
-            <div class="blog-slider__content">
-              <div class="blog-slider__code"> <h5> <%= project.name %> </h5></div>
-              <div class="blog-slider__title"><%= project.charity.name %>
-              </div>
-                <div class="blog-slider__text"><%= truncate(project.description, length: 150) %></div>
-                  <%= link_to 'En savoir +', project_path(project), class: "blog-slider__button" %>
-                <!-- <div class="status <%= project.status %>"></div> -->
-            </div>
-        </div>
+    <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
+      <div class='container-search-bar mb-3'>
+          <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.input :status, collection: @statuses, required: false, label: 'Statut' %>
+          <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, label: 'Thème' %>
+          <%= f.submit "Effacer les filtres", class: "clearFilterButton"  %>
       </div>
     <% end %>
+    <span class="c-toggle">
+      <input type="checkbox" id="toggle" />
+      <label for="toggle">Voir la carte</label>
+    </span>
+
+  <div class="d-flex">
+    <div class="cards-wrapper">
+      <div class="row row-project-card d-flex">
+        <% @projects.each do |project| %>
+          <div class="blog-slider">
+            <div class="blog-slider__wrp swiper-wrapper">
+              <div class="blog-slider__img" style="background-image: linear-gradient(rgba(0,0,0,0.05),rgba(0,0,0,0.05)), url(<%= cl_image_path project.image %>);">
+              <p><%= project.status %></p>
+                  <!-- <div class="status <%= project.status %>"></div> -->
+
+
+                <div class="development">
+                  <% if project.development_goal == 'Éducation de qualité' %>
+                    <div class="icone"><i class="fas fa-graduation-cap"></i></div>
+
+                  <% elsif project.development_goal == 'Vie terrestre' %>
+                    <div class="icone"><i class="fas fa-tree"></i></div>
+
+                  <% elsif project.development_goal == 'Mesures relatives à la lutte contre les changements climatiques' %>
+                    <div class="icone"><i class="fas fa-globe-americas"></i></div>
+
+                    <% elsif project.development_goal == 'Pas de pauvreté' %>
+                    <div class="icone"><i class="fas fa-euro-sign"></i></div>
+
+                    <% elsif project.development_goal == 'Faim zéro' %>
+                    <div class="icone"><i class="fas fa-hamburger"></i></div>
+
+                    <% elsif project.development_goal == 'Bonne santé et bien-être' %>
+                    <div class="icone"><i class="fas fa-heartbeat"></i></div>
+
+                    <% elsif project.development_goal == 'Égalité entre les sexes' %>
+                    <div class="icone"><i class="fas fa-venus-mars"></i></div>
+
+                    <% elsif project.development_goal == 'Eau propre et assainissement' %>
+                    <div class="icone"><i class="fas fa-tint"></i></div>
+
+                    <% elsif project.development_goal == "Énergie propre et d'un coût abordable" %>
+                    <div class="icone"><i class="fas fa-solar-panel"></i></div>
+
+                    <% elsif project.development_goal == 'Travail décent et croissance économique' %>
+                    <div class="icone"><i class="fas fa-chart-line"></i></div>
+
+                    <% elsif project.development_goal == 'industrie innovation et infrastructure' %>
+                    <div class="icone"><i class="fas fa-industry"></i></div>
+
+                    <% elsif project.development_goal == 'Inégalités réduites' %>
+                    <div class="icone"><i class="fas fa-not-equal"></i></div>
+
+                    <% elsif project.development_goal == 'Villes et communautés durables' %>
+                    <div class="icone"><i class="fas fa-calendar-week"></i></div>
+
+                    <% elsif project.development_goal == 'Consommation et production responsables' %>
+                    <div class="icone"><i class="fas fa-shopping-basket"></i></div>
+
+                    <% elsif project.development_goal == 'Vie aquatique' %>
+                    <div class="icone"><i class="fas fa-fish"></i></div>
+
+                    <% elsif project.development_goal == 'Paix, justice et institutions efficaces' %>
+                    <div class="icone"><i class="fas fa-balance-scale-right"></i></div>
+
+                    <% elsif project.development_goal == 'Partenariat pour  la réalisation des objectifs' %>
+                    <div class="icone"><i class="far fa-handshake"></i></div>
+                  <% end %>
+                </div>
+
+                <div class="blog-slider__content">
+                  <div class="blog-slider__code"> <h5> <%= project.name %> </h5></div>
+                  <div class="blog-slider__title"><%= project.charity.name %>
+                  </div>
+                  <div class="blog-slider__text"><%= truncate(project.description, length: 100) %></div>
+                  <%= link_to 'En savoir +', project_path(project), class: "blog-slider__button" %>
+                  <!-- <div class="status <%= project.status %>"></div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="map-wrapper" style="margin-right: 20px;">
+      <div
+        id="map"
+        style="width: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        height: 600px;"
+
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      ></div>
+    </div>
   </div>
 
-  </div>
+
+
+<!--   </div>
     <div class="blog-slider__pagination"></div>
-  </div>
+  </div> -->
 
 
 

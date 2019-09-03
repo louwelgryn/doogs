@@ -16,6 +16,17 @@ import { taskFunction  } from '../components/task';
 
 import { initCounter } from '../components/init_counter';
 
+// MAPBOX
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { openMap } from '../components/init_mapbox';
+
+// import { openMap } from '../components/open_map';
+
+if (document.querySelector('.map-wrapper')) {
+  // initMapbox();
+  openMap();
+}
+
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
 }
