@@ -1,0 +1,55 @@
+
+  <div class="">
+    <div class="row">
+      <div class="col-sm-4  title-task" style="padding:0">
+        <div class="test-card">
+        <p class="task-title">Normales</p>
+
+        <div id="Normale" class="drag-drop">
+
+        <% @project.tasks.normale.a_faire.each do |task| %>
+          <%= render 'Tasks_cards', task: task  %>
+         <% end %>
+           <% if @manager %>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+      Créer
+      </button>
+      <% end %>
+        </div>
+        </div>
+      </div>
+
+      <div class="col-sm-4  title-task" style="padding:0">
+      <div class="test-card">
+        <p class="task-title">Urgentes</p>
+
+        <div id="Urgente" class="drag-drop">
+        <% @project.tasks.urgente.a_faire.each do |task| %>
+          <%= render 'Tasks_cards', task: task  %>
+        <% end %>
+        <% if @manager %>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+      Créer
+      </button>
+      <% end %>
+        </div>
+      </div>
+      </div>
+
+      <div class="col-sm-4 title-task" style="padding:0" >
+        <div class="test-card">
+        <p class="task-title">Prioritaires</p>
+        <div id="Prioritaire" class="drag-drop">
+          <% @project.tasks.prioritaire.a_faire.each do |task| %>
+            <%= render 'Tasks_cards', task: task  %>
+          <% end %>
+          <% if @manager %>
+        <button type="button" class="task-button" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-plus"></i>
+      Créer
+      </button>
+      <% end %>
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
