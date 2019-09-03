@@ -21,9 +21,7 @@ class EventsController < ApplicationController
       )
     end
 
-    url = 'http://localhost:3000/projects/' + @project.id.to_s + '/dashboard#calendar/'
-
-    redirect_to url
+    redirect_to project_dashboard_path(anchor: 'calendar')
 
     # redirect_to project_dashboard_path(@event.project)
     # respond_to do |format|
