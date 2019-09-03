@@ -73,18 +73,6 @@ volunteers.forEach((volunteer) => {
   });
 });
 
-// const newEventButton = document.getElementById("submit-calendar");
-// const participationsButtons = document.querySelectorAll(".submit-participation");
-// newEventButton.addEventListener("click", (event) => {
-//   participationsButtons.forEach((button) => {
-//     button.click();
-//     console.log("click effectué!")
-//   });
-// });
-
-
-
-
 // const redirection = document.getElementById("submit-calendar")
 
 // redirection.addEventListener("click", (event) => {
