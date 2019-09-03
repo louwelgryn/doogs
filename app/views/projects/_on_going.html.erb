@@ -89,10 +89,14 @@
               <div class="next-event-card">
                 <div class="card-image-wraper background-dashboard-card">
                   <div class="next-event-details">
+                    <% if @next_participation.nil? %>
+                      <p>pas d'évènement à venir</p>
+                    <% else %>
                     <h2><strong><%= @next_participation.event.name %></strong></h2>
                     <h3><%= @next_participation.start_time.day %> <%= @next_participation_month %></h2>
                     <h3><%= @next_participation.start_time.hour %>h</h2>
                     <p><%= @next_participation.event.description%></p>
+                    <% end %>
                   </div>
                 </div>
               </div>

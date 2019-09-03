@@ -11,6 +11,8 @@ puts "destroy all Chat_rooms"
 ChatRoom.destroy_all
 puts "destroy all Tasks"
 Task.destroy_all
+puts "destroy all Participations"
+Participation.destroy_all
 puts "destroy all Events"
 Event.destroy_all
 puts "destroy all Project"
