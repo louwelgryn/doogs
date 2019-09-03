@@ -86,9 +86,6 @@ $(document).ready(() => {
 });
 
 
-
-// const redirection = document.getElementById("submit-calendar")
-
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
@@ -103,15 +100,6 @@ volunteers.forEach((volunteer) => {
   });
 });
 
-
-// const newEventButton = document.getElementById("submit-calendar");
-// const participationsButtons = document.querySelectorAll(".submit-participation");
-// newEventButton.addEventListener("click", (event) => {
-//   participationsButtons.forEach((button) => {
-//     button.click();
-//     console.log("click effectué!")
-//   });
-// });
 
 
 

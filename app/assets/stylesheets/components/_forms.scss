@@ -1,0 +1,39 @@
+.form-actions-centered {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.form-label {
+  color: #6B757C;
+  font-size: 16px;
+}
+
+.form-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-header-custom {
+  background-color: #95CFAF;
+  color: white;
+  border-radius: 8px;
+}
+
+.modal-content-custom {
+  background-color: #d0eddd;
+  border-radius: 8px;
+}
+
+#event_start_time_1i, #event_start_time_2i, #event_start_time_3i,  {
+  display: none !important;
+}
+
+#event_end_time_1i, #event_end_time_2i, #event_end_time_3i,  {
+  display: none !important;
+}
+

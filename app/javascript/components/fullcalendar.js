@@ -6,6 +6,21 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 // import '@fullcalendar/core/main.css';
 // import '@fullcalendar/daygrid/main.css';
 
+const monthLetters = {
+  1: 'Janvier',
+  2: 'Février',
+  3: 'Mars',
+  4: 'Avril',
+  5: 'Mai',
+  6: 'Juin',
+  7: 'Juillet',
+  8: 'Août',
+  9: 'Septembre',
+  10: 'Octobre',
+  11: 'Novembre',
+  12: 'Décembre',
+};
+
 const calendarInit = () => {
 
   const calendarEl = document.getElementById('calendar');
@@ -34,23 +49,6 @@ const calendarInit = () => {
 
       calendar.render();
 
-
-      /// AVOIR LA DESCRIPTION D UN EVENEMENT ///
-      // const existingEvents = document.querySelectorAll(".fc-event-container")
-      // existingEvents.forEach((existingEvent) => {
-      //   existingEvent.addEventListener("click", (event) => {
-      //     console.log('lala');
-      //     alert('hello');
-      //   });
-      // });
-
-      // events.forEach((existing) => {
-      //   existing.addEventListener("click", (event) => {
-      //     console.log('victoire!');
-      //   })
-      // })
-
-
       /// CREER UN NOUVEL EVENEMENT ////
       const dates = document.querySelectorAll(".fc-future");
       const eventLink = document.getElementById('new-event-button');
@@ -58,8 +56,9 @@ const calendarInit = () => {
       dates.forEach((day) => {
         day.addEventListener("click", (event) => {
           const selectedDay = Number.parseInt(day.dataset.date.slice(-2),10);
+          const selectedDateMonth = Number.parseInt(day.dataset.date.slice(-5,-3),10);
           $('#eventModal').modal('show');
-          document.getElementById("start_date").innerHTML = day.dataset.date;
+          document.getElementById("start_date").innerHTML = selectedDay + " " + monthLetters[selectedDateMonth];
 
           // Set start date to selected
           const options_start_day = document.querySelectorAll("#event_start_time_3i > option");
