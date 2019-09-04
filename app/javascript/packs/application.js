@@ -102,6 +102,26 @@ volunteers.forEach((volunteer) => {
   });
 });
 
+/// ASSIGNEMENT A UNE TACHE ///
+const assignement = [];
+const assignes = document.querySelectorAll(".task-user-button");
+const userInputNormale = document.getElementById("user_task_normale");
+const userInputUrgente = document.getElementById("user_task_urgente");
+const userInputPrioritaire = document.getElementById("user_task_prioritaire");
+
+
+assignes.forEach((assigne) => {
+  assigne.addEventListener("click", (event) => {
+    event.preventDefault();
+    assigne.classList.add("avatar-clicked");
+    assigne = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
+    userInputNormale.value = assigne;
+    userInputUrgente.value = assigne;
+    userInputPrioritaire.value = assigne;
+    console.log(assigne);
+  });
+});
+
 /// FORMULAIRE CALENDRIER ///
 $("#signup").click(function() {
   $(".message").css("transform", "translateX(100%)");

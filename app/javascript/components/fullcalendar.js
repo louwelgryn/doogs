@@ -31,7 +31,7 @@ const calendarInit = () => {
       var calendar = new Calendar(calendarEl, {
         fixedWeekCount: false,
         plugins: [ dayGridPlugin, interactionPlugin, timeGridPlugin ],
-        themeSystem: 'bootstrap', height: 800, width: 400,
+        themeSystem: 'bootstrap', height: 550, width: 400,
         events: gon.events,
 
         eventClick: function(info) {
@@ -42,8 +42,8 @@ const calendarInit = () => {
           const eventDescription = document.getElementById('event-description');
           eventDescription.innerHTML = info.event.extendedProps.description;
 
-          // const eventStartTime = document.getElementById('event-start-date');
-          // eventStartTime.innerHTML = info.event.extendedProps.start_time;
+          const eventStartTime = document.getElementById('event-start-date');
+          eventStartTime.innerHTML = info.event.extendedProps.start_time;
         },
 
         // eventRender: function(event, element) {
@@ -61,7 +61,18 @@ const calendarInit = () => {
 
       });
 
+
+
       calendar.render();
+
+      // Jours de la semaine en francais
+      document.querySelector(".fc-day-header.fc-widget-header.fc-sun").innerHTML="<span>Dimanche</span>";
+      document.querySelector(".fc-day-header.fc-widget-header.fc-mon").innerHTML="<span>Lundi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-tue").innerHTML="<span>Mardi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-wed").innerHTML="<span>Mercredi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-thu").innerHTML="<span>Jeudi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-fri").innerHTML="<span>Vendredi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-sat").innerHTML="<span>Samedi</span>"
 
       /// CREER UN NOUVEL EVENEMENT ////
       const dates = document.querySelectorAll(".fc-future");

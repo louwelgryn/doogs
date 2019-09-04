@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Normale</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Normale</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -28,9 +28,14 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.hidden_field :user_id, input_html:{id: 'user_task_normale'} %>
 
 
           <div class="form-actions form-button">
@@ -49,7 +54,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Urgente</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Urgente</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -75,9 +80,14 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.hidden_field :user_id, input_html:{id: 'user_task_urgente'} %>
 
 
           <div class="form-actions form-button">
@@ -96,7 +106,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Prioritaire</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Prioritaire</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -122,9 +132,14 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.hidden_field :user_id, input_html:{id: 'user_task_prioritaire'} %>
 
 
           <div class="form-actions form-button">
