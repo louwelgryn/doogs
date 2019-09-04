@@ -24,5 +24,15 @@
 }
 
 .footer-copyright {
+  display: flex;
   color: #A5C5C6;
+}
+
+.footer-copyright > a {
+  text-decoration: none;
+  color: #A5C5C6;
+}
+
+.footer-copyright > a:hover {
+  color: white;
 }
