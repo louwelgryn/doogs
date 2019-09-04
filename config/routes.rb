@@ -13,7 +13,12 @@ Rails.application.routes.draw do
 
   resources :commitments, only: [:update]
   resources :chat_rooms, only: [:show] do
-    resources :messages, only: [:create]
+    resources :messages, only: [:create] do
+      member do
+        put "like", to: "messages#upvote"
+        put "dislike", to: "messages#downvote"
+      end
+    end
   end
 
   get '/dashboard', to: 'pages#dashboard'
@@ -23,5 +28,7 @@ Rails.application.routes.draw do
   get '/projects/:id/search', to: 'projects#search', as: 'project_search'
 
   get '/tasks/status/:id' , to: 'tasks#status_update', as: 'status_update'
+
+
 end
 

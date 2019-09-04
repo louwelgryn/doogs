@@ -16,7 +16,7 @@
               <% @project.commitments.each do |commitment| %>
                 <div class="pdb-team-member">
                   <%= image_tag 'weirdo.svg', class: "small-weirdo"%>
-                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar relative-weirdo" %>
+                  <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop",:quality=>30}], class: "avatar relative-weirdo" %>
                   <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
                 </div>
               <% end %>

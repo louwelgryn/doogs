@@ -10,6 +10,75 @@
   overflow: scroll;
 }
 
+.votes-container {
+
+}
+
+.icons-filled {
+  display: none;
+}
+
+.icons-vote {
+  border-radius: 40px;
+  background-color:white;
+  width: 40px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  justify-content: space-evenly;
+  height: 25px;
+}
+
+.icons-vote.zero-votes {
+  display: none;
+}
+
+.icons-filled.up-votes {
+  display: flex;
+  border-radius: 40px;
+  background-color:white;
+  width: 80px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  justify-content: space-evenly;
+  height: 25px;
+}
+
+.plus-sign {
+  font-size: 10px;
+}
+
+.icons-details {
+ color: #cfd0d3;
+}
+
+.hidden{
+ display: none;
+  // opacity: 0;
+}
+
+
+
+.flex {
+  display: flex;
+  width: 60px;
+  height: 30px;
+  border-radius: 40px;
+  background-color:white;
+  display: flex;
+      padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  justify-content: space-around;
+}
+
+.emoji:hover {
+  transform: scale(1.02);
+}
+
+
+a:hover {
+  text-decoration: none;
+}
+
 .message {
   display: flex;
   margin-bottom: 10px;
@@ -28,7 +97,9 @@
   font-size: 20px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
+
 }
+
 .avatar {
   width: 42px;
   height: 42px;
@@ -39,6 +110,7 @@
     border-radius: 8px;
     width: 1000px;
     font-size: 20px;
+        border: none;
 }
 
 .englobing{
@@ -68,7 +140,7 @@ input.form-control {
   color: #868686;
   &:focus {
     outline: none;
-    border: 1px solid blue;
+    border: 1px solid #e48174;
     box-shadow: none;
   }
 }

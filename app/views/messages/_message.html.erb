@@ -2,9 +2,36 @@
 <div class= "message <%= user_is_messages_author ? "right" : "" %>">
   <div class="englobing">
   <div class="message-styling">
-    <div class="message-content"><%= message.content %></div>
+    <div class="message-content" ><%= message.content %></div>
     <div class="created_at"><%= message.created_at.strftime("%b %d, %I:%M%P") %></div>
+
+  <% if message.get_upvotes.size == 0 && message.get_downvotes.size == 0 %>
+    <div class="votes-container">
+      <div class="icons-vote">
+          <i class="fas fa-smile-beam icons-details icons">  </i>
+          <i class="fas fa-plus icons-details plus-sign icons"></i>
+      </div>
+      <div class="icons-filled">
+        <p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😍 <% end %>  </p>
+         <%= message.get_upvotes.size %>
+        <p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😡 <% end %> </p>
+        <%= message.get_downvotes.size %>
+      </div>
+    </div>
+  <% else %>
+      <!-- <div class="when-value"> -->
+    <div class="flex">
+    <p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😍 <% end %> </p>
+    <%= message.get_upvotes.size %>
+    <p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😡 <% end %> </p>
+
+    <%= message.get_downvotes.size %>
+<!--   </div> -->
   </div>
-  <%= image_tag message.user.image_url, class: "avatar" %>
+<% end %>
+
+
+  </div>
+  <%= image_tag message.user.image_url,:quality=>30,  class: "avatar" %>
   </div>
 </div>
