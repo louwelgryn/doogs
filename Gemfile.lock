@@ -44,6 +44,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_list (0.9.19)
       activerecord (>= 3.0)
+    acts_as_votable (0.12.1)
     arel (9.0.0)
     autoprefixer-rails (9.6.1.1)
       execjs
@@ -241,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  acts_as_votable
   autoprefixer-rails
   bootsnap
   carrierwave (~> 1.2)

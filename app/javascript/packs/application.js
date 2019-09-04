@@ -7,6 +7,7 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
+import { voteFunction } from '../components/vote';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
@@ -107,22 +108,77 @@ volunteers.forEach((volunteer) => {
   });
 });
 
+/// ASSIGNEMENT A UNE TACHE ///
+const assignes = document.querySelectorAll(".task-user-button");
+const userInputNormale = document.getElementById("user_task_normale");
+const userInputUrgente = document.getElementById("user_task_urgente");
+const userInputPrioritaire = document.getElementById("user_task_prioritaire");
+
+
+assignes.forEach((assigne) => {
+  assigne.addEventListener("click", (event) => {
+    event.preventDefault();
+    assigne.classList.add("avatar-clicked");
+    console.log(Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10));
+    const assignement = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
+    userInputNormale.value = assignement;
+    userInputUrgente.value = assignement;
+    userInputPrioritaire.value = assignement;
+  });
+});
+
+
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  voteFunction();
+}
+
+// if (document.querySelector('#new_message')) {
+//   // initMapbox();
+//   DomReload();
+// }
+
+//   console.log(upvote.dataset.id)
+//  const url = `http://http://localhost:3000/projects/118/dashboard#chatroom/?message_id=${upvote.dataset.id}`
+//   url.click()
+// })
+
+
 /// FORMULAIRE CALENDRIER ///
 $("#signup").click(function() {
-  $(".message").css("transform", "translateX(100%)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("login");
+  $(".message-form").css("transform", "translateX(100%)");
+  if ($(".message-form").hasClass("login")) {
+    $(".message-form").removeClass("login");
   }
-  $(".message").addClass("signup");
+  $(".message-form").addClass("signup");
 });
 
 $("#login").click(function() {
-  $(".message").css("transform", "translateX(0)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("signup");
+  $(".message-form").css("transform", "translateX(0)");
+  if ($(".message-form").hasClass("login")) {
+    $(".message-form").removeClass("signup");
   }
-  $(".message").addClass("login");
+  $(".message-form").addClass("login");
 });
+
+
+/// CIRCLES ///
+const displays = document.querySelectorAll('.note-display');
+const transitionDuration = 900;
+
+displays.forEach(display => {
+  let progress = display.querySelector('.circle__progress--fill');
+  let radius = progress.r.baseVal.value;
+  let circumference = 2 * Math.PI * radius;
+  let note = parseFloat(display.dataset.note);
+  let offset = circumference * (15 - note) / 15;
+
+  progress.style.setProperty('--transitionDuration', `${transitionDuration}ms`);
+  progress.style.setProperty('--initialStroke', circumference);
+
+  setTimeout(() => progress.style.strokeDashoffset = offset, 100);
+});
+
 
 
 

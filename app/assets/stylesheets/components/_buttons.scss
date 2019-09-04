@@ -9,12 +9,15 @@
   background-color: #062521;
   transition: 0.3s;
   color: #fff;
-  padding: 12px 20px;
+  padding: 15px 20px;
   text-decoration: none;
+      height: 50px;
   p {
     margin-bottom: 0 !important;
   }
 }
+
+
 
 .btn-black:hover {
   text-decoration: none;
@@ -34,6 +37,11 @@
   margin: 0 auto;
   text-align: center;
   font-size: 10px;
+}
+
+.btn-small{
+  height: 25px;
+    padding: 7px;
 }
 
 .btn-red {
@@ -62,12 +70,12 @@
  }
 
 .btn-calendar {
- background-color: #ff9f1a;
- width: 60px;
- height: 15px;
- padding: 2px;
- margin: 0;
- font-size: x-small;
+ background-color: #e48174;
+width: 80px;
+    height: 20px;
+    padding: 2px;
+    margin: 0;
+    font-size: 14px;
 }
 
 .btn-status {
@@ -149,6 +157,10 @@ a.blog-slider__button:hover {
 }
 
 .participation-user-button {
+  color: transparent !important;
+}
+
+.task-user-button {
   color: transparent !important;
 }
 

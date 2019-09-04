@@ -3,10 +3,14 @@ class Message < ApplicationRecord
   belongs_to :chat_room
   validates :content, presence: true, allow_blank: false
   after_create :broadcast_message
+  acts_as_votable
+
 
   def from?(some_user)
     user == some_user
   end
+
+
 
   def broadcast_message
    ActionCable.server.broadcast("chat_room_#{chat_room.id}", {
