@@ -3,7 +3,7 @@
     <div class="modal-content" style="margin: 0 !important; padding: 0!important;">
 
     <div class="container-toggle-form">
-      <div class="message signup">
+      <div class="message-form signup">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -88,7 +88,7 @@
                   <% end %>
                 <% end %>
               </div>
-                <%= f.hidden_field :participants, input_html:{id: 'participants_reunion'} %>
+                <%= f.input :participants, input_html:{id: 'participants_reunion'} %>
 
                 <div class="form-actions form-actions-centered">
                   <%= f.submit "Organiser une réunion", class: "btn-black", id: "submit-calendar" %>

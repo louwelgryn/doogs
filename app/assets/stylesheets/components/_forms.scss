@@ -59,7 +59,7 @@ $purple: #9893DA;
 $grey: #C3C3D8;
 
 
-.message, .form-toggle, form {
+.message-form, .form-toggle, form {
   display: block;
   padding: 20px;
   justify-content: center;
@@ -83,7 +83,7 @@ $grey: #C3C3D8;
   grid-template: 100% / 50% 50%;
 }
 
-.message {
+.message-form {
   position: absolute;
   background-color: rgb(221, 219, 255);
   width: 50%;
