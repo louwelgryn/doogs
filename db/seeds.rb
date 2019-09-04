@@ -300,7 +300,7 @@ puts 'creating 6 projects'
 puts "creating project Open Food Facts"
 
 project_open_food_facts = Project.new
-project_open_food_facts.name = "Et si scanner vos produits vous permettait de découvrir leur impact sur la planète ?"
+project_open_food_facts.name = "Scanner vos produits pour sauver la planète"
 project_open_food_facts.description = "À partir des données récupérées sur open food facts et auprès des industriels, l'objectif est de mettre en place un calculateur d'empreinte carbone. En fonction de plusieurs critères pré déterminés (emballages, composition, transport...) nous voulons pouvoir donner un label noir, rouge ou vert en fonction des gaz à effet de serre qui ont été émis pour la production du produit scanné."
 project_open_food_facts.charity = open_food_facts
 project_open_food_facts.development_goal = "Mesures relatives à la lutte contre les changements climatiques"
