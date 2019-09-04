@@ -1,0 +1,140 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style='z-index: 50000;'>
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content modal-content-custom">
+      <div class="modal-header modal-header-custom">
+        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Normale</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <%= simple_form_for [@project, @task] do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :name, placeholder: "Nom", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.input :description, placeholder: "Description", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.hidden_field :priority_level, value: "Normale" %>
+          </div>
+          <p class='form-label'>Deadline:</p>
+          <div class="form-inputs">
+            <%= f.input :end_date, label: false %>
+          </div>
+          <p class='form-label'>Sélectionner un membre de l'équipe:</p>
+
+          <div class="form-inputs">
+            <%= f.input :user_id, label: false, collection: @volunteers %>
+          </div>
+
+
+          <div class="form-actions">
+            <%= f.submit "Créer la tâche", class: "btn-black" %>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="urgenteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style='z-index: 50000;'>
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content modal-content-custom">
+      <div class="modal-header modal-header-custom">
+        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Urgente</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <%= simple_form_for [@project, @task] do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :name, placeholder: "Nom", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.input :description, placeholder: "Description", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.hidden_field :priority_level, value: "Urgente" %>
+          </div>
+          <p class='form-label'>Deadline:</p>
+          <div class="form-inputs">
+            <%= f.input :end_date, label: false %>
+          </div>
+          <p class='form-label'>Sélectionner un membre de l'équipe:</p>
+
+          <div class="form-inputs">
+            <%= f.input :user_id, label: false, collection: @volunteers %>
+          </div>
+
+
+          <div class="form-actions">
+            <%= f.submit "Créer la tâche", class: "btn-black" %>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="prioritaireModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style='z-index: 50000;'>
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content modal-content-custom">
+      <div class="modal-header modal-header-custom">
+        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Prioritaire</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+
+          <%= simple_form_for [@project, @task] do |f| %>
+          <%= f.error_notification %>
+          <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+          <div class="form-inputs">
+            <%= f.input :name, placeholder: "Nom", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.input :description, placeholder: "Description", label: false %>
+          </div>
+          <div class="form-inputs">
+            <%= f.hidden_field :priority_level, value: "Prioritaire" %>
+          </div>
+          <p class='form-label'>Deadline:</p>
+          <div class="form-inputs">
+            <%= f.input :end_date, label: false %>
+          </div>
+          <p class='form-label'>Sélectionner un membre de l'équipe:</p>
+
+          <div class="form-inputs">
+            <%= f.input :user_id, label: false, collection: @volunteers %>
+          </div>
+
+
+          <div class="form-actions">
+            <%= f.submit "Créer la tâche", class: "btn-black" %>
+          </div>
+          <% end %>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

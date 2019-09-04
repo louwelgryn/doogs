@@ -5,8 +5,14 @@ puts "destroy all UserSkill"
 UserSkill.destroy_all
 puts "destroy all Commitments"
 Commitment.destroy_all
+puts "destroy all Messages"
+Message.destroy_all
+puts "destroy all Chat_rooms"
+ChatRoom.destroy_all
 puts "destroy all Tasks"
 Task.destroy_all
+puts "destroy all Participations"
+Participation.destroy_all
 puts "destroy all Events"
 Event.destroy_all
 puts "destroy all Project"
@@ -70,144 +76,144 @@ aurelie_skill1.skill = product_manager
 aurelie_skill1.user = aurelie
 aurelie_skill1.save
 
-puts 'creating Sheldon Cooper'
+puts 'creating Lou Welgryn'
 
 # User 2
-sheldon = User.new
-sheldon.name = 'Sheldon Cooper'
-sheldon.description = "J'ai hacké facebook à l'age de 13 ans."
-sheldon.level = 'Piou-piou'
-sheldon.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901088/bzn2lrpovipwoqb8vaqh_jxzeq5.jpg"
-sheldon.email = 'sheldoncooper@gmail.com'
-sheldon.password = 'qwerty'
-sheldon.save!
+lou = User.new
+lou.name = 'Lou Welgryn'
+lou.description = "J'ai hacké facebook à l'âge de 13 ans."
+lou.level = 'Piou-piou'
+lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506450/_JBU8547-1_Lou_Welgryn_iv1xmm.jpg"
+lou.email = 'louwelgryn@gmail.com'
+lou.password = 'qwerty'
+lou.save!
 
 # User 2 - Skills
 
-sheldon_skill1 = UserSkill.new
-sheldon_skill1.skill = data_scientist
-sheldon_skill1.user = sheldon
-sheldon_skill1.save
+lou_skill1 = UserSkill.new
+lou_skill1.skill = data_scientist
+lou_skill1.user = lou
+lou_skill1.save
 
-sheldon_skill2 = UserSkill.new
-sheldon_skill2.skill = data_engineer
-sheldon_skill2.user = sheldon
-sheldon_skill2.save
+lou_skill2 = UserSkill.new
+lou_skill2.skill = data_engineer
+lou_skill2.user = lou
+lou_skill2.save
 
-puts 'creating Mark Zuckerberg'
+puts 'creating Antoine Gaillard'
 
 # User 3
-mark = User.new
-mark.name ="Mark Zuckerberg"
-mark.description = "J'ai pas mal de temps libre."
-mark.level = "Piou-piou"
-mark.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
-mark.email = "markzuckerberg@gmail.com"
-mark.password = "qwerty"
-mark.save!
+antoine = User.new
+antoine.name ="antoine gaillard"
+antoine.description = "J'ai pas mal de temps libre."
+antoine.level = "Piou-piou"
+antoine.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506803/_JBU8996-1_Antoine_Gaillard_ipfh5q.jpg"
+antoine.email = "antoinegaillard@gmail.com"
+antoine.password = "qwerty"
+antoine.save!
 
 # User 3- Skills
 
-mark_skill1 = UserSkill.new
-mark_skill1.skill = full_stack_developer
-mark_skill1.user = mark
-mark_skill1.save
+antoine_skill1 = UserSkill.new
+antoine_skill1.skill = full_stack_developer
+antoine_skill1.user = antoine
+antoine_skill1.save
 
-mark_skill2 = UserSkill.new
-mark_skill2.skill = web_designer
-mark_skill2.user = mark
-mark_skill2.save
+antoine_skill2 = UserSkill.new
+antoine_skill2.skill = web_designer
+antoine_skill2.user = antoine
+antoine_skill2.save
 
-mark_skill3 = UserSkill.new
-mark_skill3.skill = developer_front
-mark_skill3.user = mark
-mark_skill3.save
+antoine_skill3 = UserSkill.new
+antoine_skill3.skill = developer_front
+antoine_skill3.user = antoine
+antoine_skill3.save
 
-mark_skill4 = UserSkill.new
-mark_skill4.skill = developer_back
-mark_skill4.user = mark
-mark_skill4.save
+antoine_skill4 = UserSkill.new
+antoine_skill4.skill = developer_back
+antoine_skill4.user = antoine
+antoine_skill4.save
 
-puts 'creating Elizabeth Windsor'
+puts 'creating marie Stoppa'
 
 # User 4
-elizabeth = User.new
-elizabeth.name ="Elizabeth Windsor"
-elizabeth.description = "Je suis la reine du PM et de l'Angleterre, dans cet ordre."
-elizabeth.level = "Piou-piou"
-elizabeth.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567067009/a8rrhnuu21qfn1d6norz.jpg"
-elizabeth.email = "elizabethwindsor@gmail.com"
-elizabeth.password = "qwerty"
-elizabeth.save!
+marie = User.new
+marie.name ="marie Stoppa"
+marie.description = "I like to data data. I like to data !"
+marie.level = "Piou-piou"
+marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
+marie.email = "mariestoppa@gmail.com"
+marie.password = "qwerty"
+marie.save!
 
 # User 4- Skills
 
-elizabeth_skill1 = UserSkill.new
-elizabeth_skill1.skill = product_manager
-elizabeth_skill1.user = elizabeth
-elizabeth_skill1.save
+marie_skill1 = UserSkill.new
+marie_skill1.skill = product_manager
+marie_skill1.user = marie
+marie_skill1.save
 
-puts 'creating Aya Nakamura'
+puts 'creating maxence Nakamura'
 
 # User 5
-aya = User.new
-aya.name ="Aya Nakamura"
-aya.description = "Tu parles sur moi y'a R"
-aya.level = "Piou-piou"
-aya.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566998084/ayanakamura_shwg9f.jpg"
-aya.email = "ayanakamura@gmail.com"
-aya.password = "qwerty"
-aya.save!
+maxence = User.new
+maxence.name ="Maxence Ballende"
+maxence.description = "Tu parles sur moi y'a R"
+maxence.level = "Piou-piou"
+maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507259/_JBU8747-1_xt8bxo.jpg"
+maxence.email = "maxenceballende@gmail.com"
+maxence.password = "qwerty"
+maxence.save!
 
 # User 5- Skills
 
-aya_skill1 = UserSkill.new
-aya_skill1.skill = product_manager
-aya_skill1.user = aya
-aya_skill1.save
+maxence_skill1 = UserSkill.new
+maxence_skill1.skill = product_manager
+maxence_skill1.user = maxence
+maxence_skill1.save
 
-puts 'creating Rihanna'
+puts 'creating Arnaud de Castelbajac'
 
 # User 6
-rihanna = User.new
-rihanna.name ="Rihanna"
-rihanna.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
-rihanna.level = "Piou-piou"
-rihanna.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567007061/v1zvqxdncsoncowzbdak.jpg"
-rihanna.email = "rihanna@gmail.com"
-rihanna.password = "qwerty"
-rihanna.save!
+arnaud = User.new
+arnaud.name ="Arnaud de Castelbajac"
+arnaud.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
+arnaud.level = "Piou-piou"
+arnaud.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507210/_JBU8336-1_cafybx.jpg"
+arnaud.email = "arnaud@gmail.com"
+arnaud.password = "qwerty"
+arnaud.save!
 
 # User 6- Skills
 
-rihanna_skill1 = UserSkill.new
-rihanna_skill1.skill = product_manager
-rihanna_skill1.user = rihanna
-rihanna_skill1.save
+arnaud_skill1 = UserSkill.new
+arnaud_skill1.skill = product_manager
+arnaud_skill1.user = arnaud
+arnaud_skill1.save
 
-puts 'creating Ignatius Reilly'
+puts 'creating thomas Reilly'
 
 # User 7
-ignatius = User.new
-ignatius.name ="Ignatius Reilly"
-ignatius.description = "J'aime le développement web et le cinéma."
-ignatius.level = "Piou-piou"
-ignatius.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567067012/xqtpiqkofkiuzzdc54ub.jpg"
-ignatius.email = "ignatiusreilly@gmail.com"
-ignatius.password = "qwerty"
-ignatius.save!
+thomas = User.new
+thomas.name ="Thomas Bozzo"
+thomas.description = "J'aime le développement web et le cinéma."
+thomas.level = "Piou-piou"
+thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507235/_JBU8663-1_l2rzoh.jpg"
+thomas.email = "thomasbozzo@gmail.com"
+thomas.password = "qwerty"
+thomas.save!
 
 # User 7- Skills
 
-ignatius_skill1 = UserSkill.new
-ignatius_skill1.skill = web_designer
-ignatius_skill1.user = ignatius
-ignatius_skill1.save
+thomas_skill1 = UserSkill.new
+thomas_skill1.skill = web_designer
+thomas_skill1.user = thomas
+thomas_skill1.save
 
-ignatius_skill2 = UserSkill.new
-ignatius_skill2.skill = developer_front
-ignatius_skill2.user = ignatius
-ignatius_skill2.save
+thomas_skill2 = UserSkill.new
+thomas_skill2.skill = developer_front
+thomas_skill2.user = thomas
+thomas_skill2.save
 
 # Charities ----------------------------------------------------------------------
 
@@ -222,6 +228,7 @@ spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
 spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
 spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.address = "39 Boulevard Berthier 75017 Paris"
 spa.save!
 
 puts "Creating charity AHP"
@@ -233,6 +240,7 @@ ahp.referent_name = "Hilda Chlorobenzène"
 ahp.referent_position = "Fondatrice"
 ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.address = "39 Boulevard de la Madeleine 75008 Paris"
 ahp.save!
 
 puts "Creating charity Article 1"
@@ -244,6 +252,7 @@ article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
 article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
 article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.address = "29 Boulevard Bourdon 75004 Paris"
 article1.save!
 
 puts "Creating charity Open Food Facts"
@@ -255,6 +264,7 @@ open_food_facts.referent_name = "Lisa Kasskroute"
 open_food_facts.referent_position = "Président"
 open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
 open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.address = "21 rue des Iles 94100 Saint Maur Des Fosses"
 open_food_facts.save!
 
 puts "Creating charity Nature en Occitanie"
@@ -266,6 +276,7 @@ nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
 nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
 nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.address = "14 Rue de Tivoli 31000 Toulouse"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -277,7 +288,10 @@ bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
 bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
 bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.address = " 19 Rue de Gouesnou 29200 Brest"
 bretagne_vivante.save!
+
+
 
 # Projects ----------------------------------------------------------------------
 
@@ -319,6 +333,7 @@ project_spa.development_goal = "Vie terrestre"
 project_spa.status = "En cours"
 project_spa.start_date = Date.new(2019,7,5)
 project_spa.end_date = Date.new(2019,11,10)
+
 project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902057/photo-1494256997604-768d1f608cac_ktmift.jpg"
 project_spa.save
 
@@ -332,6 +347,7 @@ project_ahp.development_goal = "Éducation de qualité"
 project_ahp.status = "En attente"
 project_ahp.start_date = Date.new(2019,8,1)
 project_ahp.end_date = Date.new(2020,2,29)
+
 project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902207/katie-smith-uQs1802D0CQ-unsplash_ax9lud.jpg"
 project_ahp.save
 
@@ -361,6 +377,53 @@ project_bv.end_date = Date.new(2018,6,12)
 project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567070322/project_bv_i3xnzi.jpg"
 project_bv.save!
 
+# Chatroom ----------------------------------------------------------------------
+
+puts 'creating 6 chatrooms'
+
+puts 'creating chatroom Open food facts'
+
+chatroom_open_food_facts = ChatRoom.new
+chatroom_open_food_facts.name = "Open Food Facts Chat"
+chatroom_open_food_facts.project = project_open_food_facts
+chatroom_open_food_facts.save
+
+puts 'creating chatroom Article1'
+
+chatroom_article1 = ChatRoom.new
+chatroom_article1.name = "Article1 chat"
+chatroom_article1.project = project_article1
+chatroom_article1.save
+
+puts 'creating chatroom spa'
+
+chatroom_spa = ChatRoom.new
+chatroom_spa.name = "SPA"
+chatroom_spa.project = project_spa
+chatroom_spa.save
+
+puts 'creating chatroom ahp'
+
+chatroom_ahp = ChatRoom.new
+chatroom_ahp.name = "Amicale des Hygiénistes Psychorigides chat "
+chatroom_ahp.project = project_ahp
+chatroom_ahp.save
+
+puts 'creating chatroom Nature en Oxitanie'
+
+chatroom_neo = ChatRoom.new
+chatroom_neo.name = "Nature en Oxitanie chat"
+chatroom_neo.project = project_neo
+chatroom_neo.save
+
+puts 'creating chatroom Bretagne vivante'
+
+chatroom_bv = ChatRoom.new
+chatroom_bv.name = "Bretagne vivante Chat"
+chatroom_bv.project = project_bv
+chatroom_bv.save
+
+
 # Commitments ----------------------------------------------------------------------
 
 puts 'Commiting people to projects'
@@ -377,11 +440,11 @@ commitment_user2_project1.skill = developer_front
 commitment_user2_project1.project = project_open_food_facts
 commitment_user2_project1.save
 
-puts 'Assigning Sheldon to open_food_facts'
+puts 'Assigning lou to open_food_facts'
 
 commitment_user3_project1 = Commitment.new
 commitment_user3_project1.skill = data_scientist
-commitment_user3_project1.user = sheldon
+commitment_user3_project1.user = lou
 commitment_user3_project1.project = project_open_food_facts
 commitment_user3_project1.save
 
@@ -397,7 +460,7 @@ commitment_user2_project2.skill = developer_front
 commitment_user2_project2.project = project_spa
 commitment_user2_project2.save!
 
-puts 'Commiting Aurelie Delpeche and Rihanna to neo (ongoing)'
+puts 'Commiting Aurelie Delpeche and arnaud to neo (ongoing)'
 
 commitment_user1_project5 = Commitment.new
 commitment_user1_project5.skill = product_manager
@@ -414,7 +477,7 @@ commitment_user1_project5.save!
 
 puts 'Creating empty commitments'
 
-puts 'creating empty commitment for ahp and assigning Mark, UK Queen and Ignatius'
+puts 'creating empty commitment for ahp and assigning antoine, UK Queen and thomas'
 
 commitment_user1_project3 = Commitment.new
 commitment_user1_project3.skill = product_manager
@@ -423,19 +486,19 @@ commitment_user1_project3.save!
 
 commitment_user2_project3 = Commitment.new
 commitment_user2_project3.skill = developer_back
-commitment_user2_project3.user = mark
+commitment_user2_project3.user = antoine
 commitment_user2_project3.project = project_ahp
 commitment_user2_project3.save!
 
 commitment_user3_project3 = Commitment.new
 commitment_user3_project3.skill = data_analyst
-commitment_user3_project3.user = elizabeth
+commitment_user3_project3.user = marie
 commitment_user3_project3.project = project_ahp
 commitment_user3_project3.save!
 
 commitment_user4_project3 = Commitment.new
 commitment_user4_project3.skill = developer_front
-commitment_user4_project3.user = ignatius
+commitment_user4_project3.user = thomas
 commitment_user4_project3.project = project_ahp
 commitment_user4_project3.save!
 
@@ -502,7 +565,7 @@ puts "creating tasks"
 # task1_project1 = Task.new
 # task1_project1.name = "Test du bot"
 # task1_project1.project = project_spa
-# task1_project1.user = elizabeth
+# task1_project1.user = marie
 # task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
 # task1_project1.status = "A faire"
 # task1_project1.priority_level = "Urgente"
@@ -512,7 +575,7 @@ puts "creating tasks"
 # task2_project1 = Task.new
 # task2_project1.name = "API Twitter"
 # task2_project1.project = project_spa
-# task2_project1.user = ignatius
+# task2_project1.user = thomas
 # task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
 # task2_project1.status = "A faire"
 # task2_project1.priority_level = "Normale"
@@ -532,7 +595,7 @@ task1_project2.save!
 # task2_project2 = Task.new
 # task2_project2.name = "Mapbox et JS"
 # task2_project2.project = project_neo
-# task2_project2.user = mark
+# task2_project2.user = antoine
 # task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
 # task2_project2.status = "Terminée"
 # task2_project2.priority_level = "Normale"
@@ -543,49 +606,49 @@ task1_project2.save!
 
 puts "creating Super User Marie"
 
-marie = User.new
-marie.name ="Marie Zuckerberg"
-marie.description = "J'ai pas mal de temps libre."
-marie.level = "Piou-piou"
-marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
-marie.email = "mariezuckerberg@gmail.com"
-marie.password = "qwerty"
-marie.save!
+mariette = User.new
+mariette.name ="mariette Zuckerberg"
+mariette.description = "J'ai pas mal de temps libre."
+mariette.level = "Piou-piou"
+mariette.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
+mariette.email = "mariettezuckerberg@gmail.com"
+mariette.password = "qwerty"
+mariette.save!
 
-marie_skill1 = UserSkill.new
-marie_skill1.skill = full_stack_developer
-marie_skill1.user = marie
-marie_skill1.save
+mariette_skill1 = UserSkill.new
+mariette_skill1.skill = full_stack_developer
+mariette_skill1.user = mariette
+mariette_skill1.save
 
-marie_skill2 = UserSkill.new
-marie_skill2.skill = web_designer
-marie_skill2.user = marie
-marie_skill2.save
+mariette_skill2 = UserSkill.new
+mariette_skill2.skill = web_designer
+mariette_skill2.user = mariette
+mariette_skill2.save
 
-marie_skill3 = UserSkill.new
-marie_skill3.skill = developer_front
-marie_skill3.user = marie
-marie_skill3.save
+mariette_skill3 = UserSkill.new
+mariette_skill3.skill = developer_front
+mariette_skill3.user = mariette
+mariette_skill3.save
 
-marie_skill4 = UserSkill.new
-marie_skill4.skill = developer_back
-marie_skill4.user = marie
-marie_skill4.save
+mariette_skill4 = UserSkill.new
+mariette_skill4.skill = developer_back
+mariette_skill4.user = mariette
+mariette_skill4.save
 
-marie_skill5 = UserSkill.new
-marie_skill5.skill = data_analyst
-marie_skill5.user = marie
-marie_skill5.save
+mariette_skill5 = UserSkill.new
+mariette_skill5.skill = data_analyst
+mariette_skill5.user = mariette
+mariette_skill5.save
 
-marie_skill6 = UserSkill.new
-marie_skill6.skill = data_scientist
-marie_skill6.user = marie
-marie_skill6.save
+mariette_skill6 = UserSkill.new
+mariette_skill6.skill = data_scientist
+mariette_skill6.user = mariette
+mariette_skill6.save
 
-marie_skill7 = UserSkill.new
-marie_skill7.skill = product_manager
-marie_skill7.user = marie
-marie_skill7.save
+mariette_skill7 = UserSkill.new
+mariette_skill7.skill = product_manager
+mariette_skill7.user = mariette
+mariette_skill7.save
 
 puts 'creating events'
 event = Event.new

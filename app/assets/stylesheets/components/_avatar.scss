@@ -5,6 +5,27 @@
   object-fit: cover;
 }
 
+.avatar-participation {
+  opacity: 0.7 !important;
+  transition: all 0.3s ease-in-out !important;
+  cursor: pointer;
+}
+
+.avatar-participation:hover {
+  opacity: 1 !important;
+}
+
+.avatar-clicked {
+  opacity: 1 !important;
+}
+
+.avatar-smaller {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
 .avatar-large {
   width: 56px;
   border-radius: 50%;

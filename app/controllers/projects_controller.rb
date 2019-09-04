@@ -31,6 +31,26 @@ class ProjectsController < ApplicationController
         @projects = @projects.where(development_goal: thematic) if params["search"]["thematics"] == thematic
       end
     end
+
+    @charities = @projects.map { |p| p.charity }
+
+    @markers = @projects.map do |project|
+      {
+        lat: project.charity.latitude,
+        lng: project.charity.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { project: project }),
+        image_url: helpers.asset_url('maps-and-flags.png')
+      }
+    end
+
+    # @markers = @charities.map do |charity|
+    #   {
+    #     lat: charity.latitude,
+    #     lng: charity.longitude,
+    #     infoWindow: render_to_string(partial: "info_window", locals: { project: @project }),
+    #     image_url: helpers.asset_url('maps-and-flags.png')
+    #   }
+    # end
   end
 
   def dashboard
@@ -38,9 +58,19 @@ class ProjectsController < ApplicationController
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
+
+    @chat_room = @project.chat_room
+    @user_participations = ["lalala"]
     authorize @project
     @manager = manager?
     gon.events = EventsParsingService.parse_events(@project)
+
+    @next_participation = @project.participations.where('user_id = ?', current_user.id).order(:start_time).first
+
+    if @next_participation.nil?
+    else
+      @next_participation_month = Project::CORRESPONDANCE_MOIS_CHIFFRE[@next_participation.start_time.month]
+    end
   end
 
   def search
@@ -59,6 +89,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image)
+    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image, :chat_room, :ressource_data => [])
   end
 end

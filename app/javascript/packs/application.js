@@ -2,17 +2,33 @@ import "bootstrap";
 
 import Sortable from 'sortablejs';
 
-
 import '@fullcalendar/core/main.css';
+
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
-
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
+// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
+// import onClickDescription from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
+
+import { initCounter } from '../components/init_counter';
+
+// MAPBOX
+import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
+import { openMap } from '../components/init_mapbox';
+// import { initMapbox } from '../components/init_mapbox';
+
+// import { openMap } from '../components/open_map';
+
+if (document.querySelector('.map-wrapper')) {
+  // initMapbox();
+  openMap();
+}
 
 if (document.querySelector(".home-page")) {
   initUpdateNavbarOnScroll();
@@ -22,12 +38,25 @@ if (document.querySelector(".filter-search")) {
   submitForm();
 }
 
+if (document.querySelector("#counter-target")) {
+  initCounter();
+}
+
 calendarInit();
+
 window.initSweetalert = initSweetalert;
+
+// onClickDescription();
 
 if (document.querySelector("#roadmap")) {
   taskFunction()
 };
+
+function scrollLastMessageIntoView() {
+const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.scrollIntoView();
+}
 
 
 // TAB NAVIGATION //
@@ -57,52 +86,20 @@ $(document).ready(() => {
   });
 });
 
-// const redirection = document.getElementById("submit-calendar")
 
-// redirection.addEventListener("click", (event) => {
-// //   console.log("hello");
-// //   console.log("goodbye");
-//   window.location = 'http://localhost:3000/projects/4/dashboard#calendar/'
-// });
+/// PARTICIPATION A UN EVENEMENT ///
+const participants = [];
+const volunteers = document.querySelectorAll(".participation-user-button");
+const participantsInput = document.getElementById("event_participants");
 
-
-
-
-
-
-
-// // PROGRESS BAR
-// const display = document.querySelector('.progress_bar');
-// const transitionDuration = 900;
-
-
-// let progress = display.querySelector('.line__progress--fill');
-// let radius = progress.r.baseVal.value;
-// let circumference = 2 * Math.PI * radius;
-
-// progress.style.setProperty('--transitionDuration', `${transitionDuration}ms`);
-// progress.style.setProperty('--initialStroke');
-
-// setTimeout(() => progress.style.strokeDashoffset = 50, 100);
-
-
-
-// var bar = new ProgressBar.Line(container, {
-//   strokeWidth: 4,
-//   easing: 'easeInOut',
-//   duration: 1400,
-//   color: '#FFEA82',
-//   trailColor: '#eee',
-//   trailWidth: 1,
-//   svgStyle: {width: '100%', height: '100%'},
-//   from: {color: '#FFEA82'},
-//   to: {color: '#ED6A5A'},
-//   step: (state, bar) => {
-//     bar.path.setAttribute('stroke', state.color);
-//   }
-// });
-
-// bar.animate(1.0);  // Number from 0.0 to 1.0
+volunteers.forEach((volunteer) => {
+  volunteer.addEventListener("click", (event) => {
+    event.preventDefault();
+    volunteer.classList.add("avatar-clicked");
+    participants.push(Number.parseInt(volunteer.innerHTML.slice(0,7).trim(),10));
+    participantsInput.value = participants;
+  });
+});
 
 
 

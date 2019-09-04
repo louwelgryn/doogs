@@ -19,13 +19,13 @@ class CommitmentsController < ApplicationController
         @title = "Bienvenue dans ce projet!"
       else
         # POPUP MESSAGE
-        @message = "Il manque encore d'autres bénévoles pour que le projet puisse démarrer."
+        @message = 'Il manque encore d\'autres bénévoles pour que le projet puisse démarrer.'
         @icon = "success"
         @title = "Bienvenue dans ce projet!"
       end
     elsif @current_project_count.zero?
       # POPUP MESSAGE
-      @message = "Vous n'avez pas les compétences requises pour rejoindre ce projet à ce poste."
+      @message = 'Vous n\'avez pas les compétences requises pour rejoindre ce projet à ce poste.'
       @title = "Désolés!"
       @icon = "error"
     else
@@ -38,7 +38,7 @@ class CommitmentsController < ApplicationController
 
     respond_to do |format|
       format.html { render 'projects/show' }
-      format.js  # <-- will render `app/views/commitments/create.js.erb`
+      format.js  # <-- will render `app/views/commitments/update.js.erb`
     end
   end
 

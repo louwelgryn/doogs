@@ -1,0 +1,39 @@
+
+<div class="">
+    <div class="">
+
+      <div class="messages">
+        <% messages = @chat_room_messages ? @chat_room_messages : @chat_room.messages %>
+        <% messages.order('messages.created_at ASC').each do |message| %>
+          <%= render 'messages/message', message: message, user_is_messages_author: message.user == current_user %>
+          <% end %>
+
+      </div>
+      <div id="create-message">
+        <%= simple_form_for([@chat_room, Message.new], remote: true) do |f| %>
+          <%= f.input :content, label: false, as: :string %>
+          <%= f.submit 'Send', class: 'btn-rose' , style: "margin-top: 10px;"%>
+        <% end %>
+      </div>
+    </div>
+ <!--  </div> -->
+
+  <% content_for :after_js do %>
+  <script>
+    const messages = document.querySelectorAll('.message');
+    const lastMessage = messages[messages.length - 1];
+    lastMessage.scrollIntoView();
+    App['chat_room_<%= @chat_room.id %>'] = App.cable.subscriptions.create({ channel:'ChatRoomsChannel', chat_room_id: <%= @chat_room.id %> },  {received: (data) => {
+      if (data.current_user_id !== <%= current_user.id %>){
+      const messagesContainer = document.querySelector('.messages');
+      messagesContainer.insertAdjacentHTML('beforeend', data.message_partial);
+      lastMessage.scrollIntoView();
+      }
+    }
+  })
+
+  </script>
+<% end %>
+
+
+</div>

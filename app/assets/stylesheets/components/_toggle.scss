@@ -1,0 +1,72 @@
+
+.c-toggle {
+  display: inline-block;
+  position: relative;
+  text-indent: 2.5em;
+}
+
+.c-toggle input[type="checkbox"] {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+}
+
+/* ui element */
+.c-toggle::before {
+  content: '';
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #ccc;
+  border: 0.1em solid #646464;
+  border-radius: 1em;
+  box-sizing: border-box;
+}
+
+/* moving button */
+.c-toggle label::after,
+.c-toggle label::before {
+  content: '';
+  display: block;
+  height: 1em;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+// .c-toggle label::after {
+//   width: 4em;
+//   height: 2em;
+//   background: transparent;
+//   color: white;
+// }
+
+.c-toggle label::before {
+  content: '';
+  display: block;
+  height: 100%;
+  width: 2em;
+  height: 2em;
+  position: absolute;
+  top: 0em;
+  background: #646464;
+  border-radius: 50%;
+  transition: transform 0.2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.c-toggle input[type="checkbox"]:checked + label::before {
+  transform: translateX(2em);
+  background: #E38076;
+}
+
+
+.mapboxgl-canvas {
+  height: 800px;
+  width: 600px;
+}

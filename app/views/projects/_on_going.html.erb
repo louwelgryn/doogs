@@ -2,143 +2,56 @@
 <div class="mx-auto">
   <ul class="nav nav-dashboard" id="myTab" role="tablist">
     <li class="nav-item">
-      <a class="nav-link active tab-label cool-link" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
+      <a class="nav-link active tab-label" id="summary-tab" data-toggle="tab" href="#summary" role="tab" aria-controls="summary" aria-selected="true">Vue d'ensemble</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
+      <a class="nav-link tab-label" id="calendar-tab" data-toggle="tab" href="#calendar" role="tab" aria-controls="calendar" aria-selected="false">Calendrier</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link tab-label cool-link" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
+      <a class="nav-link tab-label" id="roadmap-tab" data-toggle="tab" href="#roadmap" role="tab" aria-controls="roadmap" aria-selected="false">Roadmap</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab-label" id="chatroom-tab" data-toggle="tab" href="#chatroom" role="tab" aria-controls="chatroom" aria-selected="false">Chatroom</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link tab-label" id="fichiers-tab" data-toggle="tab" href="#fichiers" role="tab" aria-controls="fichiers" aria-selected="false">Ressources</a>
     </li>
   </ul>
 
   <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active tab-content" id="summary" role="tabpanel" aria-labelledby="summary-tab">
-      <div class="row">
-        <div class="project-cards">
-          <div class="project-card col-5">
-            <%= cl_image_tag @project.image, class: "croped-image-bord"  %>
-            <%= image_tag 'weirdo-orange.svg', class: "weirdo-orange"%>
-          </div>
 
-          <div class="project-card col-5">
-            <h4>Prochaine tâche à venir</h4>
-            <div class="project-task-card">
-              <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
-                <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
-
-                   <div class="project-task-date">
-                    <div class="test">
-                    <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-                <div class="project-task-informations">
-                  <% if @upcoming_task.priority_level == "Normale" %>
-                    <p class="task-status btn-yellow btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                    <p class="task-status btn-orange btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% else %>
-                    <p class="task-status btn-red btn-basic top-left"> <%= @upcoming_task.priority_level%></p>
-                  <% end %>
-                  </div>
-                  </div>
-                    <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar task-owner", style:"margin: 0;" %>
-                  </div>
-
-
-                 <p style= "margin-top: 8px" class="title-task"> <%= @upcoming_task.name %></p>
-
-                <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
-                  <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                    <%= f.submit "Marquer comme achevée", class: "btn-rose finished" %>
-                  <% end %>
-                <% end %>
-              <% else %>
-
-
-
-
-                <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
-
-              <% end %>
-            </div>
-          </div>
-
-
-          <div class="project-card col-5">
-            <h4>Prochain évènement </h4>
-          </div>
-        </div>
-      </div>
-     </div>
+    <div class="tab-pane fade show active tab-content " id="summary" role="tabpanel" aria-labelledby="summary-tab">
+      <%= render 'db_summary'%>
+    </div>
 
     <div class="tab-pane fade tab-content" id="calendar" role="tabpanel" aria-labelledby="calendar-tab">
-
-      <button type="button" class="btn-black finished" data-toggle="modal" data-target="#eventModal">
-        Créer un nouvel évènement
-      </button>
-
-       <div id="calendar" class="calendar-box"></div>
-
+      <%= render 'db_calendar'%>
     </div>
 
     <div class="tab-pane fade tab-content" id="roadmap" role="tabpanel" aria-labelledby="roadmap-tab">
-      <% if @manager %>
-
-        <div>
-          <button type="button" class="btn-black finished" data-toggle="modal" data-target="#exampleModal">
-          Créer une nouvelle tâche!
-          </button>
-        </div>
-
-
-      <% end %>
-      <br>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3 title-task">
-            Normale
-
-            <div id="Normale" class="drag-drop">
-
-            <% @project.tasks.normale.a_faire.each do |task| %>
-
-              <%= render 'Tasks_cards', task: task  %>
-             <% end %>
-            </div>
-          </div>
-
-          <div class="col-sm-3 title-task">
-            Urgentes
-
-            <div id="Urgente" class="drag-drop">
-            <% @project.tasks.urgente.a_faire.each do |task| %>
-
-
-              <%= render 'Tasks_cards', task: task  %>
-            <% end %>
-          </div>
-          </div>
-          <div class="col-sm-3 title-task" >
-            Prioritaires
-            <div id="Prioritaire" class="drag-drop">
-              <% @project.tasks.prioritaire.a_faire.each do |task| %>
-                <%= render 'Tasks_cards', task: task  %>
-              <% end %>
-              </div>
-            </div>
-          </div>
-
-
-          </div>
-        </div>
-      </div>
+      <%= render 'db_tasks'%>
     </div>
+
+    <div class="tab-pane fade tab-content" id="chatroom" role="tabpanel" aria-labelledby="chatroom-tab">
+      <div class="container-search">
+        <%= form_tag chat_room_path(@chat_room), method: :get, class: "form-inline my-2 my-lg-0 search-flex container-search-form", remote: true do %>
+          <%= text_field_tag :query,
+            params[:query],
+            class: " form-control mr-sm-2 ",
+            placeholder: "Find a message"
+          %>
+         <%= submit_tag "Search", class: " btn-rose my-2 my-sm-0" %>
+        <% end %>
+      </div>
+     <div id="chat-room"> <%= render 'db_chatroom'%> </div>
+    </div>
+
+    <div class="tab-pane fade tab-content" id="fichiers" role="tabpanel" aria-labelledby="fichiers-tab">
+      <%= render 'db_fichiers'%>
+    </div>
+
+
   </div>
-
-
-
-
-
 
 </div>
 
