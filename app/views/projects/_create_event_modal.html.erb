@@ -4,7 +4,6 @@
       <div class="modal-header modal-header-custom">
         <div class="form-header">
           <h5 class="modal-title" id="eventModalLabel">Nouvel évènement</h5>
-          <p id="start_date"></p>
         </div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -14,6 +13,7 @@
         <div class="container">
           <!-- <button id="sweet-alert-button" class="d-none">Click me!</button> -->
 
+          <p id="start_date"></p>
           <%= simple_form_for [@project, @event] do |f| %>
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>

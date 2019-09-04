@@ -60,6 +60,17 @@ class ProjectsController < ApplicationController
     @volunteers = @project.volunteers
     @event = Event.new
 
+    if @project.tasks.where('status = ?', 'A faire').nil?
+    else
+      @taches_a_faire = @project.tasks.where('status = ?', 'A faire').length
+    end
+
+    if @project.tasks.where('status = ?', 'Achevée').nil?
+    else
+    @taches_faites = @project.tasks.where('status = ?', 'Achevée').length
+    end
+
+    console
     @chat_room = @project.chat_room
     @user_participations = ["lalala"]
     authorize @project

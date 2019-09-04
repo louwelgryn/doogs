@@ -1,4 +1,3 @@
-
 <div class="modal modal-calendar fade " id="toggleEventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style='z-index: 50000;'>
   <div class="modal-dialog" role="document">
     <div class="modal-content" style="margin: 0 !important; padding: 0!important;">
@@ -20,6 +19,7 @@
         <div class="form-title">
           <h2 class="form--heading form-heading-custom">Créer un évènement personnel</h2>
         </div>
+          <p class="start_date"></p>
         <%= simple_form_for [@project, @event] do |f| %>
                 <%= f.error_notification %>
                 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -53,6 +53,7 @@
         <div class="form-title">
           <h2 class="form--heading form-heading-custom">Organiser une réunion </h2>
         </div>
+          <p class="start_date"></p>
         <%= simple_form_for [@project, @event] do |f| %>
                 <%= f.error_notification %>
                 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -87,7 +88,7 @@
                   <% end %>
                 <% end %>
               </div>
-                  <%= f.hidden_field :participants, input_html:{id: 'participants_reunion'} %>
+                <%= f.hidden_field :participants, input_html:{id: 'participants_reunion'} %>
 
                 <div class="form-actions form-actions-centered">
                   <%= f.submit "Organiser une réunion", class: "btn-black", id: "submit-calendar" %>

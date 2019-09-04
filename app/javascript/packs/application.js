@@ -107,6 +107,25 @@ volunteers.forEach((volunteer) => {
   });
 });
 
+/// ASSIGNEMENT A UNE TACHE ///
+const assignes = document.querySelectorAll(".task-user-button");
+const userInputNormale = document.getElementById("user_task_normale");
+const userInputUrgente = document.getElementById("user_task_urgente");
+const userInputPrioritaire = document.getElementById("user_task_prioritaire");
+
+
+assignes.forEach((assigne) => {
+  assigne.addEventListener("click", (event) => {
+    event.preventDefault();
+    assigne.classList.add("avatar-clicked");
+    console.log(Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10));
+    const assignement = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
+    userInputNormale.value = assignement;
+    userInputUrgente.value = assignement;
+    userInputPrioritaire.value = assignement;
+  });
+});
+
 /// FORMULAIRE CALENDRIER ///
 $("#signup").click(function() {
   $(".message").css("transform", "translateX(100%)");
@@ -122,6 +141,24 @@ $("#login").click(function() {
     $(".message").removeClass("signup");
   }
   $(".message").addClass("login");
+});
+
+
+/// CIRCLES ///
+const displays = document.querySelectorAll('.note-display');
+const transitionDuration = 900;
+
+displays.forEach(display => {
+  let progress = display.querySelector('.circle__progress--fill');
+  let radius = progress.r.baseVal.value;
+  let circumference = 2 * Math.PI * radius;
+  let note = parseFloat(display.dataset.note);
+  let offset = circumference * (15 - note) / 15;
+
+  progress.style.setProperty('--transitionDuration', `${transitionDuration}ms`);
+  progress.style.setProperty('--initialStroke', circumference);
+
+  setTimeout(() => progress.style.strokeDashoffset = offset, 100);
 });
 
 

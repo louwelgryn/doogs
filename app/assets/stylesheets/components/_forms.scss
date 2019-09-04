@@ -17,6 +17,12 @@
   text-align: center;
 }
 
+.start_date {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .form-header {
   display: flex;
   flex-direction: column;
@@ -229,6 +235,14 @@ $grey: #C3C3D8;
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+
+.form-title-task {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
 }
 
 .form-button {
