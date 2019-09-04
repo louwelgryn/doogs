@@ -104,7 +104,7 @@ puts 'creating Antoine Gaillard'
 
 # User 3
 antoine = User.new
-antoine.name ="antoine gaillard"
+antoine.name ="Antoine Gaillard"
 antoine.description = "J'ai pas mal de temps libre."
 antoine.level = "Piou-piou"
 antoine.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506803/_JBU8996-1_Antoine_Gaillard_ipfh5q.jpg"
@@ -134,11 +134,11 @@ antoine_skill4.skill = developer_back
 antoine_skill4.user = antoine
 antoine_skill4.save
 
-puts 'creating marie Stoppa'
+puts 'creating Marie Stoppa'
 
 # User 4
 marie = User.new
-marie.name ="marie Stoppa"
+marie.name ="Marie Stoppa"
 marie.description = "I like to data data. I like to data !"
 marie.level = "Piou-piou"
 marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
@@ -153,11 +153,11 @@ marie_skill1.skill = product_manager
 marie_skill1.user = marie
 marie_skill1.save
 
-puts 'creating maxence Nakamura'
+puts 'creating Maxence Ballande'
 
 # User 5
 maxence = User.new
-maxence.name ="Maxence Ballende"
+maxence.name ="Maxence Ballande"
 maxence.description = "Tu parles sur moi y'a R"
 maxence.level = "Piou-piou"
 maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507259/_JBU8747-1_xt8bxo.jpg"
@@ -191,11 +191,11 @@ arnaud_skill1.skill = product_manager
 arnaud_skill1.user = arnaud
 arnaud_skill1.save
 
-puts 'creating thomas Reilly'
+puts 'creating Thomas Reilly'
 
 # User 7
 thomas = User.new
-thomas.name ="Thomas Bozzo"
+thomas.name ="Thomas Reilly"
 thomas.description = "J'aime le développement web et le cinéma."
 thomas.level = "Piou-piou"
 thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507235/_JBU8663-1_l2rzoh.jpg"
