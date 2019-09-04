@@ -18,13 +18,16 @@ class EventsController < ApplicationController
       start_time: @event.start_time
     )
 
-    params[:event][:participants].split(',').uniq.each do |participant_id|
-      participant = User.find(participant_id)
-      Participation.create(
-        event: @event,
-        user: participant,
-        start_time: @event.start_time
-      )
+    if params[:event][:participants].nil?
+    else
+      params[:event][:participants].split(',').uniq.each do |participant_id|
+        participant = User.find(participant_id)
+        Participation.create(
+          event: @event,
+          user: participant,
+          start_time: @event.start_time
+        )
+      end
     end
 
     redirect_to project_dashboard_path(@project, anchor: 'calendar')

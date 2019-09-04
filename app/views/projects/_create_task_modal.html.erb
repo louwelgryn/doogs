@@ -14,10 +14,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "} %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "} %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Normale" %>
@@ -33,7 +33,7 @@
           </div>
 
 
-          <div class="form-actions">
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>
@@ -61,10 +61,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Urgente" %>
@@ -80,7 +80,7 @@
           </div>
 
 
-          <div class="form-actions">
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>
@@ -108,10 +108,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Prioritaire" %>
@@ -127,7 +127,7 @@
           </div>
 
 
-          <div class="form-actions">
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>
