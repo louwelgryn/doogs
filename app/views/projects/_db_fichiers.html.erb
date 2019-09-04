@@ -2,19 +2,16 @@
 
   <div class="ressources-block ressources-list">
     <h4>Fichiers à télécharger</h4>
-    <% @project.ressources.each do |ressource| %>
-      <div class="ressource">
-        <div class="ressource-icon">
-          <%= link_to ressource.source.url, target: :_blank do %>
-            <%= image_tag ressource.icon_file_type(ressource.source.filename), width: 64 %>
-          <% end %>
-        </div>
-        <div class="ressource-info">
-          <span><strong><%= ressource.name %></strong></span><br>
-          <span class="ressource-info-user">Mise à disposition par <%= ressource.user.name %> le <%= ressource.created_at.strftime("%m/%d/%Y") %></span>
-        </div>
+    <% if !@project.ressources.any? %>
+      <p>Il n'y a aucun fichier disponible pour le moment</p>
+    <% else %>
+      <%= simple_form_for(:search, url: project_ressources_path(@project), method: :get, html: { id: 'ressources-form' }, remote: true) do |f| %>
+        <%= f.input :content_type, as: :check_boxes, collection: ['jpg', 'csv', 'pdf'], input_html: { checked: true} %>
+        <%= f.button :submit %>
+      <% end %>
+      <div id="ressources-container">
+        <%= render "projects/ressources_display", ressources: @project.ressources %>
       </div>
-      <hr>
     <% end %>
   </div>
 

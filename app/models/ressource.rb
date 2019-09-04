@@ -5,8 +5,19 @@ class Ressource < ApplicationRecord
   validates :name, presence: true
   validates :source, presence: true
 
-  def icon_file_type(filename)
-    ext = filename.match(/[^\\]*\.(\w+)$/)[1]
-    return "/file_type_icons/#{ext}.svg"
+  before_save :update_attributes
+
+  def icon_file(format)
+    "/file_type_icons/#{format}.svg"
+  end
+
+  def file_type
+    self.source.filename.match(/[^\\]*\.(\w+)$/)[1]
+  end
+
+  private
+
+  def update_attributes
+    self.content_type = file_type
   end
 end

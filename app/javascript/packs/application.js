@@ -17,6 +17,7 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
 import { initCounter } from '../components/init_counter';
+import { submitRessourcesSearch } from '../components/ressources_search';
 
 // MAPBOX
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
@@ -40,6 +41,10 @@ if (document.querySelector(".filter-search")) {
 
 if (document.querySelector("#counter-target")) {
   initCounter();
+}
+
+if (document.querySelector("#ressources-form")) {
+  submitRessourcesSearch();
 }
 
 calendarInit();

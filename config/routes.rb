@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show] do
     resources :tasks, only: [:new, :create, :update]
     resources :events, only: [:create]
-    resources :ressources, only: [:create]
+    resources :ressources, only: [:create, :index]
   end
 
   resources :commitments, only: [:update]
