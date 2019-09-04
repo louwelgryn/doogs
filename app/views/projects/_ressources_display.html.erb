@@ -6,7 +6,9 @@
       <% end %>
     </div>
     <div class="ressource-info">
-      <span><strong><%= ressource.name %></strong> <i class="fas fa-file-download"></i></span><br>
+      <%= link_to ressource.source.url, target: :_blank do %>
+        <span><strong><%= ressource.name %></strong> <i class="fas fa-file-download"></i></span><br>
+      <% end %>
       <span class="ressource-info-user">Mise à disposition par <%= ressource.user.name %> le <%= ressource.created_at.strftime("%m/%d/%Y") %></span>
     </div>
   </div>
