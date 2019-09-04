@@ -95,7 +95,7 @@ $(document).ready(() => {
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
-const participantsInput = document.getElementById("event_participants");
+const participantsInput = document.getElementById("participants_reunion");
 
 volunteers.forEach((volunteer) => {
   volunteer.addEventListener("click", (event) => {
@@ -103,6 +103,7 @@ volunteers.forEach((volunteer) => {
     volunteer.classList.add("avatar-clicked");
     participants.push(Number.parseInt(volunteer.innerHTML.slice(0,7).trim(),10));
     participantsInput.value = participants;
+    console.log(participants);
   });
 });
 
