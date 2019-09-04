@@ -104,7 +104,7 @@ puts 'creating Antoine Gaillard'
 
 # User 3
 antoine = User.new
-antoine.name ="antoine gaillard"
+antoine.name ="Antoine Gaillard"
 antoine.description = "J'ai pas mal de temps libre."
 antoine.level = "Piou-piou"
 antoine.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506803/_JBU8996-1_Antoine_Gaillard_ipfh5q.jpg"
@@ -138,7 +138,7 @@ puts 'creating marie Stoppa'
 
 # User 4
 marie = User.new
-marie.name ="marie Stoppa"
+marie.name ="Marie Stoppa"
 marie.description = "I like to data data. I like to data !"
 marie.level = "Piou-piou"
 marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
