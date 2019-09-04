@@ -60,6 +60,8 @@ class ProjectsController < ApplicationController
     @volunteers = @project.volunteers
     @event = Event.new
 
+    @taches_a_faire = @project.tasks.where('status = ?', 'A faire');
+    @taches_faites = @project.tasks.where('status = ?', 'Achevée');
     @chat_room = @project.chat_room
     @user_participations = ["lalala"]
     authorize @project

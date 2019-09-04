@@ -35,7 +35,7 @@
               </span>
               <% end %>
           </div>
-          <%= f.hidden_field :user_id, input_html:{id: 'user_task_normale'} %>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_normale', style: "display: none"} %>
 
 
           <div class="form-actions form-button">
@@ -87,7 +87,7 @@
               </span>
               <% end %>
           </div>
-          <%= f.hidden_field :user_id, input_html:{id: 'user_task_urgente'} %>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_urgente', style: "display: none"} %>
 
 
           <div class="form-actions form-button">
@@ -139,7 +139,8 @@
               </span>
               <% end %>
           </div>
-          <%= f.hidden_field :user_id, input_html:{id: 'user_task_prioritaire'} %>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_prioritaire', style: "display: none"} %>
+
 
 
           <div class="form-actions form-button">

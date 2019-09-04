@@ -103,7 +103,6 @@ volunteers.forEach((volunteer) => {
 });
 
 /// ASSIGNEMENT A UNE TACHE ///
-const assignement = [];
 const assignes = document.querySelectorAll(".task-user-button");
 const userInputNormale = document.getElementById("user_task_normale");
 const userInputUrgente = document.getElementById("user_task_urgente");
@@ -114,11 +113,11 @@ assignes.forEach((assigne) => {
   assigne.addEventListener("click", (event) => {
     event.preventDefault();
     assigne.classList.add("avatar-clicked");
-    assigne = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
-    userInputNormale.value = assigne;
-    userInputUrgente.value = assigne;
-    userInputPrioritaire.value = assigne;
-    console.log(assigne);
+    console.log(Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10));
+    const assignement = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
+    userInputNormale.value = assignement;
+    userInputUrgente.value = assignement;
+    userInputPrioritaire.value = assignement;
   });
 });
 

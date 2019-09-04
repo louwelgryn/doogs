@@ -83,7 +83,12 @@ const calendarInit = () => {
           const selectedDay = Number.parseInt(day.dataset.date.slice(-2),10);
           const selectedDateMonth = Number.parseInt(day.dataset.date.slice(-5,-3),10);
           $('#toggleEventModal').modal('show');
-          document.getElementById("start_date").innerHTML = selectedDay + " " + monthLetters[selectedDateMonth];
+          console.log(document.querySelectorAll(".start_date"));
+          document.querySelectorAll(".start_date").forEach((start) => {
+            console.log(start);
+            start.innerHTML = selectedDay + " " + monthLetters[selectedDateMonth];
+            console.log(start);
+          });
 
           // Set start date to selected
           const options_start_day = document.querySelectorAll("#event_start_time_3i > option");

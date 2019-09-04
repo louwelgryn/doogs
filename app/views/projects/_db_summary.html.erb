@@ -25,9 +25,13 @@
 
     <div class="project-card col-sm-6">
       <div class="test-card for-dashboard">
+
         <h4 class="task-title">Prochaine tâche à venir</h4>
+
         <div class="project-task-card">
+
           <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
+
             <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
             <div class="project-cards">
               <div class="project-task-card border-top border-bottom">
@@ -52,11 +56,15 @@
                 <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
               </div>
             </div>
+
           <% else %>
+
             <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
+
           <% end %>
         </div>
       </div>
+
     </div>
 
     <div class="project-card col-sm-6">
