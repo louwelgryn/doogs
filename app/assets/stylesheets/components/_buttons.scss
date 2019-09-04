@@ -29,18 +29,14 @@
 
 .btn-basic {
   text-transform: none;
-    border-radius: 50px;
-    text-align: center;
-    transition: 0.3s;
-    color: #fff;
-    /* padding: 12px 20px; */
-    text-decoration: none;
-    margin: 0 auto;
-    /* justify-content: center; */
-    /* align-content: center; */
-    text-align: center;
-    font-size: 10px;
-    /* padding: 10px; */
+  border-radius: 50px;
+  text-align: center;
+  transition: 0.3s;
+  color: #fff;
+  text-decoration: none;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 10px;
 }
 
 .btn-small{
@@ -58,18 +54,19 @@
   background-color: #ff9f1a;
   transition: 0.3s;
 }
+
 .btn-yellow {
   background-color: #f5dd29;
   transition: 0.3s;
 }
 
- .btn-rose {
+.btn-rose {
   background-color: #e48174;
   border-radius: 8px;
-    border: #e48174;
-    font-color: white;
-    font-color: white;
-    color: white;
+  border: #e48174;
+  font-color: white;
+  font-color: white;
+  color: white;
  }
 
 .btn-calendar {
@@ -81,21 +78,16 @@ width: 80px;
     font-size: 14px;
 }
 
-
-
 .btn-status {
   height: 25px;
   transition: 0.3s;
-
 }
-
 
 .button-default.turquoise {
   background-color: #fffb46;
   transition: 0.3s;
   color: white;
   border-radius: 5px;
-
   font-weight: bold;
   a:hover {
     background-color: rgba(255,255,255,0.7);
@@ -113,7 +105,8 @@ width: 80px;
 }
 
 a.blog-slider__button {
-    position: relative;
+    // position: relative;
+    position: center;
     display: inline-block;
     height: 40px;
     padding: 3px 23px;
@@ -164,6 +157,10 @@ a.blog-slider__button:hover {
 }
 
 .participation-user-button {
+  color: transparent !important;
+}
+
+.task-user-button {
   color: transparent !important;
 }
 

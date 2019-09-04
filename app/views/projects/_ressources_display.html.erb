@@ -1,0 +1,16 @@
+<% ressources.each do |ressource| %>
+  <div class="ressource">
+    <div class="ressource-icon">
+      <%= link_to ressource.source.url, target: :_blank do %>
+        <%= image_tag ressource.icon_file(ressource.source.file.format), width: 64 %>
+      <% end %>
+    </div>
+    <div class="ressource-info">
+      <%= link_to ressource.source.url, target: :_blank do %>
+        <span><strong><%= ressource.name %></strong> <i class="fas fa-file-download"></i></span><br>
+      <% end %>
+      <span class="ressource-info-user">Mise à disposition par <%= ressource.user.name %> le <%= ressource.created_at.strftime("%m/%d/%Y") %></span>
+    </div>
+  </div>
+  <hr>
+<% end %>

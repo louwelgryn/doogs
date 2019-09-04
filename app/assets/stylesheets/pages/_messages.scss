@@ -80,8 +80,6 @@ a:hover {
 }
 
 .message {
-  display: flex;
-  margin-bottom: 10px;
   &.right {
     flex-direction: row-reverse;
     .message-content {
@@ -91,6 +89,16 @@ a:hover {
     }
   }
 }
+
+.message-custom {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .message-content {
   background-color: #F7F7F7;
   border-radius: 11px;

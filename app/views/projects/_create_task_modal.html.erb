@@ -2,7 +2,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Normale</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Normale</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -14,10 +14,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "} %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "} %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Normale" %>
@@ -28,12 +28,17 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_normale', style: "display: none"} %>
 
 
-          <div class="form-actions">
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>
@@ -49,7 +54,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Urgente</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Urgente</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -61,10 +66,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Urgente" %>
@@ -75,12 +80,17 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_urgente', style: "display: none"} %>
 
 
-          <div class="form-actions">
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>
@@ -96,7 +106,7 @@
   <div class="modal-dialog modal-dialog-scrollable" role="document">
     <div class="modal-content modal-content-custom">
       <div class="modal-header modal-header-custom">
-        <h5 class="modal-title" id="exampleModalLabel">Nouvelle tâche - Prioritaire</h5>
+        <h5 class="modal-title form-title-task" id="exampleModalLabel">Nouvelle tâche - Prioritaire</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -108,10 +118,10 @@
           <%= f.error_notification %>
           <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
           <div class="form-inputs">
-            <%= f.input :name, placeholder: "Nom", label: false %>
+            <%= f.input :name, placeholder: "Nom", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
-            <%= f.input :description, placeholder: "Description", label: false %>
+            <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "}  %>
           </div>
           <div class="form-inputs">
             <%= f.hidden_field :priority_level, value: "Prioritaire" %>
@@ -122,12 +132,18 @@
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
-          <div class="form-inputs">
-            <%= f.input :user_id, label: false, collection: @volunteers %>
+          <div class="participants-selection">
+            <% @project.users.each do |user| %>
+              <span class="task-user-button avatar-participation"><%= user.id %>
+              <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+              </span>
+              <% end %>
           </div>
+          <%= f.input :user_id, label: false, input_html:{id: 'user_task_prioritaire', style: "display: none"} %>
 
 
-          <div class="form-actions">
+
+          <div class="form-actions form-button">
             <%= f.submit "Créer la tâche", class: "btn-black" %>
           </div>
           <% end %>

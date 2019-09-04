@@ -18,6 +18,7 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
 import { initCounter } from '../components/init_counter';
+import { submitRessourcesSearch } from '../components/ressources_search';
 
 // MAPBOX
 import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the stylesheet_pack_tag in the layout!
@@ -41,6 +42,10 @@ if (document.querySelector(".filter-search")) {
 
 if (document.querySelector("#counter-target")) {
   initCounter();
+}
+
+if (document.querySelector("#ressources-form")) {
+  submitRessourcesSearch();
 }
 
 calendarInit();
@@ -91,7 +96,7 @@ $(document).ready(() => {
 /// PARTICIPATION A UN EVENEMENT ///
 const participants = [];
 const volunteers = document.querySelectorAll(".participation-user-button");
-const participantsInput = document.getElementById("event_participants");
+const participantsInput = document.getElementById("participants_reunion");
 
 volunteers.forEach((volunteer) => {
   volunteer.addEventListener("click", (event) => {
@@ -99,8 +104,29 @@ volunteers.forEach((volunteer) => {
     volunteer.classList.add("avatar-clicked");
     participants.push(Number.parseInt(volunteer.innerHTML.slice(0,7).trim(),10));
     participantsInput.value = participants;
+    console.log(participants);
   });
 });
+
+/// ASSIGNEMENT A UNE TACHE ///
+const assignes = document.querySelectorAll(".task-user-button");
+const userInputNormale = document.getElementById("user_task_normale");
+const userInputUrgente = document.getElementById("user_task_urgente");
+const userInputPrioritaire = document.getElementById("user_task_prioritaire");
+
+
+assignes.forEach((assigne) => {
+  assigne.addEventListener("click", (event) => {
+    event.preventDefault();
+    assigne.classList.add("avatar-clicked");
+    console.log(Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10));
+    const assignement = Number.parseInt(assigne.innerHTML.slice(0,7).trim(),10);
+    userInputNormale.value = assignement;
+    userInputUrgente.value = assignement;
+    userInputPrioritaire.value = assignement;
+  });
+});
+
 
 if (document.querySelector('.messages')) {
   // initMapbox();
@@ -116,6 +142,42 @@ if (document.querySelector('.messages')) {
 //  const url = `http://http://localhost:3000/projects/118/dashboard#chatroom/?message_id=${upvote.dataset.id}`
 //   url.click()
 // })
+
+
+/// FORMULAIRE CALENDRIER ///
+$("#signup").click(function() {
+  $(".message").css("transform", "translateX(100%)");
+  if ($(".message").hasClass("login")) {
+    $(".message").removeClass("login");
+  }
+  $(".message").addClass("signup");
+});
+
+$("#login").click(function() {
+  $(".message").css("transform", "translateX(0)");
+  if ($(".message").hasClass("login")) {
+    $(".message").removeClass("signup");
+  }
+  $(".message").addClass("login");
+});
+
+
+/// CIRCLES ///
+const displays = document.querySelectorAll('.note-display');
+const transitionDuration = 900;
+
+displays.forEach(display => {
+  let progress = display.querySelector('.circle__progress--fill');
+  let radius = progress.r.baseVal.value;
+  let circumference = 2 * Math.PI * radius;
+  let note = parseFloat(display.dataset.note);
+  let offset = circumference * (15 - note) / 15;
+
+  progress.style.setProperty('--transitionDuration', `${transitionDuration}ms`);
+  progress.style.setProperty('--initialStroke', circumference);
+
+  setTimeout(() => progress.style.strokeDashoffset = offset, 100);
+});
 
 
 

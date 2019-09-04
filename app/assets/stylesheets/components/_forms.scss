@@ -4,9 +4,23 @@
   margin-top: 16px;
 }
 
+.form-case {
+  border: none !important;
+  border-bottom: solid 1px #bfbfbf !important;
+  width: 100%;
+  text-align: center;
+}
+
 .form-label {
   color: #6B757C;
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.start_date {
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .form-header {
@@ -19,14 +33,11 @@
 }
 
 .modal-header-custom {
-  background-color: #A4C5C6;
-  color: white;
-  border-radius: 8px;
+  background-color: white;
 }
 
 .modal-content-custom {
-  background-color: #A4C5C6;
-  border-radius: 8px;
+  background-color: white;
 }
 
 #event_start_time_1i, #event_start_time_2i, #event_start_time_3i,  {
@@ -35,5 +46,216 @@
 
 #event_end_time_1i, #event_end_time_2i, #event_end_time_3i,  {
   display: none !important;
+}
+
+/// FORMULAIRE CALENDRIER ///
+
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+$font: 'Source Sans Pro', sans-serif;
+$blue: #809BCE;
+$purple: #9893DA;
+$grey: #C3C3D8;
+
+
+.message, .form-toggle, form {
+  display: block;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.toggle-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.container-toggle-form {
+  width: 700px;
+  height: 700px;
+  background: white;
+  position: relative;
+  display: grid;
+  grid-template: 100% / 50% 50%;
+}
+
+.message {
+  position: absolute;
+  background-color: rgb(221, 219, 255);
+  width: 50%;
+  height: 100%;
+  transition: 0.5s all ease;
+  transform: translateX(100%);
+  z-index: 4;
+
+  &:before {
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 70%;
+    background: $grey;
+    opacity: 0;
+    left: 0;
+    top:15%;
+  }
+
+  .button {
+    margin: 5px 0;
+  }
+}
+
+.signup {
+  &:before {
+    opacity: 0.3;
+    left: 0;
+  }
+}
+
+.login {
+  &:before {
+    opacity: 0.3;
+    left: 100%;
+  }
+}
+
+
+.btn-wrapper {
+  width: 60%;
+}
+
+.form-toggle {
+  width: 100%;
+  height: 100%;
+
+  &--heading {
+    font-size: 18px;
+    height: 50px;
+    color: $blue;
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+// form {
+//   width: 70%;
+//   > * {
+//     margin: 10px;
+//   }
+//   input {
+//     width: 90%;
+//     border: 0;
+//     border-bottom: 1px solid rgba($grey, 0.5);
+//     font-size: 13px;
+//     font-weight: 300;
+//     color: #797A9E;
+//     letter-spacing: 0.11em;
+
+//     &::placeholder {
+//       color: #C3C3D8;
+//       font-size: 10px;
+//     }
+
+//     &:focus {
+//       outline: 0;
+//       border-bottom: 1px solid rgba($blue, 0.7);
+//       transition: 0.6s all ease;
+//     }
+//   }
+// }
+
+.button-toggle {
+  margin: 4px;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  z-index: 3;
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: $purple;
+  transition: 0.3s;
+  padding: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(1px);
+    transition: 0.3s all ease;
+    text-decoration: none;
+    color: $purple;
+    background-color: $blanc-semi-transparent;
+    border-color: $purple;
+    border: solid 1px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button-toggle-space {
+  margin-bottom: 16px !important;
+}
+
+
+@media (max-width: 750px){
+  .container {
+    transform: scale(0.8);
+  }
+}
+
+.participants-selection {
+  display: flex;
+  justify-content: space-around;
+}
+
+.form-heading-custom {
+  font-size: 32px;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.form-title {
+  height: 120px;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.form-title-task {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+}
+
+.form-button {
+  height: 120px;
+  width: 100%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-wrapper-custom {
+  width: 88% !important;
 }
 

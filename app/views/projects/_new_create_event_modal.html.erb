@@ -1,0 +1,103 @@
+<div class="modal modal-calendar fade " id="toggleEventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style='z-index: 50000;'>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style="margin: 0 !important; padding: 0!important;">
+
+    <div class="container-toggle-form">
+      <div class="message signup">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="message-custom">
+          <div class="btn-wrapper btn-wrapper-custom">
+            <button class="button-toggle button-toggle-space" id="signup">Créer un évènement solo</button>
+            <button class="button-toggle button-toggle-space" id="login">Organiser une réunion</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-toggle form--signup">
+        <div class="form-title">
+          <h2 class="form--heading form-heading-custom">Créer un évènement personnel</h2>
+        </div>
+          <p class="start_date"></p>
+        <%= simple_form_for [@project, @event] do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <div class="form-inputs">
+                  <%= f.input :name, placeholder: "Nom de l'évènement", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :description, placeholder: "Description de l'évènement", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :hub, placeholder: "Lieu/plateforme", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de début:</p>
+                  <%= f.input :start_time, label: false, :minute_step => 5%>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de fin:</p>
+                  <%= f.input :end_time, label: false, :minute_step => 5%>
+                </div>
+                  <%= f.hidden_field :status, value: "perso" %>
+                <div class="form-button">
+                  <div class="form-actions form-actions-centered">
+                    <%= f.submit "Créer un évènement perso", class: "btn-black", id: "submit-calendar" %>
+                  </div>
+                </div>
+            <% end %>
+      </div>
+
+      <div class="form-toggle form--login">
+        <div class="form-title">
+          <h2 class="form--heading form-heading-custom">Organiser une réunion </h2>
+        </div>
+          <p class="start_date"></p>
+        <%= simple_form_for [@project, @event] do |f| %>
+                <%= f.error_notification %>
+                <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+                <div class="form-inputs">
+                  <%= f.input :name, placeholder: "Nom de la réunion", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :description, placeholder: "Description", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <%= f.input :hub, placeholder: "Lieu/plateforme de rendez-vous", label: false, input_html: { class: "form-case "} %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de début:</p>
+                  <%= f.input :start_time, label: false, :minute_step => 5 %>
+                </div>
+                <div class="form-inputs">
+                  <p class='form-label'>Heure de fin:</p>
+                  <%= f.input :end_time, label: false, :minute_step => 5 %>
+                </div>
+                  <%= f.hidden_field :status, value: "reunion" %>
+
+              <p class='form-label'>Sélectionner des participants</p>
+
+              <div class="participants-selection">
+                <% @project.users.each do |user| %>
+                  <% if user == current_user %>
+                  <% else %>
+                  <span class="participation-user-button avatar-participation"><%= user.id %>
+                  <%= cl_image_tag user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1", class:"avatar" %>
+                  </span>
+                  <% end %>
+                <% end %>
+              </div>
+                <%= f.hidden_field :participants, input_html:{id: 'participants_reunion'} %>
+
+                <div class="form-actions form-actions-centered">
+                  <%= f.submit "Organiser une réunion", class: "btn-black", id: "submit-calendar" %>
+                </div>
+              <% end %>
+      </div>
+    </div>
+    </div>
+    </div>
+</div>
+</div>
+

@@ -14,18 +14,18 @@ class CommitmentsController < ApplicationController
         @project.status = "En cours"
         @project.save
         # POPUP MESSAGE
-        @message = "Il ne manquait plus que vous pour compléter l'équipe, le projet peut maintenant commencer! "
+        @message = "Il ne manquait plus que vous pour compléter la team, le projet peut maintenant commencer! "
         @icon = "success"
         @title = "Bienvenue dans ce projet!"
       else
         # POPUP MESSAGE
-        @message = 'Il manque encore d\'autres bénévoles pour que le projet puisse démarrer.'
+        @message = 'Il manque encore des bénévoles pour que le projet puisse démarrer.'
         @icon = "success"
         @title = "Bienvenue dans ce projet!"
       end
     elsif @current_project_count.zero?
       # POPUP MESSAGE
-      @message = 'Vous n\'avez pas les compétences requises pour rejoindre ce projet à ce poste.'
+      @message = 'Vous ne possédez pas les compétences requises pour rejoindre ce projet à ce poste.'
       @title = "Désolés!"
       @icon = "error"
     else

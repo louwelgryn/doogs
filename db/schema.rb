@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_075549) do
+
+
+
+ActiveRecord::Schema.define(version: 2019_09_04_113756) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_075549) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "status"
-    t.text "description"
+    t.string "description"
     t.string "hub"
     t.bigint "project_id"
     t.datetime "created_at", null: false
@@ -94,6 +98,18 @@ ActiveRecord::Schema.define(version: 2019_09_04_075549) do
     t.datetime "updated_at", null: false
     t.bigint "charity_id"
     t.index ["charity_id"], name: "index_projects_on_charity_id"
+  end
+
+  create_table "ressources", force: :cascade do |t|
+    t.bigint "project_id"
+    t.string "source"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.bigint "user_id"
+    t.string "content_type"
+    t.index ["project_id"], name: "index_ressources_on_project_id"
+    t.index ["user_id"], name: "index_ressources_on_user_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -174,6 +190,8 @@ ActiveRecord::Schema.define(version: 2019_09_04_075549) do
   add_foreign_key "participations", "events"
   add_foreign_key "participations", "users"
   add_foreign_key "projects", "charities"
+  add_foreign_key "ressources", "projects"
+  add_foreign_key "ressources", "users"
   add_foreign_key "tasks", "projects"
   add_foreign_key "tasks", "users"
   add_foreign_key "user_skills", "skills"

@@ -55,15 +55,27 @@ class ProjectsController < ApplicationController
 
   def dashboard
     @project = Project.find(params[:id])
+    @events = @project.events.joins(:participations).where('user_id = ?', current_user.id)
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
 
+    if @project.tasks.where('status = ?', 'A faire').nil?
+    else
+      @taches_a_faire = @project.tasks.where('status = ?', 'A faire').length
+    end
+
+    if @project.tasks.where('status = ?', 'Achevée').nil?
+    else
+    @taches_faites = @project.tasks.where('status = ?', 'Achevée').length
+    end
+
+    console
     @chat_room = @project.chat_room
     @user_participations = ["lalala"]
     authorize @project
     @manager = manager?
-    gon.events = EventsParsingService.parse_events(@project)
+    gon.events = EventsParsingService.parse_events(@events)
 
     @next_participation = @project.participations.where('user_id = ?', current_user.id).order(:start_time).first
 
@@ -89,6 +101,6 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image, :chat_room)
+    params.require(:project).permit(:name, :description, :development_goal, :status, :start_date, :end_date, :image, :chat_room, :ressource_data => [])
   end
 end

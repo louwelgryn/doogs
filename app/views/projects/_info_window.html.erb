@@ -3,8 +3,11 @@
 </div>
 
 <div>
-  <h2><%= project.name %></h2>
-  <h2><%= project.charity.name %></h2>
+  <h6><%= project.name %></h6>
+  <h6><%= project.charity.name %></h6>
   <p><%= project.charity.address %></p>
 </div>
 
+<div>
+  <%= link_to 'En savoir +', project_path(project), class: "blog-slider__button" %>
+</div>
