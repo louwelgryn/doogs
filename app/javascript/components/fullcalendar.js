@@ -44,7 +44,21 @@ const calendarInit = () => {
 
           // const eventStartTime = document.getElementById('event-start-date');
           // eventStartTime.innerHTML = info.event.extendedProps.start_time;
+        },
+
+        // eventRender: function(event, element) {
+        //   console.log(event);
+        //   console.log(event.extendedProps.description);
+        // }
+
+        eventRender: function(info) {
+          if (info.event.extendedProps.status === "perso") {
+            info.el.classList.add("fc-event-perso")
+          } else {
+            info.el.classList.add("fc-event-reunion")
+          }
         }
+
       });
 
       calendar.render();

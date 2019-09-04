@@ -55,6 +55,7 @@ class ProjectsController < ApplicationController
 
   def dashboard
     @project = Project.find(params[:id])
+    @events = @project.events.joins(:participations).where('user_id = ?', current_user.id)
     @task = Task.new
     @volunteers = @project.volunteers
     @event = Event.new
@@ -63,7 +64,7 @@ class ProjectsController < ApplicationController
     @user_participations = ["lalala"]
     authorize @project
     @manager = manager?
-    gon.events = EventsParsingService.parse_events(@project)
+    gon.events = EventsParsingService.parse_events(@events)
 
     @next_participation = @project.participations.where('user_id = ?', current_user.id).order(:start_time).first
 

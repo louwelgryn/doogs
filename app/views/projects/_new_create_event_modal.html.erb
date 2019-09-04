@@ -15,12 +15,14 @@
       </div>
 
       <div class="form-toggle form--signup">
-        <div class="form--heading">Créer un event perso</div>
+        <div class="form-title">
+          <h2 class="form--heading form-heading-custom">Créer un évènement personnel</h2>
+        </div>
         <%= simple_form_for [@project, @event] do |f| %>
                 <%= f.error_notification %>
                 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
                 <div class="form-inputs">
-                  <%= f.input :name, placeholder: "Nom de l'évènement", label: false %>
+                  <%= f.input :name, placeholder: "Nom de l'évènement", label: false, input_html: { class: "reset-css form-case "} %>
                 </div>
                 <div class="form-inputs">
                   <%= f.input :description, placeholder: "Description de l'évènement", label: false %>
@@ -36,16 +38,18 @@
                   <p class='form-label'>Heure de fin:</p>
                   <%= f.input :end_time, label: false, :minute_step => 5 %>
                 </div>
-                  <%= f.hidden_field :participants %>
+                  <%= f.hidden_field :status, value: "perso" %>
 
                 <div class="form-actions form-actions-centered">
-                  <%= f.submit "Créer un évènement solo", class: "btn-black", id: "submit-calendar" %>
+                  <%= f.submit "Créer un évènement perso", class: "btn-black", id: "submit-calendar" %>
                 </div>
               <% end %>
       </div>
 
       <div class="form-toggle form--login">
-        <div class="form--heading">Créer un rdv avec d'autres </div>
+        <div class="form-title">
+          <h2 class="form--heading form-heading-custom">Organiser une réunion </h2>
+        </div>
         <%= simple_form_for [@project, @event] do |f| %>
                 <%= f.error_notification %>
                 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -66,7 +70,7 @@
                   <p class='form-label'>Heure de fin:</p>
                   <%= f.input :end_time, label: false, :minute_step => 5 %>
                 </div>
-                  <%= f.hidden_field :participants %>
+                  <%= f.hidden_field :status, value: "reunion" %>
 
               <p class='form-label'>Sélectionner des participants</p>
 
@@ -80,6 +84,7 @@
                   <% end %>
                 <% end %>
               </div>
+                  <%= f.hidden_field :participants, input_html:{id: 'participants_reunion'} %>
 
                 <div class="form-actions form-actions-centered">
                   <%= f.submit "Organiser une réunion", class: "btn-black", id: "submit-calendar" %>

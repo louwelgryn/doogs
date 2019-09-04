@@ -4,6 +4,10 @@
   margin-top: 16px;
 }
 
+.form-case {
+  border: solid 1px $gray;
+}
+
 .form-label {
   color: #6B757C;
   font-size: 16px;
@@ -49,7 +53,8 @@ $grey: #C3C3D8;
 
 
 .message, .form-toggle, form {
-  display: flex;
+  display: block;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -73,7 +78,7 @@ $grey: #C3C3D8;
 
 .message {
   position: absolute;
-  background: white;
+  background-color: rgb(221, 219, 255);
   width: 50%;
   height: 100%;
   transition: 0.5s all ease;
@@ -200,5 +205,24 @@ $grey: #C3C3D8;
 .participants-selection {
   display: flex;
   justify-content: space-around;
+}
+
+.form-heading-custom {
+  font-size: 32px;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.form-title {
+  height: 120px;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 

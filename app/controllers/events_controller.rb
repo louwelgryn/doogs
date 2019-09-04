@@ -7,8 +7,8 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @project = Project.find(params[:project_id])
     @event.project = @project
-    @event.save
     authorize @event
+    @event.save
 
     @volunteers = @project.volunteers
 
@@ -27,13 +27,7 @@ class EventsController < ApplicationController
       )
     end
 
-    redirect_to project_dashboard_path(anchor: 'calendar')
-
-    # redirect_to project_dashboard_path(@event.project)
-    # respond_to do |format|
-    #   format.html { render 'projects/show' }
-    #   format.js # <-- will render `app/views/events/create.js.erb`
-    # end
+    redirect_to project_dashboard_path(@project, anchor: 'calendar')
   end
 
   private
