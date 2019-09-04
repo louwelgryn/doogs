@@ -1,3 +1,5 @@
+// General displaying -----------
+
 .ressources-container {
   display: flex;
   justify-content: space-between;
@@ -6,7 +8,7 @@
     color: rgb(65, 65, 65);
   }
 
-  div, span, p {
+  div, span, p, legend {
     color: rgb(65, 65, 65);
     font-family: 'Open Sans', sans-serif;
     font-size: 0.85rem;
@@ -23,6 +25,34 @@
   }
 }
 
+.form-ressources {
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+// Toggles and filter form -------------
+
+.toggle-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+  border-color: #e48174;
+  background-color: #e48174;
+}
+
+#ressources-form input[type=submit] {
+  display: none;
+}
+
+.search-legend {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+// Search results (files) in partial --------
+
 .ressource {
   display: flex;
   align-items: center;
@@ -30,7 +60,13 @@
 
 .ressource-info {
   margin-left: 16px;
+
+  a:hover {
+    text-decoration: none;
+  }
 }
+
+// Upload form --------
 
 .btn-ressource {
   text-transform: none;
@@ -52,6 +88,4 @@
   border: solid 1px;
 }
 
-.form-ressources {
-  display: block;
-}
+

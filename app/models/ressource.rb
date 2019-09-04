@@ -5,6 +5,8 @@ class Ressource < ApplicationRecord
   validates :name, presence: true
   validates :source, presence: true
 
+  FILEFORMATS = ['jpg', 'csv', 'pdf']
+
   before_save :update_attributes
 
   def icon_file(format)
