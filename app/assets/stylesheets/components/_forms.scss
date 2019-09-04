@@ -4,9 +4,17 @@
   margin-top: 16px;
 }
 
+.form-case {
+  border: none !important;
+  border-bottom: solid 1px #bfbfbf !important;
+  width: 100%;
+  text-align: center;
+}
+
 .form-label {
   color: #6B757C;
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
 }
 
 .form-header {
@@ -19,14 +27,11 @@
 }
 
 .modal-header-custom {
-  background-color: #A4C5C6;
-  color: white;
-  border-radius: 8px;
+  background-color: white;
 }
 
 .modal-content-custom {
-  background-color: #A4C5C6;
-  border-radius: 8px;
+  background-color: white;
 }
 
 #event_start_time_1i, #event_start_time_2i, #event_start_time_3i,  {
@@ -49,7 +54,8 @@ $grey: #C3C3D8;
 
 
 .message, .form-toggle, form {
-  display: flex;
+  display: block;
+  padding: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -73,7 +79,7 @@ $grey: #C3C3D8;
 
 .message {
   position: absolute;
-  background: white;
+  background-color: rgb(221, 219, 255);
   width: 50%;
   height: 100%;
   transition: 0.5s all ease;
@@ -190,6 +196,10 @@ $grey: #C3C3D8;
   }
 }
 
+.button-toggle-space {
+  margin-bottom: 16px !important;
+}
+
 
 @media (max-width: 750px){
   .container {
@@ -200,5 +210,38 @@ $grey: #C3C3D8;
 .participants-selection {
   display: flex;
   justify-content: space-around;
+}
+
+.form-heading-custom {
+  font-size: 32px;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  padding-top: 16px;
+  text-align: center;
+}
+
+.form-title {
+  height: 120px;
+  width: 100%;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.form-button {
+  height: 120px;
+  width: 100%;
+  bottom: 0px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.btn-wrapper-custom {
+  width: 88% !important;
 }
 
