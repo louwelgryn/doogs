@@ -12,6 +12,12 @@ class EventsController < ApplicationController
 
     @volunteers = @project.volunteers
 
+    Participation.create(
+      event: @event,
+      user: current_user,
+      start_time: @event.start_time
+    )
+
     params[:event][:participants].split(',').uniq.each do |participant_id|
       participant = User.find(participant_id)
       Participation.create(
