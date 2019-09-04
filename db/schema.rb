@@ -103,6 +103,7 @@ ActiveRecord::Schema.define(version: 2019_09_04_113756) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.bigint "user_id"
+    t.string "content_type"
     t.index ["project_id"], name: "index_ressources_on_project_id"
     t.index ["user_id"], name: "index_ressources_on_user_id"
   end
