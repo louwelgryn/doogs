@@ -353,6 +353,11 @@
   margin: 0px;
 }
 
+.task-summary {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
 .roadmap {
   z-index: 1;

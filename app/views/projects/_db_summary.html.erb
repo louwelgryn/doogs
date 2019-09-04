@@ -33,6 +33,7 @@
           <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
 
             <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
+            <div class="project-summary">
             <div class="project-cards">
               <div class="project-task-card border-top border-bottom">
                 <div class="colored-info">
@@ -55,6 +56,8 @@
                 <p class="task-owner"> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller avatar-dashboard", style:"margin: 0;" %></p>
                 <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
               </div>
+            </div>
+            <%= render 'circles' %>
             </div>
 
           <% else %>
