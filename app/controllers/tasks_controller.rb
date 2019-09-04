@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-
   def new
     @task = Task.new
     @project = Project.find(params[:project_id])
@@ -13,7 +12,7 @@ class TasksController < ApplicationController
     @task.project = @project
     authorize @task
     if @task.save
-      redirect_to project_dashboard_path(anchor: 'roadmap')
+      redirect_to project_dashboard_path(@project, anchor: 'roadmap')
     else
       render :new
     end
@@ -44,8 +43,6 @@ class TasksController < ApplicationController
       commitment.user
     end
   end
-
-
 
   def tasks_params
     params.require(:task).permit(:name, :description, :priority_level, :user_id, :end_date)

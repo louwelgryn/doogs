@@ -22,9 +22,9 @@
     <h4>Ajouter une ressource</h4>
     <p>Téléversez un fichier csv, jpg ou pdf</p>
     <div class="file-upload">
-      <%= simple_form_for [@project, Ressource.new] do |f| %>
-        <%= f.input :name %>
-        <%= f.input :source %>
+      <%= simple_form_for [@project, Ressource.new], html: { class: "form-ressources"} do |f| %>
+        <%= f.input :name, label: "Nom de la ressource" %>
+        <%= f.input :source, label: "Fichier" %>
         <%= f.input :source_cache, as: :hidden %>
         <%= f.button :submit, class: "btn-ressource", value: "Créer la ressource" %>
       <% end %>
