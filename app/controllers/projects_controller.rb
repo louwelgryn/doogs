@@ -70,7 +70,6 @@ class ProjectsController < ApplicationController
     @taches_faites = @project.tasks.where('status = ?', 'Achevée').length
     end
 
-    console
     @chat_room = @project.chat_room
     @user_participations = ["lalala"]
     authorize @project

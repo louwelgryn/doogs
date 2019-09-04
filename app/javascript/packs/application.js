@@ -128,19 +128,19 @@ assignes.forEach((assigne) => {
 
 /// FORMULAIRE CALENDRIER ///
 $("#signup").click(function() {
-  $(".message").css("transform", "translateX(100%)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("login");
+  $(".message-form").css("transform", "translateX(100%)");
+  if ($(".message-form").hasClass("login")) {
+    $(".message-form").removeClass("login");
   }
-  $(".message").addClass("signup");
+  $(".message-form").addClass("signup");
 });
 
 $("#login").click(function() {
-  $(".message").css("transform", "translateX(0)");
-  if ($(".message").hasClass("login")) {
-    $(".message").removeClass("signup");
+  $(".message-form").css("transform", "translateX(0)");
+  if ($(".message-form").hasClass("login")) {
+    $(".message-form").removeClass("signup");
   }
-  $(".message").addClass("login");
+  $(".message-form").addClass("login");
 });
 
 
