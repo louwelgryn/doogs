@@ -7,6 +7,7 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
+import { voteFunction } from '../components/vote';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
@@ -126,6 +127,23 @@ assignes.forEach((assigne) => {
   });
 });
 
+
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  voteFunction();
+}
+
+// if (document.querySelector('#new_message')) {
+//   // initMapbox();
+//   DomReload();
+// }
+
+//   console.log(upvote.dataset.id)
+//  const url = `http://http://localhost:3000/projects/118/dashboard#chatroom/?message_id=${upvote.dataset.id}`
+//   url.click()
+// })
+
+
 /// FORMULAIRE CALENDRIER ///
 $("#signup").click(function() {
   $(".message-form").css("transform", "translateX(100%)");
@@ -160,6 +178,7 @@ displays.forEach(display => {
 
   setTimeout(() => progress.style.strokeDashoffset = offset, 100);
 });
+
 
 
 

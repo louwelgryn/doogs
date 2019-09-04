@@ -15,7 +15,7 @@
 
 .wave {
   position: absolute;
-  bottom:0;
+  bottom:-1px;
 }
 
 .image-homepage {
@@ -35,7 +35,8 @@
   }
 
   to {
-    clip-path: polygon(44% 26%, 58% 38%, 58% 38%, 44% 81%, 44% 81%, 25% 49%);
+    // clip-path: polygon(44% 46%, 58% 38%, 58% 38%, 44% 70%, 40% 81%, 10% 20%);
+    clip-path: polygon(10% 20%, 40% 81%, 44% 70%, 58% 38%, 58% 38%, 44% 46%);
   }
 }
 

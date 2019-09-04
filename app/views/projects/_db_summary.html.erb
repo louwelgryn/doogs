@@ -10,6 +10,7 @@
 
   <div class="project-cards">
 
+
     <div class="project-card col-sm-6">
       <div class="test-card for-dashboard">
         <h4 class="task-title">L'équipe</h4>
@@ -18,6 +19,7 @@
             <%= image_tag 'weirdo.svg', class: "small-weirdo"%>
             <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar relative-weirdo" %>
             <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
+
           </div>
         <% end %>
       </div>
