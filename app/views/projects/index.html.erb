@@ -10,8 +10,9 @@
     <%= simple_form_for :search, url: projects_path, method: :get, html: { class: "filter-search" } do |f| %>
       <div class='container-search-bar mb-3'>
           <%#= f.input :thematique, as: :string, required: false, input_html: {class: "datepicker"} %>
-          <%= f.input :status, collection: @statuses, required: false, prompt: 'Statut', label: false %>
-          <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, prompt: 'Thème',label: false %>
+          <%= f.input :status, collection: @statuses, required: false, prompt: 'Statut', label: false, input_html: { class: 'filters' } %>
+          <%= f.input :thematics, as: :select, collection: Project::DEVELOPMENT_GOAL, required: false, prompt: 'Thème', label: false, input_html: { class: 'select2 filters' } %>
+          <%#= f.input :thematics, as: :select, input_html: { class: 'select2' }, collection: Project::DEVELOPMENT_GOAL, label: false %>
           <%#= f.submit "Effacer les filtres", class: "clearFilterButton"  %>
           <%= link_to "Voir tout", projects_path, class: "clearFilterButton" %>
       </div>

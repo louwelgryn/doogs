@@ -29,6 +29,9 @@ import { openMap } from '../components/init_mapbox';
 
 // import { openMap } from '../components/open_map';
 
+// SELECT2
+import { initSelect2 } from "../plugins/init_select2";
+
 // TWEAK TO HAVE ACCESS TO THIS FUNCTION IN VIEWS
 window.voteFunction = voteFunction;
 window.scrollLastMessageIntoView = scrollLastMessageIntoView;
@@ -64,6 +67,11 @@ window.initSweetalert = initSweetalert;
 if (document.querySelector("#roadmap")) {
   taskFunction()
 };
+
+// SELECT2
+if (document.querySelector('.select2')) {
+  initSelect2();
+}
 
 
 
