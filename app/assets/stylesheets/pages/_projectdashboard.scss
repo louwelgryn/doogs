@@ -236,6 +236,10 @@
   }
 }
 
+.task-clock {
+  margin-right: 6px;
+}
+
 .project-task-name {
   font-size: 0.85rem;
 }
@@ -243,7 +247,6 @@
 .task-status {
   font-size: 14px;
   width: 80px;
-  margin-right: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,6 +256,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.task-status, .task-end {
+  padding: 4px 8px;
+  margin-right: 8px;
 }
 
 .task-title {
@@ -268,6 +276,7 @@
 
 .for-dashboard {
   height: 100%;
+  padding-bottom: 1px;
 }
 
 .avatar-dashboard{
