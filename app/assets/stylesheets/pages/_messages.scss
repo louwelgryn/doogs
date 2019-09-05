@@ -105,6 +105,7 @@ a:hover {
   font-size: 20px;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
+  margin-top: 5px;
 
 }
 
@@ -130,6 +131,44 @@ a:hover {
   flex-direction: column;
 }
 
+#Normale div {
+  cursor: grab;
+}
+
+#Normale div:active {
+  cursor: grabbing;
+}
+
+#Normale div.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+#Urgente div {
+  cursor: grab;
+}
+
+#Urgente div:active {
+  cursor: grabbing;
+}
+
+#Urgente div.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
+
+#Prioritaire div {
+  cursor: grab;
+}
+
+#Prioritaire div:active {
+  cursor: grabbing;
+}
+
+#Prioritaire div.ghost {
+  filter: grayscale(1);
+  opacity: 0.5;
+}
 
 #create-message {
   padding: 10px;
