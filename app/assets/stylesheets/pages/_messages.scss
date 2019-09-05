@@ -81,6 +81,7 @@ a:hover {
 
 .message {
   &.right {
+    display: flex;
     flex-direction: row-reverse;
     .message-content {
     background-color: #e48174;
