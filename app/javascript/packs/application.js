@@ -10,7 +10,7 @@ import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
 import { voteFunction } from '../components/vote';
-// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
+import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 // import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 
 import { initSweetalert } from '../components/init_sweetalert';
@@ -28,6 +28,11 @@ import { openMap } from '../components/init_mapbox';
 // import { initMapbox } from '../components/init_mapbox';
 
 // import { openMap } from '../components/open_map';
+
+// TWEAK TO HAVE ACCESS TO THIS FUNCTION IN VIEWS
+window.voteFunction = voteFunction;
+window.scrollLastMessageIntoView = scrollLastMessageIntoView;
+
 
 if (document.querySelector('.map-wrapper')) {
   // initMapbox();
@@ -60,11 +65,6 @@ if (document.querySelector("#roadmap")) {
   taskFunction()
 };
 
-function scrollLastMessageIntoView() {
-const messages = document.querySelectorAll('.message');
-    const lastMessage = messages[messages.length - 1];
-    lastMessage.scrollIntoView();
-}
 
 
 // TAB NAVIGATION //

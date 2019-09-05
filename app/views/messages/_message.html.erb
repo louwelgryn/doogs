@@ -1,4 +1,3 @@
-
 <div class= "message <%= user_is_messages_author ? "right" : "" %>">
   <div class="englobing">
   <div class="message-styling">
@@ -32,6 +31,8 @@
 
 
   </div>
-  <%= image_tag message.user.image_url,:quality=>30,  class: "avatar" %>
+  <% if message.user.image_url%>
+    <%= image_tag message.user.image_url,:quality=>30,  class: "avatar" %>
+  <% end %>
   </div>
 </div>

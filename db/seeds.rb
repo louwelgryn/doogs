@@ -477,51 +477,51 @@ commitment_user1_project5.save!
 
 puts 'Creating empty commitments'
 
-puts 'creating empty commitment for ahp and assigning antoine, UK Queen and thomas'
+puts 'creating empty commitment for article 1'
 
 commitment_user1_project3 = Commitment.new
 commitment_user1_project3.skill = product_manager
-commitment_user1_project3.project = project_ahp
+commitment_user1_project3.project = project_article1
 commitment_user1_project3.save!
 
 commitment_user2_project3 = Commitment.new
 commitment_user2_project3.skill = developer_back
 commitment_user2_project3.user = antoine
-commitment_user2_project3.project = project_ahp
+commitment_user2_project3.project = project_article1
 commitment_user2_project3.save!
 
 commitment_user3_project3 = Commitment.new
 commitment_user3_project3.skill = data_analyst
 commitment_user3_project3.user = marie
-commitment_user3_project3.project = project_ahp
+commitment_user3_project3.project = project_article1
 commitment_user3_project3.save!
 
 commitment_user4_project3 = Commitment.new
 commitment_user4_project3.skill = developer_front
 commitment_user4_project3.user = thomas
-commitment_user4_project3.project = project_ahp
+commitment_user4_project3.project = project_article1
 commitment_user4_project3.save!
 
 puts 'creating empty commitments for article1'
 
 commitment_user1_project4 = Commitment.new
 commitment_user1_project4.skill = product_manager
-commitment_user1_project4.project = project_article1
+commitment_user1_project4.project = project_ahp
 commitment_user1_project4.save!
 
 commitment_user2_project4 = Commitment.new
 commitment_user2_project4.skill = data_scientist
-commitment_user2_project4.project = project_article1
+commitment_user2_project4.project = project_ahp
 commitment_user2_project4.save!
 
 commitment_user3_project4 = Commitment.new
 commitment_user3_project4.skill = data_scientist
-commitment_user3_project4.project = project_article1
+commitment_user3_project4.project = project_ahp
 commitment_user3_project4.save!
 
 commitment_user4_project4 = Commitment.new
 commitment_user4_project4.skill = data_analyst
-commitment_user4_project4.project = project_article1
+commitment_user4_project4.project = project_ahp
 commitment_user4_project4.save!
 
 puts 'creating empty commitments for neo'
@@ -562,15 +562,85 @@ commitment_user4_project6.save!
 
 puts "creating tasks"
 
-# task1_project1 = Task.new
-# task1_project1.name = "Test du bot"
-# task1_project1.project = project_spa
-# task1_project1.user = marie
-# task1_project1.description = "La v1 du bot est codée. Il faut mettre en oeuvre une batterie de tests pour s'assurer que tout roule."
-# task1_project1.status = "A faire"
-# task1_project1.priority_level = "Urgente"
-# task1_project1.end_date = Date.new(2019,9,23)
-# task1_project1.save!
+task1_project1 = Task.new
+task1_project1.name = "Cleaner base de données"
+task1_project1.project = project_article1
+task1_project1.user = marie
+task1_project1.description = "Il faut nettoyer la base de données pour commencer à travailler."
+task1_project1.status = "A faire"
+task1_project1.priority_level = "Urgente"
+task1_project1.end_date = Date.new(2019,9,23)
+task1_project1.save!
+
+task2_projet1 = Task.new
+task2_projet1.name = "Rencontre avec un mentor"
+task2_projet1.project = project_article1
+task2_projet1.user = marie
+task2_projet1.description = "Rencontrer un mentor pour comprendre ce qu'ils attendent de l'accompagnement"
+task2_projet1.status = "A faire"
+task2_projet1.priority_level = "Normale"
+task2_projet1.end_date = Date.new(2019,9,30)
+task2_projet1.save!
+
+task3_projet1 = Task.new
+task3_projet1.name = "Présentation projet"
+task3_projet1.project = project_article1
+task3_projet1.user = marie
+task3_projet1.description = "Première entrée en matière"
+task3_projet1.status = "Achevée"
+task3_projet1.priority_level = "Normale"
+task3_projet1.end_date = Date.new(2019,9,30)
+task3_projet1.save!
+
+task4_projet1 = Task.new
+task4_projet1.name = "Roadmap du projet"
+task4_projet1.project = project_article1
+task4_projet1.user = arnaud
+task4_projet1.description = "Faire une première roadmap avec des milestones et deadlines"
+task4_projet1.status = "A faire"
+task4_projet1.priority_level = "Urgente"
+task4_projet1.end_date = Date.new(2019,9,24)
+task4_projet1.save!
+
+task5_projet1 = Task.new
+task5_projet1.name = "Appeler Article1"
+task5_projet1.project = project_article1
+task5_projet1.user = arnaud
+task5_projet1.description = "Première entrée en matière"
+task5_projet1.status = "Achevée"
+task5_projet1.priority_level = "Normale"
+task5_projet1.end_date = Date.new(2019,9,23)
+task5_projet1.save!
+
+task6_projet1 = Task.new
+task6_projet1.name = "Bilan 1ère semaine"
+task6_projet1.project = project_article1
+task6_projet1.user = arnaud
+task6_projet1.description = "Premier bilan des premières semaines d'exploration"
+task6_projet1.status = "A faire"
+task6_projet1.priority_level = "Normale"
+task6_projet1.end_date = Date.new(2019,9,24)
+task6_projet1.save!
+
+task7_projet1 = Task.new
+task7_projet1.name = "Schéma de la db"
+task7_projet1.project = project_article1
+task7_projet1.user = thomas
+task7_projet1.description = "Faire un premier schéma de base de données"
+task7_projet1.status = "A faire"
+task7_projet1.priority_level = "Prioritaire"
+task7_projet1.end_date = Date.new(2019,9,24)
+task7_projet1.save!
+
+task8_projet1 = Task.new
+task8_projet1.name = "Exemple"
+task8_projet1.project = project_article1
+task8_projet1.user = thomas
+task8_projet1.description = "Premier bilan des premières semaines d'exploration"
+task8_projet1.status = "Achevée"
+task8_projet1.priority_level = "Normale"
+task8_projet1.end_date = Date.new(2019,9,24)
+task8_projet1.save!
 
 # task2_project1 = Task.new
 # task2_project1.name = "API Twitter"
@@ -601,6 +671,145 @@ task1_project2.save!
 # task2_project2.priority_level = "Normale"
 # task2_project2.end_date = Date.new(2019,6,8)
 # task2_project2.save!
+
+puts 'creating events. article1'
+
+event = Event.new
+event.name = "meeting"
+event.start_time = DateTime.now
+event.end_time = DateTime.now + 2.hour
+event.project = project_article1
+event.save!
+
+event1 = Event.new
+event1.name = "Pot rencontre"
+event1.start_time = DateTime.new(2019,9,7,12)
+event1.end_time = DateTime.now + 2.hour
+event1.status = "reunion"
+event1.project = project_article1
+event1.save!
+
+participation1_event1 = Participation.new
+participation1_event1.user = arnaud
+participation1_event1.event = event1
+participation1_event1.start_time = event1.start_time
+participation1_event1.save!
+
+participation2_event1 = Participation.new
+participation2_event1.user = thomas
+participation2_event1.event = event1
+participation2_event1.start_time = event1.start_time
+participation2_event1.save!
+
+participation3_event1 = Participation.new
+participation3_event1.user = marie
+participation3_event1.event = event1
+participation3_event1.start_time = event1.start_time
+participation3_event1.save!
+
+event2 = Event.new
+event2.name = "Déj pdg Article1 "
+event2.start_time = DateTime.new(2019,9,13,12)
+event2.end_time = DateTime.now + 2.hour
+event2.status = "perso"
+event2.project = project_article1
+event2.save!
+
+participation1_event2 = Participation.new
+participation1_event2.user = arnaud
+participation1_event2.event = event2
+participation1_event2.start_time = event2.start_time
+participation1_event2.save!
+
+
+event3 = Event.new
+event3.name = "Bilan 1"
+event3.start_time = DateTime.new(2019,9,10,11)
+event3.end_time = DateTime.now + 2.hour
+event3.project = project_article1
+event3.status = "réunion"
+event3.save!
+
+participation1_event3 = Participation.new
+participation1_event3.user = arnaud
+participation1_event3.event = event3
+participation1_event3.start_time = event3.start_time
+participation1_event3.save!
+
+participation2_event3 = Participation.new
+participation2_event3.user = arnaud
+participation2_event3.event = event3
+participation2_event3.start_time = event3.start_time
+participation2_event3.save!
+
+puts 'creating messages article1'
+
+puts 'creating message 1 article1'
+message1 = Message.new
+message1.chat_room = chatroom_article1
+message1.user = marie
+message1.content = "Bonjour à tous je m'appelle Marie et je suis ravie de vous rencontrer pour travailler sur ce merveilleux projet"
+message1.save!
+
+puts 'creating message 2 article1'
+
+message2 = Message.new
+message2.chat_room = chatroom_article1
+message2.user = thomas
+message2.content = "Hello Marie, moi c'est Thomas ! Je suis ravi d'apporter mes compétences de geek passsionné pour aider des jeunes à trouver leur voix"
+message2.save!
+
+puts 'creating message 3 article1'
+message3 = Message.new
+message3.chat_room = chatroom_article1
+message3.user = antoine
+message3.content = "Enchanté. Moi c'est Antoine et j'adore les barres Feed"
+message3.save!
+
+message8 = Message.new
+message8.chat_room = chatroom_article1
+message8.user = thomas
+message8.content = "Hello Hello! "
+message8.save!
+
+puts 'creating message 4 article1'
+message4 = Message.new
+message4.chat_room = chatroom_article1
+message4.user = arnaud
+message4.content = "Hello la dream team ! ça vous dit qu'on s'organise un verre pour tous se rencontrer ? Le 3 septembre par exemple ? "
+message4.save!
+
+puts 'creating message 5 article1'
+message5 = Message.new
+message5.chat_room = chatroom_article1
+message5.user = marie
+message5.content = "J'espère que vous vous êtes bien remis de la soirée de la veille ! J'ai commencé à nettoyer la base de données, vous pouvez télécharger le fichier csv dbarticle1"
+message5.save!
+
+puts 'creating message 6 article1'
+message6 = Message.new
+message6.chat_room = chatroom_article1
+message6.user = arnaud
+message6.content = "Hello Marie ! Merci beaucoup je regarde dès que j'ai 5 minutes "
+message6.save!
+
+message7 = Message.new
+message7.chat_room = chatroom_article1
+message7.user = thomas
+message7.content = " Je décuve encore quelques heures et je m'y mets ! "
+message7.save!
+
+# message8 = Message.new
+# message8.chat_room = chatroom_article1
+# message8.user =
+# message8.content =
+# message8.save!
+
+message9 = Message.new
+message9.chat_room = chatroom_article1
+message9.user = marie
+message9.content = "parfait ! Faites moi vos retours quand vous pouvez :)"
+message9.save!
 
 # Super User ----------------------------------------------------------------------
 
@@ -650,13 +859,8 @@ mariette_skill7.skill = product_manager
 mariette_skill7.user = mariette
 mariette_skill7.save
 
-puts 'creating events'
-event = Event.new
-event.name = "meeting"
-event.start_time = DateTime.now
-event.end_time = DateTime.now + 2.hour
-event.project = project_spa
-event.save!
+
+
 
 puts 'finished!'
 
