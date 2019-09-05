@@ -103,11 +103,10 @@ a:hover {
 .message-content {
   background-color: #F7F7F7;
   border-radius: 11px;
-  font-size: 20px;
+  font-size: 0.9rem;
   margin: 0 10px;
   padding: 11px 10px 8px 10px;
   margin-top: 5px;
-
 }
 
 .avatar {
@@ -116,10 +115,10 @@ a:hover {
   border-radius: 50%;
 }
 
- #query{
-    border-radius: 8px;
-    font-size: 20px;
-    border: none;
+#query{
+  border-radius: 8px;
+  font-size: 0.9rem;
+  border: none;
 }
 
 .englobing{

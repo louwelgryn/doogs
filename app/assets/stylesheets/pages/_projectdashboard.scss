@@ -231,15 +231,18 @@
   // position: absolute;
   // left: 68px;
   // top: 10px;
+  p {
+    font-size: 0.85rem;
+  }
+}
+
+.project-task-name {
+  font-size: 0.85rem;
 }
 
 .task-status {
-
-  // padding: 3px;
-
   font-size: 14px;
   width: 80px;
-  // height: 20px;
   margin-right: 3px;
   display: flex;
   align-items: center;
