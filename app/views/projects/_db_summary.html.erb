@@ -42,7 +42,7 @@
                 <% end %>
                 <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
               </div>
-              <p><%= @upcoming_task.name %></p>
+              <p class="project-task-name"><%= @upcoming_task.name %></p>
             </div>
             <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
               <p class="task-owner2">

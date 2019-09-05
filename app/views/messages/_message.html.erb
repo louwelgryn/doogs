@@ -32,7 +32,7 @@
 
   </div>
   <% if message.user.image_url%>
-    <%= image_tag message.user.image_url,:quality=>30,  class: "avatar" %>
+    <%= cl_image_tag(message.user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar") %>
   <% end %>
   </div>
 </div>
