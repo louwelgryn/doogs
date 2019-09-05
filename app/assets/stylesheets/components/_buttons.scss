@@ -11,10 +11,18 @@
   color: #fff;
   padding: 15px 20px;
   text-decoration: none;
-  height: 50px;
+  // height: 50px;
   p {
     margin-bottom: 0 !important;
   }
+}
+
+.btn-black:hover {
+  text-decoration: none;
+  color: #062521;
+  background-color: $blanc-semi-transparent;
+  border-color: #062521;
+  border: solid 1px;
 }
 
 .btn-rose {
@@ -33,21 +41,11 @@
   }
  }
 
- .btn-rose:hover {
+.btn-rose:hover {
   text-decoration: none;
   color: #e48174;
   background-color: $blanc-semi-transparent;
   border-color: #e48174;
-  border: solid 1px;
-}
-
-
-
-.btn-black:hover {
-  text-decoration: none;
-  color: #062521;
-  background-color: $blanc-semi-transparent;
-  border-color: #062521;
   border: solid 1px;
 }
 

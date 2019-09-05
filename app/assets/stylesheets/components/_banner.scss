@@ -6,19 +6,25 @@
   align-items: center;
   display: flex;
   margin-bottom: 48px;
-  h1, p {
+  p {
     font-weight: 100;
   }
   h1 {
-   font-size: 3.5rem;
+    font-weight: 400;
+  }
+}
+
+.project-banner {
+  height: 400px;
+  h1 {
+    font-size: 3.5rem;
   }
 }
 
 .dashboard-banner {
   text-align: center;
   height: 220px;
-}
-
-.project-banner {
-  height: 400px;
+  h1 {
+    font-size: 2.5rem;
+  }
 }
