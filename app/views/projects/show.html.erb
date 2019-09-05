@@ -21,7 +21,7 @@
     <p><%= @charity.description %></p>
     <p>Référent.e :</p>
     <div class="charity-referent">
-      <%= cl_image_tag(@charity.referent_image, width: 300, height: 300, gravity: :face, crop: :thumb, class: "avatar-120")
+      <%= cl_image_tag(@charity.referent_image, width: 240, height: 240, gravity: :face, crop: :thumb, class: "avatar-120")
       %>
       <p><strong><%= @charity.referent_name %></strong>, <%= @charity.referent_position %></p>
     </div>
@@ -41,7 +41,7 @@
 
     <hr>
 
-    <h2>Les Doogies</h2>
+    <h2>L'équipe</h2>
 
     <button id="sweet-alert-button" class="d-none">Click me!</button>
 
@@ -52,10 +52,9 @@
 
           <% if commitment.user %>
             <div class="avatar-container">
-              <%= cl_image_tag commitment.user.image, crop: :fill, width: 100, gravity: :auto, radius: "max", aspect_ratio: "1:1",:quality=>30, class:"avatar-big" %>
-              <div class="middle">
+              <%= cl_image_tag(commitment.user.image, width: 240, height: 240, gravity: :face, crop: :thumb, class: "avatar-96") %>
+              <div class="avatar-middle">
                 <span><%= commitment.skill.name %></span>
-                <%= image_tag 'weirdo.svg', class: "medium-weirdo"%>
               </div>
             </div>
           <% elsif !current_user %>
