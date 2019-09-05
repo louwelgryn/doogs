@@ -1,7 +1,7 @@
 <div class="project-cards">
   <div class="project-task-card border-top border-bottom">
     <%= cl_image_tag(task.user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar avatar-new") %>
-    <div>
+    <div class="project-task-bandeau">
       <div class="colored-info">
         <% if task.priority_level == "Normale" %>
           <p class="task-status btn-yellow btn-basic top-left"> <%= task.priority_level%></p>

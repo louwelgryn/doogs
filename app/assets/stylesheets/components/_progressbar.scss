@@ -2,10 +2,16 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   p {
     margin: 0 24px;
   }
+}
+
+p#decompte {
+  font-weight: 700;
+  color: #e48174;
+  font-size: 1.2rem;
 }
 
 .progress {
