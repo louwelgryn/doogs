@@ -5,8 +5,19 @@
     <% if !@project.ressources.any? %>
       <p>Il n'y a aucun fichier disponible pour le moment</p>
     <% else %>
-      <%= simple_form_for(:search, url: project_ressources_path(@project), method: :get, html: { id: 'ressources-form' }, remote: true) do |f| %>
-        <%= f.input :content_type, as: :check_boxes, collection: ['jpg', 'csv', 'pdf'], input_html: { checked: true} %>
+      <%= simple_form_for(:search, url: project_ressources_path(@project), method: :get, html: { class: "form-ressources", id: 'ressources-form' }, remote: true) do |f| %>
+        <fieldset class="form-group">
+          <legend class="search-legend">Quel type de ressource vous intéresse ?</legend>
+          <input type="hidden" name="search[content_type][]" value="">
+          <div class="toggle-row">
+            <% Ressource::FILEFORMATS.each do |format| %>
+              <div class="custom-control custom-switch">
+                <input class="custom-control-input" type="checkbox" value="<%= format %>" checked="checked" name="search[content_type][]" id="search_content_type_<%= format %>">
+                <label class="custom-control-label" for="search_content_type_<%= format %>"><%= format.upcase %></label>
+              </div>
+            <% end %>
+          </div>
+        </fieldset>
         <%= f.button :submit %>
       <% end %>
       <div id="ressources-container">
@@ -19,7 +30,7 @@
     <h4>Ajouter une ressource</h4>
     <p>Téléversez un fichier csv, jpg ou pdf</p>
     <div class="file-upload">
-      <%= simple_form_for [@project, Ressource.new], html: { class: "form-ressources"} do |f| %>
+      <%= simple_form_for [@project, Ressource.new], html: { class: "form-ressources" } do |f| %>
         <%= f.input :name, label: "Nom de la ressource" %>
         <%= f.input :source, label: "Fichier" %>
         <%= f.input :source_cache, as: :hidden %>

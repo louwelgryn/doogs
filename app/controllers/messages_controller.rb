@@ -19,7 +19,19 @@ class MessagesController < ApplicationController
     end
   end
 
+  def upvote
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.upvote_by current_user
+    redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')
+  end
 
+  def downvote
+    @message = Message.find(params[:id])
+    authorize @message
+    @message.downvote_by current_user
+    redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')
+  end
 
 
   private

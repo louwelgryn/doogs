@@ -12,7 +12,7 @@
       <div id="create-message">
         <%= simple_form_for([@chat_room, Message.new], remote: true) do |f| %>
           <%= f.input :content, label: false, as: :string %>
-          <%= f.submit 'Send', class: 'btn-rose' , style: "margin-top: 10px;"%>
+          <%= f.submit 'Send', class: 'btn-rose' , style: "margin-top: 10px;font-size: 20px;"%>
         <% end %>
       </div>
     </div>

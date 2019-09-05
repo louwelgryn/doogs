@@ -8,7 +8,7 @@
   justify-content: center;
   text-align: center;
   margin-top: -100px;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 
 .pdb-ensemble {
@@ -179,6 +179,12 @@
     left: 10px;
     color:#A4C5C6;
 }
+
+.avatar-new {
+  position: absolute;
+  left: 16px;
+  top: 12px;
+}
 .project-task-card {
   height: 75px;
   width: 100%;
@@ -193,27 +199,44 @@
 }
 
 .task-owner{
-      margin: 0;
+         height: 42px;
     position: absolute;
-    top: 13px;
-    left: 192px;
+    left: 291px;
+    top: 11px;
+    width: 42px;
+    heigth: 48px;
+    border-radius: 50%;
+    background: #F4F4F4;
+    color:#F4F4F4;
+}
+
+.task-owner:hover{
+  background: #A4C5C6;
+  transform: scale(1.02);
+  color: white;
 }
 
 .project-task-informations {
       text-align: initial;
       margin-top: 4px;
-       display: flex;
-           color: grey;
+      display: flex;
+      color: grey;
+    position: absolute;
+    left: 70px;
 }
 
 .task-button {
   font-color:grey;
   background-color:white;
   border: white;
+      margin-bottom: 7px;
 }
 
 .colored-info{
   display: flex;
+  position: absolute;
+    left: 68px;
+    top: 10px;
 
 }
 
@@ -222,8 +245,11 @@
 }
 
 .task-status {
- margin-right: 5px;
- width: 60px;
+ padding: 3px;
+    font-size: 14px;
+    width: 80px;
+    height: 20px;
+    margin-right: 3px;
 
 }
 
