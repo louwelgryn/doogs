@@ -13,7 +13,7 @@
   align-items: center;
 }
 .footer-links a {
-  color: #A5C5C6;
+  color: white;
   // opacity: 0.5;
   text-decoration: none;
   font-size: 24px;
@@ -21,19 +21,19 @@
 }
 
 .footer-links a:hover {
-  color: white;
+  color: #A5C5C6;
 }
 
 .footer-copyright {
   display: flex;
-  color: #A5C5C6;
+  color: white;
 }
 
 .footer-copyright > a {
   text-decoration: none;
-  color: #A5C5C6;
+  color: white;
 }
 
 .footer-copyright > a:hover {
-  color: white;
+  color: #A5C5C6;
 }
