@@ -95,6 +95,11 @@ lou_skill1.skill = data_scientist
 lou_skill1.user = lou
 lou_skill1.save
 
+lou_skill3 = UserSkill.new
+lou_skill3.skill = product_manager
+lou_skill3.user = lou
+lou_skill3.save
+
 lou_skill2 = UserSkill.new
 lou_skill2.skill = data_engineer
 lou_skill2.user = lou
@@ -320,7 +325,7 @@ project_article1.development_goal = "Éducation de qualité"
 project_article1.status = "En attente"
 project_article1.start_date = Date.new(2019,9,1)
 project_article1.end_date = Date.new(2019,11,12)
-project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901231/Cover-twitter_gvezw9.jpg"
+project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/c_scale,h_1706/v1567697966/plush-design-studio-l3N9Q27zULw-unsplash_aynybh.jpg"
 project_article1.save
 
 puts "creating project Spa"
@@ -595,7 +600,7 @@ task3_projet1.save!
 task4_projet1 = Task.new
 task4_projet1.name = "Roadmap du projet"
 task4_projet1.project = project_article1
-task4_projet1.user = arnaud
+task4_projet1.user = lou
 task4_projet1.description = "Faire une première roadmap avec des milestones et deadlines"
 task4_projet1.status = "A faire"
 task4_projet1.priority_level = "Urgente"
@@ -605,7 +610,7 @@ task4_projet1.save!
 task5_projet1 = Task.new
 task5_projet1.name = "Appeler Article1"
 task5_projet1.project = project_article1
-task5_projet1.user = arnaud
+task5_projet1.user = lou
 task5_projet1.description = "Première entrée en matière"
 task5_projet1.status = "Achevée"
 task5_projet1.priority_level = "Normale"
@@ -615,7 +620,7 @@ task5_projet1.save!
 task6_projet1 = Task.new
 task6_projet1.name = "Bilan 1ère semaine"
 task6_projet1.project = project_article1
-task6_projet1.user = arnaud
+task6_projet1.user = lou
 task6_projet1.description = "Premier bilan des premières semaines d'exploration"
 task6_projet1.status = "A faire"
 task6_projet1.priority_level = "Normale"
@@ -690,7 +695,7 @@ event1.project = project_article1
 event1.save!
 
 participation1_event1 = Participation.new
-participation1_event1.user = arnaud
+participation1_event1.user = lou
 participation1_event1.event = event1
 participation1_event1.start_time = event1.start_time
 participation1_event1.save!
@@ -716,7 +721,7 @@ event2.project = project_article1
 event2.save!
 
 participation1_event2 = Participation.new
-participation1_event2.user = arnaud
+participation1_event2.user = lou
 participation1_event2.event = event2
 participation1_event2.start_time = event2.start_time
 participation1_event2.save!
@@ -731,13 +736,13 @@ event3.status = "réunion"
 event3.save!
 
 participation1_event3 = Participation.new
-participation1_event3.user = arnaud
+participation1_event3.user = lou
 participation1_event3.event = event3
 participation1_event3.start_time = event3.start_time
 participation1_event3.save!
 
 participation2_event3 = Participation.new
-participation2_event3.user = arnaud
+participation2_event3.user = marie
 participation2_event3.event = event3
 participation2_event3.start_time = event3.start_time
 participation2_event3.save!
@@ -775,7 +780,7 @@ message8.save!
 puts 'creating message 4 article1'
 message4 = Message.new
 message4.chat_room = chatroom_article1
-message4.user = arnaud
+message4.user = lou
 message4.content = "Hello la dream team ! ça vous dit qu'on s'organise un verre pour tous se rencontrer ? Le 3 septembre par exemple ? "
 message4.save!
 
@@ -789,7 +794,7 @@ message5.save!
 puts 'creating message 6 article1'
 message6 = Message.new
 message6.chat_room = chatroom_article1
-message6.user = arnaud
+message6.user = antoine
 message6.content = "Hello Marie ! Merci beaucoup je regarde dès que j'ai 5 minutes "
 message6.save!
 
