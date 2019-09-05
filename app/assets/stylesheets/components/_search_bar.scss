@@ -15,3 +15,16 @@
     margin-bottom: 0;
 
 }
+
+.container-search-chat {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-button-chat {
+  margin-left: 32px;
+  margin-right: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
