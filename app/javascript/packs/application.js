@@ -1,10 +1,8 @@
 import "bootstrap";
 
 import Sortable from 'sortablejs';
-import Wickedpicker from 'wickedpicker';
 
 import "../plugins/flatpickr";
-// import "../plugins/wickedpicker";
 
 import '@fullcalendar/core/main.css';
 
