@@ -3,5 +3,5 @@ class Event < ApplicationRecord
   has_many :participations
   attr_accessor :participants
 
-  validates :name, :priority_level, :description, :hub, presence: true
+  validates :name, :description, :hub, presence: true
 end
