@@ -5,6 +5,19 @@
   object-fit: cover;
 }
 
+.avatar-96 {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.avatar-120 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .avatar-participation {
   opacity: 0.7 !important;
   transition: all 0.3s ease-in-out !important;
@@ -30,23 +43,19 @@
   width: 56px;
   border-radius: 50%;
 }
+
 .avatar-bordered {
   width: 40px;
   border-radius: 50%;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+
 .avatar-square {
   width: 40px;
   border-radius: 0px;
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
-}
-
-.avatar-big {
-  width: 96px;
-  border-radius: 50%;
-  margin: 20px;
 }
 
 .empty-avatar {
@@ -68,7 +77,6 @@
 .avatar-container {
   position: relative;
   width: 100%;
-  margin-right: 20px;
 }
 
 .avatar-container:hover .empty-avatar {
@@ -91,7 +99,25 @@
   transition: .5s ease;
 }
 
-.avatar-container:hover .middle {opacity: 1; color: rgba(0,0,0,1)}
+.avatar-container:hover .avatar-middle {opacity: 1; color: rgba(0,0,0,1)}
 
 .avatar-container .submit-text {display:none}
 .avatar-container:hover .submit-text {display: inline; opacity: 1}
+
+.avatar-middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  span {
+    color: rgb(65, 65, 65);
+  }
+}
+
+.empty-avatar-text {
+  color: rgb(65, 65, 65);
+}
