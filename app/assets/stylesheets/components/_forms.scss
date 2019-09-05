@@ -21,6 +21,7 @@
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  margin: 0;
 }
 
 .form-header {
@@ -85,7 +86,7 @@ $grey: #C3C3D8;
 
 .message-form {
   position: absolute;
-  background-color: rgb(221, 219, 255);
+  background-color: $vert;
   width: 50%;
   height: 100%;
   transition: 0.5s all ease;
@@ -179,7 +180,7 @@ $grey: #C3C3D8;
   text-transform: none;
   border-radius: 50px;
   text-align: center;
-  background-color: $purple;
+  background-color: $vert-plus-fonce;
   transition: 0.3s;
   padding: 8px;
   text-decoration: none;
@@ -191,9 +192,9 @@ $grey: #C3C3D8;
     transform: translateY(1px);
     transition: 0.3s all ease;
     text-decoration: none;
-    color: $purple;
+    color: $vert-plus-fonce;
     background-color: $blanc-semi-transparent;
-    border-color: $purple;
+    border-color: $vert-plus-fonce;
     border: solid 1px;
   }
 
