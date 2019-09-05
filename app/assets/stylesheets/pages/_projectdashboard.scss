@@ -239,6 +239,15 @@
   width: 80px;
   // height: 20px;
   margin-right: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-end {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .task-title {
