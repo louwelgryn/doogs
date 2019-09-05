@@ -10,7 +10,7 @@
           <%= f.input :status, collection: @statuses, required: false, prompt: 'Statut', label: false %>
           <%= f.input :thematics, collection: Project::DEVELOPMENT_GOAL, required: false, prompt: 'Thème',label: false %>
           <%#= f.submit "Effacer les filtres", class: "clearFilterButton"  %>
-          <%= link_to "Effacer les filtres", projects_path, class: "clearFilterButton" %>
+          <%= link_to "Voir tout", projects_path, class: "clearFilterButton" %>
       </div>
     <% end %>
     <div class="d-flex" style="width: 200px;
