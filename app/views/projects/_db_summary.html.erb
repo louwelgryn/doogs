@@ -1,11 +1,11 @@
 <div class="row pdb-ensemble">
 
   <div class="project-bar">
-    <p>Avancement :</p>
+    <p>Avancement:</p>
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: <%= @project.progression_percent %>%"></div>
     </div>
-    <p>Plus que <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> jours avant lancement !</p>
+    <p>Plus que <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> jours avant lancement!</p>
   </div>
 
   <div class="project-card col-sm-4">
@@ -14,7 +14,7 @@
       <% @project.commitments.each do |commitment| %>
         <div class="pdb-team-member">
           <%= image_tag 'weirdo.svg', class: "small-weirdo" %>
-          <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar relative-weirdo" %>
+          <%= cl_image_tag(commitment.user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar relative-weirdo") %>
           <span><strong><%= commitment.user.name %></strong><br><%= commitment.skill.name %></span>
         </div>
       <% end %>
@@ -22,50 +22,46 @@
   </div>
 
   <div class="project-card col-sm-4">
+
     <div class="test-card for-dashboard">
-
       <h4 class="task-title">Prochaine tâche à venir</h4>
+      <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
+        <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
 
-      <div class="project-task-card">
-
-        <% if @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).any? %>
-
-          <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
-          <div class="project-summary">
-          <div class="project-cards">
-            <div class="project-task-card border-top border-bottom position-summary">
-             <p class=""> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar avatar-new", style:"margin: 0;" %> </p>
-                <div class="colored-info">
-                  <% if @upcoming_task.priority_level == "Normale" %>
-                    <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                    <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                  <% else %>
+        <div class="project-cards">
+          <div class="project-task-card border-top border-bottom">
+            <%= cl_image_tag(@upcoming_task.user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar avatar-new") %>
+            <div>
+              <div class="colored-info">
+                <% if @upcoming_task.priority_level == "Normale" %>
+                  <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                <% elsif @upcoming_task.priority_level == "Prioritaire" %>
+                  <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                <% else %>
                   <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                <% end %>
+                <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+              </div>
+              <p><%= @upcoming_task.name %></p>
+              <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
+                <p class="task-owner2">
+                  <%= simple_form_for [@project, @upcoming_task] do |f| %>
+                    <%= f.submit "", class: " task-owner2" %>
                   <% end %>
-                  <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-                </div>
-                <div class="project-task-informations">
-                  <%= @upcoming_task.name %> <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
-                  <% end %>
-                </div>
-                <p class="task-owner2 "> <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                  <%= f.submit "", class: " task-owner2" %>
-                <% end %> </p>
-
+                </p>
+              <% end %>
+            </div>
             <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
-            </div>
           </div>
-          <%= render 'circles' %>
-          </div>
+        </div>
 
-        <% else %>
+        <div style="text-align: center"><%= render 'circles' %></div>
+      <% else %>
+        <div style="text-align: center">
           <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
-          <div>
-              <%= render 'circles' %>
-            </div>
-        <% end %>
-      </div>
+          <div><%= render 'circles' %></div>
+        </div>
+      <% end %>
     </div>
 
   </div>
