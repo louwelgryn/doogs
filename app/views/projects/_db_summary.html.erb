@@ -13,9 +13,9 @@
       <h4 class="task-title">L'équipe</h4>
       <% @project.commitments.each do |commitment| %>
         <div class="pdb-team-member">
-          <%= image_tag 'weirdo.svg', class: "small-weirdo"%>
+          <%= image_tag 'weirdo.svg', class: "small-weirdo" %>
           <%= cl_image_tag commitment.user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar relative-weirdo" %>
-          <span><strong><%= commitment.user.name %></strong> - <%= commitment.skill.name %><br></span>
+          <span><strong><%= commitment.user.name %></strong><br><%= commitment.skill.name %></span>
         </div>
       <% end %>
     </div>
@@ -33,27 +33,27 @@
           <% @upcoming_task = @project.tasks.where("status = 'A faire' and user_id = ?", current_user.id).order("end_date ASC").first %>
           <div class="project-summary">
           <div class="project-cards">
-            <div class="project-task-card border-top border-bottom">
-              <div class="colored-info">
-                <% if @upcoming_task.priority_level == "Normale" %>
-                  <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                  <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                <% else %>
+            <div class="project-task-card border-top border-bottom position-summary">
+             <p class=""> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar avatar-new", style:"margin: 0;" %> </p>
+                <div class="colored-info">
+                  <% if @upcoming_task.priority_level == "Normale" %>
+                    <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                  <% elsif @upcoming_task.priority_level == "Prioritaire" %>
+                    <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                  <% else %>
                   <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
-                <% end %>
-                <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
-              </div>
-              <div class="project-task-informations">
-                <%= @upcoming_task.name %> <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
-                  <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                    <%= f.submit "Done", class: " btn-basic task-button" %>
                   <% end %>
-                <% end %>
-              </div>
+                  <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                </div>
+                <div class="project-task-informations">
+                  <%= @upcoming_task.name %> <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
+                  <% end %>
+                </div>
+                <p class="task-owner2 "> <%= simple_form_for [@project, @upcoming_task] do |f| %>
+                  <%= f.submit "", class: " task-owner2" %>
+                <% end %> </p>
 
-              <p class="task-owner"> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller avatar-dashboard", style:"margin: 0;" %></p>
-              <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
+            <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
             </div>
           </div>
           <%= render 'circles' %>
@@ -75,16 +75,16 @@
       <h4 class="task-title">Prochain évènement</h4>
       <div class="next-event-card">
         <div class="card-image-wraper background-dashboard-card">
+        </div>
           <div class="next-event-details">
             <% if @next_participation.nil? %>
               <p>Pas d'évènement à venir</p>
             <% else %>
               <h2><strong><%= @next_participation.event.name %></strong></h2>
-              <h3><%= @next_participation.start_time.day %> <%= @next_participation_month %></h3>
+              <h3><i class="far fa-calendar-alt"></i> <%= @next_participation.start_time.day %> <%= @next_participation_month %></h3>
               <h3><%= @next_participation.start_time.hour %>h</h3>
               <p><%= @next_participation.event.description%></p>
             <% end %>
-          </div>
         </div>
       </div>
     </div>
