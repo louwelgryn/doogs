@@ -1,3 +1,7 @@
+.navbar {
+  z-index: 2;
+}
+
 .dropdown-menu a {
   color: #212529;
 }
@@ -15,7 +19,7 @@ a.navbar-signin, a.navbar-signin:hover {
   padding: 24px;
   position: fixed;
   width: 100%;
-  z-index: 1;
+  // z-index: 1;
   top: 0;
   background-color: transparent;
   transition: 0.5s background-color ease;
