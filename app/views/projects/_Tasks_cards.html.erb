@@ -13,14 +13,17 @@
         <p class="task-end btn-basic btn-calendar"><i class="far fa-clock task-clock"></i> <%= task.end_date.strftime('%d %b') %></p>
       </div>
       <p class="project-task-name"><%= task.name %></p>
-      <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
-        <p class="task-owner">
-          <%= simple_form_for [@project, task] do |f| %>
-            <%= f.submit "", class: "task-owner" %>
-          <% end %>
-        </p>
-      <% end %>
     </div>
+    <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
+      <form class="simple_form edit_task" id="edit_task_4" novalidate="novalidate" action="/projects/2/tasks/4" accept-charset="UTF-8" method="post">
+        <input name="utf8" type="hidden" value="✓">
+        <input type="hidden" name="_method" value="patch">
+        <input type="hidden" name="authenticity_token" value="XfqhSirS6geX3gSec/bcQiCZtZFHU3z9/ewrZwtXGO7Uj4V1QswJdOAOp0qz8FPKYalHktRIxS7lPypnrR4+5g==">
+        <button type="submit" name="commit" value="" class="muf" data-disable-with="">
+          <i class="fas fa-check-circle"></i>
+        </button>
+      </form>
+    <% end %>
     <%= link_to '' , status_update_path(task), hidden: true, remote: true %>
   </div>
 </div>

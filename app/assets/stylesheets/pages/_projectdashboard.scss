@@ -185,35 +185,46 @@
   align-items: center;
 }
 
-.task-owner2 {
-  height: 30px;
-  position: absolute;
-  left: 261px;
-  top: 21px;
-  width: 30px;
-  border-radius: 50%;
-  background: #F4F4F4;
-  color: #F4F4F4;
+// .task-owner2 {
+//   height: 30px;
+//   position: absolute;
+//   left: 261px;
+//   top: 21px;
+//   width: 30px;
+//   border-radius: 50%;
+//   background: #F4F4F4;
+//   color: #F4F4F4;
+// }
+
+// .task-owner2:hover {
+//   background: #A4C5C6;
+//   transform: scale(1.02);
+//   color: white;
+// }
+
+// .task-owner {
+//   height: 30px;
+//   position: absolute;
+//   left: 308px;
+//   top: 21px;
+//   width: 30px;
+//   border-radius: 50%;
+//   background: #F4F4F4;
+//   color: #F4F4F4;
+// }
+
+// .task-owner:hover{
+//   background: #A4C5C6;
+//   transform: scale(1.02);
+//   color: white;
+// }
+
+.muf {
+  border: 0;
+  background: none;
 }
 
-.task-owner2:hover {
-  background: #A4C5C6;
-  transform: scale(1.02);
-  color: white;
-}
-
-.task-owner {
-  height: 30px;
-  position: absolute;
-  left: 308px;
-  top: 21px;
-  width: 30px;
-  border-radius: 50%;
-  background: #F4F4F4;
-  color: #F4F4F4;
-}
-
-.task-owner:hover{
+.muf:hover{
   background: #A4C5C6;
   transform: scale(1.02);
   color: white;
