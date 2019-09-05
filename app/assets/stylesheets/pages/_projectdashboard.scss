@@ -122,10 +122,13 @@
 // }
 
 .card-image-wraper {
-  background: url(asset_path('tache_card.svg'));
+  background: url(asset_path('green.svg'));
   background-repeat: no-repeat;
   background-size: contain;
-  position: relative;
+  z-index: 1px;
+  position: absolute;
+    top: -133px;
+    left: 121px;
 }
 
 .test-card {
@@ -161,6 +164,13 @@
   padding: 32px;
   height: 100%;
   width: 100%;
+      z-index: 1;
+          position: absolute;
+    top: 40px;
+}
+
+.position-summary {
+      TOP: -16px;
 }
 
 
@@ -193,21 +203,34 @@
    text-align: center;
 }
 
-.avatar-smaller{
-  position: absolute;
-  left: 116px;
-}
 
-.task-owner{
-         height: 42px;
+.task-owner2 {
+    height: 30px;
     position: absolute;
-    left: 291px;
-    top: 11px;
-    width: 42px;
-    heigth: 48px;
+    left: 261px;
+    top: 21px;
+    width: 30px;
     border-radius: 50%;
     background: #F4F4F4;
-    color:#F4F4F4;
+    color: #F4F4F4;
+}
+
+.task-owner2:hover {
+  background: #A4C5C6;
+  transform: scale(1.02);
+  color: white;
+}
+
+
+.task-owner{
+    height: 30px;
+    position: absolute;
+    left: 308px;
+    top: 21px;
+    width: 30px;
+    border-radius: 50%;
+    background: #F4F4F4;
+    color: #F4F4F4;
 }
 
 .task-owner:hover{
@@ -255,8 +278,8 @@
 
 .task-title {
       margin-left: 16px;
-    font-size: larger;
     color: grey;
+    font-size: 25px;
 }
 
 #dashboard {
