@@ -163,17 +163,19 @@
 }
 
 .avatar-new {
-  position: absolute;
-  left: 16px;
-  top: 12px;
+  // position: absolute;
+  // left: 16px;
+  // top: 12px;
 }
 
 .project-task-card {
+  display: flex;
   height: 75px;
   width: 100%;
   position: relative;
   background-color: white;
-  text-align: center;
+  // text-align: center;
+  padding: 16px;
 }
 
 .task-owner2 {
@@ -228,20 +230,16 @@
 
 .colored-info {
   display: flex;
-  position: absolute;
-  left: 68px;
-  top: 10px;
-}
-
-.project-task-card {
-  padding: 16px;
+  // position: absolute;
+  // left: 68px;
+  // top: 10px;
 }
 
 .task-status {
-  padding: 3px;
+  // padding: 3px;
   font-size: 14px;
   width: 80px;
-  height: 20px;
+  // height: 20px;
   margin-right: 3px;
 }
 
