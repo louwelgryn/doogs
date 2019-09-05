@@ -56,13 +56,17 @@
                 <p class="task-owner"> <%= cl_image_tag @upcoming_task.user.image,:transformation=>[{:width=>800, :height=>800, :gravity=>"face", :crop=>"crop"}], class: "avatar-smaller avatar-dashboard", style:"margin: 0;" %></p>
                 <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
               </div>
-            </div>
-            <%= render 'circles' %>
+            <div>
+              <%= render 'circles' %>
             </div>
 
           <% else %>
 
             <p style="z-index: 1">Vous êtes génial et n'avez pas de tâche à faire</p>
+
+            <div>
+              <%= render 'circles' %>
+            </div>
 
           <% end %>
         </div>
