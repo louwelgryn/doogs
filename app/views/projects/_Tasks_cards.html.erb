@@ -15,14 +15,11 @@
       <p class="project-task-name"><%= task.name %></p>
     </div>
     <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>
-      <form class="simple_form edit_task" id="edit_task_4" novalidate="novalidate" action="/projects/2/tasks/4" accept-charset="UTF-8" method="post">
-        <input name="utf8" type="hidden" value="✓">
-        <input type="hidden" name="_method" value="patch">
-        <input type="hidden" name="authenticity_token" value="XfqhSirS6geX3gSec/bcQiCZtZFHU3z9/ewrZwtXGO7Uj4V1QswJdOAOp0qz8FPKYalHktRIxS7lPypnrR4+5g==">
-        <button type="submit" name="commit" value="" class="muf" data-disable-with="">
-          <i class="fas fa-check-circle"></i>
+      <%= simple_form_for [@project, task] do |f| %>
+        <button type="submit" name="commit" value="" class="hide-btn" data-disable-with="" onclick="return confirm('Es-tu sûr de vouloir archiver cette tâche ?');">
+          <i class="fas fa-check-circle checked"></i>
         </button>
-      </form>
+      <% end %>
     <% end %>
     <%= link_to '' , status_update_path(task), hidden: true, remote: true %>
   </div>

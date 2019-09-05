@@ -2,6 +2,13 @@
   margin-top: 64px;
 }
 
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none !important;
+}
+
 .reset-css {
   animation : none;
     animation-delay : 0;
