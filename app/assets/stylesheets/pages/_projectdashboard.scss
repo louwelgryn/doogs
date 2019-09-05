@@ -1,3 +1,5 @@
+// banner et nav ------------------------
+
 .yellow-banner h1 {
   text-align: center;
   margin-top: 110px;
@@ -11,26 +13,11 @@
   margin-bottom: 24px;
 }
 
-.pdb-ensemble {
-  justify-content: center;
-}
-
-// onglets
+// onglets -------------------------------
 
 .tab-label {
   margin: 0 16px;
   padding: 16px 32px;
-}
-
-.small-weirdo {
-  width: 60px;
-  height: 45px;
-  position: absolute;
-  left: 20px;
-}
-
-.relative-weirdo {
-  position: relative;
 }
 
 .nav-item a {
@@ -68,31 +55,35 @@
   }
 }
 
-.top-left{
-  margin-left: 0;
+.small-weirdo {
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  left: 20px;
 }
 
-.container-tasks{
+.relative-weirdo {
+  position: relative;
 }
 
-.test {
-  display: flex;
-  margin-left: 5px;
-  align-items: center;
-}
+// .test {
+//   display: flex;
+//   margin-left: 5px;
+//   align-items: center;
+// }
 
 .project-cards {
   display: flex;
   justify-content: center;
 }
 
-.project-card-small{
-  background-color: white;
-    margin: 4px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-    border-radius: 11px;
-    text-align: center;
-}
+// .project-card-small{
+//   background-color: white;
+//     margin: 4px;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+//     border-radius: 11px;
+//     text-align: center;
+// }
 
 #myTabContent {
   margin: 0;
@@ -163,16 +154,17 @@
 }
 
 .avatar-new {
-  // margin-right: 16px;
+  margin-left: 4px;
 }
 
 .project-task-bandeau {
   height: 100%;
+  text-align: center;
+  width: 11em;
 }
 
 .project-task-card {
   display: flex;
-  height: 75px;
   width: 100%;
   position: relative;
   background-color: white;
@@ -231,6 +223,8 @@
 
 .project-task-name {
   font-size: 0.85rem;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .task-status {
@@ -249,7 +243,7 @@
 
 .task-status, .task-end {
   padding: 4px 8px;
-  margin-right: 8px;
+  // margin-right: 8px;
 }
 
 .task-title {

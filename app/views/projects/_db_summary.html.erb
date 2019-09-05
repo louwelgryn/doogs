@@ -1,4 +1,4 @@
-<div class="row pdb-ensemble">
+<div class="row">
 
   <div class="project-bar">
     <div class="progress">
@@ -33,11 +33,11 @@
             <div class="project-task-bandeau">
               <div class="colored-info">
                 <% if @upcoming_task.priority_level == "Normale" %>
-                  <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                  <p class="task-status btn-yellow btn-basic" > <%= @upcoming_task.priority_level%></p>
                 <% elsif @upcoming_task.priority_level == "Prioritaire" %>
-                  <p class="task-status btn-red btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                  <p class="task-status btn-red btn-basic" > <%= @upcoming_task.priority_level%></p>
                 <% else %>
-                  <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
+                  <p class="task-status btn-orange btn-basic" > <%= @upcoming_task.priority_level%></p>
                 <% end %>
                 <p class="task-end btn-basic btn-calendar"><i class="far fa-clock task-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
               </div>
