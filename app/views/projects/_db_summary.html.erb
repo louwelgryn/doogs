@@ -1,11 +1,10 @@
 <div class="row pdb-ensemble">
 
   <div class="project-bar">
-
     <div class="progress">
       <div class="progress-bar progress-bar-success" style="width: <%= @project.progression_percent %>%"></div>
     </div>
-    <p>J - <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> !</p>
+    <p id="decompte">J - <span id="counter-target" data-counterstart="<%= @project.total_days %>" data-counterend="<%= @project.remaining_days %>"></span> !</p>
   </div>
 
   <div class="project-card col-sm-4">
@@ -31,7 +30,7 @@
         <div class="project-cards">
           <div class="project-task-card border-top border-bottom">
             <%= cl_image_tag(@upcoming_task.user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar avatar-new") %>
-            <div>
+            <div class="project-task-bandeau">
               <div class="colored-info">
                 <% if @upcoming_task.priority_level == "Normale" %>
                   <p class="task-status btn-yellow btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
@@ -76,9 +75,9 @@
             <% if @next_participation.nil? %>
               <p>Pas d'évènement à venir</p>
             <% else %>
-              <h2><strong><%= @next_participation.event.name %></strong></h2>
-              <h3><i class="far fa-calendar-alt"></i> <%= @next_participation.start_time.day %> <%= @next_participation_month %></h3>
-              <h3><%= @next_participation.start_time.hour %>h</h3>
+              <h3><strong><%= @next_participation.event.name %></strong></h3>
+              <h4><i class="far fa-calendar-alt"></i> <%= @next_participation.start_time.day %> <%= @next_participation_month %></h4>
+              <h4><%= @next_participation.start_time.hour %>h</h4>
               <p><%= @next_participation.event.description%></p>
             <% end %>
         </div>

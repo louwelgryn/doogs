@@ -15,8 +15,7 @@
       <p>Les projets</p>
     <% end %>
     <% if user_signed_in? %>
-      <%= cl_image_tag current_user.image, :transformation=>[{:gravity=>"face", :crop=>"crop"}], class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-
+      <%= cl_image_tag current_user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% if current_user.notifications > 0 %>
         <div id="navbar-notif-badge">
           <div id="badge-wraper">
