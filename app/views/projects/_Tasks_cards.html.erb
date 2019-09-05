@@ -4,13 +4,13 @@
     <div>
       <div class="colored-info">
         <% if task.priority_level == "Normale" %>
-          <p class="task-status btn-yellow btn-basic top-left" > <%= task.priority_level%></p>
+          <p class="task-status btn-yellow btn-basic top-left"> <%= task.priority_level%></p>
         <% elsif task.priority_level == "Prioritaire" %>
-          <p class="task-status btn-red btn-basic top-left" > <%= task.priority_level%></p>
+          <p class="task-status btn-red btn-basic top-left"> <%= task.priority_level%></p>
         <% else %>
-          <p class="task-status btn-orange btn-basic top-left" > <%= task.priority_level%></p>
+          <p class="task-status btn-orange btn-basic top-left"> <%= task.priority_level%></p>
         <% end %>
-        <p class="task-end btn-basic btn-calendar"><i class="far fa-clock"></i> <%= task.end_date.strftime('%d %b') %></p>
+        <p class="task-end btn-basic btn-calendar"><i class="far fa-clock task-clock"></i> <%= task.end_date.strftime('%d %b') %></p>
       </div>
       <p class="project-task-name"><%= task.name %></p>
       <% if task.status == "A faire" && ((current_user == task.user) || @manager) %>

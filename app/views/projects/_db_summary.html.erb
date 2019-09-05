@@ -40,7 +40,7 @@
                 <% else %>
                   <p class="task-status btn-orange btn-basic top-left" > <%= @upcoming_task.priority_level%></p>
                 <% end %>
-                <p class="task-end btn-basic btn-calendar"><i class="far fa-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
+                <p class="task-end btn-basic btn-calendar"><i class="far fa-clock task-clock">  </i>  <%= @upcoming_task.end_date.strftime('%d %b') %></p>
               </div>
               <p class="project-task-name"><%= @upcoming_task.name %></p>
             </div>
