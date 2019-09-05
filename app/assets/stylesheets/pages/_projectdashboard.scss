@@ -163,7 +163,7 @@
 }
 
 .avatar-new {
-  margin-right: 16px;
+  // margin-right: 16px;
 }
 
 .project-task-bandeau {
@@ -178,6 +178,7 @@
   background-color: white;
   padding: 16px;
   align-items: center;
+  justify-content: space-between;
 }
 
 .hide-btn {
@@ -185,18 +186,17 @@
   background: none;
 }
 
-.hide-btn:focus {
-  outline: none !important;
+.project-task-card form {
+  padding: 0;
 }
 
 .checked {
-  // color: rgba(100, 100, 100, 0.5);
-  color: rgba(194, 225, 187, 0.5);
+  color: #C2E1BB;
   font-size: 32px;
 }
 
 .checked:hover {
-  color: #C2E1BB;
+  color: #56a046;
 }
 
 .project-task-informations {
