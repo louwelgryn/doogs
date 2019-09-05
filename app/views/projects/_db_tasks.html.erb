@@ -24,6 +24,7 @@
         <p class="task-title">Urgentes</p>
 
         <div id="Urgente" class="drag-drop">
+
         <% @project.tasks.urgente.a_faire.each do |task| %>
           <%= render 'Tasks_cards', task: task  %>
         <% end %>

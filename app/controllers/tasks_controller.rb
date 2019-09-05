@@ -32,8 +32,14 @@ class TasksController < ApplicationController
     @task.status = "Achevée"
     authorize @task
     @task.save
+
     redirect_to project_dashboard_path(@project, anchor: 'roadmap')
     flash[:notice] = "La tâche est désormais achevée"
+
+    # respond_to do |format|
+    #   format.html { redirect_to project_dashboard_path(@project, anchor: 'roadmap') }
+    #   format.js  # <-- will render `app/views/commitments/update.js.erb`
+    # end
   end
 
   private
