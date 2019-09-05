@@ -10,7 +10,7 @@
     <% if @user.notifications > 0 %>
       <div class="user-notif">
         <h4>Tâches en attente :</h2>
-          <% @user.tasks.each do |task| %>
+          <% @user.tasks.where("status = ?", "A faire").each do |task| %>
             <p>
               <%= task.name  %>
               <%= link_to project_dashboard_path(task.project) do %>
