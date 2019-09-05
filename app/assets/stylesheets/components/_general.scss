@@ -9,6 +9,12 @@ textarea:focus {
   outline: none !important;
 }
 
+.wave-bottom {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
 .reset-css {
   animation : none;
     animation-delay : 0;
