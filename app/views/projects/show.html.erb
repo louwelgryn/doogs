@@ -2,7 +2,7 @@
   <%= image_tag 'blue-wave.svg', class: "wave-bottom" %>
 </div>
 
-<div class="banner project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @project.image %>'); ">
+<div class="banner project-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path(@project.image, height: 400) %>'); ">
   <div class="container">
     <h1><%= @project.name %></h1>
     <p>Un projet de <em><%= @charity.name %></em></p>
@@ -19,10 +19,7 @@
     <p><%= @charity.description %></p>
     <p>Référent.e :</p>
     <div class="charity-referent">
-      <%= cl_image_tag(@charity.referent_image, :transformation=>[
-        {:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-        {:width=>120, :crop=>"scale"}
-        ])
+      <%= cl_image_tag(@charity.referent_image, width: 300, height: 300, gravity: :face, crop: :thumb, class: "avatar-120")
       %>
       <p><strong><%= @charity.referent_name %></strong>, <%= @charity.referent_position %></p>
     </div>
@@ -100,8 +97,7 @@
 
   </div> -->
 
-
-  <svg viewBox="0 0 361 329" class="current-resident-card"></svg>
-  <path fill="#C2E1BB" fill-rule="evenodd" d="M327.775 185.887c-100.942 116.027-98.05 152.438-194.445 140.61-96.395-11.828-62.76-60.837-118.302-170.13C-40.514 47.076 76.749-9.384 173.144 2.445 269.54 14.272 428.718 69.86 327.775 185.887z"></path>
+<!--   <svg viewBox="0 0 361 329" class="current-resident-card"></svg>
+  <path fill="#C2E1BB" fill-rule="evenodd" d="M327.775 185.887c-100.942 116.027-98.05 152.438-194.445 140.61-96.395-11.828-62.76-60.837-118.302-170.13C-40.514 47.076 76.749-9.384 173.144 2.445 269.54 14.272 428.718 69.86 327.775 185.887z"></path> -->
 
 </div>

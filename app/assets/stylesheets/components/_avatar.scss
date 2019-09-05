@@ -5,6 +5,12 @@
   object-fit: cover;
 }
 
+.avatar-120 {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
 .avatar-participation {
   opacity: 0.7 !important;
   transition: all 0.3s ease-in-out !important;
