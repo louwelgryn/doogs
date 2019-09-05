@@ -276,7 +276,7 @@ nature_en_occitanie.referent_name = "Johnny Appleseed"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
 nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
 nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
-nature_en_occitanie.address = "14 Rue de Tivoli 31000 Toulouse"
+nature_en_occitanie.address = "5 Rue du Moulin Joly 75011 Paris"
 nature_en_occitanie.save!
 
 puts "Creating charity Bretagne Vivante"
@@ -288,7 +288,7 @@ bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
 bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
 bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
-bretagne_vivante.address = " 19 Rue de Gouesnou 29200 Brest"
+bretagne_vivante.address = "71 rue didot 75014 paris"
 bretagne_vivante.save!
 
 

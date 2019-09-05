@@ -32,7 +32,7 @@ class TasksController < ApplicationController
     @task.status = "Achevée"
     authorize @task
     @task.save
-    redirect_to project_dashboard_path(@project)
+    redirect_to project_dashboard_path(@project, anchor: 'roadmap')
     flash[:notice] = "La tâche est désormais achevée"
   end
 

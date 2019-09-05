@@ -198,15 +198,19 @@
   opacity: 1;
   width: 100%;
   border-radius: 0%;
-  height: 11%;
+  height: 14%;
   color: white;
   position: absolute;
   left: 3%;
   text-align: center;
   top: 85%;
   background-color: #CF796B;
-  font-size: 12px;
+  font-size: 15px;
   position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3px;
 }
 
 
@@ -286,4 +290,14 @@ width: 100%;
 
 .blog-slider a {
   text-decoration: none;
+}
+
+.yellow-shape.yellow-shape-2 {
+  position: absolute;
+  height: 75%;
+  left: 78%;
+  top: -22%;
+  width: 39%;
+  z-index: 0;
+  transform: rotate(130deg);
 }

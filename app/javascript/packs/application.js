@@ -2,6 +2,8 @@ import "bootstrap";
 
 import Sortable from 'sortablejs';
 
+import "../plugins/flatpickr";
+
 import '@fullcalendar/core/main.css';
 
 import '@fullcalendar/daygrid/main.css';
@@ -178,7 +180,6 @@ displays.forEach(display => {
 
   setTimeout(() => progress.style.strokeDashoffset = offset, 100);
 });
-
 
 
 

@@ -24,7 +24,7 @@
           </div>
           <p class='form-label'>Deadline:</p>
           <div class="form-inputs">
-            <%= f.input :end_date, label: false %>
+            <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
@@ -76,7 +76,7 @@
           </div>
           <p class='form-label'>Deadline:</p>
           <div class="form-inputs">
-            <%= f.input :end_date, label: false %>
+            <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
@@ -128,7 +128,7 @@
           </div>
           <p class='form-label'>Deadline:</p>
           <div class="form-inputs">
-            <%= f.input :end_date, label: false %>
+            <%= f.input :end_date, as: :string, required: false, label: false, input_html: {class: "datepicker"} %>
           </div>
           <p class='form-label'>Sélectionner un membre de l'équipe:</p>
 
