@@ -1,19 +1,11 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon
-  <% unless current_page?(root_path) %>
-    navbar-lewagon-white
-  <% end %>
- ">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon <% unless current_page?(root_path) %>navbar-lewagon-white<% end %>">
 
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%#= image_tag "GroupDoog.svg" %>
     <%= image_tag "DOOG.1.png" %>
-
   <% end %>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <%= link_to projects_path, class: "btn-black", id: "btn-navbar" do %>
-      <p>Les projets</p>
-    <% end %>
+    <%= link_to 'Les projets', projects_path, class: "btn-black", id: "btn-navbar" %>
     <% if user_signed_in? %>
       <%= cl_image_tag current_user.image, width: 120, height: 120, gravity: :face, crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <% if current_user.notifications > 0 %>
