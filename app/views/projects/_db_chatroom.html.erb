@@ -9,10 +9,15 @@
           <% end %>
 
       </div>
-      <div id="create-message">
+      <div id="create-message" class="container-search-chat">
+        <div class="enter-message-chat">
         <%= simple_form_for([@chat_room, Message.new], remote: true) do |f| %>
           <%= f.input :content, label: false, as: :string %>
-          <%= f.submit 'Send', class: 'btn-rose' , style: "margin-top: 10px;font-size: 20px;"%>
+        </div>
+
+        <div class="enter-button-chat">
+          <%= f.submit '  Send  ', class: 'btn-rose' , style: "margin-top: 10px; font-size: 16px;"%>
+        </div>
         <% end %>
       </div>
     </div>
