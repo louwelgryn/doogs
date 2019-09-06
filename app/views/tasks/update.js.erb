@@ -1,0 +1,11 @@
+initSweetalert('#sweet-alert-button-task', {
+  title: "Génial ! ",
+  text: "La tâche a été marquée comme effectuée.",
+  icon: "success"
+});
+
+document.getElementById('sweet-alert-button-task').click();
+
+setTimeout(function () {
+  window.location.reload();
+},2000);

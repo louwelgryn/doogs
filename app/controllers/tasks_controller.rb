@@ -24,6 +24,11 @@ class TasksController < ApplicationController
     @priority_level = params[:priority_level]
     @task.priority_level = @priority_level
     @task.save
+
+    # respond_to do |format|
+    #   format.html { redirect_to project_dashboard_path(@project, anchor: 'roadmap') }
+    #   format.js { render '../views/tasks/update.js.erb' }# <-- will render `app/views/commitments/update.js.erb`
+    # end
   end
 
   def update
@@ -32,8 +37,13 @@ class TasksController < ApplicationController
     @task.status = "Achevée"
     authorize @task
     @task.save
-    redirect_to project_dashboard_path(@project, anchor: 'roadmap')
-    flash[:notice] = "La tâche est désormais achevée"
+
+    # redirect_to project_dashboard_path(@project, anchor: 'roadmap')
+
+    respond_to do |format|
+      format.html { redirect_to project_dashboard_path(@project, anchor: 'roadmap') }
+      format.js # <-- will render `app/views/commitments/update.js.erb`
+    end
   end
 
   private
