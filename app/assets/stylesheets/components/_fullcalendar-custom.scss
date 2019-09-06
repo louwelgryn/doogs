@@ -14,14 +14,18 @@
   cursor: pointer !important;
 }
 
+.fc-title {
+  color: rgb(65,65,65) !important;
+}
+
 .fc-event-reunion {
   background-color: $vert !important;
   border: 1px solid $vert !important;
 }
 
 .fc-event-perso {
-  background-color: #facac6 !important;
-  border: 1px solid #facac6 !important;
+  background-color: $rose !important;
+  border: 1px solid $rose !important;
 }
 
 
