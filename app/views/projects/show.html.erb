@@ -8,6 +8,14 @@
   <div class="container">
     <h1><%= @project.name %></h1>
     <p>Un projet de <em><%= @charity.name %></em></p>
+    <p class="project-status
+    <%= if @project.status == "En cours"
+      "project-status-orange"
+    elsif @project.status == "En attente"
+      "project-status-blue"
+    else
+      "project-status-green"
+    end %> "><%= @project.status %></p>
   </div>
 </div>
 
@@ -17,7 +25,7 @@
     <div class="charity-logo-container">
       <%= cl_image_tag @charity.logo, width: 120, class: "charity-logo-image" %>
     </div>
-    <h4>L'association</h2>
+    <h4>L'association</h4>
     <p><%= @charity.description %></p>
     <p>Référent.e :</p>
     <div class="charity-referent">
@@ -29,13 +37,10 @@
 
   <div class="project-view-project">
 
-    <p><em>Statut: <%= @project.status %></em></p>
     <p><%= @project.description %></p>
     <% if current_user && @project.status = "En cours" && @volunteers.include?(current_user)  %>
       <p class="btn-dashboard"><%= link_to "Accéder au tableau de bord du projet", project_dashboard_path(@project), class: "btn-black btn-dashboard" %></p>
     <% end %>
-
-    <hr>
 
     <h2>L'équipe</h2>
 

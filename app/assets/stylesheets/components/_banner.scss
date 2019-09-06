@@ -5,7 +5,6 @@
   color: white;
   align-items: center;
   display: flex;
-  margin-bottom: 48px;
   p {
     font-weight: 100;
   }
@@ -15,15 +14,38 @@
 }
 
 .project-banner {
-  height: 400px;
+  height: 320px;
+  margin-bottom: 30px;
   h1 {
     font-size: 3.5rem;
   }
 }
 
+.project-status {
+  display: inline;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
+
+.project-status-orange {
+  background-color: #e48174;
+}
+
+.project-status-blue {
+  background-color: #A4C5C6;
+  color: rgb(65, 65, 65);
+}
+
+.project-status-green {
+  background-color: #C2E1BB;
+  color: rgb(65, 65, 65);
+}
+
 .dashboard-banner {
-  text-align: center;
   height: 220px;
+  margin-bottom: 47px;
+  text-align: center;
   h1 {
     font-size: 2.5rem;
   }
