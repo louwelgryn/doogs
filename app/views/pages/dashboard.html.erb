@@ -9,7 +9,7 @@
 
     <% if @user.notifications > 0 %>
       <div class="user-notif">
-        <h4>Tâches en attente :</h2>
+        <h4>Tâches en attente :</h4>
           <% @user.tasks.where("status = ?", "A faire").each do |task| %>
             <p>
               <%= task.name  %>
@@ -24,11 +24,11 @@
 
   <div class="profile-info">
     <h1><%= @user.name %></h1>
-    <p><%= @user.description %></p>
+    <p id="user-desc"><em><%= @user.description %></em></p>
     <p>Mes compétences :</p>
     <ul class="list-inline">
       <% @user.skills.each do |skill| %>
-        <li class="list-inline-item"><%= skill.name %></li>
+        <li class="list-inline-item"><i class="fas fa-check-circle"></i> <%= skill.name %></li>
       <% end %>
     </ul>
   </div>
