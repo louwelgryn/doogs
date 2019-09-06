@@ -42,7 +42,7 @@
 .blog-slider {
     width: 27%;
     position: relative;
-    max-width: 800px;
+    max-width: 380px;
     margin: 0% 2%;
     background: #fff;
     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
@@ -291,6 +291,10 @@ width: 100%;
 
 .blog-slider a {
   text-decoration: none;
+}
+
+.filter-search {
+  padding-left: 0;
 }
 
 .yellow-shape.yellow-shape-2 {
