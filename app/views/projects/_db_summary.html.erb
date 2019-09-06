@@ -45,7 +45,7 @@
             </div>
             <% if @upcoming_task.status == "A faire" && ((current_user == @upcoming_task.user) || @manager) %>
               <%= simple_form_for [@project, @upcoming_task] do |f| %>
-                <button type="submit" name="commit" value="" class="hide-btn" data-disable-with="" onclick="return confirm('Es-tu sûr de vouloir archiver cette tâche ?');">
+                <button type="submit" name="commit" value="" class="hide-btn" data-disable-with="" >
                   <i class="fas fa-check-circle checked"></i>
                 </button>
               <% end %>
