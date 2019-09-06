@@ -6,6 +6,5 @@ initSweetalert('#sweet-alert-button-task', {
 
 document.getElementById('sweet-alert-button-task').click();
 
-setTimeout(function () {
-  window.location.reload();
-},2000);
+var task = document.getElementById('task-<%= @task.id %>')
+task.classList.add("d-none");
