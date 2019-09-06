@@ -191,6 +191,34 @@ displays.forEach(display => {
   setTimeout(() => progress.style.strokeDashoffset = offset, 100);
 });
 
+/// Sweetalert tasks
+
+// const task_updates = document.querySelectorAll('.submit-button-task')
+// const task_updates_hide = document.querySelectorAll('.hide-btn')
+
+// task_updates.forEach((task_update) => {
+//   task_update.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     document.querySelector('#sweet-alert-button-task').click();
+//     console.log('clique sur le bouton "click me!"');
+//   });
+// });
+
+// task_updates_hide.forEach((task_update_hide) => {
+//   task_update_hide.addEventListener('click', (event) => {
+//     event.preventDefault();
+//     document.querySelector('#sweet-alert-button-task').click();
+//     console.log('clique sur le bouton "click me!"');
+//   });
+// });
+
+// initSweetalert('#sweet-alert-button-task', {
+//   title: "Génial ! ",
+//   text: "La tâche a été marquée comme effectuée.",
+//   icon: "success"
+// });
+
+
 
 
 
