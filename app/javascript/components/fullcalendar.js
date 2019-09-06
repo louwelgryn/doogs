@@ -66,13 +66,13 @@ const calendarInit = () => {
       calendar.render();
 
       // Jours de la semaine en francais
-      document.querySelector(".fc-day-header.fc-widget-header.fc-sun").innerHTML="<span>Dimanche</span>";
-      document.querySelector(".fc-day-header.fc-widget-header.fc-mon").innerHTML="<span>Lundi</span>"
-      document.querySelector(".fc-day-header.fc-widget-header.fc-tue").innerHTML="<span>Mardi</span>"
-      document.querySelector(".fc-day-header.fc-widget-header.fc-wed").innerHTML="<span>Mercredi</span>"
-      document.querySelector(".fc-day-header.fc-widget-header.fc-thu").innerHTML="<span>Jeudi</span>"
-      document.querySelector(".fc-day-header.fc-widget-header.fc-fri").innerHTML="<span>Vendredi</span>"
-      document.querySelector(".fc-day-header.fc-widget-header.fc-sat").innerHTML="<span>Samedi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-sun").innerHTML="<span style='color: rgb(65,65,65) !important;'>Dimanche</span>";
+      document.querySelector(".fc-day-header.fc-widget-header.fc-mon").innerHTML="<span style='color: rgb(65,65,65) !important;'>Lundi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-tue").innerHTML="<span style='color: rgb(65,65,65) !important;'>Mardi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-wed").innerHTML="<span style='color: rgb(65,65,65) !important;'>Mercredi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-thu").innerHTML="<span style='color: rgb(65,65,65) !important;'>Jeudi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-fri").innerHTML="<span style='color: rgb(65,65,65) !important;'>Vendredi</span>"
+      document.querySelector(".fc-day-header.fc-widget-header.fc-sat").innerHTML="<span style='color: rgb(65,65,65) !important;'>Samedi</span>"
 
       /// CREER UN NOUVEL EVENEMENT ////
       const dates = document.querySelectorAll(".fc-future");
