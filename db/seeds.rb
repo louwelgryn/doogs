@@ -325,7 +325,7 @@ project_article1.description = "Optimiser le matching parrain-filleul pour Frate
 project_article1.charity = article1
 project_article1.development_goal = "Éducation de qualité"
 project_article1.status = "En attente"
-project_article1.start_date = Date.new(2019,9,1)
+project_article1.start_date = Date.new(2019,7,15)
 project_article1.end_date = Date.new(2019,11,12)
 project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/c_scale,h_1706/v1567697966/plush-design-studio-l3N9Q27zULw-unsplash_aynybh.jpg"
 project_article1.save
