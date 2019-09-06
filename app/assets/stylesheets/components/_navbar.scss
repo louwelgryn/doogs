@@ -1,5 +1,10 @@
 .navbar {
   z-index: 2;
+
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .dropdown-menu a {
@@ -62,6 +67,7 @@ a.navbar-signin, a.navbar-signin:hover {
 }
 
 #btn-navbar {
+  padding: 12px 20px;
   margin-right: 20px;
 }
 

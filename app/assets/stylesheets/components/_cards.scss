@@ -45,8 +45,8 @@
     max-width: 800px;
     margin: 0% 2%;
     background: #fff;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-    border-radius: 11px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 10px 0px;
+    border-radius: 8px;
     height: 400px;
     transition: all .3s;
     margin-bottom: 4%;
@@ -93,7 +93,7 @@
   // position: absolute;
   // top: -11%;
   // width: 87%;
-  border-radius: 11px 11px 0 0;
+  border-radius: 8px 8px 0 0;
   left: 6.15%;
   background-position: center;
   background-size: cover;
@@ -192,22 +192,22 @@
 }
 
 .blog-slider p {
-  opacity: 1;
-  width: 100%;
-  border-radius: 0%;
-  height: 14%;
+  // opacity: 1;
+  // width: 100%;
+  // border-radius: 0%;
+  height: 17%;
   color: white;
-  position: absolute;
-  left: 3%;
-  text-align: center;
-  top: 85%;
+  // position: absolute;
+  // left: 3%;
+  // text-align: center;
+  // top: 85%;
   background-color: #CF796B;
-  font-size: 15px;
+  font-size: 0.85rem;
   position: static;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: 3px;
+  // padding-top: 3px;
 }
 
 
@@ -224,10 +224,10 @@
 
 .icone {
   background-color: #CF796B;
-  width: 3%;
-  height: 35px;
+  // width: 3%;
+  height: 40px;
   border-radius: 50%;
-  width: 35px;
+  width: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -235,10 +235,14 @@
   margin-top: 3px;
   position: absolute;
   top: -20px;
-  i{
-    font-size: 14px;
+  i {
+    font-size: 18px;
     color:white;
   }
+}
+
+.position-icon {
+  margin-right: 4px;
 }
 
 .blog-slider {
