@@ -183,8 +183,26 @@ if (document.querySelector('.messages')) {
 
 
 /// FORMULAIRE CALENDRIER ///
+
 $("#signup").click(function() {
   $(".message-form").css("transform", "translateX(100%)");
+
+  if ($("#slide-container").hasClass("rose")) {
+  } else {
+    $("#slide-container").removeClass("vert");
+    $("#slide-container").addClass("rose");
+  };
+
+  if ($("#signup").hasClass("button-toggle-rose")) {
+  } else {
+    $("#signup").removeClass("button-toggle");
+    $("#signup").addClass("button-toggle-rose");
+
+    $("#login").removeClass("button-toggle");
+    $("#login").addClass("button-toggle-rose");
+  };
+
+
   if ($(".message-form").hasClass("login")) {
     $(".message-form").removeClass("login");
   }
@@ -192,7 +210,24 @@ $("#signup").click(function() {
 });
 
 $("#login").click(function() {
+  const container_login = document.getElementById("slide-container");
   $(".message-form").css("transform", "translateX(0)");
+
+  if ($("#slide-container").hasClass("vert")) {
+  } else {
+    $("#slide-container").removeClass("rose");
+    $("#slide-container").addClass("vert");
+  };
+
+  if ($("#login").hasClass("button-toggle")) {
+  } else {
+    $("#login").removeClass("button-toggle-rose");
+    $("#login").addClass("button-toggle");
+
+    $("#signup").removeClass("button-toggle-rose");
+    $("#signup").addClass("button-toggle");
+  };
+
   if ($(".message-form").hasClass("login")) {
     $(".message-form").removeClass("signup");
   }
@@ -216,34 +251,6 @@ displays.forEach(display => {
 
   setTimeout(() => progress.style.strokeDashoffset = offset, 100);
 });
-
-/// Sweetalert tasks
-
-// const task_updates = document.querySelectorAll('.submit-button-task')
-// const task_updates_hide = document.querySelectorAll('.hide-btn')
-
-// task_updates.forEach((task_update) => {
-//   task_update.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     document.querySelector('#sweet-alert-button-task').click();
-//     console.log('clique sur le bouton "click me!"');
-//   });
-// });
-
-// task_updates_hide.forEach((task_update_hide) => {
-//   task_update_hide.addEventListener('click', (event) => {
-//     event.preventDefault();
-//     document.querySelector('#sweet-alert-button-task').click();
-//     console.log('clique sur le bouton "click me!"');
-//   });
-// });
-
-// initSweetalert('#sweet-alert-button-task', {
-//   title: "Génial ! ",
-//   text: "La tâche a été marquée comme effectuée.",
-//   icon: "success"
-// });
-
 
 
 

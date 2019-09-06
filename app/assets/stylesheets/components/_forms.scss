@@ -86,7 +86,6 @@ $grey: #C3C3D8;
 
 .message-form {
   position: absolute;
-  background-color: $vert;
   width: 50%;
   height: 100%;
   transition: 0.5s all ease;
@@ -203,6 +202,42 @@ $grey: #C3C3D8;
   }
 }
 
+.button-toggle-rose {
+  margin: 4px;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  outline: 0;
+  color: white;
+  font-size: 15px;
+  position: relative;
+  z-index: 3;
+  text-transform: none;
+  border-radius: 50px;
+  text-align: center;
+  background-color: $rose-plus-fonce;
+  transition: 0.3s;
+  padding: 8px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    transform: translateY(1px);
+    transition: 0.3s all ease;
+    text-decoration: none;
+    color: $rose-plus-fonce;
+    background-color: $blanc-semi-transparent;
+    border-color: $rose-plus-fonce;
+    border: solid 1px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+
 .button-toggle-space {
   margin-bottom: 16px !important;
 }
@@ -258,5 +293,13 @@ $grey: #C3C3D8;
 
 .btn-wrapper-custom {
   width: 88% !important;
+}
+
+.rose {
+  background-color: $rose;
+}
+
+.vert {
+  background-color: $vert;
 }
 
