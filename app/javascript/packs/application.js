@@ -138,6 +138,10 @@ if (document.querySelector('.messages')) {
   // initMapbox();
   voteFunction();
 }
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  scrollLastMessageIntoView();
+}
 
 if (document.querySelector('.messages')) {
   // initMapbox();
@@ -148,6 +152,14 @@ if (document.querySelector('.messages')) {
   // initMapbox();
   downVoteFunction();
 }
+
+// if (document.querySelector('#chatroom')) {
+// document.addEventListener(‘DOMContentLoaded’, (event) => {
+//   const messages = document.querySelectorAll('.message');
+//     const lastMessage = messages[messages.length - 1];
+//     lastMessage.scrollIntoView();
+// })
+// }
 
 // if (document.querySelector('#new_message')) {
 //   // initMapbox();
