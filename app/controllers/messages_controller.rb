@@ -23,7 +23,11 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
     authorize @message
     @message.upvote_by current_user
-    redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')
+    # redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')
+    respond_to do |format|
+        format.html {redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')}
+        format.js
+      end
   end
 
   def downvote
@@ -31,6 +35,10 @@ class MessagesController < ApplicationController
     authorize @message
     @message.downvote_by current_user
     redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')
+    respond_to do |format|
+        format.html {redirect_to project_dashboard_path(@message.chat_room.project_id, anchor: 'chatroom')}
+        format.js
+      end
   end
 
 
@@ -39,4 +47,5 @@ class MessagesController < ApplicationController
  def message_params
   params.require(:message).permit(:content)
  end
+
 end

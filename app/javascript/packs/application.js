@@ -9,7 +9,8 @@ import '@fullcalendar/core/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import { submitForm } from '../components/submitForm';
-import { voteFunction } from '../components/vote';
+import { voteFunction, upVoteFunction, downVoteFunction} from '../components/vote';
+// import { voteFunction} from '../components/vote';
 import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
@@ -31,7 +32,7 @@ import { openMap } from '../components/init_mapbox';
 import { initSelect2 } from "../plugins/init_select2";
 
 // TWEAK TO HAVE ACCESS TO THIS FUNCTION IN VIEWS
-window.voteFunction = voteFunction;
+
 window.scrollLastMessageIntoView = scrollLastMessageIntoView;
 
 
@@ -139,11 +140,36 @@ assignes.forEach((assigne) => {
   });
 });
 
+window.voteFunction = voteFunction;
+window.upVoteFunction = upVoteFunction;
+window.downVoteFunction = downVoteFunction;
 
 if (document.querySelector('.messages')) {
   // initMapbox();
   voteFunction();
 }
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  scrollLastMessageIntoView();
+}
+
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  upVoteFunction();
+}
+
+if (document.querySelector('.messages')) {
+  // initMapbox();
+  downVoteFunction();
+}
+
+// if (document.querySelector('#chatroom')) {
+// document.addEventListener(‘DOMContentLoaded’, (event) => {
+//   const messages = document.querySelectorAll('.message');
+//     const lastMessage = messages[messages.length - 1];
+//     lastMessage.scrollIntoView();
+// })
+// }
 
 // if (document.querySelector('#new_message')) {
 //   // initMapbox();
