@@ -23,9 +23,10 @@
   background-color:white;
   width: 40px;
   padding: 5px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px 0px;
+  display: flex;
+  align-items: center;
   justify-content: space-evenly;
-  height: 25px;
 }
 
 .icons-vote.zero-votes {
@@ -33,14 +34,14 @@
 }
 
 .icons-filled.up-votes {
- display: flex;
-    border-radius: 40px;
-    background-color: white;
-    width: 60px;
-    padding: 5px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-    justify-content: space-evenly;
-    height: 25px;
+  display: flex;
+  border-radius: 40px;
+  background-color: white;
+  width: 60px;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+  justify-content: space-evenly;
+  height: 25px;
 }
 
 .plus-sign {
