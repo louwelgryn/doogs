@@ -2,32 +2,33 @@
   <div class="englobing">
   <div class="message-styling">
     <div class="message-content" ><%= message.content %></div>
-    <div class="created_at"><%= message.created_at.strftime("%b %d, %I:%M%P") %></div>
 
-  <% if message.get_upvotes.size == 0 && message.get_downvotes.size == 0 %>
-    <div class="votes-container">
-      <div class="icons-vote">
-          <i class="fas fa-smile-beam icons-details icons">  </i>
-          <i class="fas fa-plus icons-details plus-sign icons"></i>
+  <div class="emoji-container">
+    <% if message.get_upvotes.size == 0 && message.get_downvotes.size == 0 %>
+      <div class="votes-container">
+        <div class="icons-vote">
+            <i class="fas fa-smile-beam icons-details icons">  </i>
+            <i class="fas fa-plus icons-details plus-sign icons"></i>
+        </div>
+        <div class="icons-filled">
+         <div class="positive"> <p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id),  remote: true, method: :put do %> 😍 <% end %>  </p>
+           <p class="upvote"> <%= message.get_upvotes.size %></p></div>
+          <div class="negative"><p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), remote: true, method: :put do %> 😡 <% end %> </p>
+          <p class="downvote"><%= message.get_downvotes.size %></div></p>
+        </div>
       </div>
-      <div class="icons-filled">
-        <p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😍 <% end %>  </p>
-         <%= message.get_upvotes.size %>
-        <p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😡 <% end %> </p>
-        <%= message.get_downvotes.size %>
+    <% else %>
+        <!-- <div class="when-value"> -->
+      <div class="flex">
+        <div class="positive"><p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), remote: true, method: :put do %> 😍 <% end %> </p>
+        <p class="upvote"><%= message.get_upvotes.size %></p></div>
+        <div class="negative"><p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), remote: true, method: :put do %> 😡 <% end %> </p>
+          <p class="downvote"> <%= message.get_downvotes.size %></p>
+        </div>
+    <!--   </div> -->
       </div>
-    </div>
-  <% else %>
-      <!-- <div class="when-value"> -->
-    <div class="flex">
-    <p class= "emoji"> <%= link_to like_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😍 <% end %> </p>
-    <%= message.get_upvotes.size %>
-    <p class= "emoji"> <%= link_to  dislike_chat_room_message_path(chat_room_id: message.chat_room.id,id: message.id), method: :put do %> 😡 <% end %> </p>
-
-    <%= message.get_downvotes.size %>
-<!--   </div> -->
+    <% end %>
   </div>
-<% end %>
 
 
   </div>

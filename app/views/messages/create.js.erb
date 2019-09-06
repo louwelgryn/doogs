@@ -4,7 +4,11 @@
 
   var messagesContainer = document.querySelector('.messages');
   messagesContainer.insertAdjacentHTML('beforeend', " <%= j render 'messages/message', message: @message, user_is_messages_author: true  %>");
-  window.voteFunction();
+  // window.voteFunction();
+
+  voteFunction();
+  upVoteFunction();
+  downVoteFunction();
 
   var input = document.querySelector('#message_content');
   input.value = '';

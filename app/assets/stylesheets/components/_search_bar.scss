@@ -14,6 +14,8 @@
     margin-right: 20px;
     margin-bottom: 0;
 
+    z-index: 1000 !important;
+
 }
 
 .container-search-chat {
@@ -64,4 +66,8 @@
     border-radius: 4px;
     display: flex;
     height: 37px !important;
+}
+
+.search_status {
+  z-index: 1000 !important;
 }
