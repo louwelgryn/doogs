@@ -325,7 +325,7 @@ project_article1.description = "Optimiser le matching parrain-filleul pour Frate
 project_article1.charity = article1
 project_article1.development_goal = "Éducation de qualité"
 project_article1.status = "En attente"
-project_article1.start_date = Date.new(2019,7,15)
+project_article1.start_date = Date.new(2019,8,15)
 project_article1.end_date = Date.new(2019,11,12)
 project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/c_scale,h_1706/v1567697966/plush-design-studio-l3N9Q27zULw-unsplash_aynybh.jpg"
 project_article1.save
@@ -689,8 +689,8 @@ event.project = project_article1
 event.save!
 
 event1 = Event.new
-event1.name = "Pot rencontre"
-event1.start_time = DateTime.new(2019,9,7,12)
+event1.name = "Point DB Marie"
+event1.start_time = DateTime.new(2019,9,9,12)
 event1.end_time = DateTime.now + 2.hour
 event1.status = "reunion"
 event1.project = project_article1
@@ -701,12 +701,6 @@ participation1_event1.user = lou
 participation1_event1.event = event1
 participation1_event1.start_time = event1.start_time
 participation1_event1.save!
-
-participation2_event1 = Participation.new
-participation2_event1.user = thomas
-participation2_event1.event = event1
-participation2_event1.start_time = event1.start_time
-participation2_event1.save!
 
 participation3_event1 = Participation.new
 participation3_event1.user = marie
