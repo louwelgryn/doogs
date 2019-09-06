@@ -27,8 +27,8 @@
   </div>
 
   <div class="ressources-block ressources-upload">
-    <h4>Ajouter une ressource</h4>
-    <p>Téléverser un fichier csv, jpg ou pdf</p>
+    <h4>Ajoutez une ressource</h4>
+    <p>Téléversez un fichier csv, jpg ou pdf</p>
     <div class="file-upload">
       <%= simple_form_for [@project, Ressource.new], html: { class: "form-ressources" } do |f| %>
         <%= f.input :name, label: "Nom de la ressource" %>
