@@ -11,7 +11,7 @@ import '@fullcalendar/daygrid/main.css';
 import { submitForm } from '../components/submitForm';
 import { voteFunction, upVoteFunction, downVoteFunction} from '../components/vote';
 // import { voteFunction} from '../components/vote';
-import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
+import { scrollLastMessageIntoView, scrollOnClickTab } from '../components/scroll_to_last_message';
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
 import { initUpdateNavbarOnScrollHome } from '../components/navbar';
@@ -148,9 +148,9 @@ if (document.querySelector('.messages')) {
   // initMapbox();
   voteFunction();
 }
-if (document.querySelector('.messages')) {
+if (document.querySelector('#chatroom-tab')) {
   // initMapbox();
-  scrollLastMessageIntoView();
+  scrollOnClickTab();
 }
 
 if (document.querySelector('.messages')) {
