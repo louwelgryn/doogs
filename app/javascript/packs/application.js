@@ -11,12 +11,10 @@ import '@fullcalendar/daygrid/main.css';
 import { submitForm } from '../components/submitForm';
 import { voteFunction } from '../components/vote';
 import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
-// import { scrollLastMessageIntoView } from '../components/scroll_to_last_message';
-
 import { initSweetalert } from '../components/init_sweetalert';
 import calendarInit from '../components/fullcalendar.js';
-// import onClickDescription from '../components/fullcalendar.js';
-import { initUpdateNavbarOnScroll } from '../components/navbar';
+import { initUpdateNavbarOnScrollHome } from '../components/navbar';
+import { initUpdateNavbarOnScrollIndex } from '../components/navbar';
 import { taskFunction  } from '../components/task';
 
 import { initCounter } from '../components/init_counter';
@@ -43,7 +41,11 @@ if (document.querySelector('.map-wrapper')) {
 }
 
 if (document.querySelector(".home-page")) {
-  initUpdateNavbarOnScroll();
+  initUpdateNavbarOnScrollHome();
+}
+
+if (document.querySelector(".indexpage")) {
+  initUpdateNavbarOnScrollIndex();
 }
 
 if (document.querySelector(".filter-search")) {

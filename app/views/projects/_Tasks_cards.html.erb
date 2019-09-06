@@ -4,11 +4,11 @@
     <div class="project-task-bandeau">
       <div class="colored-info">
         <% if task.priority_level == "Normale" %>
-          <p class="task-status btn-yellow btn-basic top-left"> <%= task.priority_level%></p>
+          <p class="task-status btn-yellow btn-basic"> <%= task.priority_level%></p>
         <% elsif task.priority_level == "Prioritaire" %>
-          <p class="task-status btn-red btn-basic top-left"> <%= task.priority_level%></p>
+          <p class="task-status btn-red btn-basic"> <%= task.priority_level%></p>
         <% else %>
-          <p class="task-status btn-orange btn-basic top-left"> <%= task.priority_level%></p>
+          <p class="task-status btn-orange btn-basic"> <%= task.priority_level%></p>
         <% end %>
         <p class="task-end btn-basic btn-calendar"><i class="far fa-clock task-clock"></i> <%= task.end_date.strftime('%d %b') %></p>
       </div>
@@ -24,10 +24,3 @@
     <%= link_to '' , status_update_path(task), hidden: true, remote: true %>
   </div>
 </div>
-
-
-<!-- Ajouter un link to caché vers une route custom pour updater le statut -->
-<!-- Stocker le statut dans un data-status  -->
-<!-- Call back de drop, récupérer le statut  -->
-<!-- En js rajouter au lien un param avec le statut type ?="status" -->
-<!-- En js trigguer le link to qui est caché  -->

@@ -1,14 +1,14 @@
 .green-banner {
  // background-image: url('Vectorvector.svg');
- background-color: #A4C5C6;
- background-repeat: no-repeat;
- height: 100vh;
- position: relative;
+   background-color: #A4C5C6;
+   background-repeat: no-repeat;
+   height: 100vh;
+   position: relative;
 }
 
 .banner-info {
   position: absolute;
-  top: 280px;
+  top: 40%;
   right: 16%;
   width: 350px;
 }
@@ -47,8 +47,7 @@
 }
 
 .cards h4 {
- text-align: center;
-
+  text-align: center;
 }
 
 .cards {
@@ -75,8 +74,8 @@ transform: rotate(0);
 .orange-circle {
   height: 100px;
   position: absolute;
-      top: 138px;
-    left: 600px;
+  top: 138px;
+  left: 600px;
 }
 
 .orange-shape {
@@ -116,11 +115,12 @@ transform: rotate(0);
 
 .title {
   position: absolute;
-    height: 25%;
-    top: 95px;
-    left: 29%;
-
+  height: 25%;
+  width: 32%;
+  top: 15%;
+  left: 22%;
 }
+
 .doog-mission {
   position: relative;
   background-color: white;
@@ -133,7 +133,6 @@ transform: rotate(0);
  position: absolute;
   height: 400px;
   left: -129px;
-
 }
 
 .big-title {

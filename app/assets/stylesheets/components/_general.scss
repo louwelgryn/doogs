@@ -9,6 +9,22 @@ textarea:focus {
   outline: none !important;
 }
 
+.wave-index {
+  height: 85%;
+}
+
+.container-index {
+  margin-top: 0 !important;
+  padding-top: 92px;
+}
+
+
+.wave-bottom {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
 .reset-css {
   animation : none;
     animation-delay : 0;

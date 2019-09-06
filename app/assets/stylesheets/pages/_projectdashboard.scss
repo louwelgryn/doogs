@@ -1,3 +1,5 @@
+// banner et nav ------------------------
+
 .yellow-banner h1 {
   text-align: center;
   margin-top: 110px;
@@ -11,26 +13,12 @@
   margin-bottom: 24px;
 }
 
-.pdb-ensemble {
-  justify-content: center;
-}
 
-// onglets
+// onglets -------------------------------
 
 .tab-label {
   margin: 0 16px;
   padding: 16px 32px;
-}
-
-.small-weirdo {
-  width: 60px;
-  height: 45px;
-  position: absolute;
-  left: 20px;
-}
-
-.relative-weirdo {
-  position: relative;
 }
 
 .nav-item a {
@@ -54,7 +42,35 @@
   background-color: white;
 }
 
-// Team
+
+// cards (summary & roadmap) -------------------
+
+.project-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.test-card {
+  width: 95%;
+  background-color: white;
+  padding-top: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+  border-radius: 11px;
+  height: 125%;
+  position: relative;
+}
+
+.test-card:hover {
+  transform: scale(1.02);
+}
+
+.for-dashboard {
+  height: 100%;
+  padding-bottom: 1px;
+}
+
+
+// summary team -------------------------------
 
 .pdb-team-member {
   margin: 20px 28px;
@@ -68,40 +84,19 @@
   }
 }
 
-.top-left{
-  margin-left: 0;
+.small-weirdo {
+  width: 60px;
+  height: 45px;
+  position: absolute;
+  left: 20px;
 }
 
-.container-tasks{
+.relative-weirdo {
+  position: relative;
 }
 
-.test {
-  display: flex;
-  margin-left: 5px;
-  align-items: center;
-}
 
-.project-cards {
-  display: flex;
-  justify-content: center;
-}
-
-.project-card-small{
-  background-color: white;
-    margin: 4px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
-    border-radius: 11px;
-    text-align: center;
-}
-
-#myTabContent {
-  margin: 0;
-}
-
-.drag-drop {
-  min-height: 50px;
-  min-width: 50px;
-}
+// summary events -----------------------------
 
 .card-image-wraper {
   background: url(asset_path('green.svg'));
@@ -111,16 +106,6 @@
   position: absolute;
   top: -133px;
   left: 121px;
-}
-
-.test-card {
-  width: 95%;
-  background-color: white;
-  padding-top: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
-  border-radius: 11px;
-  height: 125%;
-  position: relative;
 }
 
 .next-event-card {
@@ -155,6 +140,18 @@
   }
 }
 
+
+// roadmap tasks ---------------------
+
+.drag-drop {
+  min-height: 64px;
+  // min-width: 50px;
+}
+
+.avatar-new {
+  margin-left: 4px;
+}
+
 .task-button {
   position: absolute;
   bottom: 0px;
@@ -162,17 +159,14 @@
   color:#A4C5C6;
 }
 
-.avatar-new {
-  // margin-right: 16px;
-}
-
 .project-task-bandeau {
   height: 100%;
+  text-align: center;
+  width: 10.8em;
 }
 
 .project-task-card {
   display: flex;
-  height: 75px;
   width: 100%;
   position: relative;
   background-color: white;
@@ -217,9 +211,7 @@
 
 .colored-info {
   display: flex;
-  // position: absolute;
-  // left: 68px;
-  // top: 10px;
+  justify-content: space-between;
   p {
     font-size: 0.85rem;
   }
@@ -231,6 +223,8 @@
 
 .project-task-name {
   font-size: 0.85rem;
+  margin-bottom: 0;
+  margin-top: 8px;
 }
 
 .task-status {
@@ -247,9 +241,10 @@
   justify-content: center;
 }
 
-.task-status, .task-end {
+.task-status,
+.task-end {
   padding: 4px 8px;
-  margin-right: 8px;
+  margin: 0;
 }
 
 .task-title {
@@ -258,65 +253,11 @@
   font-size: 25px;
 }
 
-#dashboard {
-  left: 28px;
-  top: 13px;
-}
-
-.for-dashboard {
-  height: 100%;
-  padding-bottom: 1px;
-}
-
-.avatar-dashboard{
-  left: 63px;
-}
-
-.test-card:hover {
-  transform: scale(1.02);
-}
-
-.croped-image-bord {
-  border-radius: 50%;
-  width: 250px;
-  position: absolute;
-  height: 250px;
-  object-fit: cover;
-  z-index:1;
-  position: relative;
-}
-
-.weirdo-orange {
-  position: absolute;
-  height: 250px;
-  left: 15px;
-}
-
 .colored-style {
   background-color: #e48174;
   width: 200px;
   height: 20px;
   position: absolute;
-}
-
-.wave-bottom {
-  position: fixed;
-  bottom: 0;
-  z-index: -1;
-}
-
-.finished {
-  padding: 2px;
-  height: 20px;
-  width: 150px;
-  margin: 0 auto;
-  display: block;
-  margin-top: 8px;
-  font-size: 10px;
-}
-
-.drag-drop {
-  min-height: 50px;
 }
 
 .task-description {
@@ -330,6 +271,60 @@
   height: 100%;
 }
 
-.roadmap {
-  z-index: 1;
-}
+
+// .finished {
+//   padding: 2px;
+//   height: 20px;
+//   width: 150px;
+//   margin: 0 auto;
+//   display: block;
+//   margin-top: 8px;
+//   font-size: 10px;
+// }
+
+// .weirdo-orange {
+//   position: absolute;
+//   height: 250px;
+//   left: 15px;
+// }
+
+// .roadmap {
+//   z-index: 1;
+// }
+
+// .project-card-small{
+//   background-color: white;
+//     margin: 4px;
+//     box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px 0px;
+//     border-radius: 11px;
+//     text-align: center;
+// }
+
+// .test {
+//   display: flex;
+//   margin-left: 5px;
+//   align-items: center;
+// }
+
+// #myTabContent {
+//   margin: 0;
+// }
+
+// .avatar-dashboard {
+//   left: 63px;
+// }
+
+// #dashboard {
+//   left: 28px;
+//   top: 13px;
+// }
+
+// .croped-image-bord {
+//   border-radius: 50%;
+//   width: 250px;
+//   position: absolute;
+//   height: 250px;
+//   object-fit: cover;
+//   z-index:1;
+//   position: relative;
+// }
