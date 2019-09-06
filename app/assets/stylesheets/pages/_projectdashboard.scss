@@ -162,7 +162,7 @@
 .project-task-bandeau {
   height: 100%;
   text-align: center;
-  width: 11em;
+  width: 10.8em;
 }
 
 .project-task-card {
@@ -211,6 +211,7 @@
 
 .colored-info {
   display: flex;
+  justify-content: space-between;
   p {
     font-size: 0.85rem;
   }
@@ -243,6 +244,7 @@
 .task-status,
 .task-end {
   padding: 4px 8px;
+  margin: 0;
 }
 
 .task-title {
