@@ -42,8 +42,8 @@ const calendarInit = () => {
           const eventDescription = document.getElementById('event-description');
           eventDescription.innerHTML = info.event.extendedProps.description;
 
-          const eventStartTime = document.getElementById('event-start-date');
-          eventStartTime.innerHTML = info.event.extendedProps.start_time;
+          // const eventStartTime = document.getElementById('event-start-date');
+          // eventStartTime.innerHTML = info.event.extendedProps.start_time;
         },
 
         // eventRender: function(event, element) {
