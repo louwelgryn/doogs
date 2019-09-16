@@ -1,18 +1,20 @@
 <div class="homepage indexpage">
-  <div class="green-banner">
+  <div class="green-banner index-new">
 
-    <%= image_tag 'Vectorvector.svg', class: "wave wave-index" %>
+    <div class="container container-navbar">
 
-    <div class="container">
+      <h1 id="signin-title">Se connecter</h1>
 
-      <h1>Se connecter</h2>
-
-      <%= render "devise/shared/links" %>
-
-      <br>
+      <div class="signin-intro">
+        <p><em>Pour tester les fonctionnalités de la plateforme, utilisez les identifiants invités suivants :</em></p>
+        <ul>
+          <li><em>E-mail : guest@doog.club</em></li>
+          <li><em>Mot de passe : password</em></li>
+        </ul>
+      </div>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
+        <div class="form-inputs signin-form">
           <%= f.input :email,
                       required: false,
                       autofocus: true,
@@ -29,5 +31,6 @@
       <% end %>
 
     </div>
+
   </div>
 </div>

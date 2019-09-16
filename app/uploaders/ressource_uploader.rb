@@ -8,6 +8,6 @@ class RessourceUploader < CarrierWave::Uploader::Base
   # end
 
   def extension_whitelist
-    %w(jpg pdf csv)
+    %w[jpg pdf csv]
   end
 end

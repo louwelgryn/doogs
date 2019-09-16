@@ -49,6 +49,10 @@
                   <i class="fas fa-check-circle checked"></i>
                 </button>
               <% end %>
+            <% else %>
+              <button style="visibility: hidden;">
+                <i class="fas fa-check-circle checked"></i>
+              </button>
             <% end %>
             <%= link_to '' , status_update_path(@upcoming_task), hidden: true, remote: true %>
           </div>
