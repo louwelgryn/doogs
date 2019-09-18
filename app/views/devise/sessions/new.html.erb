@@ -1,26 +1,36 @@
-<div class="container" style="margin-top: 124px;">
+<div class="homepage indexpage">
+  <div class="green-banner index-new">
 
-  <h1>Se connecter</h2>
+    <div class="container container-navbar">
 
-  <%= render "devise/shared/links" %>
+      <h1 id="signin-title">Se connecter</h1>
 
-  <br>
+      <div class="signin-intro">
+        <p><em>Pour tester les fonctionnalités de la plateforme, utilisez les identifiants invités suivants :</em></p>
+        <ul>
+          <li><em>E-mail : guest@doog.club</em></li>
+          <li><em>Mot de passe : password</em></li>
+        </ul>
+      </div>
 
-  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="form-inputs">
-      <%= f.input :email,
-                  required: false,
-                  autofocus: true,
-                  label: 'Votre email'%>
-      <%= f.input :password,
-                  required: false,
-                  label: 'Votre mot de passe'%>
-      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs signin-form">
+          <%= f.input :email,
+                      required: false,
+                      autofocus: true,
+                      label: 'Votre email'%>
+          <%= f.input :password,
+                      required: false,
+                      label: 'Votre mot de passe'%>
+          <%= f.input :remember_me, label: 'Se souvenir de moi', as: :boolean if devise_mapping.rememberable? %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Connexion", class: "btn-black" %>
+        </div>
+      <% end %>
+
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Connexion", class: "btn btn-primary" %>
-    </div>
-  <% end %>
-
+  </div>
 </div>

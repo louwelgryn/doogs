@@ -50,7 +50,6 @@
       <% @project.commitments.each do |commitment| %>
 
         <li>
-
           <% if commitment.user %>
             <div class="avatar-container">
               <%= cl_image_tag(commitment.user.image, width: 180, height: 180, gravity: :face, crop: :thumb, class: "avatar-96") %>
@@ -59,28 +58,23 @@
               </div>
             </div>
           <% elsif !current_user %>
-            <div type="submit" class="reset-css">
-              <div class="avatar-container">
-                <div class="empty-avatar">
-                  <p class="reset-css submit-text"><%= link_to 'JOIN!', new_user_session_path, class: "reset-css" %></p>
-                  <span class="empty-avatar-text"><%= commitment.skill.name %></span>
-                </div>
+            <div class="avatar-container">
+              <div class="empty-avatar">
+                <%= link_to 'JOIN!', new_user_session_path, class: "submit-text"%>
+                <span class="empty-avatar-text"><%= commitment.skill.name %></span>
               </div>
             </div>
           <% else commitment.user.nil? %>
             <%= simple_form_for(commitment, remote: true) do |f| %>
               <%= f.input :user_id, as: :hidden, input_html: {value: current_user.id} %>
-              <div type="submit" class="reset-css">
-                <div class="avatar-container">
-                  <div class="empty-avatar">
-                    <%= f.submit "JOIN!", class: "reset-css submit-text"%>
-                    <span class="empty-avatar-text"><%= commitment.skill.name %></span>
-                  </div>
+              <div class="avatar-container">
+                <div class="empty-avatar">
+                  <%= f.submit "JOIN!", class: "submit-text"%>
+                  <span class="empty-avatar-text"><%= commitment.skill.name %></span>
                 </div>
               </div>
             <% end %>
           <% end %>
-
        </li>
 
       <% end %>

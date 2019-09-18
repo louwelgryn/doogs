@@ -27,7 +27,7 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="<% unless current_page?(root_path) || current_page?(projects_path) %>page<% end %>">
+    <div class="<% unless current_page?(root_path) || current_page?(projects_path) || current_page?(new_user_session_path) %>page<% end %>">
       <%= yield %>
     </div>
     <%= javascript_include_tag 'application' %>

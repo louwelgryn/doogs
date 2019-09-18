@@ -11,7 +11,6 @@
   color: #fff;
   padding: 15px 20px;
   text-decoration: none;
-  // height: 50px;
   p {
     margin-bottom: 0 !important;
   }
@@ -35,11 +34,10 @@
   transition: 0.3s;
   padding: 15px 20px;
   text-decoration: none;
-  // height: 50px;
   p {
     margin-bottom: 0 !important;
   }
- }
+}
 
 .btn-rose:hover {
   text-decoration: none;
@@ -85,8 +83,6 @@
 .btn-calendar {
   background-color: #e48174;
   width: 80px;
-  // height: 20px;
-  // padding: 2px;
   margin: 0;
   font-size: 14px;
 }
@@ -118,34 +114,30 @@
 }
 
 a.blog-slider__button {
-    // position: relative;
-    position: center;
-    display: inline-block;
-    height: 40px;
-    padding: 3px 23px;
-    border: 1px solid;
-    border-radius: 50px;
-    line-height: 34px;
-    font-size: 14px;
-    font-weight: 400;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    color: #E58074;
-    border-color: #E58074;
-    background-color: #E58074;
-    color: white;
-    text-decoration: none;
-    margin-top: 20%;
-    // background-color:green;
+  position: center;
+  display: inline-block;
+  height: 40px;
+  padding: 3px 23px;
+  border: 1px solid;
+  border-radius: 50px;
+  line-height: 34px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: #E58074;
+  border-color: #E58074;
+  background-color: #E58074;
+  color: white;
+  text-decoration: none;
+  margin-top: 20%;
 }
 
 a.blog-slider__button:hover {
-
   color: #E58074;
   border-color: #E58074;
   background-color: $blanc-semi-transparent;
-
 }
 
 .clearFilterButton {
@@ -176,6 +168,4 @@ a.blog-slider__button:hover {
 .task-user-button {
   color: transparent !important;
 }
-
-
 

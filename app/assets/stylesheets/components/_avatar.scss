@@ -9,7 +9,6 @@
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  margin: 20px;
 }
 
 .avatar-120 {
@@ -103,6 +102,12 @@
 
 .avatar-container .submit-text {display:none}
 .avatar-container:hover .submit-text {display: inline; opacity: 1}
+
+.submit-text {
+  border: none;
+  background: none;
+  color: rgb(65,65,65);
+}
 
 .avatar-middle {
   transition: .5s ease;

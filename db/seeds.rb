@@ -1,15 +1,12 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
 puts "destroy all Ressources"
 Ressource.destroy_all
-puts "destroy all UserSkill"
+puts "destroy all UserSkills"
 UserSkill.destroy_all
 puts "destroy all Commitments"
 Commitment.destroy_all
 puts "destroy all Messages"
 Message.destroy_all
-puts "destroy all Chat_rooms"
+puts "destroy all ChatRooms"
 ChatRoom.destroy_all
 puts "destroy all Tasks"
 Task.destroy_all
@@ -19,12 +16,13 @@ puts "destroy all Events"
 Event.destroy_all
 puts "destroy all Project"
 Project.destroy_all
-puts "destroy all Charity"
+puts "destroy all Charities"
 Charity.destroy_all
-puts "destroy all User"
+puts "destroy all Users"
 User.destroy_all
-puts "destroy all Skill"
+puts "destroy all Skills"
 Skill.destroy_all
+
 
 # Skills ----------------------------------------------------------------------
 
@@ -55,13 +53,15 @@ data_engineer = Skill.new
 data_engineer.name = "Data engineer"
 data_engineer.save
 
+
 # Users ----------------------------------------------------------------------
 
 puts 'creating 7 users and their skills'
 
-puts 'creating Aurelie'
+puts 'creating Aurelie Delpeche'
 
 # User 1
+
 aurelie = User.new
 aurelie.name = 'Aurelie Delpeche'
 aurelie.description = "Je manipule des données depuis que j'ai 7 ans."
@@ -81,9 +81,10 @@ aurelie_skill1.save
 puts 'creating Lou Welgryn'
 
 # User 2
+
 lou = User.new
 lou.name = 'Lou Welgryn'
-lou.description = "J'ai hacké facebook à l'âge de 13 ans."
+lou.description = "J'ai hacké Facebook à l'âge de 13 ans."
 lou.level = 'Piou-piou'
 lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506450/_JBU8547-1_Lou_Welgryn_iv1xmm.jpg"
 lou.email = 'louwelgryn@gmail.com'
@@ -110,6 +111,7 @@ lou_skill2.save
 puts 'creating Antoine Gaillard'
 
 # User 3
+
 antoine = User.new
 antoine.name ="Antoine Gaillard"
 antoine.description = "J'ai pas mal de temps libre."
@@ -119,7 +121,7 @@ antoine.email = "antoinegaillard@gmail.com"
 antoine.password = "qwerty"
 antoine.save!
 
-# User 3- Skills
+# User 3 - Skills
 
 antoine_skill1 = UserSkill.new
 antoine_skill1.skill = full_stack_developer
@@ -141,28 +143,30 @@ antoine_skill4.skill = developer_back
 antoine_skill4.user = antoine
 antoine_skill4.save
 
-puts 'creating Marie Stoppa'
+puts 'creating Marie Stoppa / guest'
 
 # User 4
+
 marie = User.new
 marie.name ="Marie Stoppa"
-marie.description = "I like to data data. I like to data !"
+marie.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
 marie.level = "Piou-piou"
 marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
-marie.email = "mariestoppa@gmail.com"
-marie.password = "qwerty"
+marie.email = "guest@doog.club"
+marie.password = "password"
 marie.save!
 
-# User 4- Skills
+# User 4 - Skills
 
 marie_skill1 = UserSkill.new
-marie_skill1.skill = product_manager
+marie_skill1.skill = data_analyst
 marie_skill1.user = marie
 marie_skill1.save
 
 puts 'creating Maxence Ballande'
 
 # User 5
+
 maxence = User.new
 maxence.name ="Maxence Ballande"
 maxence.description = "Tu parles sur moi y'a R"
@@ -172,7 +176,7 @@ maxence.email = "maxenceballende@gmail.com"
 maxence.password = "qwerty"
 maxence.save!
 
-# User 5- Skills
+# User 5 - Skills
 
 maxence_skill1 = UserSkill.new
 maxence_skill1.skill = product_manager
@@ -182,6 +186,7 @@ maxence_skill1.save
 puts 'creating Arnaud de Castelbajac'
 
 # User 6
+
 arnaud = User.new
 arnaud.name ="Arnaud de Castelbajac"
 arnaud.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
@@ -191,7 +196,7 @@ arnaud.email = "arnaud@gmail.com"
 arnaud.password = "qwerty"
 arnaud.save!
 
-# User 6- Skills
+# User 6 - Skills
 
 arnaud_skill1 = UserSkill.new
 arnaud_skill1.skill = product_manager
@@ -201,6 +206,7 @@ arnaud_skill1.save
 puts 'creating Thomas Reilly'
 
 # User 7
+
 thomas = User.new
 thomas.name ="Thomas Reilly"
 thomas.description = "J'aime le développement web et le cinéma."
@@ -210,7 +216,7 @@ thomas.email = "thomasbozzo@gmail.com"
 thomas.password = "qwerty"
 thomas.save!
 
-# User 7- Skills
+# User 7 - Skills
 
 thomas_skill1 = UserSkill.new
 thomas_skill1.skill = web_designer
@@ -221,6 +227,7 @@ thomas_skill2 = UserSkill.new
 thomas_skill2.skill = developer_front
 thomas_skill2.user = thomas
 thomas_skill2.save
+
 
 # Charities ----------------------------------------------------------------------
 
@@ -243,7 +250,7 @@ puts "Creating charity AHP"
 ahp = Charity.new
 ahp.name = "Amicale des Hygiénistes Psychorigides"
 ahp.description = "L'amicale promeut une société libérée de tous germes, fleurant bon l'eau de javel ou les arômes articiels de pin des Landes. Rejoignez-nous dans ce combat pour un monde plus pur mais n'oubliez pas de vous laver les mains avant."
-ahp.referent_name = "Hilda Chlorobenzène"
+ahp.referent_name = "Élodie Louineaux"
 ahp.referent_position = "Fondatrice"
 ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
 ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
@@ -267,37 +274,36 @@ puts "Creating charity Open Food Facts"
 open_food_facts = Charity.new
 open_food_facts.name = "Open Food Facts"
 open_food_facts.description = "Open Food Facts est une base de données sur les produits alimentaires faite par tout le monde, pour tout le monde. Elle vous permet de faire des choix plus informés, et comme les données sont ouvertes (open data), tout le monde peut les utiliser pour tout usage."
-open_food_facts.referent_name = "Lisa Kasskroute"
-open_food_facts.referent_position = "Président"
-open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/open_food_facts_referent_image_psnrz0.jpg"
+open_food_facts.referent_name = "Lisa Barthélémy"
+open_food_facts.referent_position = "Présidente"
+open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568643223/doogs/stephanie-liverani-Zz5LQe-VSMY-unsplash_nkwhoq.jpg"
 open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
 open_food_facts.address = "21 rue des Iles 94100 Saint Maur Des Fosses"
 open_food_facts.save!
 
-puts "Creating charity Nature en Occitanie"
+puts "Creating charity Fédération Nature Occitanie"
 
 nature_en_occitanie = Charity.new
-nature_en_occitanie.name = "Nature en Occitanie"
-nature_en_occitanie.description = "Nature En Occitanie agit depuis 1969 pour la protection de la faune et de la flore sauvages ainsi que pour la préservation des milieux naturels de la région."
-nature_en_occitanie.referent_name = "Johnny Appleseed"
+nature_en_occitanie.name = "Fédération Nature Occitanie"
+nature_en_occitanie.description = "La Fédération Nature Occitanie agit depuis 1968 pour la protection de la faune et de la flore sauvages ainsi que pour la préservation des milieux naturels de la région."
+nature_en_occitanie.referent_name = "Hervé Martin"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
 nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
-nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_logo_vejre9.jpg"
+nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568639908/doogs/nature_wjfxfw.jpg"
 nature_en_occitanie.address = "5 Rue du Moulin Joly 75011 Paris"
 nature_en_occitanie.save!
 
-puts "Creating charity Bretagne Vivante"
+puts "Creating charity Bretagne Environnement"
 
 bretagne_vivante = Charity.new
-bretagne_vivante.name = "Bretagne Vivante"
-bretagne_vivante.description = "Créée en 1958, association Loi 1901 reconnue d’utilité publique en 1968, agréée pour la protection de l’environnement, Bretagne Vivante est membre fondateur de grandes structures nationales et régionales telles que France Nature Environnement, Réserves Naturelles de France et le Réseau d’Éducation à l’Environnement en Bretagne (REEB)."
+bretagne_vivante.name = "Bretagne Environnement"
+bretagne_vivante.description = "Créée en 1969, association Loi 1901 reconnue d’utilité publique, agréée pour la protection de l’environnement, Bretagne Environnement se bat pour la sauvegarde des écosystèmes bretons, notamment les écosystèmes aquatiques."
 bretagne_vivante.referent_name = "Maïwenn Kermadec"
 bretagne_vivante.referent_position = "Bryologue"
-bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_referent_bn0sgm.jpg"
-bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069302/bretagne_logo_p9k0dt.jpg"
+bretagne_vivante.remote_referent_image_url= "https://res.cloudinary.com/duro4nxuo/image/upload/v1568643223/doogs/alex-avalos-zmzb1gU1DS4-unsplash_qlxyf6.jpg"
+bretagne_vivante.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568639952/doogs/beautiful-landscape-and-river_mdb9h0.png"
 bretagne_vivante.address = "71 rue didot 75014 paris"
 bretagne_vivante.save!
-
 
 
 # Projects ----------------------------------------------------------------------
@@ -324,7 +330,7 @@ project_article1.name = "Algorithme de recommandation pour le parrainage étudia
 project_article1.description = "Optimiser le matching parrain-filleul pour Frateli afin de prévoir si un matching va réussir ou échouer grâce à un outil algorithmique d’aide à la décision pour améliorer le taux de réussite du parrainage."
 project_article1.charity = article1
 project_article1.development_goal = "Éducation de qualité"
-project_article1.status = "En attente"
+project_article1.status = "En cours"
 project_article1.start_date = Date.new(2019,8,15)
 project_article1.end_date = Date.new(2019,11,12)
 project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/c_scale,h_1706/v1567697966/plush-design-studio-l3N9Q27zULw-unsplash_aynybh.jpg"
@@ -341,7 +347,7 @@ project_spa.status = "En cours"
 project_spa.start_date = Date.new(2019,7,5)
 project_spa.end_date = Date.new(2019,11,10)
 
-project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902057/photo-1494256997604-768d1f608cac_ktmift.jpg"
+project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567784574/doogs/gzbcxwf4scpjhjnsp4xd.jpg"
 project_spa.save
 
 puts "creating project Ahp"
@@ -365,7 +371,7 @@ project_neo.name = "Cartographier les petites bêtes"
 project_neo.description = "Nos naturalistes récoltent énormément d'informations sur la petite faune (insectes) du territoire de l'Occitanie. Ces informations sont géoréférences, nous souhaitons pouvoir les valoriser sur de belles cartes dynamiques en ligne."
 project_neo.charity = nature_en_occitanie
 project_neo.development_goal = "Vie terrestre"
-project_neo.status = "En cours"
+project_neo.status = "En attente"
 project_neo.start_date = Date.new(2019,5,12)
 project_neo.end_date = Date.new(2019,10,18)
 project_neo.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069943/project_neo_gsavww.jpg"
@@ -383,6 +389,7 @@ project_bv.start_date = Date.new(2018,2,9)
 project_bv.end_date = Date.new(2018,6,12)
 project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567070322/project_bv_i3xnzi.jpg"
 project_bv.save!
+
 
 # Chatroom ----------------------------------------------------------------------
 
@@ -412,14 +419,14 @@ chatroom_spa.save
 puts 'creating chatroom ahp'
 
 chatroom_ahp = ChatRoom.new
-chatroom_ahp.name = "Amicale des Hygiénistes Psychorigides chat "
+chatroom_ahp.name = "Amicale des Hygiénistes Psychorigides chat"
 chatroom_ahp.project = project_ahp
 chatroom_ahp.save
 
-puts 'creating chatroom Nature en Oxitanie'
+puts 'creating chatroom Nature en Occitanie'
 
 chatroom_neo = ChatRoom.new
-chatroom_neo.name = "Nature en Oxitanie chat"
+chatroom_neo.name = "Nature en Occitanie chat"
 chatroom_neo.project = project_neo
 chatroom_neo.save
 
@@ -433,253 +440,219 @@ chatroom_bv.save
 
 # Commitments ----------------------------------------------------------------------
 
-puts 'Commiting people to projects'
+puts 'Creating commitments for Open Food Facts'
 
-puts 'Creating empty commitments to open_food_facts (finished)'
+commitment1_project1 = Commitment.new
+commitment1_project1.skill = product_manager
+commitment1_project1.project = project_open_food_facts
+commitment1_project1.save
 
-commitment_user1_project1 = Commitment.new
-commitment_user1_project1.skill = product_manager
-commitment_user1_project1.project = project_open_food_facts
-commitment_user1_project1.save
+commitment2_project1 = Commitment.new
+commitment2_project1.skill = developer_front
+commitment2_project1.project = project_open_food_facts
+commitment2_project1.save
 
-commitment_user2_project1 = Commitment.new
-commitment_user2_project1.skill = developer_front
-commitment_user2_project1.project = project_open_food_facts
-commitment_user2_project1.save
+commitment3_project1 = Commitment.new
+commitment3_project1.skill = data_scientist
+commitment3_project1.user = thomas
+commitment3_project1.project = project_open_food_facts
+commitment3_project1.save
 
-puts 'Assigning lou to open_food_facts'
+puts 'Creating commitments for SPA'
 
-commitment_user3_project1 = Commitment.new
-commitment_user3_project1.skill = data_scientist
-commitment_user3_project1.user = lou
-commitment_user3_project1.project = project_open_food_facts
-commitment_user3_project1.save
+commitment1_project2 = Commitment.new
+commitment1_project2.skill = product_manager
+commitment1_project2.project = project_spa
+commitment1_project2.save!
 
-puts 'Creating empty comitment to spa (ongoing)'
+commitment2_project2 = Commitment.new
+commitment2_project2.skill = developer_front
+commitment2_project2.project = project_spa
+commitment2_project2.save!
 
-commitment_user1_project2 = Commitment.new
-commitment_user1_project2.skill = product_manager
-commitment_user1_project2.project = project_spa
-commitment_user1_project2.save!
+puts 'Creating commitments for Article 1'
 
-commitment_user2_project2 = Commitment.new
-commitment_user2_project2.skill = developer_front
-commitment_user2_project2.project = project_spa
-commitment_user2_project2.save!
+commitment1_project3 = Commitment.new
+commitment1_project3.skill = product_manager
+commitment1_project3.user = lou
+commitment1_project3.project = project_article1
+commitment1_project3.save!
 
-puts 'Commiting Aurelie Delpeche and arnaud to neo (ongoing)'
+commitment2_project3 = Commitment.new
+commitment2_project3.skill = developer_back
+commitment2_project3.user = antoine
+commitment2_project3.project = project_article1
+commitment2_project3.save!
 
-commitment_user1_project5 = Commitment.new
-commitment_user1_project5.skill = product_manager
-commitment_user1_project5.user = aurelie
-commitment_user1_project5.project = project_neo
-commitment_user1_project5.save!
+commitment3_project3 = Commitment.new
+commitment3_project3.skill = data_analyst
+commitment3_project3.user = marie
+commitment3_project3.project = project_article1
+commitment3_project3.save!
 
-commitment_user1_project5 = Commitment.new
-commitment_user1_project5.skill = data_analyst
-commitment_user1_project5.project = project_neo
-commitment_user1_project5.save!
+commitment4_project3 = Commitment.new
+commitment4_project3.skill = developer_front
+commitment4_project3.user = maxence
+commitment4_project3.project = project_article1
+commitment4_project3.save!
 
-# Empty Commitments ----------------------------------------------------------------------
+puts 'Creating commitments for AHP'
 
-puts 'Creating empty commitments'
+commitment1_project4 = Commitment.new
+commitment1_project4.skill = product_manager
+commitment1_project4.project = project_ahp
+commitment1_project4.save!
 
-puts 'creating empty commitment for article 1'
+commitment2_project4 = Commitment.new
+commitment2_project4.skill = data_scientist
+commitment2_project4.project = project_ahp
+commitment2_project4.save!
 
-commitment_user1_project3 = Commitment.new
-commitment_user1_project3.skill = product_manager
-commitment_user1_project3.project = project_article1
-commitment_user1_project3.save!
+commitment3_project4 = Commitment.new
+commitment3_project4.skill = data_scientist
+commitment3_project4.project = project_ahp
+commitment3_project4.save!
 
-commitment_user2_project3 = Commitment.new
-commitment_user2_project3.skill = developer_back
-commitment_user2_project3.user = antoine
-commitment_user2_project3.project = project_article1
-commitment_user2_project3.save!
+commitment4_project4 = Commitment.new
+commitment4_project4.skill = data_analyst
+commitment4_project4.project = project_ahp
+commitment4_project4.save!
 
-commitment_user3_project3 = Commitment.new
-commitment_user3_project3.skill = data_analyst
-commitment_user3_project3.user = marie
-commitment_user3_project3.project = project_article1
-commitment_user3_project3.save!
+puts 'Creating commitments for BV'
 
-commitment_user4_project3 = Commitment.new
-commitment_user4_project3.skill = developer_front
-commitment_user4_project3.user = thomas
-commitment_user4_project3.project = project_article1
-commitment_user4_project3.save!
+commitment1_project6 = Commitment.new
+commitment1_project6.skill = product_manager
+commitment1_project6.project = project_bv
+commitment1_project6.save!
 
-puts 'creating empty commitments for article1'
+commitment2_project6 = Commitment.new
+commitment2_project6.skill = developer_back
+commitment2_project6.project = project_bv
+commitment2_project6.save!
 
-commitment_user1_project4 = Commitment.new
-commitment_user1_project4.skill = product_manager
-commitment_user1_project4.project = project_ahp
-commitment_user1_project4.save!
+commitment3_project6 = Commitment.new
+commitment3_project6.skill = data_scientist
+commitment3_project6.project = project_bv
+commitment3_project6.save!
 
-commitment_user2_project4 = Commitment.new
-commitment_user2_project4.skill = data_scientist
-commitment_user2_project4.project = project_ahp
-commitment_user2_project4.save!
+commitment4_project6 = Commitment.new
+commitment4_project6.skill = data_analyst
+commitment4_project6.project = project_bv
+commitment4_project6.save!
 
-commitment_user3_project4 = Commitment.new
-commitment_user3_project4.skill = data_scientist
-commitment_user3_project4.project = project_ahp
-commitment_user3_project4.save!
+puts 'Creating commitments for NEO'
 
-commitment_user4_project4 = Commitment.new
-commitment_user4_project4.skill = data_analyst
-commitment_user4_project4.project = project_ahp
-commitment_user4_project4.save!
+commitment1_project5 = Commitment.new
+commitment1_project5.skill = product_manager
+commitment1_project5.user = aurelie
+commitment1_project5.project = project_neo
+commitment1_project5.save!
 
-puts 'creating empty commitments for neo'
+commitment2_project5 = Commitment.new
+commitment2_project5.skill = data_analyst
+commitment2_project5.user = arnaud
+commitment2_project5.project = project_neo
+commitment2_project5.save!
 
-commitment_user3_project5 = Commitment.new
-commitment_user3_project5.skill = data_scientist
-commitment_user3_project5.project = project_neo
-commitment_user3_project5.save!
+commitment3_project5 = Commitment.new
+commitment3_project5.skill = data_scientist
+commitment3_project5.project = project_neo
+commitment3_project5.save!
 
-commitment_user4_project5 = Commitment.new
-commitment_user4_project5.skill = web_designer
-commitment_user4_project5.project = project_neo
-commitment_user4_project5.save!
+commitment4_project5 = Commitment.new
+commitment4_project5.skill = web_designer
+commitment4_project5.project = project_neo
+commitment4_project5.save!
 
-puts 'creating empty commitments for bv'
 
-commitment_user1_project6 = Commitment.new
-commitment_user1_project6.skill = product_manager
-commitment_user1_project6.project = project_bv
-commitment_user1_project6.save!
+# Tasks for Article 1 -------------------------------------------------------------------
 
-commitment_user2_project6 = Commitment.new
-commitment_user2_project6.skill = developer_back
-commitment_user2_project6.project = project_bv
-commitment_user2_project6.save!
+puts "creating tasks for Article 1"
 
-commitment_user3_project6 = Commitment.new
-commitment_user3_project6.skill = data_scientist
-commitment_user3_project6.project = project_bv
-commitment_user3_project6.save!
+task1 = Task.new
+task1.name = "Cleaner base de données"
+task1.project = project_article1
+task1.user = marie
+task1.description = "Il faut nettoyer la base de données pour commencer à travailler"
+task1.status = "A faire"
+task1.priority_level = "Urgente"
+task1.end_date = Date.new(2019,9,23)
+task1.save!
 
-commitment_user4_project6 = Commitment.new
-commitment_user4_project6.skill = data_analyst
-commitment_user4_project6.project = project_bv
-commitment_user4_project6.save!
+task2 = Task.new
+task2.name = "Rencontre avec un mentor"
+task2.project = project_article1
+task2.user = marie
+task2.description = "Rencontrer un mentor pour comprendre ce qu'ils attendent de l'accompagnement"
+task2.status = "A faire"
+task2.priority_level = "Normale"
+task2.end_date = Date.new(2019,9,30)
+task2.save!
 
-# Tasks ----------------------------------------------------------------------
+task3 = Task.new
+task3.name = "Présentation projet"
+task3.project = project_article1
+task3.user = marie
+task3.description = "Première entrée en matière"
+task3.status = "Achevée"
+task3.priority_level = "Normale"
+task3.end_date = Date.new(2019,9,30)
+task3.save!
 
-puts "creating tasks"
+task4 = Task.new
+task4.name = "Roadmap du projet"
+task4.project = project_article1
+task4.user = lou
+task4.description = "Faire une première roadmap avec des milestones et deadlines"
+task4.status = "A faire"
+task4.priority_level = "Urgente"
+task4.end_date = Date.new(2019,9,24)
+task4.save!
 
-task1_project1 = Task.new
-task1_project1.name = "Cleaner base de données"
-task1_project1.project = project_article1
-task1_project1.user = marie
-task1_project1.description = "Il faut nettoyer la base de données pour commencer à travailler."
-task1_project1.status = "A faire"
-task1_project1.priority_level = "Urgente"
-task1_project1.end_date = Date.new(2019,9,23)
-task1_project1.save!
+task5 = Task.new
+task5.name = "Appeler Article1"
+task5.project = project_article1
+task5.user = lou
+task5.description = "Première entrée en matière"
+task5.status = "Achevée"
+task5.priority_level = "Normale"
+task5.end_date = Date.new(2019,9,23)
+task5.save!
 
-task2_projet1 = Task.new
-task2_projet1.name = "Rencontre avec un mentor"
-task2_projet1.project = project_article1
-task2_projet1.user = marie
-task2_projet1.description = "Rencontrer un mentor pour comprendre ce qu'ils attendent de l'accompagnement"
-task2_projet1.status = "A faire"
-task2_projet1.priority_level = "Normale"
-task2_projet1.end_date = Date.new(2019,9,30)
-task2_projet1.save!
+task6 = Task.new
+task6.name = "Bilan 1ère semaine"
+task6.project = project_article1
+task6.user = lou
+task6.description = "Premier bilan des premières semaines d'exploration"
+task6.status = "A faire"
+task6.priority_level = "Normale"
+task6.end_date = Date.new(2019,9,24)
+task6.save!
 
-task3_projet1 = Task.new
-task3_projet1.name = "Présentation projet"
-task3_projet1.project = project_article1
-task3_projet1.user = marie
-task3_projet1.description = "Première entrée en matière"
-task3_projet1.status = "Achevée"
-task3_projet1.priority_level = "Normale"
-task3_projet1.end_date = Date.new(2019,9,30)
-task3_projet1.save!
+task7 = Task.new
+task7.name = "Schéma de la db"
+task7.project = project_article1
+task7.user = maxence
+task7.description = "Faire un premier schéma de base de données"
+task7.status = "A faire"
+task7.priority_level = "Prioritaire"
+task7.end_date = Date.new(2019,9,24)
+task7.save!
 
-task4_projet1 = Task.new
-task4_projet1.name = "Roadmap du projet"
-task4_projet1.project = project_article1
-task4_projet1.user = lou
-task4_projet1.description = "Faire une première roadmap avec des milestones et deadlines"
-task4_projet1.status = "A faire"
-task4_projet1.priority_level = "Urgente"
-task4_projet1.end_date = Date.new(2019,9,24)
-task4_projet1.save!
+task8 = Task.new
+task8.name = "Exemple"
+task8.project = project_article1
+task8.user = maxence
+task8.description = "Premier bilan des premières semaines d'exploration"
+task8.status = "Achevée"
+task8.priority_level = "Normale"
+task8.end_date = Date.new(2019,9,24)
+task8.save!
 
-task5_projet1 = Task.new
-task5_projet1.name = "Appeler Article1"
-task5_projet1.project = project_article1
-task5_projet1.user = lou
-task5_projet1.description = "Première entrée en matière"
-task5_projet1.status = "Achevée"
-task5_projet1.priority_level = "Normale"
-task5_projet1.end_date = Date.new(2019,9,23)
-task5_projet1.save!
 
-task6_projet1 = Task.new
-task6_projet1.name = "Bilan 1ère semaine"
-task6_projet1.project = project_article1
-task6_projet1.user = lou
-task6_projet1.description = "Premier bilan des premières semaines d'exploration"
-task6_projet1.status = "A faire"
-task6_projet1.priority_level = "Normale"
-task6_projet1.end_date = Date.new(2019,9,24)
-task6_projet1.save!
+# Events for Article 1 -------------------------------------------------------------------
 
-task7_projet1 = Task.new
-task7_projet1.name = "Schéma de la db"
-task7_projet1.project = project_article1
-task7_projet1.user = thomas
-task7_projet1.description = "Faire un premier schéma de base de données"
-task7_projet1.status = "A faire"
-task7_projet1.priority_level = "Prioritaire"
-task7_projet1.end_date = Date.new(2019,9,24)
-task7_projet1.save!
-
-task8_projet1 = Task.new
-task8_projet1.name = "Exemple"
-task8_projet1.project = project_article1
-task8_projet1.user = thomas
-task8_projet1.description = "Premier bilan des premières semaines d'exploration"
-task8_projet1.status = "Achevée"
-task8_projet1.priority_level = "Normale"
-task8_projet1.end_date = Date.new(2019,9,24)
-task8_projet1.save!
-
-# task2_project1 = Task.new
-# task2_project1.name = "API Twitter"
-# task2_project1.project = project_spa
-# task2_project1.user = thomas
-# task2_project1.description = "Il faut potasser l'API Twitter et identifier les params dont on aura besoin pour le bot."
-# task2_project1.status = "A faire"
-# task2_project1.priority_level = "Normale"
-# task2_project1.end_date = Date.new(2019,10,12)
-# task2_project1.save!
-
-task1_project2 = Task.new
-task1_project2.name = "Photos"
-task1_project2.project = project_neo
-task1_project2.user = aurelie
-task1_project2.description = "Scraper les sites de photos libres de droits pour récupérer des tofs correctes de petites bêtes pour nos cards."
-task1_project2.status = "A faire"
-task1_project2.priority_level = "Prioritaire"
-task1_project2.end_date = Date.new(2019,9,28)
-task1_project2.save!
-
-# task2_project2 = Task.new
-# task2_project2.name = "Mapbox et JS"
-# task2_project2.project = project_neo
-# task2_project2.user = antoine
-# task2_project2.description = "On a besoin de décrypter l'API de Mapbox pour arriver à afficher des cards animées avec du bon vieux JS des familles."
-# task2_project2.status = "Terminée"
-# task2_project2.priority_level = "Normale"
-# task2_project2.end_date = Date.new(2019,6,8)
-# task2_project2.save!
-
-puts 'creating events. article1'
+puts 'creating events for Article 1'
 
 event = Event.new
 event.name = "meeting"
@@ -722,7 +695,6 @@ participation1_event2.event = event2
 participation1_event2.start_time = event2.start_time
 participation1_event2.save!
 
-
 event3 = Event.new
 event3.name = "Bilan 1"
 event3.start_time = DateTime.new(2019,9,10,11)
@@ -743,78 +715,113 @@ participation2_event3.event = event3
 participation2_event3.start_time = event3.start_time
 participation2_event3.save!
 
-puts 'creating messages article1'
 
-puts 'creating message 1 article1'
+# Messages for Article 1 -------------------------------------------------------------------
+
+puts 'creating messages for Article 1'
+
+puts 'creating message 1'
+
 message1 = Message.new
 message1.chat_room = chatroom_article1
 message1.user = marie
-message1.content = "Bonjour à tous je m'appelle Marie et je suis ravie de vous rencontrer pour travailler sur ce merveilleux projet"
+message1.content = "Bonjour à tous je m'appelle Marie et je suis ravie de vous rencontrer pour travailler sur ce projet"
 message1.save!
 
-puts 'creating message 2 article1'
+puts 'creating message 2'
 
 message2 = Message.new
 message2.chat_room = chatroom_article1
-message2.user = thomas
-message2.content = "Hello Marie, moi c'est Thomas ! Je suis ravi d'apporter mes compétences de geek passsionné pour aider des jeunes à trouver leur voix"
+message2.user = maxence
+message2.content = "Hello Marie, moi c'est Maxence ! Je suis ravi d'apporter mes compétences de geek passsionné pour aider des jeunes à trouver leur voix"
 message2.save!
 
-puts 'creating message 3 article1'
+puts 'creating message 3'
+
 message3 = Message.new
 message3.chat_room = chatroom_article1
 message3.user = antoine
-message3.content = "Enchanté. Moi c'est Antoine et j'adore les barres Feed"
+message3.content = "Enchanté. Moi c'est Antoine et j'ai hâte de commencer !"
 message3.save!
 
-message8 = Message.new
-message8.chat_room = chatroom_article1
-message8.user = thomas
-message8.content = "Hello Hello! "
-message8.save!
+puts 'creating message 4'
 
-puts 'creating message 4 article1'
 message4 = Message.new
 message4.chat_room = chatroom_article1
 message4.user = lou
-message4.content = "Hello la dream team ! ça vous dit qu'on s'organise un verre pour tous se rencontrer ? Le 3 septembre par exemple ? "
+message4.content = "Hello la dream team ! ça vous dit qu'on s'organise un verre pour tous se rencontrer ? Le 3 septembre par exemple ?"
 message4.save!
 
-puts 'creating message 5 article1'
+puts 'creating message 5'
+
 message5 = Message.new
 message5.chat_room = chatroom_article1
-message5.user = marie
-message5.content = "J'espère que vous vous êtes bien remis de la soirée de la veille ! J'ai commencé à nettoyer la base de données, vous pouvez télécharger le fichier csv dbarticle1"
+message5.user = maxence
+message5.content = "Top !"
 message5.save!
 
-puts 'creating message 6 article1'
+puts 'creating message 6'
+
 message6 = Message.new
 message6.chat_room = chatroom_article1
-message6.user = antoine
-message6.content = "Hello Marie ! Merci beaucoup je regarde dès que j'ai 5 minutes "
+message6.user = marie
+message6.content = "J'espère que vous vous êtes bien remis de la soirée de la veille ! J'ai commencé à nettoyer la base de données, vous pouvez télécharger le fichier csv 'Donnnées brutes'"
 message6.save!
+
+puts 'creating message 7'
 
 message7 = Message.new
 message7.chat_room = chatroom_article1
-message7.user = thomas
-message7.content = " Je décuve encore quelques heures et je m'y mets ! "
+message7.user = antoine
+message7.content = "Hello Marie ! Merci beaucoup je regarde dès que j'ai 5 minutes"
 message7.save!
 
-# message8 = Message.new
-# message8.chat_room = chatroom_article1
-# message8.user =
-# message8.content =
-# message8.save!
+puts 'creating message 8'
+
+message8 = Message.new
+message8.chat_room = chatroom_article1
+message8.user = maxence
+message8.content = "Je décuve encore quelques heures et je m'y mets !"
+message8.save!
+
+puts 'creating message 9'
 
 message9 = Message.new
 message9.chat_room = chatroom_article1
 message9.user = marie
-message9.content = "parfait ! Faites moi vos retours quand vous pouvez :)"
+message9.content = "Parfait ! Faites moi vos retours quand vous pouvez :)"
 message9.save!
+
+
+# Files for Article 1 -------------------------------------------------------------------
+
+puts "creating files for Article 1"
+
+file1 = Ressource.new
+file1.name = "Schéma de la DB"
+file1.project = project_article1
+file1.remote_source_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568642570/doogs/db_schema_uebuxp.jpg"
+file1.user = marie
+file1.save!
+
+file2 = Ressource.new
+file2.name = "Cahier des charges"
+file2.project = project_article1
+file2.remote_source_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568642570/doogs/cahier-charges_pzgfir.pdf"
+file2.user = antoine
+file2.save!
+
+file3 = Ressource.new
+file3.name = "Données brutes"
+file3.project = project_article1
+file3.remote_source_url = "https://res.cloudinary.com/duro4nxuo/raw/upload/v1568642569/doogs/dbarticle1_imjjvv.csv"
+file3.user = marie
+file3.save!
+
 
 # Super User ----------------------------------------------------------------------
 
-puts "creating Super User Marie"
+puts "creating Super User Mariette"
 
 mariette = User.new
 mariette.name ="mariette Zuckerberg"
@@ -860,10 +867,4 @@ mariette_skill7.skill = product_manager
 mariette_skill7.user = mariette
 mariette_skill7.save
 
-
-
-
 puts 'finished!'
-
-
-

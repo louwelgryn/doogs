@@ -1,9 +1,13 @@
 .green-banner {
- // background-image: url('Vectorvector.svg');
    background-color: #A4C5C6;
-   background-repeat: no-repeat;
    height: 100vh;
    position: relative;
+}
+
+.index-new {
+  background-image: url('Vectorvector.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .banner-info {
@@ -54,13 +58,6 @@
   padding: 10px;
   z-index: 1;
 }
-// .image-two {
-// clip-path: polygon(10% 0,94% 36%,98% 100%,0 100%,0 20%);
-//  object-fit: cover;
-//   object-position: right;
-//   position: absolute;
-//   height: 200px;
-// }
 
 @keyframes imageone {
   from{
@@ -141,6 +138,3 @@ transform: rotate(0);
 .big-title {
   font-size: 200px;
 }
-
-
-
