@@ -86,7 +86,7 @@ lou = User.new
 lou.name = 'Lou Welgryn'
 lou.description = "J'ai hacké Facebook à l'âge de 13 ans."
 lou.level = 'Piou-piou'
-lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506450/_JBU8547-1_Lou_Welgryn_iv1xmm.jpg"
+lou.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645063/qks9h7amqmy4qlxq3zly.jpg"
 lou.email = 'louwelgryn@gmail.com'
 lou.password = 'qwerty'
 lou.save!
@@ -116,7 +116,7 @@ antoine = User.new
 antoine.name ="Antoine Gaillard"
 antoine.description = "J'ai pas mal de temps libre."
 antoine.level = "Piou-piou"
-antoine.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/q_60/v1567506803/_JBU8996-1_Antoine_Gaillard_ipfh5q.jpg"
+antoine.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645064/ik1sj96palhz9wtojd0e.jpg"
 antoine.email = "antoinegaillard@gmail.com"
 antoine.password = "qwerty"
 antoine.save!
@@ -151,7 +151,7 @@ marie = User.new
 marie.name ="Marie Stoppa"
 marie.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
 marie.level = "Piou-piou"
-marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567506929/_JBU8196-1_Marie_Stoppa_kxm7cb.jpg"
+marie.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645065/etktgn9rlfipzjbk6cva.jpg"
 marie.email = "guest@doog.club"
 marie.password = "password"
 marie.save!
@@ -171,7 +171,7 @@ maxence = User.new
 maxence.name ="Maxence Ballande"
 maxence.description = "Tu parles sur moi y'a R"
 maxence.level = "Piou-piou"
-maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507259/_JBU8747-1_xt8bxo.jpg"
+maxence.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645066/gzdvhwpkno68jhyp4gzr.jpg"
 maxence.email = "maxenceballende@gmail.com"
 maxence.password = "qwerty"
 maxence.save!
@@ -191,7 +191,7 @@ arnaud = User.new
 arnaud.name ="Arnaud de Castelbajac"
 arnaud.description = "A la recherche d'une activité pour occuper mes dimanches après-midi"
 arnaud.level = "Piou-piou"
-arnaud.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507210/_JBU8336-1_cafybx.jpg"
+arnaud.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645067/opjml0zwvkazwgrh9uym.jpg"
 arnaud.email = "arnaud@gmail.com"
 arnaud.password = "qwerty"
 arnaud.save!
@@ -211,7 +211,7 @@ thomas = User.new
 thomas.name ="Thomas Reilly"
 thomas.description = "J'aime le développement web et le cinéma."
 thomas.level = "Piou-piou"
-thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567507235/_JBU8663-1_l2rzoh.jpg"
+thomas.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645068/s0yq7bduaevdpkdhwa2i.jpg"
 thomas.email = "thomasbozzo@gmail.com"
 thomas.password = "qwerty"
 thomas.save!
@@ -240,8 +240,8 @@ spa.name = "Société Protectrice des Animaux"
 spa.description = "L'association lutte au quotidien pour la protection animale. Suivez l'actualité dans notre combat pour le bien être des animaux. Recherchez votre compagnon idéal et aidez nous en réalisant un don ou en devenant bénévole."
 spa.referent_name = "Marcel Bichon"
 spa.referent_position = "Trésorier"
-spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_referent_image_dbdclk.jpg"
-spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/spa_logo_bovwxt.png"
+spa.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645070/mc4ixeqztz1znhciteq9.jpg"
+spa.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645069/lmzpwtsg6rxedpeosenh.png"
 spa.address = "39 Boulevard Berthier 75017 Paris"
 spa.save!
 
@@ -252,8 +252,8 @@ ahp.name = "Amicale des Hygiénistes Psychorigides"
 ahp.description = "L'amicale promeut une société libérée de tous germes, fleurant bon l'eau de javel ou les arômes articiels de pin des Landes. Rejoignez-nous dans ce combat pour un monde plus pur mais n'oubliez pas de vous laver les mains avant."
 ahp.referent_name = "Élodie Louineaux"
 ahp.referent_position = "Fondatrice"
-ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_referent_image_sdtlng.jpg"
-ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/ahp_logo_uztqkm.png"
+ahp.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645072/wupadtdcomcmfrskwkt2.jpg"
+ahp.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645071/fytcvqbijp2r9aja1xfl.png"
 ahp.address = "39 Boulevard de la Madeleine 75008 Paris"
 ahp.save!
 
@@ -264,8 +264,8 @@ article1.name = "Article 1"
 article1.description = "Article 1 développe et encadre le parrainage de jeunes étudiants boursiers à haut potentiel par des professionnels."
 article1.referent_name = "Boris Walbaum"
 article1.referent_position = "Président"
-article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_referent_image_w5xyu4.jpg"
-article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902314/article1_logo_tfgzpm.png"
+article1.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645074/fpw6j1k3kxoas9w6yovr.jpg"
+article1.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645073/xh0momxk7fjfz4mp6qc2.png"
 article1.address = "29 Boulevard Bourdon 75004 Paris"
 article1.save!
 
@@ -277,7 +277,7 @@ open_food_facts.description = "Open Food Facts est une base de données sur les 
 open_food_facts.referent_name = "Lisa Barthélémy"
 open_food_facts.referent_position = "Présidente"
 open_food_facts.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568643223/doogs/stephanie-liverani-Zz5LQe-VSMY-unsplash_nkwhoq.jpg"
-open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902315/open_food_facts_logo_ujhbkc.png"
+open_food_facts.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645075/cyajh40zlgefxk2cdz54.png"
 open_food_facts.address = "21 rue des Iles 94100 Saint Maur Des Fosses"
 open_food_facts.save!
 
@@ -288,7 +288,7 @@ nature_en_occitanie.name = "Fédération Nature Occitanie"
 nature_en_occitanie.description = "La Fédération Nature Occitanie agit depuis 1968 pour la protection de la faune et de la flore sauvages ainsi que pour la préservation des milieux naturels de la région."
 nature_en_occitanie.referent_name = "Hervé Martin"
 nature_en_occitanie.referent_position = "Coordinateur du pôle Biodiversité"
-nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567068755/neo_referent_wst6bb.jpg"
+nature_en_occitanie.remote_referent_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645079/ub2xthnaphsnwulkcclq.jpg"
 nature_en_occitanie.remote_logo_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568639908/doogs/nature_wjfxfw.jpg"
 nature_en_occitanie.address = "5 Rue du Moulin Joly 75011 Paris"
 nature_en_occitanie.save!
@@ -320,7 +320,7 @@ project_open_food_facts.development_goal = "Mesures relatives à la lutte contre
 project_open_food_facts.status = "Terminé"
 project_open_food_facts.start_date = Date.new(2019,1,1)
 project_open_food_facts.end_date = Date.new(2019,3,1)
-project_open_food_facts.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566899900/7793640219_open-food-facts-le-wikipedia-de-l-alimentation_1_blmly1.jpg"
+project_open_food_facts.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645082/gehyo64dvgqdhca3ady0.jpg"
 project_open_food_facts.save!
 
 puts "creating project Article1"
@@ -333,7 +333,7 @@ project_article1.development_goal = "Éducation de qualité"
 project_article1.status = "En cours"
 project_article1.start_date = Date.new(2019,8,15)
 project_article1.end_date = Date.new(2019,11,12)
-project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/c_scale,h_1706/v1567697966/plush-design-studio-l3N9Q27zULw-unsplash_aynybh.jpg"
+project_article1.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645083/aph40qrls8izvnplqg5v.jpg"
 project_article1.save
 
 puts "creating project Spa"
@@ -346,8 +346,7 @@ project_spa.development_goal = "Vie terrestre"
 project_spa.status = "En cours"
 project_spa.start_date = Date.new(2019,7,5)
 project_spa.end_date = Date.new(2019,11,10)
-
-project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567784574/doogs/gzbcxwf4scpjhjnsp4xd.jpg"
+project_spa.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645084/abjdz3ofb0rf3szp9ivb.jpg"
 project_spa.save
 
 puts "creating project Ahp"
@@ -360,8 +359,7 @@ project_ahp.development_goal = "Éducation de qualité"
 project_ahp.status = "En attente"
 project_ahp.start_date = Date.new(2019,8,1)
 project_ahp.end_date = Date.new(2020,2,29)
-
-project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566902207/katie-smith-uQs1802D0CQ-unsplash_ax9lud.jpg"
+project_ahp.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645086/sg3tz35ajhjo4bethi0u.jpg"
 project_ahp.save
 
 puts "creating project Nature en Occitanie"
@@ -374,7 +372,7 @@ project_neo.development_goal = "Vie terrestre"
 project_neo.status = "En attente"
 project_neo.start_date = Date.new(2019,5,12)
 project_neo.end_date = Date.new(2019,10,18)
-project_neo.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567069943/project_neo_gsavww.jpg"
+project_neo.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645087/fvyav0c74zpsw8ovgknk.jpg"
 project_neo.save!
 
 puts "creating project Bretagne Vivante"
@@ -387,7 +385,7 @@ project_bv.development_goal = "Vie aquatique"
 project_bv.status = "Terminé"
 project_bv.start_date = Date.new(2018,2,9)
 project_bv.end_date = Date.new(2018,6,12)
-project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1567070322/project_bv_i3xnzi.jpg"
+project_bv.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645089/y5jlf1ib8vyx7azxmv9d.jpg"
 project_bv.save!
 
 
@@ -827,7 +825,7 @@ mariette = User.new
 mariette.name ="mariette Zuckerberg"
 mariette.description = "J'ai pas mal de temps libre."
 mariette.level = "Piou-piou"
-mariette.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1566901128/gettyimages-944400620_ygsytz.jpg"
+mariette.remote_image_url = "https://res.cloudinary.com/duro4nxuo/image/upload/v1568645094/mxtt3ws0mk2lss1zaqjl.jpg"
 mariette.email = "mariettezuckerberg@gmail.com"
 mariette.password = "qwerty"
 mariette.save!
